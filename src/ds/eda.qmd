@@ -19,4 +19,4 @@ After that, answer the following questions through computations:
 - How many rows/observations contain 1+ missing values?
 - What is the summary statistics of each column/variable?
 
-
+test
