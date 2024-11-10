@@ -14,7 +14,7 @@ book:
   author: "Amin G. Alhashim"
   date: today
   reader-mode: true
-  repo-url: https://github.com/hashcx/workspace/
+  repo-url: https://github.com/hashcx/notebook/
   page-navigation: true
   back-to-top-navigation: true
   bread-crumbs: true
