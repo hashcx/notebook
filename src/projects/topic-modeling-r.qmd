@@ -76,7 +76,7 @@ An attempt to understand Sherlock Holmes short stories found in Adventures of Sh
 ## Download Book
 
 ```{r}
-# Download the book, each line of the book is read into a seperate row
+# Download the book, each line of the book is read into a separate row
 sherlock_raw <- gutenberg_download(48320)
 dim(sherlock_raw)
 head(sherlock_raw)
