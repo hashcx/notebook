@@ -20,6 +20,7 @@ book:
   bread-crumbs: true
   # downloads: [pdf]
   repo-actions: [edit, issue]
+  repo-branch: master
   repo-link-target: "_blank" #makes issue and edit links open in a new window/tab
   
   sidebar:
