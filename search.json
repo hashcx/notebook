@@ -35,7 +35,7 @@
     "href": "src/ds/eda.html",
     "title": "EDA",
     "section": "",
-    "text": "With a new dataset, answer the followings using its codebook if available or via some search and/or asking if not.\n\nWhat is its source?\nWho collected it?\nWhen it was collected?\nWhat does each column/variable represent?\nWhat does each row/observation represent?\n\nAfter that, answer the following questions through computations:\n\nHow many columns/variables?\nHow many rows/observations?\nWhat is the data type of each column/variable?\nWhat are the top few rows/observations?\nWhat are the bottom few rows/observations?\nHow many missing values in each column/variable?\nHow many rows/observations contain 1+ missing values?\nWhat is the summary statistics of each column/variable?\n\nTEST2",
+    "text": "With a new dataset, answer the followings using its codebook if available or via some search and/or asking if not.\n\nWhat is its source?\nWho collected it?\nWhen it was collected?\nWhat does each column/variable represent?\nWhat does each row/observation represent?\n\nAfter that, answer the following questions through computations:\n\nHow many columns/variables?\nHow many rows/observations?\nWhat is the data type of each column/variable?\nWhat are the top few rows/observations?\nWhat are the bottom few rows/observations?\nHow many missing values in each column/variable?\nHow many rows/observations contain 1+ missing values?\nWhat is the summary statistics of each column/variable?\n\ntest12",
     "crumbs": [
       "Data Science",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>EDA</span>"
