@@ -1,0 +1,45 @@
+# Tips
+
+## Clean Workspace @ Start
+
+Always start by clearing the workspace to ensure objects created by other files are not used here.
+
+```{r}
+#| eval: false
+
+rm(list = ls())
+```
+
+
+## Insalling Missing Pckages
+
+Although people may not like installing packages on their machines automatically for different reasons, I prefer this route for myself because I use multiple machines and install packages one at a time (after the code breaks multiple time because of the missing packages) is annoying.
+
+Step 1: Store all needed packages to a variables:
+
+```{r}
+#| eval: false
+
+packages <- c("here", "tidyverse", "janitor")
+```
+
+
+Step 2: Install missing packages
+
+```{r}
+#| eval: false
+
+install.packages(setdiff(packages, rownames(installed.packages())))
+
+```
+
+## Loading Packages
+
+We can then load all the packages using one line.
+
+```{r Load Packages}
+#| eval: false
+
+lapply(packages, require, character.only = TRUE)
+```
+

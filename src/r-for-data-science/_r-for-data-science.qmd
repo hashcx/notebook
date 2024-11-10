@@ -1,0 +1,5 @@
+---
+title: "R for Data Science (2e)"
+---
+
+This section contains replications for the examples used in the [R for Data Science (2e) book](https://r4ds.hadley.nz/), one Quarto file per chapter of the book.

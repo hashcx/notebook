@@ -1,0 +1,37 @@
+# File Organization
+
+
+When starting any computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.
+
+The structure below is inspired by 2009 William Stafford Noble's paper [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424).  On a related topic, see 2014 Greg Wilson et al paper [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745).
+
+```
++- data: contains the fixed data sets.
+   +- raw
+   +- processed, if needed
+
++- result: contains the computational experiments performed on the data sets 
+           in the 'data' directory.
+   - NOTEBOOK: record the progress in details. The entries in this notebook 
+               should be dated and relaltively verbose with links or embeded 
+               images or tables displaying the results of the experiment 
+               performed.  Also, this notebook should also record any 
+               observation, conclusion, or ideas for future work.  In case 
+               the experiment fail, document how you know that experiment 
+               failed to make it clear for those who may read this notebook 
+               later.  You may also trascribe notes from converstaions and 
+               emails.  This notebook can reside online (e.g., Google Doc) 
+               to give access to collaborator about the current status of 
+               the project.
+   +- 2018.04.24
+   +- 2018.04.25
+   +- <chronological order>
+
++- doc: contains a seperate sub-directory for each maniuscript.
+   +- paper 1
+   +- paper 2
+   +- ...
+
++- src: contains the source code for the project.
+
+```

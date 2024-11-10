@@ -1,0 +1,5 @@
+# Welcome {.unnumbered}
+
+This Quarto Book[^quarto-book] is a workspace for the notes and projects of the programming/scripting languages that I am learning.
+
+[^quarto-book]: [Quarto Books Documentation](https://quarto.org/docs/books/)
