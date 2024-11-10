@@ -70,7 +70,7 @@ book:
     #   - src/r-for-data-science/07-data-import.qmd
     # 
     # - part: "Projects"
-    #   chapters: 
+    #   chapters:
     #     - src/projects/topic-modeling-r.qmd
     #     - src/projects/scrap_mac_registrar.qmd
 
