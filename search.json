@@ -1,0 +1,77 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workspace",
+    "section": "",
+    "text": "Welcome\nThis Quarto Book1 is a workspace for the notes and projects of the programming/scripting languages that I am learning.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Workspace",
+    "section": "",
+    "text": "Quarto Books Documentation↩︎",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "src/ds/file_org.html",
+    "href": "src/ds/file_org.html",
+    "title": "File Organization",
+    "section": "",
+    "text": "When starting any computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.\nThe structure below is inspired by 2009 William Stafford Noble’s paper A Quick Guide to Organizing Computational Biology Projects. On a related topic, see 2014 Greg Wilson et al paper Best Practices for Scientific Computing.\n+- data: contains the fixed data sets.\n   +- raw\n   +- processed, if needed\n\n+- result: contains the computational experiments performed on the data sets \n           in the 'data' directory.\n   - NOTEBOOK: record the progress in details. The entries in this notebook \n               should be dated and relaltively verbose with links or embeded \n               images or tables displaying the results of the experiment \n               performed.  Also, this notebook should also record any \n               observation, conclusion, or ideas for future work.  In case \n               the experiment fail, document how you know that experiment \n               failed to make it clear for those who may read this notebook \n               later.  You may also trascribe notes from converstaions and \n               emails.  This notebook can reside online (e.g., Google Doc) \n               to give access to collaborator about the current status of \n               the project.\n   +- 2018.04.24\n   +- 2018.04.25\n   +- &lt;chronological order&gt;\n\n+- doc: contains a seperate sub-directory for each maniuscript.\n   +- paper 1\n   +- paper 2\n   +- ...\n\n+- src: contains the source code for the project.",
+    "crumbs": [
+      "Data Science",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>File Organization</span>"
+    ]
+  },
+  {
+    "objectID": "src/ds/eda.html",
+    "href": "src/ds/eda.html",
+    "title": "EDA",
+    "section": "",
+    "text": "With a new dataset, answer the followings using its codebook if available or via some search and/or asking if not.\n\nWhat is its source?\nWho collected it?\nWhen it was collected?\nWhat does each column/variable represent?\nWhat does each row/observation represent?\n\nAfter that, answer the following questions through computations:\n\nHow many columns/variables?\nHow many rows/observations?\nWhat is the data type of each column/variable?\nWhat are the top few rows/observations?\nWhat are the bottom few rows/observations?\nHow many missing values in each column/variable?\nHow many rows/observations contain 1+ missing values?\nWhat is the summary statistics of each column/variable?\n\nTEST2",
+    "crumbs": [
+      "Data Science",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EDA</span>"
+    ]
+  },
+  {
+    "objectID": "src/ds/tips.html",
+    "href": "src/ds/tips.html",
+    "title": "Tips",
+    "section": "",
+    "text": "Clean Workspace @ Start\nAlways start by clearing the workspace to ensure objects created by other files are not used here.\nrm(list = ls())",
+    "crumbs": [
+      "Data Science",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tips</span>"
+    ]
+  },
+  {
+    "objectID": "src/ds/tips.html#insalling-missing-pckages",
+    "href": "src/ds/tips.html#insalling-missing-pckages",
+    "title": "Tips",
+    "section": "Insalling Missing Pckages",
+    "text": "Insalling Missing Pckages\nAlthough people may not like installing packages on their machines automatically for different reasons, I prefer this route for myself because I use multiple machines and install packages one at a time (after the code breaks multiple time because of the missing packages) is annoying.\nStep 1: Store all needed packages to a variables:\n\npackages &lt;- c(\"here\", \"tidyverse\", \"janitor\")\n\nStep 2: Install missing packages\n\ninstall.packages(setdiff(packages, rownames(installed.packages())))",
+    "crumbs": [
+      "Data Science",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tips</span>"
+    ]
+  },
+  {
+    "objectID": "src/ds/tips.html#loading-packages",
+    "href": "src/ds/tips.html#loading-packages",
+    "title": "Tips",
+    "section": "Loading Packages",
+    "text": "Loading Packages\nWe can then load all the packages using one line.\n\nlapply(packages, require, character.only = TRUE)",
+    "crumbs": [
+      "Data Science",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tips</span>"
+    ]
+  }
+]
