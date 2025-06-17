@@ -1,0 +1,9 @@
+# ignore all data folders
+# data/
+
+# ignore only data folder from the root of the project
+/data/
+
+# ignore only docs folder from the root of the project
+/docs/
+
