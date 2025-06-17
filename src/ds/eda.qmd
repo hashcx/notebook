@@ -1,12 +1,17 @@
 ## EDA
 
+### Manual Summaries
+
 With a new dataset, answer the followings using its codebook if available or via some search and/or asking if not.
 
 - What is its source?
+- How it was obtained? 
 - Who collected it?
 - When it was collected?
 - What does each column/variable represent?
 - What does each row/observation represent?
+
+### Computational Summaries
 
 After that, answer the following questions through computations:
 
@@ -19,4 +24,5 @@ After that, answer the following questions through computations:
 - How many rows/observations contain 1+ missing values?
 - What is the summary statistics of each column/variable?
 
-TEST
+[In a blog post, Michael Clark demos eight R packages(html)](https://m-clark.github.io/exploratory-data-analysis-tools/) that can help explore data quickly and effectively.
+The demoed packages are: [arsenal](https://mayoverse.github.io/arsenal/), [DataExplorer](https://boxuancui.github.io/DataExplorer/), [dataReporter](https://github.com/ekstroem/dataReporter) ([dataMaid](https://github.com/ekstroem/dataMaid?tab=readme-ov-file) previously), [gtsummary](https://www.danieldsjoberg.com/gtsummary/), [janitor](https://sfirke.github.io/janitor/), [SmartEDA](https://daya6489.github.io/SmartEDA/index.html), [summarytools](https://github.com/dcomtois/summarytools), and [visdat](https://docs.ropensci.org/visdat/).
