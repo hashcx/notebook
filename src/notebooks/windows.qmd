@@ -1,8 +1,0 @@
----
-title: "Microsoft Windows"
-eval: true
----
-
-## CMD Command
-
-- To know which software has update: run cmd as administrator -> type `winget upgrade`.  To update all of at once, type `winget upgrade --all`

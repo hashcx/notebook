@@ -1,5 +1,0 @@
----
-title: "Practice"
----
-
-This section contains practices for the programming/scripting languages that I am learning.
