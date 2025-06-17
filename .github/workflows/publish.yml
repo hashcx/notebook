@@ -1,36 +1,125 @@
 on:
-  workflow_dispatch:
   push:
-    branches: main
+    branches:
+      - custom
 
-name: Quarto Publish
+
+name: Execute, Render and Publish
+
+
+# you need these permissions to publish to GitHub pages
+permissions:
+    contents: write
+    pages: write
+
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    
     steps:
-      - name: Check out repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Set up Quarto
+        
+      - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # To install LaTeX to build PDF book 
+          tinytex: true 
+          # uncomment below and fill to pin a version
+          # version: SPECIFIC-QUARTO-VERSION-HERE
+      
+      # add software dependencies here and any libraries
+      
+      # From https://github.com/actions/setup-python
+      # - name: Setup Python
+      #   uses: actions/setup-python@v3
 
-      - name: Install R
+
+      # From https://github.com/r-lib/actions/tree/v2-branch/setup-r
+      - name: Setup R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.2.0'
+          r-version: '4.4.1'
 
+
+      # From: https://github.com/actions/runner-images/issues/37
+      # From: https://p3m.dev/client/#/repos/cran/packages/overview?search=png
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get install libcurl4-openssl-dev
+          sudo apt-get install -y libpng-dev
+          sudo apt-get install -y libgdal-dev
+          sudo apt-get install -y gdal-bin
+          sudo apt-get install -y libgeos-dev
+          sudo apt-get install -y libproj-dev
+          sudo apt-get install -y libsqlite3-dev
+          sudo apt-get install -y libfontconfig1-dev
+          sudo apt-get install -y libfreetype6-dev
+          sudo apt-get install -y libfribidi-dev
+          sudo apt-get install -y libharfbuzz-dev
+          sudo apt-get install -y libudunits2-dev
+
+
+      # # From: https://quarto.org/docs/publishing/github-pages.html#github-action
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
 
-      - name: Render and Publish
+
+      # From https://stackoverflow.com/questions/76642914/use-a-github-package-for-a-r-github-action
+      - name: Install remotes Package
+        run: |
+          Rscript -e "install.packages('remotes', repos='https://ftp.belnet.be/mirror/CRAN')"
+
+
+      - name: Install rnaturalearthhires Package
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          Rscript -e "remotes::install_github('ropensci/rnaturalearthhires')"
+
+
+      # From https://github.com/julia-actions/setup-julia
+      # - name: Setup Julia
+      #   uses: julia-actions/setup-julia@v1
+
+
+      # See more at https://github.com/quarto-dev/quarto-actions/blob/main/examples/example-03-dependencies.md
+
+
+      # To publish to Netlify, RStudio Connect, or GitHub Pages, uncomment
+      # the appropriate block below
+      # - name: Render & Publish to Netlify
+      #   uses: quarto-dev/quarto-actions/publish@v2
+      #   with:
+      #     target: netlify
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      # - name: Render & Publish to RStudio Connect
+      #   uses: quarto-dev/quarto-actions/publish@v2
+      #   with:
+      #     target: connect
+      #     CONNECT_SERVER: enter-the-server-url-here
+      #     CONNECT_API_KEY: ${{ secrets.CONNECT_API_KEY }} 
+
+      # NOTE: If Publishing to GitHub Pages, set the permissions correctly (see top of this yaml)
+      - name: Render & Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+
+      # - name: Publish to confluence
+      #   uses: quarto-dev/quarto-actions/publish@v2
+      #   with:
+      #     target: confluence
+      #   env: 
+      #     CONFLUENCE_USER_EMAIL: ${{ secrets.CONFLUENCE_USER_EMAIL }}
+      #     CONFLUENCE_AUTH_TOKEN: ${{ secrets.CONFLUENCE_AUTH_TOKEN }}
+      #     CONFLUENCE_DOMAIN: ${{ secrets.CONFLUENCE_DOMAIN }}
 
