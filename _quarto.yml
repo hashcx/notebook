@@ -12,13 +12,16 @@ project:
 book:
   title: "Workspace"
   author: "Amin G. Alhashim"
-  date: today
+  date: today # use today to update date published based on last time project was edited
+  # favicon: images/logo.png
   reader-mode: true
-  repo-url: https://github.com/hashcx/workspace/
+  # site-url: https://hashcx.github.io/notebook
   page-navigation: true
   back-to-top-navigation: true
+  cookie-consent: true
   bread-crumbs: true
   downloads: [pdf]
+  repo-url: https://github.com/hashcx/workspace/
   repo-actions: [edit, issue]
   repo-link-target: "_blank" #makes issue and edit links open in a new window/tab
   
@@ -43,7 +46,7 @@ book:
   #       href: https://twitter.com
   
   chapters: 
-    - index.qmd
+    - index.qmd  #the landing page file *must* be called 'index.qmd'
     
     - part: "Data Science"
       chapters: 
@@ -72,12 +75,19 @@ book:
       chapters: 
         - src/projects/topic-modeling-r.qmd
         - src/projects/scrap_mac_registrar.qmd
+        
+  # appendices:
+  # - activities/99-appendix1.qmd
+  # - activities/99-appendix3.qmd
+  # - activities/99-appendix4.qmd
+
 
 format:
   html:
     theme: #bootswatch themes.  For other options check out https://bootswatch.com/
       light: flatly
       dark: darkly
+    search: true
     toc: true
     toc-depth: 3
     link-external-newwindow: true
@@ -85,11 +95,15 @@ format:
     code-copy: true
     code-link: true
     code-line-numbers: true
+    code-block-bg: true
+    code-block-border-left: "#1482FA"
     code-tools: true
+    page-layout: full
     number-sections: false
-  pdf:
-    documentclass: scrreprt
-    keep-tex: true
+    
+  # pdf:
+  #   documentclass: scrreprt
+  #   keep-tex: true
 
 execute:
   cache: true
