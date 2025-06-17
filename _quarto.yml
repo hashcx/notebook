@@ -48,13 +48,13 @@ book:
   chapters: 
     - index.qmd  #the landing page file *must* be called 'index.qmd'
     
-    - part: "Data Science"
+    - part: "Tips"
       chapters: 
         - src/ds/file_org.qmd
         - src/ds/eda.qmd
-        - src/ds/tips.qmd
+        - src/ds/r-files.qmd
     
-    - part: src/notebooks/_notebooks.qmd
+    - part: src/notebooks/_notes.qmd
       chapters: 
         - src/notebooks/r.qmd
         - src/notebooks/quarto.qmd
