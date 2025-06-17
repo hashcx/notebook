@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - custom
+      - master
 
 
 name: Execute, Render and Publish
