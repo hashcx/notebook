@@ -1,5 +1,5 @@
 # Welcome {.unnumbered}
 
-This is my Quarto Book [^quarto-book] notebook website for future self.  Test2
+This is my Quarto Book [^quarto-book] notebook website for future self.
 
 [^quarto-book]: [Quarto Books Documentation](https://quarto.org/docs/books/)
