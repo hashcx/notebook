@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project File Organization – Workspace</title>
+<title>10&nbsp; Data Transformation – Workspace</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/ds/eda.html" rel="next">
-<link href="../../index.html" rel="prev">
+<link href="../../src/r4ds/04-workflow-code-style.html" rel="next">
+<link href="../../src/r4ds/02-workflow-basics.html" rel="prev">
 <script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -303,7 +303,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/ds/file_org.html">Tips</a></li><li class="breadcrumb-item"><a href="../../src/ds/file_org.html"><span class="chapter-title">Project File Organization</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html">src/r-for-data-science/_r-for-data-science.qmd</a></li><li class="breadcrumb-item"><a href="../../src/r4ds/03-data-trans.html"><span class="chapter-title">Data Transformation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -354,7 +354,7 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/ds/file_org.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Project File Organization</span></a>
+  <a href="../../src/ds/file_org.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project File Organization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -421,7 +421,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/r4ds/03-data-trans.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Transformation</span></a>
+  <a href="../../src/r4ds/03-data-trans.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Data Transformation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -472,21 +472,43 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#clear-workspace-dont-edit" id="toc-clear-workspace-dont-edit" class="nav-link active" data-scroll-target="#clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</a></li>
+  <li><a href="#list-used-packages-edit" id="toc-list-used-packages-edit" class="nav-link" data-scroll-target="#list-used-packages-edit">List Used Packages, EDIT</a></li>
+  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages">Load Packages, DON’T EDIT</a>
+  <ul class="collapse">
+  <li><a href="#install-missing" id="toc-install-missing" class="nav-link" data-scroll-target="#install-missing">Install Missing</a></li>
+  <li><a href="#load" id="toc-load" class="nav-link" data-scroll-target="#load">Load</a></li>
+  </ul></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">10.1</span> Introduction</a></li>
+  <li><a href="#dplyr-functions-verbs" id="toc-dplyr-functions-verbs" class="nav-link" data-scroll-target="#dplyr-functions-verbs"><span class="header-section-number">10.2</span> <code>dplyr</code> Functions (Verbs)</a>
+  <ul class="collapse">
+  <li><a href="#four-groups" id="toc-four-groups" class="nav-link" data-scroll-target="#four-groups"><span class="header-section-number">10.2.1</span> Four Groups</a></li>
+  <li><a href="#common-characteristics" id="toc-common-characteristics" class="nav-link" data-scroll-target="#common-characteristics"><span class="header-section-number">10.2.2</span> Common Characteristics</a></li>
+  <li><a href="#pipe-operator" id="toc-pipe-operator" class="nav-link" data-scroll-target="#pipe-operator"><span class="header-section-number">10.2.3</span> Pipe <code>|&gt;</code> Operator</a></li>
+  <li><a href="#row-functions" id="toc-row-functions" class="nav-link" data-scroll-target="#row-functions"><span class="header-section-number">10.2.4</span> Row Functions</a></li>
+  <li><a href="#column-functions" id="toc-column-functions" class="nav-link" data-scroll-target="#column-functions"><span class="header-section-number">10.2.5</span> Column Functions</a></li>
+  <li><a href="#groups-functions" id="toc-groups-functions" class="nav-link" data-scroll-target="#groups-functions"><span class="header-section-number">10.2.6</span> Groups Functions</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/r4ds/03-data-trans.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/ds/file_org.html">Tips</a></li><li class="breadcrumb-item"><a href="../../src/ds/file_org.html"><span class="chapter-title">Project File Organization</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html">src/r-for-data-science/_r-for-data-science.qmd</a></li><li class="breadcrumb-item"><a href="../../src/r4ds/03-data-trans.html"><span class="chapter-title">Data Transformation</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Project File Organization</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Data Transformation</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -498,40 +520,202 @@ cookieconsent.run({
 </header>
 
 
-<p>When starting a computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.</p>
-<p>The structure below is inspired by 2009 William Stafford Noble’s paper <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424">A Quick Guide to Organizing Computational Biology Projects</a>. On a related topic, see 2014 Greg Wilson et al paper <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>.</p>
-<pre><code>+- data: contains the fixed data sets.
-   +- raw
-   +- processed, if needed
+<section id="clear-workspace-dont-edit" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</h2>
+<p>Always start by clearing the workspace. This ensure objects created in other files are not used used here.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="list-used-packages-edit" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="list-used-packages-edit">List Used Packages, EDIT</h2>
+<p>List all the packages that will be used in chunk below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>packages <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"nycflights13"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-packages" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-packages">Load Packages, DON’T EDIT</h2>
+<section id="install-missing" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="install-missing">Install Missing</h3>
+<p>Any missing package will be installed automatically. This ensure smoother execution when run by others.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Installing Packages on Other People Machine
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be aware the people may not like installing packages into their machine automatically. This might break some of their previous code.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Downloading packages -------------------------------------------------------
+- Downloading nycflights13 from CRAN ...        OK [4.3 Mb]
+Successfully downloaded 1 package in 0.35 seconds.
 
-+- result: contains the computational experiments performed on the data sets 
-           in the 'data' directory.
-   - NOTEBOOK: record the progress in details. The entries in this notebook 
-               should be dated and relaltively verbose with links or embeded 
-               images or tables displaying the results of the experiment 
-               performed.  Also, this notebook should also record any 
-               observation, conclusion, or ideas for future work.  In case 
-               the experiment fail, document how you know that experiment 
-               failed to make it clear for those who may read this notebook 
-               later.  You may also trascribe notes from converstaions and 
-               emails.  This notebook can reside online (e.g., Google Doc) 
-               to give access to collaborator about the current status of 
-               the project.
-   +- 2018.04.24
-   +- 2018.04.25
-   +- &lt;chronological order&gt;
+The following package(s) will be installed:
+- nycflights13 [1.0.2]
+These packages will be installed into "~/work/notebook/notebook/renv/library/linux-ubuntu-noble/R-4.4/x86_64-pc-linux-gnu".
 
-+- doc: contains a seperate sub-directory for each maniuscript.
-   +- paper 1
-   +- paper 2
-   +- ...
+# Installing packages --------------------------------------------------------
+- Installing nycflights13 ...                   OK [built from source and cached in 8.8s]
+Successfully installed 1 package in 8.8 seconds.</code></pre>
+</div>
+</div>
+</section>
+<section id="load" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="load">Load</h3>
+<p>Load all packages</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] TRUE
 
-+- src: contains the source code for the project.
-</code></pre>
+[[2]]
+[1] TRUE
+
+[[3]]
+[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="introduction" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">10.1</span> Introduction</h2>
+<p>This page introduces the <code>dplyr</code> package used to transform data such as creating new variables, editing existing variables, filtering out observations, and creating summaries.</p>
+</section>
+<section id="dplyr-functions-verbs" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="dplyr-functions-verbs"><span class="header-section-number">10.2</span> <code>dplyr</code> Functions (Verbs)</h2>
+<section id="four-groups" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="four-groups"><span class="header-section-number">10.2.1</span> Four Groups</h3>
+<p><code>dplyr</code> functions (verbs) can be grouped into functions that work on:</p>
+<ul>
+<li>rows, eg, <code>filter()</code>, <code>arrange()</code>, <code>distinct()</code>, <code>count()</code></li>
+<li>columns, eg, <code>mutate()</code>, <code>select()</code>, <code>rename()</code>, <code>relocate()</code></li>
+<li>groups, eg, <code>summarize()</code>, <code>slice_max</code>, <code>group_by</code>, <code>ungroup()</code>, <code>.by</code></li>
+<li>tables</li>
+</ul>
+</section>
+<section id="common-characteristics" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="common-characteristics"><span class="header-section-number">10.2.2</span> Common Characteristics</h3>
+<p>All the functions have the followings in common:</p>
+<ul>
+<li>their first argument is always a data frame</li>
+<li>their subsequent arguments typically describe which columns to operate on using variable names <em>without quotes</em></li>
+<li>they always output a new data frame, they don’t modify the passed one</li>
+</ul>
+</section>
+<section id="pipe-operator" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="pipe-operator"><span class="header-section-number">10.2.3</span> Pipe <code>|&gt;</code> Operator</h3>
+<ul>
+<li>The pipe <code>|&gt;</code> operator takes what on its left and pass it to the function on its right so that <code>x |&gt; f(y)</code> (pronounced as <code>x</code> <em>then</em> <code>f(y)</code>) is equivalent to <code>f(x, y)</code> and <code>x |&gt; f(y) |&gt; g(z)</code> (pronounced as <code>x</code> then <code>f(y)</code> then <code>g(z)</code>) is equivalent to <code>g(f(x, y), z)</code></li>
+<li>The <code>base</code> R pipe operator <code>|&gt;</code> was introduced in R 4.1.0 in 2021 while the tidyverse <code>magrittr</code> pipe operator <code>%&gt;%</code> was introduced in 2014. Using <code>|&gt;</code> instead of <code>%&gt;%</code> makes our code run when we don’t use tidyverse</li>
+</ul>
+</section>
+<section id="row-functions" class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="row-functions"><span class="header-section-number">10.2.4</span> Row Functions</h3>
+<ul>
+<li>The following <code>filter()</code> statements are equivalent:
+<ul>
+<li><code>filter(ds, var == 1 or var == 2)</code></li>
+<li><code>filter(ds, var == 1 | var == 2)</code></li>
+<li><code>filter(ds, var %in% c(1,2))</code></li>
+</ul></li>
+<li>The following <code>filter()</code> statements are equivalent:
+<ul>
+<li><code>filter(ds, var == 1 and var == 2)</code></li>
+<li><code>filter(ds, var == 1, var == 2)</code></li>
+</ul></li>
+<li>The following <code>arrange()</code> statements order data differently
+<ul>
+<li><code>arrange(ds, var)</code> ascendant order</li>
+<li><code>arrange(ds, desc(var))</code> decedent order</li>
+</ul></li>
+<li>The following <code>distinct()</code> statements return different data frames
+<ul>
+<li><code>distinct(ds, var1, var2)</code> only keep columns <code>var1</code> and <code>var2</code></li>
+<li><code>distinct(ds, var1, var2, .keep_all = TRUE)</code> keep all the columns–find the <em>first</em> observation where <code>var1</code> and <code>var2</code> are distinct and discard the rest</li>
+</ul></li>
+<li>The following <code>count()</code> statements order the results differently
+<ul>
+<li><code>count(ds, var1, var2)</code> arrange results in order they are encountered</li>
+<li><code>count(ds, var1, var2, sort = TRUE)</code> arrange results in descending order of number of occurrence</li>
+</ul></li>
+</ul>
+</section>
+<section id="column-functions" class="level3" data-number="10.2.5">
+<h3 data-number="10.2.5" class="anchored" data-anchor-id="column-functions"><span class="header-section-number">10.2.5</span> Column Functions</h3>
+<ul>
+<li><code>mutate()</code>
+<ul>
+<li>Instead of adding the newly created variable to the right hand side of the data frame, we can instruct <code>mutate()</code> to adding before a variable using the <code>.before</code> attribute or after a variable using the <code>.after</code> attribute</li>
+<li>To only keep the variables involved in the creation of the new variables, we can instruct <code>mutate()</code> to do so by setting the <code>.keep = "used"</code> attribute</li>
+</ul></li>
+<li><code>select()</code>
+<ul>
+<li>select range of variables: <code>select(ds, var_x:var_y)</code></li>
+<li>select all variables except certain range: <code>select(ds, !var_x:var_y)</code></li>
+<li>select character variables only: <code>select(ds, where(is.character))</code></li>
+<li>select variables whose name start with something: <code>select(ds, start_with("m"))</code></li>
+<li>select variables whose name end with something: <code>select(ds, end_with("m"))</code></li>
+<li>select variables whose name contain something: <code>select(ds, contains("m"))</code></li>
+<li>select variables whose name follow some range: <code>select(ds, num_range("x", 1:3))</code></li>
+<li>select and rename variable: <code>select(ds, var1_new = var1, var2_new = var2)</code></li>
+</ul></li>
+<li><code>rename()</code>
+<ul>
+<li>to rename many columns, it is better to use <code>janitor::clean_names()</code> function</li>
+</ul></li>
+<li><code>relocate()</code>
+<ul>
+<li>By default, bring columns to left hand side of the data frame</li>
+<li><code>relocate(ds, var1, .after = var2)</code> puts <code>var1</code> after <code>var2</code></li>
+<li><code>relocate(ds, var1, .before = var2)</code> puts <code>var1</code> before <code>var2</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="groups-functions" class="level3" data-number="10.2.6">
+<h3 data-number="10.2.6" class="anchored" data-anchor-id="groups-functions"><span class="header-section-number">10.2.6</span> Groups Functions</h3>
+<ul>
+<li><code>group_by()</code>
+<ul>
+<li>divides the data into groups so that subsequent operations work on these groups</li>
+<li>it added a <em>class</em> to the dataset to indicate the grouping</li>
+</ul></li>
+<li><code>summarize()</code> or <code>summarise()</code>
+<ul>
+<li>To prevent summary statistics functions, eg, <code>mean()</code> to give <code>NA</code> due to some groups has <code>NA</code> (missing) values, set their argument: <code>na.rm = TRUE</code></li>
+<li>The summary statistics function <code>n()</code> gives the number of observations in the group</li>
+<li>Each summary peels off the last group. To prevent this behavior, change the default value <code>drop_last</code> of the <code>.groups</code> argument of the summary statistic function to either <code>keep</code> to keep all groups or <code>drop</code> to drop all groups</li>
+</ul></li>
+<li><pre><code>`slice_` functions</code></pre>
+<ul>
+<li>The functions are: <code>slice_head()</code>, <code>slice_tail()</code>, <code>slice_min()</code>, <code>slice_max()</code>, and <code>slice_sample()</code></li>
+<li>To slice a number of rows from each group, use the <code>n</code> arguments, eg, <code>n = 1</code></li>
+<li>To slice percentage of rows from each group, use the <code>prop</code> argument, eg, <code>prop = .1</code> (10%)</li>
+<li>To prevent ties from showing, use <code>with_ties = FALSE</code> argument</li>
+</ul></li>
+<li><pre><code>`.by` argument</code></pre>
+<ul>
+<li>New addition to dplyr 1.1.0 (more information at <a href="https://www.tidyverse.org/blog/2023/02/dplyr-1-1-0-per-operation-grouping/">dplyr 1.1.0 blog post</a>)</li>
+<li>Per-operation grouping–can be used all verbs. The advantage is that we don’t need to use the <code>.groups</code> argument to suppress the warning message raised by <code>summarize()</code> when grouping by multiple variables and we don’t need to use <code>ungroup()</code> when done with our summary.</li>
+</ul></li>
+</ul>
 
 
 <!-- -->
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1002,55 +1186,174 @@ cookieconsent.run({
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="../../src/r4ds/02-workflow-basics.html" class="pagination-link" aria-label="Workflow: Basics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Workflow: Basics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/ds/eda.html" class="pagination-link" aria-label="EDA">
-        <span class="nav-page-text"><span class="chapter-title">EDA</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/r4ds/04-workflow-code-style.html" class="pagination-link" aria-label="Workflow: Code Style">
+        <span class="nav-page-text"><span class="chapter-title">Workflow: Code Style</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu"># Project File Organization</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a>When starting a computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>The structure below is inspired by 2009 William Stafford Noble's paper <span class="co">[</span><span class="ot">A Quick Guide to Organizing Computational Biology Projects</span><span class="co">](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)</span>.  On a related topic, see 2014 Greg Wilson et al paper <span class="co">[</span><span class="ot">Best Practices for Scientific Computing</span><span class="co">](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)</span>.</span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="in">```</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="in">+- data: contains the fixed data sets.</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="in">   +- raw</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="in">   +- processed, if needed</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="in">+- result: contains the computational experiments performed on the data sets </span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="in">           in the 'data' directory.</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="in">   - NOTEBOOK: record the progress in details. The entries in this notebook </span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="in">               should be dated and relaltively verbose with links or embeded </span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="in">               images or tables displaying the results of the experiment </span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="in">               performed.  Also, this notebook should also record any </span></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="in">               observation, conclusion, or ideas for future work.  In case </span></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="in">               the experiment fail, document how you know that experiment </span></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="in">               failed to make it clear for those who may read this notebook </span></span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="in">               later.  You may also trascribe notes from converstaions and </span></span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="in">               emails.  This notebook can reside online (e.g., Google Doc) </span></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="in">               to give access to collaborator about the current status of </span></span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="in">               the project.</span></span>
-<span id="cb2-26"><a href="#cb2-26"></a><span class="in">   +- 2018.04.24</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a><span class="in">   +- 2018.04.25</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a><span class="in">   +- &lt;chronological order&gt;</span></span>
-<span id="cb2-29"><a href="#cb2-29"></a></span>
-<span id="cb2-30"><a href="#cb2-30"></a><span class="in">+- doc: contains a seperate sub-directory for each maniuscript.</span></span>
-<span id="cb2-31"><a href="#cb2-31"></a><span class="in">   +- paper 1</span></span>
-<span id="cb2-32"><a href="#cb2-32"></a><span class="in">   +- paper 2</span></span>
-<span id="cb2-33"><a href="#cb2-33"></a><span class="in">   +- ...</span></span>
-<span id="cb2-34"><a href="#cb2-34"></a></span>
-<span id="cb2-35"><a href="#cb2-35"></a><span class="in">+- src: contains the source code for the project.</span></span>
-<span id="cb2-36"><a href="#cb2-36"></a></span>
-<span id="cb2-37"><a href="#cb2-37"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="an">title:</span><span class="co"> "Data Transformation"</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co">---</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="fu">## Clear Workspace, DON'T EDIT {-}</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a>Always start by clearing the workspace. This ensure objects created in other files are not used used here.</span>
+<span id="cb9-9"><a href="#cb9-9"></a></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="in">```{r}</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="co">#| include: true</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="co">#| results: 'hide'</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb9-17"><a href="#cb9-17"></a><span class="in">```</span></span>
+<span id="cb9-18"><a href="#cb9-18"></a></span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="fu">## List Used Packages, EDIT {-}</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a></span>
+<span id="cb9-21"><a href="#cb9-21"></a>List all the packages that will be used in chunk below.</span>
+<span id="cb9-22"><a href="#cb9-22"></a></span>
+<span id="cb9-25"><a href="#cb9-25"></a><span class="in">```{r}</span></span>
+<span id="cb9-26"><a href="#cb9-26"></a><span class="co">#| include: true</span></span>
+<span id="cb9-27"><a href="#cb9-27"></a><span class="co">#| echo: true</span></span>
+<span id="cb9-28"><a href="#cb9-28"></a><span class="co">#| error: true</span></span>
+<span id="cb9-29"><a href="#cb9-29"></a></span>
+<span id="cb9-30"><a href="#cb9-30"></a>packages <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"nycflights13"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>)</span>
+<span id="cb9-31"><a href="#cb9-31"></a><span class="in">```</span></span>
+<span id="cb9-32"><a href="#cb9-32"></a></span>
+<span id="cb9-33"><a href="#cb9-33"></a></span>
+<span id="cb9-34"><a href="#cb9-34"></a><span class="fu">## Load Packages, DON'T EDIT {#sec-packages -}</span></span>
+<span id="cb9-35"><a href="#cb9-35"></a></span>
+<span id="cb9-36"><a href="#cb9-36"></a><span class="fu">### Install Missing {-}</span></span>
+<span id="cb9-37"><a href="#cb9-37"></a></span>
+<span id="cb9-38"><a href="#cb9-38"></a>Any missing package will be installed automatically. This ensure smoother execution when run by others.</span>
+<span id="cb9-39"><a href="#cb9-39"></a></span>
+<span id="cb9-40"><a href="#cb9-40"></a>::: callout-important</span>
+<span id="cb9-41"><a href="#cb9-41"></a></span>
+<span id="cb9-42"><a href="#cb9-42"></a><span class="fu">#### Installing Packages on Other People Machine</span></span>
+<span id="cb9-43"><a href="#cb9-43"></a></span>
+<span id="cb9-44"><a href="#cb9-44"></a>Be aware the people may not like installing packages into their machine automatically.  This might break some of their previous code.</span>
+<span id="cb9-45"><a href="#cb9-45"></a></span>
+<span id="cb9-46"><a href="#cb9-46"></a>:::</span>
+<span id="cb9-47"><a href="#cb9-47"></a></span>
+<span id="cb9-48"><a href="#cb9-48"></a><span class="in">```{r Install Missing Packages}</span></span>
+<span id="cb9-49"><a href="#cb9-49"></a><span class="co">#| include: true</span></span>
+<span id="cb9-50"><a href="#cb9-50"></a><span class="co">#| echo: true</span></span>
+<span id="cb9-51"><a href="#cb9-51"></a><span class="co">#| error: true</span></span>
+<span id="cb9-52"><a href="#cb9-52"></a></span>
+<span id="cb9-53"><a href="#cb9-53"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb9-54"><a href="#cb9-54"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
+<span id="cb9-55"><a href="#cb9-55"></a><span class="in">```</span></span>
+<span id="cb9-56"><a href="#cb9-56"></a></span>
+<span id="cb9-57"><a href="#cb9-57"></a><span class="fu">### Load {-}</span></span>
+<span id="cb9-58"><a href="#cb9-58"></a></span>
+<span id="cb9-59"><a href="#cb9-59"></a>Load all packages</span>
+<span id="cb9-60"><a href="#cb9-60"></a></span>
+<span id="cb9-61"><a href="#cb9-61"></a><span class="in">```{r Load Packages}</span></span>
+<span id="cb9-62"><a href="#cb9-62"></a><span class="co">#| include: true</span></span>
+<span id="cb9-63"><a href="#cb9-63"></a><span class="co">#| echo: true</span></span>
+<span id="cb9-64"><a href="#cb9-64"></a><span class="co">#| error: true</span></span>
+<span id="cb9-65"><a href="#cb9-65"></a></span>
+<span id="cb9-66"><a href="#cb9-66"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb9-67"><a href="#cb9-67"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-68"><a href="#cb9-68"></a><span class="in">```</span></span>
+<span id="cb9-69"><a href="#cb9-69"></a></span>
+<span id="cb9-70"><a href="#cb9-70"></a><span class="fu">## Introduction</span></span>
+<span id="cb9-71"><a href="#cb9-71"></a></span>
+<span id="cb9-72"><a href="#cb9-72"></a>This page introduces the <span class="in">`dplyr`</span> package used to transform data such as creating new variables, editing existing variables, filtering out observations, and creating summaries.</span>
+<span id="cb9-73"><a href="#cb9-73"></a></span>
+<span id="cb9-74"><a href="#cb9-74"></a></span>
+<span id="cb9-75"><a href="#cb9-75"></a></span>
+<span id="cb9-76"><a href="#cb9-76"></a><span class="fu">## `dplyr` Functions (Verbs)</span></span>
+<span id="cb9-77"><a href="#cb9-77"></a></span>
+<span id="cb9-78"><a href="#cb9-78"></a><span class="fu">### Four Groups</span></span>
+<span id="cb9-79"><a href="#cb9-79"></a></span>
+<span id="cb9-80"><a href="#cb9-80"></a><span class="in">`dplyr`</span> functions (verbs) can be grouped into functions that work on:</span>
+<span id="cb9-81"><a href="#cb9-81"></a></span>
+<span id="cb9-82"><a href="#cb9-82"></a><span class="ss">-   </span>rows, eg, <span class="in">`filter()`</span>, <span class="in">`arrange()`</span>, <span class="in">`distinct()`</span>, <span class="in">`count()`</span></span>
+<span id="cb9-83"><a href="#cb9-83"></a><span class="ss">-   </span>columns, eg, <span class="in">`mutate()`</span>, <span class="in">`select()`</span>, <span class="in">`rename()`</span>, <span class="in">`relocate()`</span></span>
+<span id="cb9-84"><a href="#cb9-84"></a><span class="ss">-   </span>groups, eg, <span class="in">`summarize()`</span>, <span class="in">`slice_max`</span>, <span class="in">`group_by`</span>, <span class="in">`ungroup()`</span>, <span class="in">`.by`</span></span>
+<span id="cb9-85"><a href="#cb9-85"></a><span class="ss">-   </span>tables</span>
+<span id="cb9-86"><a href="#cb9-86"></a></span>
+<span id="cb9-87"><a href="#cb9-87"></a><span class="fu">### Common Characteristics</span></span>
+<span id="cb9-88"><a href="#cb9-88"></a></span>
+<span id="cb9-89"><a href="#cb9-89"></a>All the functions have the followings in common:</span>
+<span id="cb9-90"><a href="#cb9-90"></a></span>
+<span id="cb9-91"><a href="#cb9-91"></a><span class="ss">-   </span>their first argument is always a data frame</span>
+<span id="cb9-92"><a href="#cb9-92"></a><span class="ss">-   </span>their subsequent arguments typically describe which columns to operate on using variable names *without quotes*</span>
+<span id="cb9-93"><a href="#cb9-93"></a><span class="ss">-   </span>they always output a new data frame, they don't modify the passed one</span>
+<span id="cb9-94"><a href="#cb9-94"></a></span>
+<span id="cb9-95"><a href="#cb9-95"></a><span class="fu">### Pipe `|&gt;` Operator</span></span>
+<span id="cb9-96"><a href="#cb9-96"></a></span>
+<span id="cb9-97"><a href="#cb9-97"></a><span class="ss">-   </span>The pipe <span class="in">`|&gt;`</span> operator takes what on its left and pass it to the function on its right so that <span class="in">`x |&gt; f(y)`</span> (pronounced as <span class="in">`x`</span> *then* <span class="in">`f(y)`</span>) is equivalent to <span class="in">`f(x, y)`</span> and <span class="in">`x |&gt; f(y) |&gt; g(z)`</span> (pronounced as <span class="in">`x`</span> then <span class="in">`f(y)`</span> then <span class="in">`g(z)`</span>) is equivalent to <span class="in">`g(f(x, y), z)`</span></span>
+<span id="cb9-98"><a href="#cb9-98"></a><span class="ss">-   </span>The <span class="in">`base`</span> R pipe operator <span class="in">`|&gt;`</span> was introduced in R 4.1.0 in 2021 while the tidyverse <span class="in">`magrittr`</span> pipe operator <span class="in">`%&gt;%`</span> was introduced in 2014. Using <span class="in">`|&gt;`</span> instead of <span class="in">`%&gt;%`</span> makes our code run when we don't use tidyverse</span>
+<span id="cb9-99"><a href="#cb9-99"></a></span>
+<span id="cb9-100"><a href="#cb9-100"></a><span class="fu">### Row Functions</span></span>
+<span id="cb9-101"><a href="#cb9-101"></a></span>
+<span id="cb9-102"><a href="#cb9-102"></a><span class="ss">-   </span>The following <span class="in">`filter()`</span> statements are equivalent:</span>
+<span id="cb9-103"><a href="#cb9-103"></a><span class="ss">    -   </span><span class="in">`filter(ds, var == 1 or var == 2)`</span></span>
+<span id="cb9-104"><a href="#cb9-104"></a><span class="ss">    -   </span><span class="in">`filter(ds, var == 1 | var == 2)`</span></span>
+<span id="cb9-105"><a href="#cb9-105"></a><span class="ss">    -   </span><span class="in">`filter(ds, var %in% c(1,2))`</span></span>
+<span id="cb9-106"><a href="#cb9-106"></a><span class="ss">-   </span>The following <span class="in">`filter()`</span> statements are equivalent:</span>
+<span id="cb9-107"><a href="#cb9-107"></a><span class="ss">    -   </span><span class="in">`filter(ds, var == 1 and var == 2)`</span></span>
+<span id="cb9-108"><a href="#cb9-108"></a><span class="ss">    -   </span><span class="in">`filter(ds, var == 1, var == 2)`</span></span>
+<span id="cb9-109"><a href="#cb9-109"></a><span class="ss">-   </span>The following <span class="in">`arrange()`</span> statements order data differently</span>
+<span id="cb9-110"><a href="#cb9-110"></a><span class="ss">    -   </span><span class="in">`arrange(ds, var)`</span> ascendant order</span>
+<span id="cb9-111"><a href="#cb9-111"></a><span class="ss">    -   </span><span class="in">`arrange(ds, desc(var))`</span> decedent order</span>
+<span id="cb9-112"><a href="#cb9-112"></a><span class="ss">-   </span>The following <span class="in">`distinct()`</span> statements return different data frames</span>
+<span id="cb9-113"><a href="#cb9-113"></a><span class="ss">    -   </span><span class="in">`distinct(ds, var1, var2)`</span> only keep columns <span class="in">`var1`</span> and <span class="in">`var2`</span></span>
+<span id="cb9-114"><a href="#cb9-114"></a><span class="ss">    -   </span><span class="in">`distinct(ds, var1, var2, .keep_all = TRUE)`</span> keep all the columns--find the *first* observation where <span class="in">`var1`</span> and <span class="in">`var2`</span> are distinct and discard the rest</span>
+<span id="cb9-115"><a href="#cb9-115"></a><span class="ss">-   </span>The following <span class="in">`count()`</span> statements order the results differently</span>
+<span id="cb9-116"><a href="#cb9-116"></a><span class="ss">    -   </span><span class="in">`count(ds, var1, var2)`</span> arrange results in order they are encountered</span>
+<span id="cb9-117"><a href="#cb9-117"></a><span class="ss">    -   </span><span class="in">`count(ds, var1, var2, sort = TRUE)`</span> arrange results in descending order of number of occurrence</span>
+<span id="cb9-118"><a href="#cb9-118"></a></span>
+<span id="cb9-119"><a href="#cb9-119"></a><span class="fu">### Column Functions</span></span>
+<span id="cb9-120"><a href="#cb9-120"></a></span>
+<span id="cb9-121"><a href="#cb9-121"></a><span class="ss">-   </span><span class="in">`mutate()`</span></span>
+<span id="cb9-122"><a href="#cb9-122"></a><span class="ss">    -   </span>Instead of adding the newly created variable to the right hand side of the data frame, we can instruct <span class="in">`mutate()`</span> to adding before a variable using the <span class="in">`.before`</span> attribute or after a variable using the <span class="in">`.after`</span> attribute</span>
+<span id="cb9-123"><a href="#cb9-123"></a><span class="ss">    -   </span>To only keep the variables involved in the creation of the new variables, we can instruct <span class="in">`mutate()`</span> to do so by setting the <span class="in">`.keep = "used"`</span> attribute</span>
+<span id="cb9-124"><a href="#cb9-124"></a><span class="ss">-   </span><span class="in">`select()`</span></span>
+<span id="cb9-125"><a href="#cb9-125"></a><span class="ss">    -   </span>select range of variables: <span class="in">`select(ds, var_x:var_y)`</span></span>
+<span id="cb9-126"><a href="#cb9-126"></a><span class="ss">    -   </span>select all variables except certain range: <span class="in">`select(ds, !var_x:var_y)`</span></span>
+<span id="cb9-127"><a href="#cb9-127"></a><span class="ss">    -   </span>select character variables only: <span class="in">`select(ds, where(is.character))`</span></span>
+<span id="cb9-128"><a href="#cb9-128"></a><span class="ss">    -   </span>select variables whose name start with something: <span class="in">`select(ds, start_with("m"))`</span></span>
+<span id="cb9-129"><a href="#cb9-129"></a><span class="ss">    -   </span>select variables whose name end with something: <span class="in">`select(ds, end_with("m"))`</span></span>
+<span id="cb9-130"><a href="#cb9-130"></a><span class="ss">    -   </span>select variables whose name contain something: <span class="in">`select(ds, contains("m"))`</span></span>
+<span id="cb9-131"><a href="#cb9-131"></a><span class="ss">    -   </span>select variables whose name follow some range: <span class="in">`select(ds, num_range("x", 1:3))`</span></span>
+<span id="cb9-132"><a href="#cb9-132"></a><span class="ss">    -   </span>select and rename variable: <span class="in">`select(ds, var1_new = var1, var2_new = var2)`</span></span>
+<span id="cb9-133"><a href="#cb9-133"></a><span class="ss">-   </span><span class="in">`rename()`</span></span>
+<span id="cb9-134"><a href="#cb9-134"></a><span class="ss">    -   </span>to rename many columns, it is better to use <span class="in">`janitor::clean_names()`</span> function</span>
+<span id="cb9-135"><a href="#cb9-135"></a><span class="ss">-   </span><span class="in">`relocate()`</span></span>
+<span id="cb9-136"><a href="#cb9-136"></a><span class="ss">    -   </span>By default, bring columns to left hand side of the data frame</span>
+<span id="cb9-137"><a href="#cb9-137"></a><span class="ss">    -   </span><span class="in">`relocate(ds, var1, .after = var2)`</span> puts <span class="in">`var1`</span> after <span class="in">`var2`</span></span>
+<span id="cb9-138"><a href="#cb9-138"></a><span class="ss">    -   </span><span class="in">`relocate(ds, var1, .before = var2)`</span> puts <span class="in">`var1`</span> before <span class="in">`var2`</span></span>
+<span id="cb9-139"><a href="#cb9-139"></a></span>
+<span id="cb9-140"><a href="#cb9-140"></a><span class="fu">### Groups Functions</span></span>
+<span id="cb9-141"><a href="#cb9-141"></a></span>
+<span id="cb9-142"><a href="#cb9-142"></a><span class="ss">-   </span><span class="in">`group_by()`</span></span>
+<span id="cb9-143"><a href="#cb9-143"></a><span class="ss">    -   </span>divides the data into groups so that subsequent operations work on these groups</span>
+<span id="cb9-144"><a href="#cb9-144"></a><span class="ss">    -   </span>it added a *class* to the dataset to indicate the grouping</span>
+<span id="cb9-145"><a href="#cb9-145"></a></span>
+<span id="cb9-146"><a href="#cb9-146"></a><span class="ss">-   </span><span class="in">`summarize()`</span> or <span class="in">`summarise()`</span></span>
+<span id="cb9-147"><a href="#cb9-147"></a><span class="ss">    -   </span>To prevent summary statistics functions, eg, <span class="in">`mean()`</span> to give <span class="in">`NA`</span> due to some groups has <span class="in">`NA`</span> (missing) values, set their argument:  <span class="in">`na.rm = TRUE`</span></span>
+<span id="cb9-148"><a href="#cb9-148"></a><span class="ss">    -   </span>The summary statistics function <span class="in">`n()`</span> gives the number of observations in the group</span>
+<span id="cb9-149"><a href="#cb9-149"></a><span class="ss">    -   </span>Each summary peels off the last group.  To prevent this behavior, change the default value <span class="in">`drop_last`</span> of the <span class="in">`.groups`</span> argument of the summary statistic function to either <span class="in">`keep`</span> to keep all groups or <span class="in">`drop`</span> to drop all groups</span>
+<span id="cb9-150"><a href="#cb9-150"></a></span>
+<span id="cb9-151"><a href="#cb9-151"></a><span class="ss">-     </span><span class="in">`slice_`</span> functions</span>
+<span id="cb9-152"><a href="#cb9-152"></a><span class="ss">    -   </span>The functions are: <span class="in">`slice_head()`</span>, <span class="in">`slice_tail()`</span>, <span class="in">`slice_min()`</span>, <span class="in">`slice_max()`</span>, and <span class="in">`slice_sample()`</span></span>
+<span id="cb9-153"><a href="#cb9-153"></a><span class="ss">    -   </span>To slice a number of rows from each group, use the <span class="in">`n`</span> arguments, eg, <span class="in">`n = 1`</span></span>
+<span id="cb9-154"><a href="#cb9-154"></a><span class="ss">    -   </span>To slice percentage of rows from each group, use the <span class="in">`prop`</span> argument, eg, <span class="in">`prop = .1`</span> (10%)</span>
+<span id="cb9-155"><a href="#cb9-155"></a><span class="ss">    -   </span>To prevent ties from showing, use <span class="in">`with_ties = FALSE`</span> argument</span>
+<span id="cb9-156"><a href="#cb9-156"></a></span>
+<span id="cb9-157"><a href="#cb9-157"></a><span class="ss">-     </span><span class="in">`.by`</span> argument</span>
+<span id="cb9-158"><a href="#cb9-158"></a><span class="ss">    -   </span>New addition to dplyr 1.1.0 (more information at <span class="co">[</span><span class="ot">dplyr 1.1.0 blog post</span><span class="co">](https://www.tidyverse.org/blog/2023/02/dplyr-1-1-0-per-operation-grouping/)</span>)</span>
+<span id="cb9-159"><a href="#cb9-159"></a><span class="ss">    -   </span>Per-operation grouping--can be used all verbs.  The advantage is that we don't need to use the <span class="in">`.groups`</span> argument to suppress the warning message raised by <span class="in">`summarize()`</span> when grouping by multiple variables and we don't need to use <span class="in">`ungroup()`</span> when done with our summary.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1060,7 +1363,7 @@ cookieconsent.run({
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/ds/file_org.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/r4ds/03-data-trans.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

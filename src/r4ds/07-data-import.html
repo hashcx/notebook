@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Amin G. Alhashim">
 
-<title>Project File Organization – Workspace</title>
+<title>14&nbsp; Data Import – Workspace</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/ds/eda.html" rel="next">
-<link href="../../index.html" rel="prev">
+<link href="../../src/projects/topic-modeling-r.html" rel="next">
+<link href="../../src/r4ds/06-workflow-scripts-and-projects.html" rel="prev">
 <script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -303,7 +304,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/ds/file_org.html">Tips</a></li><li class="breadcrumb-item"><a href="../../src/ds/file_org.html"><span class="chapter-title">Project File Organization</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html">src/r-for-data-science/_r-for-data-science.qmd</a></li><li class="breadcrumb-item"><a href="../../src/r4ds/07-data-import.html"><span class="chapter-title">Data Import</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -354,7 +355,7 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/ds/file_org.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Project File Organization</span></a>
+  <a href="../../src/ds/file_org.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project File Organization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -441,7 +442,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/r4ds/07-data-import.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Import</span></a>
+  <a href="../../src/r4ds/07-data-import.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Data Import</span></a>
   </div>
 </li>
       </ul>
@@ -472,22 +473,41 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#clear-workspace-dont-edit" id="toc-clear-workspace-dont-edit" class="nav-link active" data-scroll-target="#clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</a></li>
+  <li><a href="#list-used-packages-edit" id="toc-list-used-packages-edit" class="nav-link" data-scroll-target="#list-used-packages-edit">List Used Packages, EDIT</a></li>
+  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages">Load Packages, DON’T EDIT</a>
+  <ul class="collapse">
+  <li><a href="#install-missing" id="toc-install-missing" class="nav-link" data-scroll-target="#install-missing">Install Missing</a></li>
+  <li><a href="#load" id="toc-load" class="nav-link" data-scroll-target="#load">Load</a></li>
+  </ul></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">14.1</span> Introduction</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/r4ds/07-data-import.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/ds/file_org.html">Tips</a></li><li class="breadcrumb-item"><a href="../../src/ds/file_org.html"><span class="chapter-title">Project File Organization</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html">src/r-for-data-science/_r-for-data-science.qmd</a></li><li class="breadcrumb-item"><a href="../../src/r4ds/07-data-import.html"><span class="chapter-title">Data Import</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Project File Organization</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Data Import</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Amin G. Alhashim </p>
+          </div>
+  </div>
     
   
     
@@ -498,40 +518,65 @@ cookieconsent.run({
 </header>
 
 
-<p>When starting a computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.</p>
-<p>The structure below is inspired by 2009 William Stafford Noble’s paper <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424">A Quick Guide to Organizing Computational Biology Projects</a>. On a related topic, see 2014 Greg Wilson et al paper <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>.</p>
-<pre><code>+- data: contains the fixed data sets.
-   +- raw
-   +- processed, if needed
-
-+- result: contains the computational experiments performed on the data sets 
-           in the 'data' directory.
-   - NOTEBOOK: record the progress in details. The entries in this notebook 
-               should be dated and relaltively verbose with links or embeded 
-               images or tables displaying the results of the experiment 
-               performed.  Also, this notebook should also record any 
-               observation, conclusion, or ideas for future work.  In case 
-               the experiment fail, document how you know that experiment 
-               failed to make it clear for those who may read this notebook 
-               later.  You may also trascribe notes from converstaions and 
-               emails.  This notebook can reside online (e.g., Google Doc) 
-               to give access to collaborator about the current status of 
-               the project.
-   +- 2018.04.24
-   +- 2018.04.25
-   +- &lt;chronological order&gt;
-
-+- doc: contains a seperate sub-directory for each maniuscript.
-   +- paper 1
-   +- paper 2
-   +- ...
-
-+- src: contains the source code for the project.
-</code></pre>
+<section id="clear-workspace-dont-edit" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</h2>
+<p>Always start by clearing the workspace. This ensure objects created in other files are not used used here.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="list-used-packages-edit" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="list-used-packages-edit">List Used Packages, EDIT</h2>
+<p>List all the packages that will be used in chunk below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sec-packages" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-packages">Load Packages, DON’T EDIT</h2>
+<section id="install-missing" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="install-missing">Install Missing</h3>
+<p>Any missing package will be installed automatically. This ensure smoother execution when run on another machine.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Installing Packages on Other People Machine
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be aware that people may not like installing packages into their machine automatically. This might break some of their previous code.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- There are no packages to install.</code></pre>
+</div>
+</div>
+</section>
+<section id="load" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="load">Load</h3>
+<p>Load all packages</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>list()</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="introduction" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">14.1</span> Introduction</h2>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1002,55 +1047,86 @@ cookieconsent.run({
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="../../src/r4ds/06-workflow-scripts-and-projects.html" class="pagination-link" aria-label="Workflow: Scripts &amp; Projects">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Workflow: Scripts &amp; Projects</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/ds/eda.html" class="pagination-link" aria-label="EDA">
-        <span class="nav-page-text"><span class="chapter-title">EDA</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/projects/topic-modeling-r.html" class="pagination-link" aria-label="Topic Modeling in R">
+        <span class="nav-page-text"><span class="chapter-title">Topic Modeling in R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu"># Project File Organization</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a>When starting a computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>The structure below is inspired by 2009 William Stafford Noble's paper <span class="co">[</span><span class="ot">A Quick Guide to Organizing Computational Biology Projects</span><span class="co">](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)</span>.  On a related topic, see 2014 Greg Wilson et al paper <span class="co">[</span><span class="ot">Best Practices for Scientific Computing</span><span class="co">](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)</span>.</span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="in">```</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="in">+- data: contains the fixed data sets.</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="in">   +- raw</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="in">   +- processed, if needed</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="in">+- result: contains the computational experiments performed on the data sets </span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="in">           in the 'data' directory.</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="in">   - NOTEBOOK: record the progress in details. The entries in this notebook </span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="in">               should be dated and relaltively verbose with links or embeded </span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="in">               images or tables displaying the results of the experiment </span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="in">               performed.  Also, this notebook should also record any </span></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="in">               observation, conclusion, or ideas for future work.  In case </span></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="in">               the experiment fail, document how you know that experiment </span></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="in">               failed to make it clear for those who may read this notebook </span></span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="in">               later.  You may also trascribe notes from converstaions and </span></span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="in">               emails.  This notebook can reside online (e.g., Google Doc) </span></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="in">               to give access to collaborator about the current status of </span></span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="in">               the project.</span></span>
-<span id="cb2-26"><a href="#cb2-26"></a><span class="in">   +- 2018.04.24</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a><span class="in">   +- 2018.04.25</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a><span class="in">   +- &lt;chronological order&gt;</span></span>
-<span id="cb2-29"><a href="#cb2-29"></a></span>
-<span id="cb2-30"><a href="#cb2-30"></a><span class="in">+- doc: contains a seperate sub-directory for each maniuscript.</span></span>
-<span id="cb2-31"><a href="#cb2-31"></a><span class="in">   +- paper 1</span></span>
-<span id="cb2-32"><a href="#cb2-32"></a><span class="in">   +- paper 2</span></span>
-<span id="cb2-33"><a href="#cb2-33"></a><span class="in">   +- ...</span></span>
-<span id="cb2-34"><a href="#cb2-34"></a></span>
-<span id="cb2-35"><a href="#cb2-35"></a><span class="in">+- src: contains the source code for the project.</span></span>
-<span id="cb2-36"><a href="#cb2-36"></a></span>
-<span id="cb2-37"><a href="#cb2-37"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="an">title:</span><span class="co"> "Data Import"</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="an">author:</span><span class="co"> "Amin G. Alhashim"</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co">---</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">## Clear Workspace, DON'T EDIT {-}</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a>Always start by clearing the workspace. This ensure objects created in other files are not used used here.</span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="in">```{r}</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="co">#| include: true</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="co">#| results: 'hide'</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="in">```</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="fu">## List Used Packages, EDIT {-}</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
+<span id="cb7-22"><a href="#cb7-22"></a>List all the packages that will be used in chunk below.</span>
+<span id="cb7-23"><a href="#cb7-23"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="in">```{r}</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a><span class="co">#| include: true</span></span>
+<span id="cb7-28"><a href="#cb7-28"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-29"><a href="#cb7-29"></a><span class="co">#| error: true</span></span>
+<span id="cb7-30"><a href="#cb7-30"></a></span>
+<span id="cb7-31"><a href="#cb7-31"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb7-32"><a href="#cb7-32"></a><span class="in">```</span></span>
+<span id="cb7-33"><a href="#cb7-33"></a></span>
+<span id="cb7-34"><a href="#cb7-34"></a></span>
+<span id="cb7-35"><a href="#cb7-35"></a><span class="fu">## Load Packages, DON'T EDIT {#sec-packages -}</span></span>
+<span id="cb7-36"><a href="#cb7-36"></a></span>
+<span id="cb7-37"><a href="#cb7-37"></a><span class="fu">### Install Missing {-}</span></span>
+<span id="cb7-38"><a href="#cb7-38"></a></span>
+<span id="cb7-39"><a href="#cb7-39"></a>Any missing package will be installed automatically. This ensure smoother execution when run on another machine.</span>
+<span id="cb7-40"><a href="#cb7-40"></a></span>
+<span id="cb7-41"><a href="#cb7-41"></a>::: callout-important</span>
+<span id="cb7-42"><a href="#cb7-42"></a></span>
+<span id="cb7-43"><a href="#cb7-43"></a><span class="fu">#### Installing Packages on Other People Machine</span></span>
+<span id="cb7-44"><a href="#cb7-44"></a></span>
+<span id="cb7-45"><a href="#cb7-45"></a>Be aware that people may not like installing packages into their machine automatically.  This might break some of their previous code.</span>
+<span id="cb7-46"><a href="#cb7-46"></a></span>
+<span id="cb7-47"><a href="#cb7-47"></a>:::</span>
+<span id="cb7-48"><a href="#cb7-48"></a></span>
+<span id="cb7-49"><a href="#cb7-49"></a><span class="in">```{r Install Missing Packages}</span></span>
+<span id="cb7-50"><a href="#cb7-50"></a><span class="co">#| include: true</span></span>
+<span id="cb7-51"><a href="#cb7-51"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-52"><a href="#cb7-52"></a><span class="co">#| error: true</span></span>
+<span id="cb7-53"><a href="#cb7-53"></a></span>
+<span id="cb7-54"><a href="#cb7-54"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb7-55"><a href="#cb7-55"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
+<span id="cb7-56"><a href="#cb7-56"></a><span class="in">```</span></span>
+<span id="cb7-57"><a href="#cb7-57"></a></span>
+<span id="cb7-58"><a href="#cb7-58"></a><span class="fu">### Load {-}</span></span>
+<span id="cb7-59"><a href="#cb7-59"></a></span>
+<span id="cb7-60"><a href="#cb7-60"></a>Load all packages</span>
+<span id="cb7-61"><a href="#cb7-61"></a></span>
+<span id="cb7-62"><a href="#cb7-62"></a><span class="in">```{r Load Packages}</span></span>
+<span id="cb7-63"><a href="#cb7-63"></a><span class="co">#| include: true</span></span>
+<span id="cb7-64"><a href="#cb7-64"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-65"><a href="#cb7-65"></a><span class="co">#| error: true</span></span>
+<span id="cb7-66"><a href="#cb7-66"></a></span>
+<span id="cb7-67"><a href="#cb7-67"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb7-68"><a href="#cb7-68"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-69"><a href="#cb7-69"></a><span class="in">```</span></span>
+<span id="cb7-70"><a href="#cb7-70"></a></span>
+<span id="cb7-71"><a href="#cb7-71"></a><span class="fu">## Introduction</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1060,7 +1136,7 @@ cookieconsent.run({
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/ds/file_org.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/r4ds/07-data-import.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
