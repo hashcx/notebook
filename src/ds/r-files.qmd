@@ -2,9 +2,15 @@
 
 It is advisable to do followings at the beginning of each code file
 
+## Create Project
+
+When wanting to write R code, create a project then add R/Rmd/qmd files into it instead of only creating a single file. This will allow saving the workspace settings.
+
+
+
 ## Clean Workspace
 
-Always start by clearing the workspace to ensure objects created in other files are not used in the current file.
+Always start by clearing the workspace to ensure objects created in other files are not used in the current file by using the code shown blew.  This can be done manaully in RStudio: Environment window -> Broom icon.
 
 ```{r}
 #| eval: false
