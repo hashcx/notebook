@@ -120,15 +120,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
@@ -194,9 +196,6 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -214,7 +213,7 @@
 
 \title{Workspace}
 \author{Amin G. Alhashim}
-\date{2024-11-09}
+\date{2025-06-17}
 
 \begin{document}
 \maketitle
@@ -233,9 +232,8 @@
 
 \markboth{Welcome}{Welcome}
 
-This Quarto Book\footnote{\href{https://quarto.org/docs/books/}{Quarto
-  Books Documentation}} is a workspace for the notes and projects of the
-programming/scripting languages that I am learning.
+This is my Quarto Book \footnote{\href{https://quarto.org/docs/books/}{Quarto
+  Books Documentation}} notebook website for future self.
 
 \part{Data Science}
 
@@ -322,6 +320,8 @@ After that, answer the following questions through computations:
 \item
   What is the summary statistics of each column/variable?
 \end{itemize}
+
+TEST
 
 \chapter{Tips}\label{tips}
 
@@ -528,7 +528,7 @@ To know the type of the variables of each variable.
   \textbf{vector}: hold single type of data
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Creating Vector}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Creating Vector}, titlerule=0mm, colback=white]
 
 The \texttt{c()} function (\textbf{c}ombine multiple elements) can be
 used to create vectors in R.
@@ -557,7 +557,7 @@ x <- c(1, 2, 3, 4)
   columns that fit into the screen will be shown
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Printing tibble All Columns}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Printing tibble All Columns}, titlerule=0mm, colback=white]
 
 To force the \texttt{print()} function to print all the columns of a
 \texttt{tibble}, set the \texttt{width} parameter to \texttt{Inf} as
@@ -595,7 +595,7 @@ follows:
 
 \centering{
 
-\includegraphics[width=1.71in,height=\textheight]{src/notebooks/../../images/datastructure.png}
+\includegraphics[width=1.71in,height=\textheight,keepaspectratio]{src/notebooks/../../images/datastructure.png}
 
 }
 
@@ -1050,7 +1050,7 @@ Histogram
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-26-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-26-1.pdf}}
 
 Enhance the plot
 
@@ -1062,7 +1062,7 @@ Enhance the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-27-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-27-1.pdf}}
 
 \section{Data Manipulation}\label{data-manipulation}
 
@@ -1699,7 +1699,7 @@ Step 1: Bind the plot to specific data frame
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-48-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-48-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1713,7 +1713,7 @@ Step 1: Bind the plot to specific data frame
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-48-2.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-48-2.pdf}}
 
 Step 2: Select the type of the plot
 
@@ -1735,7 +1735,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1744,7 +1744,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-2.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-2.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1753,7 +1753,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-3.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-3.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1762,7 +1762,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-4.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-4.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1772,7 +1772,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-5.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-49-5.pdf}}
 
 \subsection{Boxplot}\label{boxplot}
 
@@ -1787,7 +1787,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-50-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-50-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1797,7 +1797,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-50-2.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-50-2.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1807,7 +1807,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-50-3.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-50-3.pdf}}
 
 \subsection{Time series data}\label{time-series-data}
 
@@ -1826,7 +1826,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1835,7 +1835,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-2.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-2.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1844,7 +1844,7 @@ Step 2: Select the type of the plot
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-3.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-3.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1858,7 +1858,7 @@ Step 2: Select the type of the plot
 i Do you need to adjust the group aesthetic?
 \end{verbatim}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-4.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-4.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1881,7 +1881,7 @@ i Do you need to adjust the group aesthetic?
 i Do you need to adjust the group aesthetic?
 \end{verbatim}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-5.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-5.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1898,7 +1898,7 @@ i Do you need to adjust the group aesthetic?
 i Do you need to adjust the group aesthetic?
 \end{verbatim}
 
-\includegraphics{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-6.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/notebooks/r_files/figure-pdf/unnamed-chunk-51-6.pdf}}
 
 \section{References}\label{references}
 
@@ -2044,14 +2044,14 @@ To import a document to another use the following shortcodes:
 
 \section{Keyboard Shortcuts}\label{keyboard-shortcuts}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Mac Users}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Mac Users}, titlerule=0mm, colback=white]
 
 In place of \texttt{Ctrl} in the keyboard shortcuts below, use
 \texttt{Cmd}.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{RStudio Tips}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{RStudio Tips}, titlerule=0mm, colback=white]
 
 \href{https://x.com/rstudiotips}{RStudio Tip} on X on how to use RStudio
 IDE effectively.
@@ -2198,7 +2198,7 @@ List all the packages that will be used in chunk below.
 Any missing package will be installed automatically. This ensure
 smoother execution when run by others.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, titlerule=0mm, colback=white]
 
 Be aware the people may not like installing packages into their machine
 automatically. This might break some of their previous code.
@@ -2385,7 +2385,7 @@ the \texttt{ggplot()} function.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-7-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-7-1.pdf}}
 
 \subsection{Link Dataset}\label{link-dataset}
 
@@ -2398,7 +2398,7 @@ Link the dataset with the instantiated \texttt{ggplot} object using the
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-8-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-8-1.pdf}}
 
 \subsection{Map Two Variables}\label{map-two-variables}
 
@@ -2413,7 +2413,7 @@ via the \texttt{aes()} function.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-9-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-9-1.pdf}}
 
 \subsection{Display Data}\label{display-data}
 
@@ -2435,7 +2435,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-10-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-10-1.pdf}}
 
 \subsection{Map Third Variables}\label{map-third-variables}
 
@@ -2458,7 +2458,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-11-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-11-1.pdf}}
 
 \subsection{Display Three Trendlines}\label{display-three-trendlines}
 
@@ -2491,7 +2491,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-12-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-12-1.pdf}}
 
 \subsection{Display One Trendline}\label{display-one-trendline}
 
@@ -2524,7 +2524,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-13-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-13-1.pdf}}
 
 \subsection{Map One Variable Twice}\label{map-one-variable-twice}
 
@@ -2555,7 +2555,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-14-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-14-1.pdf}}
 
 \subsection{Fix Labels}\label{fix-labels}
 
@@ -2610,7 +2610,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-15-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-15-1.pdf}}
 
 Other types of texts can be added using other functions. The other types
 of texts are:
@@ -2665,7 +2665,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-16-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-16-1.pdf}}
 
 \subsection{Can Call Implicitly}\label{can-call-implicitly}
 
@@ -2707,7 +2707,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-17-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-17-1.pdf}}
 
 \subsection{Use Pipe Operator}\label{use-pipe-operator}
 
@@ -2748,7 +2748,7 @@ Warning: Removed 2 rows containing missing values or values outside the scale ra
 (`geom_point()`).
 \end{verbatim}
 
-\includegraphics{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-18-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/01-data-viz_files/figure-pdf/unnamed-chunk-18-1.pdf}}
 
 \section{Visualizing Distribution}\label{visualizing-distribution}
 
@@ -2777,7 +2777,7 @@ variable is distributed:
   histogram, using \texttt{geom\_histogram()} function
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Histogram Bin Width}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Histogram Bin Width}, titlerule=0mm, colback=white]
 
 The bin width of the histogram is in the unit of the variable mapped to
 the plot \texttt{x} (or \texttt{y}) aesthetic (visual property)
@@ -2792,7 +2792,7 @@ the plot \texttt{x} (or \texttt{y}) aesthetic (visual property)
   boxplot, using \texttt{geom\_boplot()} function
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Boxplot Components}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Boxplot Components}, titlerule=0mm, colback=white]
 
 As described beautifully in
 \href{https://r4ds.hadley.nz/data-visualize\#visualizing-relationships}{R4DS},
@@ -2828,7 +2828,7 @@ showing the above components and how the boxpot is created.
 
 \centering{
 
-\includegraphics{src/r-for-data-science/../../images/EDA-boxplot.png}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/../../images/EDA-boxplot.png}}
 
 }
 
@@ -2938,7 +2938,7 @@ List all the packages that will be used in chunk below.
 Any missing package will be installed automatically. This ensure
 smoother execution when run by others.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, titlerule=0mm, colback=white]
 
 Be aware the people may not like installing packages into their machine
 automatically. This might break some of their previous code.
@@ -3045,7 +3045,7 @@ List all the packages that will be used in chunk below.
 Any missing package will be installed automatically. This ensure
 smoother execution when run by others.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, titlerule=0mm, colback=white]
 
 Be aware the people may not like installing packages into their machine
 automatically. This might break some of their previous code.
@@ -3400,7 +3400,7 @@ List all the packages that will be used in chunk below.
 Any missing package will be installed automatically. This ensure
 smoother execution when run by others.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, titlerule=0mm, colback=white]
 
 Be aware the people may not like installing packages into their machine
 automatically. This might break some of their previous code.
@@ -3436,7 +3436,7 @@ Load all packages
 This page covers code style concepts when working with R. I took note
 for those that were new to me or found useful to remind myself with.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Code Style \& Punctuation}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Code Style \& Punctuation}, titlerule=0mm, colback=white]
 
 Code style is like punctuation, when used correctly,
 itmakecodereadeasily.
@@ -3673,7 +3673,7 @@ them are copied below.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Long Pipeline}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Long Pipeline}, titlerule=0mm, colback=white]
 
 Break long pipelines (tasks) to meaningful pipelines (sub-tasks) and
 save the intermediate steps. This will make the code more readable and
@@ -3757,7 +3757,7 @@ List all the packages that will be used in chunk below.
 \subsection*{Install Missing}\label{install-missing-6}
 \addcontentsline{toc}{subsection}{Install Missing}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, titlerule=0mm, colback=white]
 
 Be aware the people may not like installing packages into their machine
 automatically. This might break some of their previous code.
@@ -3815,7 +3815,7 @@ tidy form where:
 Putting data in tidy form will make it easy to process using tidyverse
 packages.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Data Trasformation Bottom-Line}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Data Trasformation Bottom-Line}, titlerule=0mm, colback=white]
 
 Tidying is 1-to-1 process--the data takes different form but it can be
 put back into its original form which mean that no values are lost.
@@ -3825,7 +3825,7 @@ put back into its original form which mean that no values are lost.
 \section{\texorpdfstring{Lengthening Data,
 \texttt{pivot\_longer}}{Lengthening Data, pivot\_longer}}\label{lengthening-data-pivot_longer}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{`pivot\_longer' Idea}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{`pivot\_longer' Idea}, titlerule=0mm, colback=white]
 
 When pivoting longer, the number of the rows in the dataset increases
 while the number of columns decreases.
@@ -3871,7 +3871,7 @@ value belong to which column, create a new column called
 \texttt{B\_type} for this purpuse.
 \end{quote}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Dimensions of New Dataset}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Dimensions of New Dataset}, titlerule=0mm, colback=white]
 
 Assume the dimensions of the old dataset are:
 
@@ -4229,7 +4229,7 @@ NA}\label{lengthening-w-removing-na}
 \section{\texorpdfstring{Widening Data,
 \texttt{pivot-wider}}{Widening Data, pivot-wider}}\label{widening-data-pivot-wider}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{`pivot\_wider' Idea}, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{`pivot\_wider' Idea}, titlerule=0mm, colback=white]
 
 When pivoting wider, the number of the columns in the dataset increases
 while the number of rows decreases.
@@ -4489,7 +4489,7 @@ List all the packages that will be used in chunk below.
 Any missing package will be installed automatically. This ensure
 smoother execution when run by others.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, titlerule=0mm, colback=white]
 
 Be aware the people may not like installing packages into their machine
 automatically. This might break some of their previous code.
@@ -4551,7 +4551,7 @@ This chapter is about how to organize project files.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/r-for-data-science/06-workflow-scripts-and-projects_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/r-for-data-science/06-workflow-scripts-and-projects_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4602,7 +4602,7 @@ List all the packages that will be used in chunk below.
 Any missing package will be installed automatically. This ensure
 smoother execution when run on another machine.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, titlerule=0mm, colback=white]
 
 Be aware that people may not like installing packages into their machine
 automatically. This might break some of their previous code.
@@ -4682,7 +4682,7 @@ List all the packages that will be used in chunk below.
 Any missing package will be installed automatically. This ensure
 smoother execution when run by others.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, left=2mm, breakable, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, opacitybacktitle=0.6, colback=white, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toptitle=1mm, bottomrule=.15mm, arc=.35mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, rightrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, left=2mm, leftrule=.75mm, toprule=.15mm, arc=.35mm, opacitybacktitle=0.6, coltitle=black, breakable, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Installing Packages on Other People Machine}, titlerule=0mm, colback=white]
 
 Be aware the people may not like installing packages into their machine
 automatically. This might break some of their previous code.
@@ -4904,7 +4904,7 @@ Joining with `by = join_by(word)`
 Selecting by tf_idf
 \end{verbatim}
 
-\includegraphics{src/projects/topic-modeling-r_files/figure-pdf/unnamed-chunk-6-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/projects/topic-modeling-r_files/figure-pdf/unnamed-chunk-6-1.pdf}}
 
 \section{Implement Topic Modeling}\label{implement-topic-modeling}
 
@@ -5046,7 +5046,7 @@ Looking at which words contribute the most in each topic.
 Selecting by beta
 \end{verbatim}
 
-\includegraphics{src/projects/topic-modeling-r_files/figure-pdf/unnamed-chunk-9-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/projects/topic-modeling-r_files/figure-pdf/unnamed-chunk-9-1.pdf}}
 
 \section{Distribution of Topics in
 Stories}\label{distribution-of-topics-in-stories}
@@ -5075,7 +5075,7 @@ each association is.
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{src/projects/topic-modeling-r_files/figure-pdf/unnamed-chunk-10-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/projects/topic-modeling-r_files/figure-pdf/unnamed-chunk-10-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5088,7 +5088,7 @@ each association is.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{src/projects/topic-modeling-r_files/figure-pdf/unnamed-chunk-11-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{src/projects/topic-modeling-r_files/figure-pdf/unnamed-chunk-11-1.pdf}}
 
 The model did an excellent job strongly associating the stories into one
 or more topics. This perfect association is rare in the world of topic

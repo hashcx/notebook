@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>Topic Modeling in R – Workspace</title>
 <style>
 code{white-space: pre-wrap;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -66,12 +70,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-0eec444d7f8e10b4eb8470e5d5305347.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-71ea5dade76dcda5c0c3178fbd755a24.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,12 +102,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../../sty/styles.css">
+}</script>
+
+
+<link rel="stylesheet" href="../../sty/styles.css">
 </head>
+
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -113,9 +124,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">HashCX</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -137,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
@@ -151,8 +166,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/ds/file_org.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">File Organization</span></a>
   </div>
@@ -168,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../src/notebooks/_notebooks.html" class="sidebar-item-text sidebar-link">
@@ -177,8 +192,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/notebooks/r.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">R</span></a>
   </div>
@@ -199,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../src/r-for-data-science/_r-for-data-science.html" class="sidebar-item-text sidebar-link">
@@ -208,8 +223,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/r-for-data-science/01-data-viz.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Visualization</span></a>
   </div>
@@ -245,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -254,8 +269,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/projects/topic-modeling-r.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Topic Modeling in R</span></a>
   </div>
@@ -266,24 +281,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#clear-workspace-dont-edit" id="toc-clear-workspace-dont-edit" class="nav-link active" data-scroll-target="#clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</a></li>
+  <li><a href="#clear-workspace-dont-edit" id="toc-clear-workspace-dont-edit" class="nav-link active" data-scroll-target="#clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</a></li>
   <li><a href="#list-used-packages-edit" id="toc-list-used-packages-edit" class="nav-link" data-scroll-target="#list-used-packages-edit">List Used Packages, EDIT</a></li>
-  <li>
-<a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages">Load Packages, DON’T EDIT</a>
+  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages">Load Packages, DON’T EDIT</a>
   <ul class="collapse">
-<li><a href="#install-missing" id="toc-install-missing" class="nav-link" data-scroll-target="#install-missing">Install Missing</a></li>
+  <li><a href="#install-missing" id="toc-install-missing" class="nav-link" data-scroll-target="#install-missing">Install Missing</a></li>
   <li><a href="#load" id="toc-load" class="nav-link" data-scroll-target="#load">Load</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#download-book" id="toc-download-book" class="nav-link" data-scroll-target="#download-book">Download Book</a></li>
   <li><a href="#wrangle-label-stories" id="toc-wrangle-label-stories" class="nav-link" data-scroll-target="#wrangle-label-stories">Wrangle: Label Stories</a></li>
@@ -293,10 +308,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#contribution-of-words-in-topics" id="toc-contribution-of-words-in-topics" class="nav-link" data-scroll-target="#contribution-of-words-in-topics">Contribution of Words in Topics</a></li>
   <li><a href="#distribution-of-topics-in-stories" id="toc-distribution-of-topics-in-stories" class="nav-link" data-scroll-target="#distribution-of-topics-in-stories">Distribution of Topics in Stories</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/projects/topic-modeling-r.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/projects/topic-modeling-r.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/projects/topic-modeling-r.html">Projects</a></li><li class="breadcrumb-item"><a href="../../src/projects/topic-modeling-r.html"><span class="chapter-title">Topic Modeling in R</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/projects/topic-modeling-r.html">Projects</a></li><li class="breadcrumb-item"><a href="../../src/projects/topic-modeling-r.html"><span class="chapter-title">Topic Modeling in R</span></a></li></ol></nav>
+<div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Topic Modeling in R</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -311,12 +330,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="clear-workspace-dont-edit" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</h2>
+</header>
+
+
+<section id="clear-workspace-dont-edit" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</h2>
 <p>Always start by clearing the workspace. This ensure objects created in other files are not used used here.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="list-used-packages-edit" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="list-used-packages-edit">List Used Packages, EDIT</h2>
+</section>
+<section id="list-used-packages-edit" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="list-used-packages-edit">List Used Packages, EDIT</h2>
 <p>List all the packages that will be used in chunk below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"gutenbergr"</span>, <span class="co"># download books from Project Gutenberg using book ID</span></span>
@@ -326,8 +351,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5"></a>              <span class="st">"stm"</span>, <span class="co"># for do topic modeling</span></span>
 <span id="cb2-6"><a href="#cb2-6"></a>              <span class="st">"quanteda"</span>) <span class="co"># great text mining, will be used to structure the input to stm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="sec-packages" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-packages">Load Packages, DON’T EDIT</h2>
-<section id="install-missing" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="install-missing">Install Missing</h3>
+</section>
+<section id="sec-packages" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-packages">Load Packages, DON’T EDIT</h2>
+<section id="install-missing" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="install-missing">Install Missing</h3>
 <p>Any missing package will be installed automatically. This ensure smoother execution when run by others.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -346,7 +374,9 @@ Installing Packages on Other People Machine
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Do NOT modify</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="load" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="load">Load</h3>
+</section>
+<section id="load" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="load">Load</h3>
 <p>Load all packages</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Do NOT modify</span></span>
@@ -371,9 +401,14 @@ Installing Packages on Other People Machine
 [1] TRUE</code></pre>
 </div>
 </div>
-</section></section><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+</section>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>An attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle. After inspecting the table of content, the book seems to have 12 stories, one story per chapter. The analysis is inspired by <a href="https://juliasilge.com/">Julia Silge</a>’s YouTube video <a href="https://www.youtube.com/embed/evTuL-RcRpc">Topic modeling with R and tidy data principles</a></p>
-</section><section id="download-book" class="level2"><h2 class="anchored" data-anchor-id="download-book">Download Book</h2>
+</section>
+<section id="download-book" class="level2">
+<h2 class="anchored" data-anchor-id="download-book">Download Book</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Download the book, each line of the book is read into a seperate row</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>sherlock_raw <span class="ot">&lt;-</span> <span class="fu">gutenberg_download</span>(<span class="dv">48320</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -412,7 +447,9 @@ Installing Packages on Other People Machine
 6        48320 "  rapt in the peaceful beauty"                       </code></pre>
 </div>
 </div>
-</section><section id="wrangle-label-stories" class="level2"><h2 class="anchored" data-anchor-id="wrangle-label-stories">Wrangle: Label Stories</h2>
+</section>
+<section id="wrangle-label-stories" class="level2">
+<h2 class="anchored" data-anchor-id="wrangle-label-stories">Wrangle: Label Stories</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>sherlock <span class="ot">&lt;-</span> sherlock_raw <span class="sc">%&gt;%</span> </span>
 <span id="cb15-2"><a href="#cb15-2"></a>  </span>
@@ -430,7 +467,9 @@ Installing Packages on Other People Machine
 <span id="cb15-14"><a href="#cb15-14"></a>  <span class="co"># convert story column to factor</span></span>
 <span id="cb15-15"><a href="#cb15-15"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">factor</span>(story))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="wrangle-put-in-tidy-format" class="level2"><h2 class="anchored" data-anchor-id="wrangle-put-in-tidy-format">Wrangle: Put in Tidy Format</h2>
+</section>
+<section id="wrangle-put-in-tidy-format" class="level2">
+<h2 class="anchored" data-anchor-id="wrangle-put-in-tidy-format">Wrangle: Put in Tidy Format</h2>
 <p>The row of <code>text</code> column contains multiple words/tokens. We want to put each word/token of each <code>text</code> row into a separate row. This makes the dataframe follows the tidy format and hence makes it easy to process.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>tidy_sherlock <span class="ot">&lt;-</span> sherlock <span class="sc">%&gt;%</span></span>
@@ -450,7 +489,9 @@ Installing Packages on Other People Machine
 <pre><code>Joining with `by = join_by(word)`</code></pre>
 </div>
 </div>
-</section><section id="explore-tf-idf" class="level2"><h2 class="anchored" data-anchor-id="explore-tf-idf">Explore tf-idf</h2>
+</section>
+<section id="explore-tf-idf" class="level2">
+<h2 class="anchored" data-anchor-id="explore-tf-idf">Explore tf-idf</h2>
 <ul>
 <li>To see which words are important in each story/chapter, i.e.,the words that appears many times in that story but few or none in the other stories.</li>
 <li>tf-idf (term frequency-inverse document frequency) is a great exploratory tool before starting with topic modeling</li>
@@ -491,12 +532,15 @@ Installing Packages on Other People Machine
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="implement-topic-modeling" class="level2"><h2 class="anchored" data-anchor-id="implement-topic-modeling">Implement Topic Modeling</h2>
+</section>
+<section id="implement-topic-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="implement-topic-modeling">Implement Topic Modeling</h2>
 <p>Training the model for the topics</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Convert from tidy form to quanteda form (document x term matrix)</span></span>
@@ -592,7 +636,9 @@ Topic 6 Top Words:
      Score: wilson, league, merryweather, _employé_, jones, headed, coburg </code></pre>
 </div>
 </div>
-</section><section id="contribution-of-words-in-topics" class="level2"><h2 class="anchored" data-anchor-id="contribution-of-words-in-topics">Contribution of Words in Topics</h2>
+</section>
+<section id="contribution-of-words-in-topics" class="level2">
+<h2 class="anchored" data-anchor-id="contribution-of-words-in-topics">Contribution of Words in Topics</h2>
 <p>Looking at which words contribute the most in each topic.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Extracting betas and putting them in a tidy format</span></span>
@@ -619,12 +665,15 @@ Topic 6 Top Words:
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="distribution-of-topics-in-stories" class="level2"><h2 class="anchored" data-anchor-id="distribution-of-topics-in-stories">Distribution of Topics in Stories</h2>
+</section>
+<section id="distribution-of-topics-in-stories" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-topics-in-stories">Distribution of Topics in Stories</h2>
 <p>Looking at how the stories are associated with each topic and how strong each association is.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Extracting gammas and putting them in a tidy format</span></span>
@@ -644,7 +693,8 @@ Topic 6 Top Words:
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -658,23 +708,28 @@ Topic 6 Top Words:
 <span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure">
+<p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The model did an excellent job strongly associating the stories into one or more topics. This perfect association is rare in the world of topic modeling. The reason behind this perfect association here could be due to the small number of documents that we have.</p>
-</section><section id="references" class="level2"><h2 class="anchored" data-anchor-id="references">References</h2>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Adventures of Sherlock Holmes book by Arthur Conan Doyle on <a href="https://www.gutenberg.org/ebooks/48320">Project Gutenberg</a>
-</li>
+<li>Adventures of Sherlock Holmes book by Arthur Conan Doyle on <a href="https://www.gutenberg.org/ebooks/48320">Project Gutenberg</a></li>
 <li><a href="https://regex101.com/">Regular Expressions 101</a></li>
 </ul>
 
 
 <!-- -->
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -900,8 +955,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1068,7 +1121,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1293,7 +1345,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="../../src/r-for-data-science/07-data-import.html" class="pagination-link" aria-label="Data Import">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Data Import</span></span>
       </a>          
@@ -1557,6 +1611,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+
 
 
 
