@@ -3,71 +3,45 @@ title: "R"
 eval: true
 ---
 
-## Clear Workspace, DON'T EDIT {-}
 
-Always start by clearing the workspace. This ensure objects created in other files are not used used here.
-
-```{r}
-#| include: true
-#| results: 'hide'
+```{r Clean workspace}
+#| echo: false
 
 rm(list = ls())
 ```
 
-## List Used Packages, EDIT {-}
-
-List all the packages that will be used in chunk below.
-
-```{r}
-#| include: true
-#| echo: true
-#| error: true
+```{r List all used packages}
+#| echo: false
 
 packages <- c("here", "tidyverse", "janitor")
 ```
 
 
-## Load Packages, DON'T EDIT {#sec-packages -}
+```{r Install missing packages}
+#| echo: false
 
-### Install Missing {-}
-
-Any missing package will be installed automatically. This ensure smoother execution when run by others.
-
-```{r Install Missing Packages}
-#| include: true
-#| echo: true
-#| error: true
-
-# Do NOT modify
 install.packages(setdiff(packages, rownames(installed.packages())))
 ```
 
-### Load {-}
+```{r Load packages}
+#| echo: false
+#| output: false
 
-Load all packages
-
-```{r Load Packages}
-#| include: true
-#| echo: true
-#| error: true
-
-# Do NOT modify
 lapply(packages, require, character.only = TRUE)
 ```
 
-## General Notes
+## R Packages
 
-- When writing R code, create a project instead of a file which will enable saving the workspace settings
-- An R package usually includes:
-  a. reusable functions
-  b. documentation describing how to use the function
-  c. sample data
-- Before running a project, clear the objects in its workspace environment to avoid mixing up objects created in other files.  This can be done either:
-  a. pragmatically as shown below OR 
-  b. Environment window -> Broom icon
+An R package usually includes:
+
+  - reusable functions
+  - documentation describing how to use the function
+  - sample data
 
 
-## Data Types
+## Primitive Data Types
+
+The primitive (also known as singleton/simple) data types in R are:
 
 -   character
 -   numeric
@@ -99,7 +73,9 @@ x |>
 -   numeric + logical --\> numeric
 -   numeric + character + logical --\> character
 
-## Data Structures
+## Compound Data Types
+
+The compound (also know as collection/sttructure) data types in R are:
 
 -   **vector**: hold single type of data
 
@@ -117,7 +93,7 @@ x <- c(1, 2, 3, 4)
 
 -   **matrix**: 2D vector
 -   **array**: nD vector
--   **list**: generic vector, can hold mixed type of data, eg, one element can a character, another a list of integers, and the third could be a logical
+-   **list**: generic vector, can hold mixed type of data, eg, one element can be a character, another can be a list of integers, and the third could be a logical
 -   **data frame**: table where columns represent vectors
 -   **tibbles**: data frames, but slightly tweaked to work better with `tidyverse`--when printing tibbles, only the first few columns that fit into the screen will be shown
 
@@ -218,7 +194,9 @@ mean(heights, na.rm = TRUE)
 # ?mean
 ```
 
-## Exploratory Operations
+## Initial Steps
+
+### File Paths
 
 The `here` package makes it easy to point to files starting from the project main directory.
 
@@ -228,31 +206,39 @@ The `here` package makes it easy to point to files starting from the project mai
 library("here", "janitor")
 ```
 
+### Store Locally
+
 Loading file from repository and saving it locally on disk. It is always a good idea to structure the workspace--for more information, see [Best Practices for Scientific Computing paper](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745).
 
 ```{r}
-download.file(
-  url = "https://ndownloader.figshare.com/files/2292169",
-  destfile = here("data", "portal_data_joined.csv")
-)
+file_name <- "portal_data_joined.csv"
+file_path <- here("data", file_name)
+
+if (!file.exists(file_path)) {
+  download.file(
+    url = "https://ndownloader.figshare.com/files/2292169",
+    destfile = file_path
+  )
+}
 ```
 
-Load file to R as data frame
+### Load Locally
 
 ```{r}
-surveys <- read.csv(here("data", "portal_data_joined.csv"))
+surveys <- read.csv(file_path)
 
 glimpse(surveys)
 ```
 
-Clean names
+### Clean Names
+
 ```{r}
 surveys <- surveys |> 
   janitor::clean_names()
 ```
 
 
-Inspecting data frame
+### Inspecting Data
 
 ```{r}
 class(surveys) # data type
@@ -278,14 +264,14 @@ ncol(surveys)
 summary(surveys)
 ```
 
-Show first/last few objects/records/rows
+Print top and bottom obervations
 
 ```{r}
 head(surveys)
 tail(surveys)
 ```
 
-### Retrieve specific element/row/column
+Retrieve specific element/row/column
 
 ```{r}
 surveys[1, 1] # element[1,1]
@@ -294,7 +280,7 @@ head(surveys[, 1]) # column 1
 head(surveys$sex) # column by name
 ```
 
-### Dealing with factor (categorical) columns
+### Dealing with Factor (Categorical) Columns
 
 R convert columns that contain characters to factors by default. Factors are treated as integer vectors. By default, R sorts levels in alphabetical order.
 
