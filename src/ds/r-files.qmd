@@ -1,8 +1,10 @@
-# Tips
+# R/rmd/qmd Files
 
-## Clean Workspace @ Start
+It is advisable to do followings at the beginning of each code file
 
-Always start by clearing the workspace to ensure objects created by other files are not used here.
+## Clean Workspace
+
+Always start by clearing the workspace to ensure objects created in other files are not used in the current file.
 
 ```{r}
 #| eval: false
@@ -11,7 +13,7 @@ rm(list = ls())
 ```
 
 
-## Insalling Missing Pckages
+## Insall & Load Packages
 
 Although people may not like installing packages on their machines automatically for different reasons, I prefer this route for myself because I use multiple machines and install packages one at a time (after the code breaks multiple time because of the missing packages) is annoying.
 
@@ -24,7 +26,7 @@ packages <- c("here", "tidyverse", "janitor")
 ```
 
 
-Step 2: Install missing packages
+Step 2: Install missing packages, if any
 
 ```{r}
 #| eval: false
@@ -33,9 +35,8 @@ install.packages(setdiff(packages, rownames(installed.packages())))
 
 ```
 
-## Loading Packages
+Step 3: Load packages in one go
 
-We can then load all the packages using one line.
 
 ```{r Load Packages}
 #| eval: false
