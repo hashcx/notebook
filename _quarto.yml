@@ -49,30 +49,30 @@ book:
     - index.qmd  #the landing page file *must* be called 'index.qmd'
     
     - part: "Tips"
-      chapters: 
+      chapters:
         - src/ds/file_org.qmd
         - src/ds/eda.qmd
         - src/ds/r-files.qmd
     
-    - part: src/notebooks/_notes.qmd
+    - part: src/notes/_notes.qmd
       chapters: 
-        - src/notebooks/r.qmd
-        - src/notebooks/quarto.qmd
-        - src/notebooks/rstudio.qmd
-        - src/notebooks/windows.qmd
+        - src/notes/r.qmd
+        - src/notes/quarto.qmd
+        - src/notes/rstudio.qmd
+        - src/notes/windows.qmd
     
     - part: src/r-for-data-science/_r-for-data-science.qmd
-      chapters: 
-      - src/r-for-data-science/01-data-viz.qmd
-      - src/r-for-data-science/02-workflow-basics.qmd
-      - src/r-for-data-science/03-data-trans.qmd
-      - src/r-for-data-science/04-workflow-code-style.qmd
-      - src/r-for-data-science/05-data-tidying.qmd
-      - src/r-for-data-science/06-workflow-scripts-and-projects.qmd
-      - src/r-for-data-science/07-data-import.qmd
-    
+      chapters:
+      - src/r4ds/01-data-viz.qmd
+      - src/r4ds/02-workflow-basics.qmd
+      - src/r4ds/03-data-trans.qmd
+      - src/r4ds/04-workflow-code-style.qmd
+      - src/r4ds/05-data-tidying.qmd
+      - src/r4ds/06-workflow-scripts-and-projects.qmd
+      - src/r4ds/07-data-import.qmd
+
     - part: "Projects"
-      chapters: 
+      chapters:
         - src/projects/topic-modeling-r.qmd
         - src/projects/scrap_mac_registrar.qmd
         
@@ -108,6 +108,9 @@ format:
 execute:
   cache: true
   freeze: auto
+  echo: true
+  warning: false
+  error: false
 
 editor: 
   markdown:
