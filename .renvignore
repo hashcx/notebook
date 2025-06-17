@@ -1,9 +1,15 @@
-# ignore all data folders
-# data/
-
-# ignore only data folder from the root of the project
+/_extensions/
+/_freeze/
+/.git/
+/.github/
+/.quarto/
+/.Rproj.user/
 /data/
-
-# ignore only docs folder from the root of the project
 /docs/
+/images/
 
+# ignore any folder that ends with _cache
+*_cache/
+
+# ignore any folder that ends with _files
+*_files/
