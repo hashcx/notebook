@@ -1,7 +1,7 @@
-# File Organization
+# Project File Organization
 
 
-When starting any computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.
+When starting a computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.
 
 The structure below is inspired by 2009 William Stafford Noble's paper [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424).  On a related topic, see 2014 Greg Wilson et al paper [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745).
 
