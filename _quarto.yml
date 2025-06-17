@@ -20,7 +20,7 @@ book:
   back-to-top-navigation: true
   cookie-consent: true
   bread-crumbs: true
-  downloads: [pdf]
+  # downloads: [pdf]
   repo-url: https://github.com/hashcx/workspace/
   repo-actions: [edit, issue]
   repo-link-target: "_blank" #makes issue and edit links open in a new window/tab
