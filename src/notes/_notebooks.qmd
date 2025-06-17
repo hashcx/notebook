@@ -1,0 +1,5 @@
+---
+title: "Notes"
+---
+
+This section contains notes for the programming/scripting languages that I am learning.
