@@ -48,14 +48,11 @@ book:
   chapters: 
     - index.qmd  #the landing page file *must* be called 'index.qmd'
     
-    - part: "Tips"
-      chapters:
-        - src/ds/file_org.qmd
-        - src/ds/eda.qmd
-        - src/ds/code-files.qmd
-    
     - part: src/notes/_notes.qmd
       chapters: 
+        - src/notes/file_org.qmd
+        - src/notes/eda.qmd
+        - src/notes/code-files.qmd
         - src/notes/r.qmd
         - src/notes/quarto.qmd
         - src/notes/rstudio.qmd
