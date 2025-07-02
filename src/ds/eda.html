@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5a459a94b82dffa6c924e34470bb9d40.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-24354599a34588bbfd93c4033e71e5f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-5a459a94b82dffa6c924e34470bb9d40.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-9c9c1c15d0dd057cc8a65705947afef7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-b775b6fb1eeb6d16fe6034b045301735.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9c9c1c15d0dd057cc8a65705947afef7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -505,9 +505,10 @@ cookieconsent.run({
 </header>
 
 
+<p>For each dataset, try to obtain the following summaries.</p>
 <section id="manual-summaries" class="level3">
 <h3 class="anchored" data-anchor-id="manual-summaries">Manual Summaries</h3>
-<p>With a new dataset, answer the followings using its codebook if available or via some search and/or asking if not.</p>
+<p>using the dataset codebook, if available, or via some search and/or asking, answer the following questions:</p>
 <ul>
 <li>What is its source?</li>
 <li>How it was obtained?</li>
@@ -519,7 +520,7 @@ cookieconsent.run({
 </section>
 <section id="computational-summaries" class="level3">
 <h3 class="anchored" data-anchor-id="computational-summaries">Computational Summaries</h3>
-<p>After that, answer the following questions through computations:</p>
+<p>Through computations, ie, code, answer the following questions:</p>
 <ul>
 <li>How many columns/variables?</li>
 <li>How many rows/observations?</li>
@@ -530,7 +531,17 @@ cookieconsent.run({
 <li>How many rows/observations contain 1+ missing values?</li>
 <li>What is the summary statistics of each column/variable?</li>
 </ul>
-<p><a href="https://m-clark.github.io/exploratory-data-analysis-tools/">In a blog post, Michael Clark demos eight R packages(html)</a> that can help explore data quickly and effectively. The demoed packages are: <a href="https://mayoverse.github.io/arsenal/">arsenal</a>, <a href="https://boxuancui.github.io/DataExplorer/">DataExplorer</a>, <a href="https://github.com/ekstroem/dataReporter">dataReporter</a> (<a href="https://github.com/ekstroem/dataMaid?tab=readme-ov-file">dataMaid</a> previously), <a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary</a>, <a href="https://sfirke.github.io/janitor/">janitor</a>, <a href="https://daya6489.github.io/SmartEDA/index.html">SmartEDA</a>, <a href="https://github.com/dcomtois/summarytools">summarytools</a>, and <a href="https://docs.ropensci.org/visdat/">visdat</a>.</p>
+<p><a href="https://m-clark.github.io/exploratory-data-analysis-tools/">In a blog post (html)</a>, Michael Clark demos eight R packages that can help explore data quickly and effectively. The demoed packages are:</p>
+<ul>
+<li><a href="https://mayoverse.github.io/arsenal/">arsenal</a></li>
+<li><a href="https://boxuancui.github.io/DataExplorer/">DataExplorer</a></li>
+<li><a href="https://github.com/ekstroem/dataReporter">dataReporter</a> (<a href="https://github.com/ekstroem/dataMaid?tab=readme-ov-file">dataMaid</a> previously)</li>
+<li><a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary</a></li>
+<li><a href="https://sfirke.github.io/janitor/">janitor</a></li>
+<li><a href="https://daya6489.github.io/SmartEDA/index.html">SmartEDA</a></li>
+<li><a href="https://github.com/dcomtois/summarytools">summarytools</a></li>
+<li><a href="https://docs.ropensci.org/visdat/">visdat</a>.</li>
+</ul>
 
 
 <!-- -->
@@ -1020,32 +1031,43 @@ cookieconsent.run({
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">## EDA</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">### Manual Summaries</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>For each dataset, try to obtain the following summaries.</span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>With a new dataset, answer the followings using its codebook if available or via some search and/or asking if not.</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">### Manual Summaries</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="ss">- </span>What is its source?</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="ss">- </span>How it was obtained? </span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="ss">- </span>Who collected it?</span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="ss">- </span>When it was collected?</span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="ss">- </span>What does each column/variable represent?</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="ss">- </span>What does each row/observation represent?</span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="fu">### Computational Summaries</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>using the dataset codebook, if available, or via some search and/or asking, answer the following questions:</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="ss">- </span>What is its source?</span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="ss">- </span>How it was obtained? </span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="ss">- </span>Who collected it?</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="ss">- </span>When it was collected?</span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="ss">- </span>What does each column/variable represent?</span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="ss">- </span>What does each row/observation represent?</span>
 <span id="cb1-15"><a href="#cb1-15"></a></span>
-<span id="cb1-16"><a href="#cb1-16"></a>After that, answer the following questions through computations:</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="fu">### Computational Summaries</span></span>
 <span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="ss">- </span>How many columns/variables?</span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="ss">- </span>How many rows/observations?</span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="ss">- </span>What is the data type of each column/variable?</span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="ss">- </span>What are the top few rows/observations?</span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="ss">- </span>What are the bottom few rows/observations?</span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="ss">- </span>How many missing values in each column/variable?</span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="ss">- </span>How many rows/observations contain 1+ missing values?</span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="ss">- </span>What is the summary statistics of each column/variable?</span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co">[</span><span class="ot">In a blog post, Michael Clark demos eight R packages(html)</span><span class="co">](https://m-clark.github.io/exploratory-data-analysis-tools/)</span> that can help explore data quickly and effectively.</span>
-<span id="cb1-28"><a href="#cb1-28"></a>The demoed packages are: <span class="co">[</span><span class="ot">arsenal</span><span class="co">](https://mayoverse.github.io/arsenal/)</span>, <span class="co">[</span><span class="ot">DataExplorer</span><span class="co">](https://boxuancui.github.io/DataExplorer/)</span>, <span class="co">[</span><span class="ot">dataReporter</span><span class="co">](https://github.com/ekstroem/dataReporter)</span> (<span class="co">[</span><span class="ot">dataMaid</span><span class="co">](https://github.com/ekstroem/dataMaid?tab=readme-ov-file)</span> previously), <span class="co">[</span><span class="ot">gtsummary</span><span class="co">](https://www.danieldsjoberg.com/gtsummary/)</span>, <span class="co">[</span><span class="ot">janitor</span><span class="co">](https://sfirke.github.io/janitor/)</span>, <span class="co">[</span><span class="ot">SmartEDA</span><span class="co">](https://daya6489.github.io/SmartEDA/index.html)</span>, <span class="co">[</span><span class="ot">summarytools</span><span class="co">](https://github.com/dcomtois/summarytools)</span>, and <span class="co">[</span><span class="ot">visdat</span><span class="co">](https://docs.ropensci.org/visdat/)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18"></a>Through computations, ie, code, answer the following questions:</span>
+<span id="cb1-19"><a href="#cb1-19"></a></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="ss">- </span>How many columns/variables?</span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="ss">- </span>How many rows/observations?</span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="ss">- </span>What is the data type of each column/variable?</span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="ss">- </span>What are the top few rows/observations?</span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="ss">- </span>What are the bottom few rows/observations?</span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="ss">- </span>How many missing values in each column/variable?</span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="ss">- </span>How many rows/observations contain 1+ missing values?</span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="ss">- </span>What is the summary statistics of each column/variable?</span>
+<span id="cb1-28"><a href="#cb1-28"></a></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co">[</span><span class="ot">In a blog post (html)</span><span class="co">](https://m-clark.github.io/exploratory-data-analysis-tools/)</span>, Michael Clark demos eight R packages that can help explore data quickly and effectively.</span>
+<span id="cb1-30"><a href="#cb1-30"></a>The demoed packages are: </span>
+<span id="cb1-31"><a href="#cb1-31"></a></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="ss">- </span><span class="co">[</span><span class="ot">arsenal</span><span class="co">](https://mayoverse.github.io/arsenal/)</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="ss">- </span><span class="co">[</span><span class="ot">DataExplorer</span><span class="co">](https://boxuancui.github.io/DataExplorer/)</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="ss">- </span><span class="co">[</span><span class="ot">dataReporter</span><span class="co">](https://github.com/ekstroem/dataReporter)</span> (<span class="co">[</span><span class="ot">dataMaid</span><span class="co">](https://github.com/ekstroem/dataMaid?tab=readme-ov-file)</span> previously)</span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="ss">- </span><span class="co">[</span><span class="ot">gtsummary</span><span class="co">](https://www.danieldsjoberg.com/gtsummary/)</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="ss">- </span><span class="co">[</span><span class="ot">janitor</span><span class="co">](https://sfirke.github.io/janitor/)</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="ss">- </span><span class="co">[</span><span class="ot">SmartEDA</span><span class="co">](https://daya6489.github.io/SmartEDA/index.html)</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="ss">- </span><span class="co">[</span><span class="ot">summarytools</span><span class="co">](https://github.com/dcomtois/summarytools)</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="ss">- </span><span class="co">[</span><span class="ot">visdat</span><span class="co">](https://docs.ropensci.org/visdat/)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
