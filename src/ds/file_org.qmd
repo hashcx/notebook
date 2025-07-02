@@ -1,4 +1,4 @@
-# Project File Organization
+# File Organization
 
 
 When starting a computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.
