@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../src/r4ds/02-workflow-basics.html" rel="next">
-<link href="../../src/notes/windows.html" rel="prev">
+<link href="../../src/r4ds/_r4ds.html" rel="prev">
 <script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -303,7 +303,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html">src/r-for-data-science/_r-for-data-science.qmd</a></li><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html"><span class="chapter-title">Data Visualization</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/r4ds/_r4ds.html">R for Data Science (2e)</a></li><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html"><span class="chapter-title">Data Visualization</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -354,7 +354,7 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/ds/file_org.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Project File Organization</span></a>
+  <a href="../../src/ds/file_org.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">File Organization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -364,7 +364,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/ds/r-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">R/rmd/qmd Files</span></a>
+  <a href="../../src/ds/code-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">R/Rmd/qmd Files</span></a>
   </div>
 </li>
       </ul>
@@ -402,8 +402,8 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">src/r-for-data-science/_r-for-data-science.qmd</span></a>
+            <a href="../../src/r4ds/_r4ds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R for Data Science (2e)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -521,7 +521,7 @@ cookieconsent.run({
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html">src/r-for-data-science/_r-for-data-science.qmd</a></li><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html"><span class="chapter-title">Data Visualization</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/r4ds/_r4ds.html">R for Data Science (2e)</a></li><li class="breadcrumb-item"><a href="../../src/r4ds/01-data-viz.html"><span class="chapter-title">Data Visualization</span></a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Data Visualization</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -577,9 +577,9 @@ Installing Packages on Other People Machine
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading palmerpenguins from CRAN ...      OK [2.9 Mb in 0.47s]
-- Downloading ggthemes from CRAN ...            OK [482.4 Kb]
-Successfully downloaded 2 packages in 1 second.
+- Downloading palmerpenguins from CRAN ...      OK [2.9 Mb in 0.62s]
+- Downloading ggthemes from CRAN ...            OK [482.4 Kb in 0.19s]
+Successfully downloaded 2 packages in 1.3 seconds.
 
 The following package(s) will be installed:
 - ggthemes       [5.1.0]
@@ -588,8 +588,8 @@ These packages will be installed into "~/work/notebook/notebook/renv/library/lin
 
 # Installing packages --------------------------------------------------------
 - Installing palmerpenguins ...                 OK [built from source and cached in 1.1s]
-- Installing ggthemes ...                       OK [built from source and cached in 4.7s]
-Successfully installed 2 packages in 5.9 seconds.</code></pre>
+- Installing ggthemes ...                       OK [built from source and cached in 4.8s]
+Successfully installed 2 packages in 6 seconds.</code></pre>
 </div>
 </div>
 </section>
@@ -1486,8 +1486,8 @@ Figure&nbsp;8.1: Boxplot Components (taken from <a href="https://r4ds.hadley.nz/
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../../src/notes/windows.html" class="pagination-link" aria-label="Microsoft Windows">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Microsoft Windows</span></span>
+      <a href="../../src/r4ds/_r4ds.html" class="pagination-link" aria-label="R for Data Science (2e)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">R for Data Science (2e)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
