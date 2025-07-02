@@ -20,68 +20,68 @@
     ]
   },
   {
-    "objectID": "src/ds/file_org.html",
-    "href": "src/ds/file_org.html",
-    "title": "File Organization",
-    "section": "",
-    "text": "When starting a computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.\nThe structure below is inspired by 2009 William Stafford Noble’s paper A Quick Guide to Organizing Computational Biology Projects. On a related topic, see 2014 Greg Wilson et al paper Best Practices for Scientific Computing.\n+- data: contains the fixed data sets.\n   +- raw\n   +- processed, if needed\n\n+- result: contains the computational experiments performed on the data sets \n           in the 'data' directory.\n   - NOTEBOOK: record the progress in details. The entries in this notebook \n               should be dated and relaltively verbose with links or embeded \n               images or tables displaying the results of the experiment \n               performed.  Also, this notebook should also record any \n               observation, conclusion, or ideas for future work.  In case \n               the experiment fail, document how you know that experiment \n               failed to make it clear for those who may read this notebook \n               later.  You may also trascribe notes from converstaions and \n               emails.  This notebook can reside online (e.g., Google Doc) \n               to give access to collaborator about the current status of \n               the project.\n   +- 2018.04.24\n   +- 2018.04.25\n   +- &lt;chronological order&gt;\n\n+- doc: contains a seperate sub-directory for each maniuscript.\n   +- paper 1\n   +- paper 2\n   +- ...\n\n+- src: contains the source code for the project.",
-    "crumbs": [
-      "Tips",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>File Organization</span>"
-    ]
-  },
-  {
-    "objectID": "src/ds/eda.html",
-    "href": "src/ds/eda.html",
-    "title": "EDA",
-    "section": "",
-    "text": "For each dataset, try to obtain the following summaries.\n\nManual Summaries\nusing the dataset codebook, if available, or via some search and/or asking, answer the following questions:\n\nWhat is its source?\nHow it was obtained?\nWho collected it?\nWhen it was collected?\nWhat does each column/variable represent?\nWhat does each row/observation represent?\n\n\n\nComputational Summaries\nThrough computations, ie, code, answer the following questions:\n\nHow many columns/variables?\nHow many rows/observations?\nWhat is the data type of each column/variable?\nWhat are the top few rows/observations?\nWhat are the bottom few rows/observations?\nHow many missing values in each column/variable?\nHow many rows/observations contain 1+ missing values?\nWhat is the summary statistics of each column/variable?\n\nIn a blog post (html), Michael Clark demos eight R packages that can help explore data quickly and effectively. The demoed packages are:\n\narsenal\nDataExplorer\ndataReporter (dataMaid previously)\ngtsummary\njanitor\nSmartEDA\nsummarytools\nvisdat.",
-    "crumbs": [
-      "Tips",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EDA</span>"
-    ]
-  },
-  {
-    "objectID": "src/ds/code-files.html",
-    "href": "src/ds/code-files.html",
-    "title": "R/Rmd/qmd Files",
-    "section": "",
-    "text": "1. Create Project\nIt is advisable to perform the following step at the beginning of each code file. The example code chuncks are for the R programming language.\nWhen wanting to write R code, create a project then add R/Rmd/qmd files into it instead of only creating a single file. This will allow saving the workspace settings.",
-    "crumbs": [
-      "Tips",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
-    ]
-  },
-  {
-    "objectID": "src/ds/code-files.html#clean-workspace",
-    "href": "src/ds/code-files.html#clean-workspace",
-    "title": "R/Rmd/qmd Files",
-    "section": "2. Clean Workspace",
-    "text": "2. Clean Workspace\nAlways start by clearing the workspace to ensure objects created in other files are not used in the current file by using the code shown blew. This can be done manually in RStudio: Environment window -&gt; Broom icon.\n\nrm(list = ls())",
-    "crumbs": [
-      "Tips",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
-    ]
-  },
-  {
-    "objectID": "src/ds/code-files.html#insall-load-packages-automatically",
-    "href": "src/ds/code-files.html#insall-load-packages-automatically",
-    "title": "R/Rmd/qmd Files",
-    "section": "3. Insall & Load Packages Automatically",
-    "text": "3. Insall & Load Packages Automatically\nAlthough people may not like installing packages on their machines automatically for different reasons, I prefer this route for myself because I use multiple machines and install packages one at a time (after the code breaks multiple time because of the missing packages) is annoying.\nStep 1: Store all needed packages to a variables:\n\npackages &lt;- c(\"here\", \"tidyverse\", \"janitor\")\n\nStep 2: Install missing packages, if any\n\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\nStep 3: Load packages in one go\n\nlapply(packages, require, character.only = TRUE)",
-    "crumbs": [
-      "Tips",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
-    ]
-  },
-  {
     "objectID": "src/notes/_notes.html",
     "href": "src/notes/_notes.html",
     "title": "Notes",
     "section": "",
-    "text": "This section contains notes for the programming/scripting languages that I am learning.",
+    "text": "This section contains notes for different topics.",
     "crumbs": [
       "Notes"
+    ]
+  },
+  {
+    "objectID": "src/notes/file_org.html",
+    "href": "src/notes/file_org.html",
+    "title": "File Organization",
+    "section": "",
+    "text": "Here are few recommentation to follow when starting a new computational project.\n\nWhen starting a computational project, following a well-documented structure will save the creators and future patrons a lot of troubles, eg, when wanting to replicate findings or locate a particular file.\nA data-science project (or computational project in general) typically contains multiple types of data. Each type is recommended (see below) to be kept in separate folder. These types of data are:\n\nData\nScripts\nResults\nFigures\n\nThe structure below is inspired by 2009 William Stafford Noble’s paper A Quick Guide to Organizing Computational Biology Projects. On a related topic, see 2014 Greg Wilson et al paper Best Practices for Scientific Computing.\n\n+- data: contains the fixed data sets.\n   +- raw\n   +- processed, if needed\n\n+- result: contains the computational experiments performed on the data sets \n           in the 'data' directory.\n   - NOTEBOOK: record the progress in details. The entries in this notebook \n               should be dated and relaltively verbose with links or embeded \n               images or tables displaying the results of the experiment \n               performed.  Also, this notebook should also record any \n               observation, conclusion, or ideas for future work.  In case \n               the experiment fail, document how you know that experiment \n               failed to make it clear for those who may read this notebook \n               later.  You may also trascribe notes from converstaions and \n               emails.  This notebook can reside online (e.g., Google Doc) \n               to give access to collaborator about the current status of \n               the project.\n   +- 2018.04.24\n   +- 2018.04.25\n   +- &lt;chronological order&gt;\n\n+- doc: contains a seperate sub-directory for each maniuscript.\n   +- paper 1\n   +- paper 2\n   +- ...\n\n+- src: contains the source code for the project.\n\n\nWhenever inside a project, one should only use relative paths (relative to the working directory, ie, the project home) except for file hosted on the internet which require using absolute paths.",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>File Organization</span>"
+    ]
+  },
+  {
+    "objectID": "src/notes/eda.html",
+    "href": "src/notes/eda.html",
+    "title": "EDA",
+    "section": "",
+    "text": "For each dataset, try to obtain the following summaries.\n\nManual Summaries\nusing the dataset codebook, if available, or via some search and/or asking, answer the following questions:\n\nWhat is its source?\nHow it was obtained?\nWho collected it?\nWhen it was collected?\nWhat does each column/variable represent?\nWhat does each row/observation represent?\n\n\n\nComputational Summaries\nThrough computations, ie, code, answer the following questions:\n\nHow many columns/variables?\nHow many rows/observations?\nWhat is the data type of each column/variable?\nWhat are the top few rows/observations?\nWhat are the bottom few rows/observations?\nHow many missing values in each column/variable?\nHow many rows/observations contain 1+ missing values?\nWhat is the summary statistics of each column/variable?\n\nIn a blog post (html), Michael Clark demos eight R packages that can help explore data quickly and effectively. The demoed packages are:\n\narsenal\nDataExplorer\ndataReporter (dataMaid previously)\ngtsummary\njanitor\nSmartEDA\nsummarytools\nvisdat.",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EDA</span>"
+    ]
+  },
+  {
+    "objectID": "src/notes/code-files.html",
+    "href": "src/notes/code-files.html",
+    "title": "R/Rmd/qmd Files",
+    "section": "",
+    "text": "1. Create Project\nIt is advisable to perform the following step at the beginning of each code file. The example code chunks are for the R programming language.\nWhen wanting to write R code, create a project then add R/Rmd/qmd files into it instead of only creating a single file. This will allow saving the workspace settings.",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
+    ]
+  },
+  {
+    "objectID": "src/notes/code-files.html#clean-workspace",
+    "href": "src/notes/code-files.html#clean-workspace",
+    "title": "R/Rmd/qmd Files",
+    "section": "2. Clean Workspace",
+    "text": "2. Clean Workspace\nAlways start by clearing the workspace to ensure objects created in other files are not used in the current file by using the code shown blew. This can be done manually in RStudio: Environment window -&gt; Broom icon.\n#| include: false\n\nrm(list = ls())",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
+    ]
+  },
+  {
+    "objectID": "src/notes/code-files.html#insall-load-packages-automatically",
+    "href": "src/notes/code-files.html#insall-load-packages-automatically",
+    "title": "R/Rmd/qmd Files",
+    "section": "3. Insall & Load Packages Automatically",
+    "text": "3. Insall & Load Packages Automatically\nAlthough people may not like installing packages on their machines automatically for different reasons, I prefer this route for myself because I use multiple machines and installing packages one at a time (when the code breaks multiple times, one for each missing package) is annoying.\nStep 1: Store all needed packages to a variables by including the following code chunk and changing the given list of sample packages.\n#| include: false\n\npackages &lt;- c(\"here\", \"tidyverse\", \"janitor\")\nStep 2: Install missing packages automatically, if any, by including the following code chunk as it is.\n#| include: false\n\ninstall.packages(setdiff(packages, rownames(installed.packages())))\nStep 3: Load packages in one go automatically by including the following code chunk as it is.\n#| include: false\n\nlapply(packages, require, character.only = TRUE)\n\n\n\n\n\n\nExecution Options\n\n\n\nThe above R code chunk includes the execution option #| include: false which will prevent any output from being included in the knitted/rendered document. For the complete list of execution options that can be used in Quarto files see this page (html).",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
     ]
   },
   {
@@ -188,29 +188,7 @@
     "href": "src/notes/quarto.html",
     "title": "Quarto",
     "section": "",
-    "text": "Clear Workspace, DON’T EDIT\nAlways start by clearing the workspace. This ensure objects created in other files are not used used here.\nrm(list = ls())",
-    "crumbs": [
-      "Notes",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "src/notes/quarto.html#list-used-packages-edit",
-    "href": "src/notes/quarto.html#list-used-packages-edit",
-    "title": "Quarto",
-    "section": "List Used Packages, EDIT",
-    "text": "List Used Packages, EDIT\nList all the packages that will be used in chunk below.\n\npackages &lt;- c()",
-    "crumbs": [
-      "Notes",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto</span>"
-    ]
-  },
-  {
-    "objectID": "src/notes/quarto.html#sec-packages",
-    "href": "src/notes/quarto.html#sec-packages",
-    "title": "Quarto",
-    "section": "Load Packages, DON’T EDIT",
-    "text": "Load Packages, DON’T EDIT\n\nInstall Missing\nAny missing package will be installed automatically. This ensure smoother execution when run by others.\n\n# Do NOT modify\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\n- There are no packages to install.\n\n\n\n\nLoad\nLoad all packages {-}\n\n# Do NOT modify\nlapply(packages, require, character.only = TRUE)\n\nlist()",
+    "text": "Render & Review",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto</span>"
@@ -220,8 +198,8 @@
     "objectID": "src/notes/quarto.html#render-review",
     "href": "src/notes/quarto.html#render-review",
     "title": "Quarto",
-    "section": "Render & Review",
-    "text": "Render & Review\n\nVSCode/RStudio -&gt; Render button\nTerminal -&gt; quarto preview\nTerminal -&gt; quarto preview help",
+    "section": "",
+    "text": "VSCode/RStudio -&gt; Render button\nTerminal -&gt; quarto preview\nTerminal -&gt; quarto preview help",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto</span>"
@@ -243,7 +221,7 @@
     "href": "src/notes/quarto.html#import-content",
     "title": "Quarto",
     "section": "Import Content",
-    "text": "Import Content\nTo import a document to another use the following shortcodes:\n&lt;!-- {{&lt; include file.qmd &gt;}} --&gt;",
+    "text": "Import Content\nTo import the content of a Quarto document into another, use the following shortcodes:\n&lt;!-- {{&lt; include file.qmd &gt;}} --&gt;",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto</span>"
@@ -265,18 +243,18 @@
     "href": "src/notes/rstudio.html",
     "title": "RStudio",
     "section": "",
-    "text": "Keyboard Shortcuts\nBelow is a set of helpful keyboard shortcut. The full list can be reached by clicking Tools -&gt; Keyboard Shortcut Help (Alt+Shift+K) -&gt; See All Shortcuts",
+    "text": "Selected Keyboard Shortcuts\nBelow is a set of helpful keyboard shortcut.",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>RStudio</span>"
     ]
   },
   {
-    "objectID": "src/notes/rstudio.html#keyboard-shortcuts",
-    "href": "src/notes/rstudio.html#keyboard-shortcuts",
+    "objectID": "src/notes/rstudio.html#selected-keyboard-shortcuts",
+    "href": "src/notes/rstudio.html#selected-keyboard-shortcuts",
     "title": "RStudio",
     "section": "",
-    "text": "Mac Users\n\n\n\nIn place of Ctrl in the keyboard shortcuts below, use Cmd.\n\n\n\n\n\n\n\n\nRStudio Tips\n\n\n\nRStudio Tip on X on how to use RStudio IDE effectively.\n\n\n\n\nCtrl+Enter: execute the code statement at which cursor is standing and move the cursor to the beginning of the next statement\nCtrl+Shift+S: execute the whole R script\nCtrl+Alt+I: insert new code chunk\nCtrl+Shift+C: comment/un-comment\nAlt-⬆️: move line up\nAlt-⬇️️: move line down\nCtrl+D: delete line\nCtrl+Shift+A: format code\nCtrl+M: add pipe |&gt; operator–to change from %&gt;%, go to Tools -&gt; Global Options… -&gt; Code section -&gt; Editing tab -&gt; check Use native pipe operator, |&gt; (requires R 4.1+)\nCtrl++: increase font size of all windows\nCtrl+-: decrease font size of all windows\nAlt+- : insert assignment &lt;-. Notice:\n\nthe inserted assignment it is surrounded by spaces\nthe action happen when the cursor is inside an R chunk or R script file",
+    "text": "Ctrl+Enter: execute the code statement at which cursor is standing and move the cursor to the beginning of the next statement\nCtrl+Shift+S: execute the whole R script\nCtrl+Alt+I: insert new code chunk\nCtrl+Shift+C: comment/un-comment\nAlt-⬆️: move line up\nAlt-⬇️️: move line down\nCtrl+D: delete line\nCtrl+Shift+A: format code\nCtrl+M: add pipe |&gt; operator–to change from %&gt;%, go to Tools -&gt; Global Options… -&gt; Code section -&gt; Editing tab -&gt; check Use native pipe operator, |&gt; (requires R 4.1+)\nCtrl++: increase font size of all windows\nCtrl+-: decrease font size of all windows\nAlt+- : insert assignment &lt;-. Notice:\n\nthe inserted assignment it is surrounded by spaces\nthe action happen when the cursor is inside an R chunk or R script file\n\n\n\n\n\n\n\n\nMac Users\n\n\n\nIn place of Ctrl in the keyboard shortcuts below, use Cmd.\n\n\n\n\n\n\n\n\nRStudio Tips\n\n\n\nRStudio Tip on X on how to use RStudio IDE effectively.\n\n\n\n\n\n\n\n\nFull Keyboard Shortcut\n\n\n\nThe full list of RStudio keyboard shortcuts can be reached by clicking Tools -&gt; Keyboard Shortcut Help (Alt+Shift+K) -&gt; See All Shortcuts (located on the top right corner).",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>RStudio</span>"
@@ -287,7 +265,7 @@
     "href": "src/notes/rstudio.html#notes",
     "title": "RStudio",
     "section": "Notes",
-    "text": "Notes\n\nWorking Directory is the location where R looks for files and store files. RStudio showed this location at the top of the console window. The location can be printed to the console using the R command getwd() (get working directory).\nA data-science project typically contains multiple types of data. Each type is recommended to be kept in separate folder. These types of data are:\n\nData\nScripts\nResults\nFigures\n\nWhen creating project using RStudio, a file with the extension .Rproj will be created. Clicking this file will automatically open the project in RStudio.\nWhenever inside a project, one should only use relative paths (relative to the working directory, ie, the project home) except for file hosted on the internet which require using absolute paths.",
+    "text": "Notes\n\nWorking Directory is the location where R looks for files and store files. RStudio showed this location at the top of the console window. The location can be printed to the console using the R command getwd() (get working directory).\nWhen creating project using RStudio, a file with the extension .Rproj will be created. Clicking this file will automatically open the project in RStudio.",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>RStudio</span>"
@@ -330,39 +308,6 @@
     "href": "src/r4ds/01-data-viz.html",
     "title": "Data Visualization",
     "section": "",
-    "text": "Clear Workspace, DON’T EDIT\nAlways start by clearing the workspace. This ensure objects created in other files are not used used here.\nrm(list = ls())",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Visualization</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/01-data-viz.html#list-used-packages-edit",
-    "href": "src/r4ds/01-data-viz.html#list-used-packages-edit",
-    "title": "Data Visualization",
-    "section": "List Used Packages, EDIT",
-    "text": "List Used Packages, EDIT\nList all the packages that will be used in chunk below.\n\npackages = c(\"palmerpenguins\", 'ggthemes', 'ggplot2', 'dplyr', 'here', 'knitr')",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Visualization</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/01-data-viz.html#sec-packages",
-    "href": "src/r4ds/01-data-viz.html#sec-packages",
-    "title": "Data Visualization",
-    "section": "Load Packages, DON’T EDIT",
-    "text": "Load Packages, DON’T EDIT\n\nInstall Missing\nAny missing package will be installed automatically. This ensure smoother execution when run by others.\n\n\n\n\n\n\nInstalling Packages on Other People Machine\n\n\n\nBe aware the people may not like installing packages into their machine automatically. This might break some of their previous code.\n\n\n\n# Do NOT modify\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\n# Downloading packages -------------------------------------------------------\n- Downloading palmerpenguins from CRAN ...      OK [2.9 Mb in 0.62s]\n- Downloading ggthemes from CRAN ...            OK [482.4 Kb in 0.19s]\nSuccessfully downloaded 2 packages in 1.3 seconds.\n\nThe following package(s) will be installed:\n- ggthemes       [5.1.0]\n- palmerpenguins [0.1.1]\nThese packages will be installed into \"~/work/notebook/notebook/renv/library/linux-ubuntu-noble/R-4.4/x86_64-pc-linux-gnu\".\n\n# Installing packages --------------------------------------------------------\n- Installing palmerpenguins ...                 OK [built from source and cached in 1.1s]\n- Installing ggthemes ...                       OK [built from source and cached in 4.8s]\nSuccessfully installed 2 packages in 6 seconds.\n\n\n\n\nLoad\nLoad all packages\n\n# Do NOT modify\nlapply(packages, require, character.only = TRUE)\n\n[[1]]\n[1] TRUE\n\n[[2]]\n[1] TRUE\n\n[[3]]\n[1] TRUE\n\n[[4]]\n[1] TRUE\n\n[[5]]\n[1] TRUE\n\n[[6]]\n[1] TRUE",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Visualization</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/01-data-viz.html#introduction",
-    "href": "src/r4ds/01-data-viz.html#introduction",
-    "title": "Data Visualization",
-    "section": "8.1 Introduction",
     "text": "8.1 Introduction\nThis page introduces the plot creation vocabulary step by step",
     "crumbs": [
       "R for Data Science (2e)",
@@ -407,39 +352,6 @@
     "href": "src/r4ds/02-workflow-basics.html",
     "title": "Workflow: Basics",
     "section": "",
-    "text": "Clear Workspace, DON’T EDIT\nAlways start by clearing the workspace. This ensure objects created in other files are not used used here.\nrm(list = ls())",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Workflow: Basics</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/02-workflow-basics.html#list-used-packages-edit",
-    "href": "src/r4ds/02-workflow-basics.html#list-used-packages-edit",
-    "title": "Workflow: Basics",
-    "section": "List Used Packages, EDIT",
-    "text": "List Used Packages, EDIT\nList all the packages that will be used in chunk below.\n\npackages &lt;- c()",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Workflow: Basics</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/02-workflow-basics.html#sec-packages",
-    "href": "src/r4ds/02-workflow-basics.html#sec-packages",
-    "title": "Workflow: Basics",
-    "section": "Load Packages, DON’T EDIT",
-    "text": "Load Packages, DON’T EDIT\n\nInstall Missing\nAny missing package will be installed automatically. This ensure smoother execution when run by others.\n\n\n\n\n\n\nInstalling Packages on Other People Machine\n\n\n\nBe aware the people may not like installing packages into their machine automatically. This might break some of their previous code.\n\n\n\n# Do NOT modify\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\n- There are no packages to install.\n\n\n\n\nLoad\nLoad all packages\n\n# Do NOT modify\nlapply(packages, require, character.only = TRUE)\n\nlist()",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Workflow: Basics</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/02-workflow-basics.html#introduction",
-    "href": "src/r4ds/02-workflow-basics.html#introduction",
-    "title": "Workflow: Basics",
-    "section": "9.1 Introduction",
     "text": "9.1 Introduction\nThis page covers basic concepts when working with R. I took note for those that were new to me or found useful to remind myself with.",
     "crumbs": [
       "R for Data Science (2e)",
@@ -473,39 +385,6 @@
     "href": "src/r4ds/03-data-trans.html",
     "title": "Data Transformation",
     "section": "",
-    "text": "Clear Workspace, DON’T EDIT\nAlways start by clearing the workspace. This ensure objects created in other files are not used used here.\nrm(list = ls())",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Transformation</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/03-data-trans.html#list-used-packages-edit",
-    "href": "src/r4ds/03-data-trans.html#list-used-packages-edit",
-    "title": "Data Transformation",
-    "section": "List Used Packages, EDIT",
-    "text": "List Used Packages, EDIT\nList all the packages that will be used in chunk below.\n\npackages = c(\"nycflights13\", \"ggplot2\", \"dplyr\")",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Transformation</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/03-data-trans.html#sec-packages",
-    "href": "src/r4ds/03-data-trans.html#sec-packages",
-    "title": "Data Transformation",
-    "section": "Load Packages, DON’T EDIT",
-    "text": "Load Packages, DON’T EDIT\n\nInstall Missing\nAny missing package will be installed automatically. This ensure smoother execution when run by others.\n\n\n\n\n\n\nInstalling Packages on Other People Machine\n\n\n\nBe aware the people may not like installing packages into their machine automatically. This might break some of their previous code.\n\n\n\n# Do NOT modify\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\n# Downloading packages -------------------------------------------------------\n- Downloading nycflights13 from CRAN ...        OK [4.3 Mb]\nSuccessfully downloaded 1 package in 0.39 seconds.\n\nThe following package(s) will be installed:\n- nycflights13 [1.0.2]\nThese packages will be installed into \"~/work/notebook/notebook/renv/library/linux-ubuntu-noble/R-4.4/x86_64-pc-linux-gnu\".\n\n# Installing packages --------------------------------------------------------\n- Installing nycflights13 ...                   OK [built from source and cached in 8.9s]\nSuccessfully installed 1 package in 8.9 seconds.\n\n\n\n\nLoad\nLoad all packages\n\n# Do NOT modify\nlapply(packages, require, character.only = TRUE)\n\n[[1]]\n[1] TRUE\n\n[[2]]\n[1] TRUE\n\n[[3]]\n[1] TRUE",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data Transformation</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/03-data-trans.html#introduction",
-    "href": "src/r4ds/03-data-trans.html#introduction",
-    "title": "Data Transformation",
-    "section": "10.1 Introduction",
     "text": "10.1 Introduction\nThis page introduces the dplyr package used to transform data such as creating new variables, editing existing variables, filtering out observations, and creating summaries.",
     "crumbs": [
       "R for Data Science (2e)",
@@ -528,29 +407,7 @@
     "href": "src/r4ds/04-workflow-code-style.html",
     "title": "Workflow: Code Style",
     "section": "",
-    "text": "Clear Workspace, DON’T EDIT\nAlways start by clearing the workspace. This ensure objects created in other files are not used used here.\nrm(list = ls())",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Workflow: Code Style</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/04-workflow-code-style.html#list-used-packages-edit",
-    "href": "src/r4ds/04-workflow-code-style.html#list-used-packages-edit",
-    "title": "Workflow: Code Style",
-    "section": "List Used Packages, EDIT",
-    "text": "List Used Packages, EDIT\nList all the packages that will be used in chunk below.\n\npackages &lt;- c(\"styler\")",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Workflow: Code Style</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/04-workflow-code-style.html#sec-packages",
-    "href": "src/r4ds/04-workflow-code-style.html#sec-packages",
-    "title": "Workflow: Code Style",
-    "section": "Load Packages, DON’T EDIT",
-    "text": "Load Packages, DON’T EDIT\n\nInstall Missing\nAny missing package will be installed automatically. This ensure smoother execution when run by others.\n\n\n\n\n\n\nInstalling Packages on Other People Machine\n\n\n\nBe aware the people may not like installing packages into their machine automatically. This might break some of their previous code.\n\n\n\n# Do NOT modify\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\n# Downloading packages -------------------------------------------------------\n- Downloading styler from CRAN ...              OK [417.1 Kb in 0.14s]\n- Downloading R.cache from CRAN ...             OK [34.9 Kb in 0.18s]\n- Downloading R.methodsS3 from CRAN ...         OK [23.6 Kb in 0.19s]\n- Downloading R.oo from CRAN ...                OK [375.3 Kb in 0.13s]\n- Downloading R.utils from CRAN ...             OK [358.6 Kb in 0.14s]\nSuccessfully downloaded 5 packages in 1.5 seconds.\n\nThe following package(s) will be installed:\n- R.cache     [0.17.0]\n- R.methodsS3 [1.8.2]\n- R.oo        [1.27.1]\n- R.utils     [2.13.0]\n- styler      [1.10.3]\nThese packages will be installed into \"~/work/notebook/notebook/renv/library/linux-ubuntu-noble/R-4.4/x86_64-pc-linux-gnu\".\n\n# Installing packages --------------------------------------------------------\n- Installing R.methodsS3 ...                    OK [built from source and cached in 1.3s]\n- Installing R.oo ...                           OK [built from source and cached in 4.1s]\n- Installing R.utils ...                        OK [built from source and cached in 7.6s]\n- Installing R.cache ...                        OK [built from source and cached in 1.6s]\n- Installing styler ...                         OK [built from source and cached in 4.1s]\nSuccessfully installed 5 packages in 19 seconds.\n\n\n\n\nLoad\nLoad all packages\n\n# Do NOT modify\nlapply(packages, require, character.only = TRUE)\n\n[[1]]\n[1] TRUE",
+    "text": "11.1 Introduction\nThis page covers code style concepts when working with R. I took note for those that were new to me or found useful to remind myself with.",
     "crumbs": [
       "R for Data Science (2e)",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Workflow: Code Style</span>"
@@ -560,8 +417,8 @@
     "objectID": "src/r4ds/04-workflow-code-style.html#introduction",
     "href": "src/r4ds/04-workflow-code-style.html#introduction",
     "title": "Workflow: Code Style",
-    "section": "11.1 Introduction",
-    "text": "11.1 Introduction\nThis page covers code style concepts when working with R. I took note for those that were new to me or found useful to remind myself with.\n\n\n\n\n\n\nCode Style & Punctuation\n\n\n\nCode style is like punctuation, when used correctly, itmakecodereadeasily.",
+    "section": "",
+    "text": "Code Style & Punctuation\n\n\n\nCode style is like punctuation, when used correctly, itmakecodereadeasily.",
     "crumbs": [
       "R for Data Science (2e)",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Workflow: Code Style</span>"
@@ -594,29 +451,7 @@
     "href": "src/r4ds/05-data-tidying.html",
     "title": "Data Tidying",
     "section": "",
-    "text": "Clear Workspace, DON’T EDIT\nAlways start by clearing the workspace. This ensure objects created in other files are not used used here.\nrm(list = ls())",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Tidying</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/05-data-tidying.html#list-used-packages-edit",
-    "href": "src/r4ds/05-data-tidying.html#list-used-packages-edit",
-    "title": "Data Tidying",
-    "section": "List Used Packages, EDIT",
-    "text": "List Used Packages, EDIT\nList all the packages that will be used in chunk below.\n\npackages &lt;- c(\"styler\", \"dplyr\", \"tidyr\")",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Tidying</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/05-data-tidying.html#sec-packages",
-    "href": "src/r4ds/05-data-tidying.html#sec-packages",
-    "title": "Data Tidying",
-    "section": "Load Packages, DON’T EDIT",
-    "text": "Load Packages, DON’T EDIT\n\nInstall Missing\n\n\n\n\n\n\nInstalling Packages on Other People Machine\n\n\n\nBe aware the people may not like installing packages into their machine automatically. This might break some of their previous code.\n\n\nAny missing package will be installed automatically. This ensure smoother execution when run by others.\n\n# Do NOT modify\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\n- There are no packages to install.\n\n\n\n\nLoad\nLoad all packages\n\n# Do NOT modify\nlapply(packages, require, character.only = TRUE)\n\n[[1]]\n[1] TRUE\n\n[[2]]\n[1] TRUE\n\n[[3]]\n[1] TRUE",
+    "text": "12.1 Introduction\nThis page explains how use the tidyr package to put data in tidy form where:\nPutting data in tidy form will make it easy to process using tidyverse packages.",
     "crumbs": [
       "R for Data Science (2e)",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Tidying</span>"
@@ -626,8 +461,8 @@
     "objectID": "src/r4ds/05-data-tidying.html#introduction",
     "href": "src/r4ds/05-data-tidying.html#introduction",
     "title": "Data Tidying",
-    "section": "12.1 Introduction",
-    "text": "12.1 Introduction\nThis page explains how use the tidyr package to put data in tidy form where:\n\neach row represents an observation\neach column represents a variable\neach cell contain a single value\n\nPutting data in tidy form will make it easy to process using tidyverse packages.\n\n\n\n\n\n\nData Trasformation Bottom-Line\n\n\n\nTidying is 1-to-1 process–the data takes different form but it can be put back into its original form which mean that no values are lost.",
+    "section": "",
+    "text": "each row represents an observation\neach column represents a variable\neach cell contain a single value\n\n\n\n\n\n\n\n\nData Trasformation Bottom-Line\n\n\n\nTidying is 1-to-1 process–the data takes different form but it can be put back into its original form which mean that no values are lost.",
     "crumbs": [
       "R for Data Science (2e)",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Data Tidying</span>"
@@ -671,39 +506,6 @@
     "href": "src/r4ds/06-workflow-scripts-and-projects.html",
     "title": "Workflow: Scripts & Projects",
     "section": "",
-    "text": "Clear Workspace, DON’T EDIT\nAlways start by clearing the workspace. This ensure objects created in other files are not used here.\nrm(list = ls())",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Workflow: Scripts & Projects</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/06-workflow-scripts-and-projects.html#list-used-packages-edit",
-    "href": "src/r4ds/06-workflow-scripts-and-projects.html#list-used-packages-edit",
-    "title": "Workflow: Scripts & Projects",
-    "section": "List Used Packages, EDIT",
-    "text": "List Used Packages, EDIT\nList all the packages that will be used in chunk below.\n\npackages &lt;- c(\"tidyverse\")",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Workflow: Scripts & Projects</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/06-workflow-scripts-and-projects.html#sec-packages",
-    "href": "src/r4ds/06-workflow-scripts-and-projects.html#sec-packages",
-    "title": "Workflow: Scripts & Projects",
-    "section": "Load Packages, DON’T EDIT",
-    "text": "Load Packages, DON’T EDIT\n\nInstall Missing\nAny missing package will be installed automatically. This ensure smoother execution when run by others.\n\n\n\n\n\n\nInstalling Packages on Other People Machine\n\n\n\nBe aware the people may not like installing packages into their machine automatically. This might break some of their previous code.\n\n\n\n# Do NOT modify\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\n- There are no packages to install.\n\n\n\n\nLoad\nLoad all packages\n\n# Do NOT modify\nlapply(packages, require, character.only = TRUE)\n\n[[1]]\n[1] TRUE",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Workflow: Scripts & Projects</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/06-workflow-scripts-and-projects.html#introduction",
-    "href": "src/r4ds/06-workflow-scripts-and-projects.html#introduction",
-    "title": "Workflow: Scripts & Projects",
-    "section": "13.1 Introduction",
     "text": "13.1 Introduction\nThis chapter is about how to organize project files.",
     "crumbs": [
       "R for Data Science (2e)",
@@ -726,39 +528,6 @@
     "href": "src/r4ds/07-data-import.html",
     "title": "Data Import",
     "section": "",
-    "text": "Clear Workspace, DON’T EDIT\nAlways start by clearing the workspace. This ensure objects created in other files are not used used here.\nrm(list = ls())",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Data Import</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/07-data-import.html#list-used-packages-edit",
-    "href": "src/r4ds/07-data-import.html#list-used-packages-edit",
-    "title": "Data Import",
-    "section": "List Used Packages, EDIT",
-    "text": "List Used Packages, EDIT\nList all the packages that will be used in chunk below.\n\npackages &lt;- c()",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Data Import</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/07-data-import.html#sec-packages",
-    "href": "src/r4ds/07-data-import.html#sec-packages",
-    "title": "Data Import",
-    "section": "Load Packages, DON’T EDIT",
-    "text": "Load Packages, DON’T EDIT\n\nInstall Missing\nAny missing package will be installed automatically. This ensure smoother execution when run on another machine.\n\n\n\n\n\n\nInstalling Packages on Other People Machine\n\n\n\nBe aware that people may not like installing packages into their machine automatically. This might break some of their previous code.\n\n\n\n# Do NOT modify\ninstall.packages(setdiff(packages, rownames(installed.packages())))\n\n- There are no packages to install.\n\n\n\n\nLoad\nLoad all packages\n\n# Do NOT modify\nlapply(packages, require, character.only = TRUE)\n\nlist()",
-    "crumbs": [
-      "R for Data Science (2e)",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Data Import</span>"
-    ]
-  },
-  {
-    "objectID": "src/r4ds/07-data-import.html#introduction",
-    "href": "src/r4ds/07-data-import.html#introduction",
-    "title": "Data Import",
-    "section": "14.1 Introduction",
     "text": "14.1 Introduction",
     "crumbs": [
       "R for Data Science (2e)",
