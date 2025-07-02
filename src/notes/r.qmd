@@ -5,27 +5,26 @@ eval: true
 
 
 ```{r Clean workspace}
-#| echo: false
+#| include: false
 
 rm(list = ls())
 ```
 
 ```{r List all used packages}
-#| echo: false
+#| include: false
 
 packages <- c("here", "tidyverse", "janitor")
 ```
 
 
 ```{r Install missing packages}
-#| echo: false
+#| include: false
 
 install.packages(setdiff(packages, rownames(installed.packages())))
 ```
 
 ```{r Load packages}
-#| echo: false
-#| output: false
+#| include: false
 
 lapply(packages, require, character.only = TRUE)
 ```
