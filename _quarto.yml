@@ -52,7 +52,7 @@ book:
       chapters:
         - src/ds/file_org.qmd
         - src/ds/eda.qmd
-        - src/ds/r-files.qmd
+        - src/ds/code-files.qmd
     
     - part: src/notes/_notes.qmd
       chapters: 
@@ -61,7 +61,7 @@ book:
         - src/notes/rstudio.qmd
         - src/notes/windows.qmd
     
-    - part: src/r-for-data-science/_r-for-data-science.qmd
+    - part: src/r4ds/_r4ds.qmd
       chapters:
       - src/r4ds/01-data-viz.qmd
       - src/r4ds/02-workflow-basics.qmd
