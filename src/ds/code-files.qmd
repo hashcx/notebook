@@ -1,16 +1,16 @@
-# R/rmd/qmd Files
+# R/Rmd/qmd Files
 
-It is advisable to do followings at the beginning of each code file
+It is advisable to perform the following step at the beginning of each code file.  The example code chuncks are for the R programming language.
 
-## Create Project
+## 1. Create Project
 
 When wanting to write R code, create a project then add R/Rmd/qmd files into it instead of only creating a single file. This will allow saving the workspace settings.
 
 
 
-## Clean Workspace
+## 2. Clean Workspace
 
-Always start by clearing the workspace to ensure objects created in other files are not used in the current file by using the code shown blew.  This can be done manaully in RStudio: Environment window -> Broom icon.
+Always start by clearing the workspace to ensure objects created in other files are not used in the current file by using the code shown blew.  This can be done manually in RStudio: Environment window -> Broom icon.
 
 ```{r}
 #| eval: false
@@ -19,7 +19,7 @@ rm(list = ls())
 ```
 
 
-## Insall & Load Packages
+## 3. Insall & Load Packages Automatically
 
 Although people may not like installing packages on their machines automatically for different reasons, I prefer this route for myself because I use multiple machines and install packages one at a time (after the code breaks multiple time because of the missing packages) is annoying.
 
