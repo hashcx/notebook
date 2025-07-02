@@ -2,56 +2,32 @@
 title: "Quarto"
 ---
 
-## Clear Workspace, DON'T EDIT {.unnumbered}
-
-Always start by clearing the workspace. This ensure objects created in other files are not used used here.
-
-```{r}
-#| include: true
-#| results: 'hide'
+```{r Clean workspace}
+#| echo: false
 
 rm(list = ls())
 ```
 
-## List Used Packages, EDIT {.unnumbered}
-
-List all the packages that will be used in chunk below.
-
-```{r}
-#| include: true
-#| echo: true
-#| error: true
+```{r List all used packages}
+#| echo: false
 
 packages <- c()
 ```
 
-## Load Packages, DON'T EDIT {#sec-packages .unnumbered}
 
-### Install Missing {.unnumbered}
+```{r Install missing packages}
+#| echo: false
 
-Any missing package will be installed automatically. This ensure smoother execution when run by others.
-
-```{r Install Missing Packages}
-#| include: true
-#| echo: true
-#| error: true
-
-# Do NOT modify
 install.packages(setdiff(packages, rownames(installed.packages())))
 ```
 
-### Load
+```{r Load packages}
+#| echo: false
+#| output: false
 
-Load all packages {-}
-
-```{r Load Packages}
-#| include: true
-#| echo: true
-#| error: true
-
-# Do NOT modify
 lapply(packages, require, character.only = TRUE)
 ```
+
 
 ## Render & Review
 
@@ -66,7 +42,7 @@ lapply(packages, require, character.only = TRUE)
 
 ## Import Content
 
-To import a document to another use the following shortcodes:
+To import the content of a Quarto document into another, use the following shortcodes:
 
 ``` markdown
 <!-- {{< include file.qmd >}} -->
