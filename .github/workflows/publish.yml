@@ -71,16 +71,16 @@ jobs:
 
 
       # From https://stackoverflow.com/questions/76642914/use-a-github-package-for-a-r-github-action
-      - name: Install the remotes Package
-        run: |
-          Rscript -e "install.packages('remotes', repos='https://ftp.belnet.be/mirror/CRAN')"
+      # - name: Install the remotes Package
+      #   run: |
+      #     Rscript -e "install.packages('remotes', repos='https://ftp.belnet.be/mirror/CRAN')"
 
 
-      - name: Install the rnaturalearthhires Package
-        env:
-          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          Rscript -e "remotes::install_github('ropensci/rnaturalearthhires')"
+      # - name: Install the rnaturalearthhires Package
+      #   env:
+      #     GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     Rscript -e "remotes::install_github('ropensci/rnaturalearthhires')"
 
 
       # From https://github.com/julia-actions/setup-julia
