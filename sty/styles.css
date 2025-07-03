@@ -10,6 +10,10 @@ pre, code, kbd, samp, .sourceCode, .cell-code {
   font-family: "Fira Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+span.menu-text {
+  font-weight: bold;
+}
+
 .cell-output {
   background-color: LightYellow;
   border-radius: 4px;
