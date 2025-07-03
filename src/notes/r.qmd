@@ -13,7 +13,7 @@ rm(list = ls())
 ```{r List all used packages}
 #| include: false
 
-packages <- c("here", "tidyverse", "janitor")
+packages <- c("downlit", "xml2", "here", "tidyverse", "janitor")
 ```
 
 

@@ -12,7 +12,7 @@ rm(list = ls())
 ```{r List all used packages}
 #| include: false
 
-packages <- c("styler")
+packages <- c("downlit", "xml2", "styler")
 ```
 
 

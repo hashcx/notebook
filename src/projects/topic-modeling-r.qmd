@@ -12,7 +12,8 @@ rm(list = ls())
 ```{r List all used packages}
 #| include: false
 
-packages <- c("gutenbergr", # download books from Project Gutenberg using book ID
+packages <- c("downlit", "xml2",
+              "gutenbergr", # download books from Project Gutenberg using book ID
               "tidyverse",
               "tidytext",
               "ggplot2",

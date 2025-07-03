@@ -12,7 +12,7 @@ rm(list = ls())
 ```{r List all used packages}
 #| include: false
 
-packages <- c("palmerpenguins", 'ggthemes', 'ggplot2', 'dplyr', 'here', 'knitr')
+packages <- c("downlit", "xml2", "palmerpenguins", 'ggthemes', 'ggplot2', 'dplyr', 'here', 'knitr')
 ```
 
 
