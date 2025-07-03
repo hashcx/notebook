@@ -64,19 +64,19 @@ jobs:
 
 
       # # From: https://quarto.org/docs/publishing/github-pages.html#github-action
-      - name: Install R Dependencies
+      - name: Install Required R Packages from revn.lock
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
 
 
       # From https://stackoverflow.com/questions/76642914/use-a-github-package-for-a-r-github-action
-      - name: Install remotes Package
+      - name: Install the remotes Package
         run: |
           Rscript -e "install.packages('remotes', repos='https://ftp.belnet.be/mirror/CRAN')"
 
 
-      - name: Install rnaturalearthhires Package
+      - name: Install the rnaturalearthhires Package
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
