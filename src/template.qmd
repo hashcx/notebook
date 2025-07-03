@@ -3,63 +3,28 @@ title: "<title goes here>"
 number-sections: true
 ---
 
-## Clear Workspace, DON'T EDIT {-}
-
-Always start by clearing the workspace. This ensure objects created in other files are not used used here.
-
-```{r}
-#| include: true
-#| results: 'hide'
+```{r Clean workspace}
+#| include: false
 
 rm(list = ls())
 ```
 
-## List Used Packages, EDIT {-}
+```{r List all used packages}
+#| include: false
 
-List all the packages that will be used in chunk below.
-
-```{r}
-#| include: true
-#| echo: true
-#| error: true
-
-packages <- c()
+packages <- c("downlit", "xml2")
 ```
 
 
-## Load Packages, DON'T EDIT {#sec-packages -}
+```{r Install missing packages}
+#| include: false
 
-### Install Missing {-}
-
-Any missing package will be installed automatically. This ensure smoother execution when run on another machine.
-
-::: callout-important
-
-#### Installing Packages on Other People Machine
-
-Be aware that people may not like installing packages into their machine automatically.  This might break some of their previous code.
-
-:::
-
-```{r Install Missing Packages}
-#| include: true
-#| echo: true
-#| error: true
-
-# Do NOT modify
 install.packages(setdiff(packages, rownames(installed.packages())))
 ```
 
-### Load {-}
+```{r Load packages}
+#| include: false
 
-Load all packages
-
-```{r Load Packages}
-#| include: true
-#| echo: true
-#| error: true
-
-# Do NOT modify
 lapply(packages, require, character.only = TRUE)
 ```
 
