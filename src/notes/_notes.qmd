@@ -2,4 +2,4 @@
 title: "Notes"
 ---
 
-This section contains notes for different topics.
+This section contains notes on different topics.
