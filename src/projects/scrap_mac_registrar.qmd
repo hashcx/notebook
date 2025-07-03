@@ -1,5 +1,36 @@
-# Scrap Mac Registrar Website
+# WIP: Web Scrap Mac Class Schedule
 
-## Bibliography
+## Introduction
+
+This is a work-in-progress to scarp the class schedule from Macalester's Registrar website.
+
+## Observations
+
+### URL
+
+The base URL of the class schedule is
+
+```markdown
+https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=<year><term code>
+```
+
+where `<year>` is the latest year of academic year, 2026 for the 2025/26 year; and `<term code>` is `10` for fall and `30` for spring.  For example, to get the class schedule for the fall semester of 2025/2026 academic year, the URL would be
+
+```markdown
+https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202610
+```
+
+and for the spring semester of the same year, the URL of the class schedule would be
+
+```markdown
+https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202630
+```
+
+### Load
+
+The page will take few seconds to load the class schedule which be taking into consideration when scapping.
+
+
+## References
 
 - [Control a web browser from R to web scrap static and dynamic websites using `chromote` (YouTube)]( https://www.youtube.com/watch?v=30AOpjLeOyI)
