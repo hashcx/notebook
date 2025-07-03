@@ -1,6 +1,6 @@
-## EDA
+## Exploartory Data Analysis
 
-For each dataset, try to obtain the following summaries.
+For each dataset, try to obtain the following Exploartory Data Analysis (EDA) summaries.
 
 ### Manual Summaries
 
