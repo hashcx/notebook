@@ -5,7 +5,7 @@ eval: true
 
 ## Selected Keyboard Shortcuts
 
-Below is a set of helpful keyboard shortcut.
+Below is a set of helpful keyboard shortcuts:
 
 -   `Ctrl+Enter`: execute the code statement at which cursor is standing and move the cursor to the beginning of the next statement
 -   `Ctrl+Shift+S`: execute the whole R script
