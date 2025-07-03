@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Topic Modeling in R – Workspace</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -81,8 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-9c9c1c15d0dd057cc8a65705947afef7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-b775b6fb1eeb6d16fe6034b045301735.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-9c9c1c15d0dd057cc8a65705947afef7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-9c9c1c15d0dd057cc8a65705947afef7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -108,9 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-<script type="text/javascript" charset="UTF-8">
+}</script><script type="text/javascript" charset="UTF-8">
 document.addEventListener('DOMContentLoaded', function () {
 cookieconsent.run({
   "notice_banner_type":"simple",
@@ -125,13 +118,8 @@ cookieconsent.run({
 "language":"en"
   });
 });
-</script> 
-  
-
-
-<link rel="stylesheet" href="../../sty/styles.css">
+</script><link rel="stylesheet" href="../../sty/styles.css">
 </head>
-
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -297,9 +285,7 @@ cookieconsent.run({
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -310,13 +296,9 @@ cookieconsent.run({
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">HashCX</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -337,7 +319,7 @@ cookieconsent.run({
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
@@ -351,8 +333,8 @@ cookieconsent.run({
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/notes/file_org.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">File Organization</span></a>
   </div>
@@ -388,7 +370,7 @@ cookieconsent.run({
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../src/r4ds/_r4ds.html" class="sidebar-item-text sidebar-link">
@@ -397,8 +379,8 @@ cookieconsent.run({
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/r4ds/01-data-viz.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Visualization</span></a>
   </div>
@@ -434,7 +416,7 @@ cookieconsent.run({
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -443,37 +425,28 @@ cookieconsent.run({
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/projects/topic-modeling-r.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Topic Modeling in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/projects/scrap_mac_registrar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Scrap Mac Registrar Website</span></a>
+  <a href="../../src/projects/scrap_mac_registrar.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">WIP: Web Scrap Mac Class Schedule</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#clear-workspace-dont-edit" id="toc-clear-workspace-dont-edit" class="nav-link active" data-scroll-target="#clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</a></li>
-  <li><a href="#list-used-packages-edit" id="toc-list-used-packages-edit" class="nav-link" data-scroll-target="#list-used-packages-edit">List Used Packages, EDIT</a></li>
-  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages">Load Packages, DON’T EDIT</a>
-  <ul class="collapse">
-  <li><a href="#install-missing" id="toc-install-missing" class="nav-link" data-scroll-target="#install-missing">Install Missing</a></li>
-  <li><a href="#load" id="toc-load" class="nav-link" data-scroll-target="#load">Load</a></li>
-  </ul></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#download-book" id="toc-download-book" class="nav-link" data-scroll-target="#download-book">Download Book</a></li>
   <li><a href="#wrangle-label-stories" id="toc-wrangle-label-stories" class="nav-link" data-scroll-target="#wrangle-label-stories">Wrangle: Label Stories</a></li>
   <li><a href="#wrangle-put-in-tidy-format" id="toc-wrangle-put-in-tidy-format" class="nav-link" data-scroll-target="#wrangle-put-in-tidy-format">Wrangle: Put in Tidy Format</a></li>
@@ -482,15 +455,10 @@ cookieconsent.run({
   <li><a href="#contribution-of-words-in-topics" id="toc-contribution-of-words-in-topics" class="nav-link" data-scroll-target="#contribution-of-words-in-topics">Contribution of Words in Topics</a></li>
   <li><a href="#distribution-of-topics-in-stories" id="toc-distribution-of-topics-in-stories" class="nav-link" data-scroll-target="#distribution-of-topics-in-stories">Distribution of Topics in Stories</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/projects/topic-modeling-r.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/projects/topic-modeling-r.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/projects/topic-modeling-r.html">Projects</a></li><li class="breadcrumb-item"><a href="../../src/projects/topic-modeling-r.html"><span class="chapter-title">Topic Modeling in R</span></a></li></ol></nav>
-<div class="quarto-title">
+<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/projects/topic-modeling-r.html">Projects</a></li><li class="breadcrumb-item"><a href="../../src/projects/topic-modeling-r.html"><span class="chapter-title">Topic Modeling in R</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Topic Modeling in R</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -505,99 +473,17 @@ cookieconsent.run({
   
 
 
-</header>
-
-
-<section id="clear-workspace-dont-edit" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="clear-workspace-dont-edit">Clear Workspace, DON’T EDIT</h2>
-<p>Always start by clearing the workspace. This ensure objects created in other files are not used used here.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="list-used-packages-edit" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="list-used-packages-edit">List Used Packages, EDIT</h2>
-<p>List all the packages that will be used in chunk below.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"gutenbergr"</span>, <span class="co"># download books from Project Gutenberg using book ID</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>              <span class="st">"tidyverse"</span>,</span>
-<span id="cb2-3"><a href="#cb2-3"></a>              <span class="st">"tidytext"</span>,</span>
-<span id="cb2-4"><a href="#cb2-4"></a>              <span class="st">"ggplot2"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5"></a>              <span class="st">"stm"</span>, <span class="co"># for do topic modeling</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>              <span class="st">"quanteda"</span>) <span class="co"># great text mining, will be used to structure the input to stm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sec-packages" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-packages">Load Packages, DON’T EDIT</h2>
-<section id="install-missing" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="install-missing">Install Missing</h3>
-<p>Any missing package will be installed automatically. This ensure smoother execution when run by others.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Installing Packages on Other People Machine
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Be aware the people may not like installing packages into their machine automatically. This might break some of their previous code.</p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Do NOT modify</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="load" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="load">Load</h3>
-<p>Load all packages</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Do NOT modify</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-[1] TRUE
-
-[[2]]
-[1] TRUE
-
-[[3]]
-[1] TRUE
-
-[[4]]
-[1] TRUE
-
-[[5]]
-[1] TRUE
-
-[[6]]
-[1] TRUE</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+</header><section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>An attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle. After inspecting the table of content, the book seems to have 12 stories, one story per chapter. The analysis is inspired by <a href="https://juliasilge.com/">Julia Silge</a>’s YouTube video <a href="https://www.youtube.com/embed/evTuL-RcRpc">Topic modeling with R and tidy data principles</a></p>
-</section>
-<section id="download-book" class="level2">
-<h2 class="anchored" data-anchor-id="download-book">Download Book</h2>
+</section><section id="download-book" class="level2"><h2 class="anchored" data-anchor-id="download-book">Download Book</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Download the book, each line of the book is read into a seperate row</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>sherlock_raw <span class="ot">&lt;-</span> <span class="fu">gutenberg_download</span>(<span class="dv">48320</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Determining mirror for Project Gutenberg from https://www.gutenberg.org/robot/harvest</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Using mirror http://aleph.gutenberg.org</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">dim</span>(sherlock_raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Download the book, each line of the book is read into a separate row</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>sherlock_raw <span class="ot">&lt;-</span> <span class="fu">gutenberg_download</span>(<span class="dv">48320</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">dim</span>(sherlock_raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 12350     2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">head</span>(sherlock_raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">head</span>(sherlock_raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   gutenberg_id text                           
@@ -609,7 +495,7 @@ Installing Packages on Other People Machine
 5        48320 ""                             
 6        48320 "[Illustration:"               </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">tail</span>(sherlock_raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">tail</span>(sherlock_raw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   gutenberg_id text                                                  
@@ -622,109 +508,94 @@ Installing Packages on Other People Machine
 6        48320 "  rapt in the peaceful beauty"                       </code></pre>
 </div>
 </div>
-</section>
-<section id="wrangle-label-stories" class="level2">
-<h2 class="anchored" data-anchor-id="wrangle-label-stories">Wrangle: Label Stories</h2>
+</section><section id="wrangle-label-stories" class="level2"><h2 class="anchored" data-anchor-id="wrangle-label-stories">Wrangle: Label Stories</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>sherlock <span class="ot">&lt;-</span> sherlock_raw <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a href="#cb15-2"></a>  </span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="co"># determine start of each story/chapter</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(text, <span class="st">"^(A SCANDAL IN BOHEMIA|THE RED-HEADED LEAGUE|A CASE OF IDENTITY|THE BOSCOMBE VALLEY MYSTERY|THE FIVE ORANGE PIPS|THE MAN WITH THE TWISTED LIP|THE ADVENTURE OF THE BLUE CARBUNCLE|THE ADVENTURE OF THE SPECKLED BAND|THE ADVENTURE OF THE ENGINEER’S THUMB|THE ADVENTURE OF THE NOBLE BACHELOR|THE ADVENTURE OF THE BERYL CORONET|THE ADVENTURE OF THE COPPER BEECHES)$"</span>), text, <span class="cn">NA</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>  </span>
-<span id="cb15-6"><a href="#cb15-6"></a>  <span class="co"># determine lines belonging to each story/chapter by</span></span>
-<span id="cb15-7"><a href="#cb15-7"></a>  <span class="co"># filling down the N/A rows of story column</span></span>
-<span id="cb15-8"><a href="#cb15-8"></a>  <span class="fu">fill</span>(story) <span class="sc">%&gt;%</span></span>
-<span id="cb15-9"><a href="#cb15-9"></a>  </span>
-<span id="cb15-10"><a href="#cb15-10"></a>  <span class="co"># remove the part that does not belong to any story/chapter,</span></span>
-<span id="cb15-11"><a href="#cb15-11"></a>  <span class="co"># i.e, the introduction</span></span>
-<span id="cb15-12"><a href="#cb15-12"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(story)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-13"><a href="#cb15-13"></a>  </span>
-<span id="cb15-14"><a href="#cb15-14"></a>  <span class="co"># convert story column to factor</span></span>
-<span id="cb15-15"><a href="#cb15-15"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">factor</span>(story))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>sherlock <span class="ot">&lt;-</span> sherlock_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="co"># determine start of each story/chapter</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(text, <span class="st">"^(A SCANDAL IN BOHEMIA|THE RED-HEADED LEAGUE|A CASE OF IDENTITY|THE BOSCOMBE VALLEY MYSTERY|THE FIVE ORANGE PIPS|THE MAN WITH THE TWISTED LIP|THE ADVENTURE OF THE BLUE CARBUNCLE|THE ADVENTURE OF THE SPECKLED BAND|THE ADVENTURE OF THE ENGINEER’S THUMB|THE ADVENTURE OF THE NOBLE BACHELOR|THE ADVENTURE OF THE BERYL CORONET|THE ADVENTURE OF THE COPPER BEECHES)$"</span>), text, <span class="cn">NA</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  </span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="co"># determine lines belonging to each story/chapter by</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="co"># filling down the N/A rows of story column</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">fill</span>(story) <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>  </span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="co"># remove the part that does not belong to any story/chapter,</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="co"># i.e, the introduction</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(story)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>  </span>
+<span id="cb7-14"><a href="#cb7-14"></a>  <span class="co"># convert story column to factor</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">factor</span>(story))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="wrangle-put-in-tidy-format" class="level2">
-<h2 class="anchored" data-anchor-id="wrangle-put-in-tidy-format">Wrangle: Put in Tidy Format</h2>
+</section><section id="wrangle-put-in-tidy-format" class="level2"><h2 class="anchored" data-anchor-id="wrangle-put-in-tidy-format">Wrangle: Put in Tidy Format</h2>
 <p>The row of <code>text</code> column contains multiple words/tokens. We want to put each word/token of each <code>text</code> row into a separate row. This makes the dataframe follows the tidy format and hence makes it easy to process.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>tidy_sherlock <span class="ot">&lt;-</span> sherlock <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  </span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="co"># number the rows</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">mutate</span>(<span class="at">line =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-5"><a href="#cb16-5"></a>  </span>
-<span id="cb16-6"><a href="#cb16-6"></a>  <span class="co"># break the text column into multiple row where each row contain one token</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-8"><a href="#cb16-8"></a>  </span>
-<span id="cb16-9"><a href="#cb16-9"></a>  <span class="co"># remove the stopwords--the rows where the word column is a stopword</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">anti_join</span>(stop_words) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-11"><a href="#cb16-11"></a>  </span>
-<span id="cb16-12"><a href="#cb16-12"></a>  <span class="co"># remove holmes rows which might affect our topic models</span></span>
-<span id="cb16-13"><a href="#cb16-13"></a>  <span class="fu">filter</span>(word <span class="sc">!=</span> <span class="st">"holmes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(word)`</code></pre>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>tidy_sherlock <span class="ot">&lt;-</span> sherlock <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  </span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="co"># number the rows</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">mutate</span>(<span class="at">line =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-5"><a href="#cb8-5"></a>  </span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="co"># break the text column into multiple row where each row contain one token</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-8"><a href="#cb8-8"></a>  </span>
+<span id="cb8-9"><a href="#cb8-9"></a>  <span class="co"># remove the stopwords--the rows where the word column is a stopword</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">anti_join</span>(stop_words) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-11"><a href="#cb8-11"></a>  </span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="co"># remove holmes rows which might affect our topic models</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">filter</span>(word <span class="sc">!=</span> <span class="st">"holmes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="explore-tf-idf" class="level2">
-<h2 class="anchored" data-anchor-id="explore-tf-idf">Explore tf-idf</h2>
+</section><section id="explore-tf-idf" class="level2"><h2 class="anchored" data-anchor-id="explore-tf-idf">Explore tf-idf</h2>
 <ul>
 <li>To see which words are important in each story/chapter, i.e.,the words that appears many times in that story but few or none in the other stories.</li>
 <li>tf-idf (term frequency-inverse document frequency) is a great exploratory tool before starting with topic modeling</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>tidy_sherlock <span class="sc">%&gt;%</span> </span>
-<span id="cb18-2"><a href="#cb18-2"></a>  </span>
-<span id="cb18-3"><a href="#cb18-3"></a>  <span class="co"># count number of occurrence of words in stories</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">count</span>(story, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-5"><a href="#cb18-5"></a>  </span>
-<span id="cb18-6"><a href="#cb18-6"></a>  <span class="co"># compute and add tf, idf, and tf_idf values for words</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">bind_tf_idf</span>(word, story, n) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-8"><a href="#cb18-8"></a>  </span>
-<span id="cb18-9"><a href="#cb18-9"></a>  <span class="co"># group by story</span></span>
-<span id="cb18-10"><a href="#cb18-10"></a>  <span class="fu">group_by</span>(story) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-11"><a href="#cb18-11"></a>  </span>
-<span id="cb18-12"><a href="#cb18-12"></a>  <span class="co"># take top 10 words of each story with highest tf_idf (last column)</span></span>
-<span id="cb18-13"><a href="#cb18-13"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-14"><a href="#cb18-14"></a>  </span>
-<span id="cb18-15"><a href="#cb18-15"></a>  <span class="co"># unpack</span></span>
-<span id="cb18-16"><a href="#cb18-16"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb18-17"><a href="#cb18-17"></a>  </span>
-<span id="cb18-18"><a href="#cb18-18"></a>  <span class="co"># turn words into factors and order them based on their tf_idf values</span></span>
-<span id="cb18-19"><a href="#cb18-19"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This will not affect order the dataframe rows which is can be</span></span>
-<span id="cb18-20"><a href="#cb18-20"></a>  <span class="co">#   done via the arrange function</span></span>
-<span id="cb18-21"><a href="#cb18-21"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: Recording the word column this way is for ggplot to visualize them</span></span>
-<span id="cb18-22"><a href="#cb18-22"></a>  <span class="co">#   as desired from top tf_idf to lowest</span></span>
-<span id="cb18-23"><a href="#cb18-23"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word, tf_idf)) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-24"><a href="#cb18-24"></a>  </span>
-<span id="cb18-25"><a href="#cb18-25"></a>  <span class="co"># plot</span></span>
-<span id="cb18-26"><a href="#cb18-26"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(word, tf_idf, <span class="at">fill =</span> story)) <span class="sc">+</span></span>
-<span id="cb18-27"><a href="#cb18-27"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb18-28"><a href="#cb18-28"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>story, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb18-29"><a href="#cb18-29"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb18-30"><a href="#cb18-30"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Selecting by tf_idf</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>tidy_sherlock <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2"></a>  </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="co"># count number of occurrence of words in stories</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">count</span>(story, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="#cb9-5"></a>  </span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="co"># compute and add tf, idf, and tf_idf values for words</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">bind_tf_idf</span>(word, story, n) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-8"><a href="#cb9-8"></a>  </span>
+<span id="cb9-9"><a href="#cb9-9"></a>  <span class="co"># group by story</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">group_by</span>(story) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-11"><a href="#cb9-11"></a>  </span>
+<span id="cb9-12"><a href="#cb9-12"></a>  <span class="co"># take top 10 words of each story with highest tf_idf (last column)</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-14"><a href="#cb9-14"></a>  </span>
+<span id="cb9-15"><a href="#cb9-15"></a>  <span class="co"># unpack</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-17"><a href="#cb9-17"></a>  </span>
+<span id="cb9-18"><a href="#cb9-18"></a>  <span class="co"># turn words into factors and order them based on their tf_idf values</span></span>
+<span id="cb9-19"><a href="#cb9-19"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This will not affect order the dataframe rows which is can be</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a>  <span class="co">#   done via the arrange function</span></span>
+<span id="cb9-21"><a href="#cb9-21"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: Recording the word column this way is for ggplot to visualize them</span></span>
+<span id="cb9-22"><a href="#cb9-22"></a>  <span class="co">#   as desired from top tf_idf to lowest</span></span>
+<span id="cb9-23"><a href="#cb9-23"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word, tf_idf)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-24"><a href="#cb9-24"></a>  </span>
+<span id="cb9-25"><a href="#cb9-25"></a>  <span class="co"># plot</span></span>
+<span id="cb9-26"><a href="#cb9-26"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(word, tf_idf, <span class="at">fill =</span> story)) <span class="sc">+</span></span>
+<span id="cb9-27"><a href="#cb9-27"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb9-28"><a href="#cb9-28"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>story, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb9-29"><a href="#cb9-29"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb9-30"><a href="#cb9-30"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="implement-topic-modeling" class="level2">
-<h2 class="anchored" data-anchor-id="implement-topic-modeling">Implement Topic Modeling</h2>
+</section><section id="implement-topic-modeling" class="level2"><h2 class="anchored" data-anchor-id="implement-topic-modeling">Implement Topic Modeling</h2>
 <p>Training the model for the topics</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Convert from tidy form to quanteda form (document x term matrix)</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>sherlock_stm <span class="ot">&lt;-</span> tidy_sherlock <span class="sc">%&gt;%</span> </span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">count</span>(story, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">cast_dfm</span>(story, word, n)</span>
-<span id="cb20-5"><a href="#cb20-5"></a></span>
-<span id="cb20-6"><a href="#cb20-6"></a><span class="co"># Train the model</span></span>
-<span id="cb20-7"><a href="#cb20-7"></a>topic_model <span class="ot">&lt;-</span> <span class="fu">stm</span>(sherlock_stm, <span class="at">K=</span><span class="dv">6</span>, <span class="at">init.type =</span> <span class="st">"Spectral"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Convert from tidy form to quanteda form (document x term matrix)</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>sherlock_stm <span class="ot">&lt;-</span> tidy_sherlock <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">count</span>(story, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">cast_dfm</span>(story, word, n)</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co"># Train the model</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>topic_model <span class="ot">&lt;-</span> <span class="fu">stm</span>(sherlock_stm, <span class="at">K=</span><span class="dv">6</span>, <span class="at">init.type =</span> <span class="st">"Spectral"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Beginning Spectral Initialization 
      Calculating the gram matrix...
@@ -736,11 +607,11 @@ Initialization complete.
 ............
 Completed E-Step (0 seconds). 
 Completed M-Step. 
-Completing Iteration 1 (approx. per word bound = -7.785) 
+Completing Iteration 1 (approx. per word bound = -7.784) 
 ............
 Completed E-Step (0 seconds). 
 Completed M-Step. 
-Completing Iteration 2 (approx. per word bound = -7.593, relative change = 2.458e-02) 
+Completing Iteration 2 (approx. per word bound = -7.593, relative change = 2.457e-02) 
 ............
 Completed E-Step (0 seconds). 
 Completed M-Step. 
@@ -748,11 +619,11 @@ Completing Iteration 3 (approx. per word bound = -7.481, relative change = 1.473
 ............
 Completed E-Step (0 seconds). 
 Completed M-Step. 
-Completing Iteration 4 (approx. per word bound = -7.455, relative change = 3.469e-03) 
+Completing Iteration 4 (approx. per word bound = -7.455, relative change = 3.472e-03) 
 ............
 Completed E-Step (0 seconds). 
 Completed M-Step. 
-Completing Iteration 5 (approx. per word bound = -7.450, relative change = 7.612e-04) 
+Completing Iteration 5 (approx. per word bound = -7.450, relative change = 7.643e-04) 
 Topic 1: st, simon, lord, day, lady 
  Topic 2: door, miss, house, rucastle, matter 
  Topic 3: hat, goose, stone, bird, geese 
@@ -762,11 +633,11 @@ Topic 1: st, simon, lord, day, lady
 ............
 Completed E-Step (0 seconds). 
 Completed M-Step. 
-Completing Iteration 6 (approx. per word bound = -7.449, relative change = 1.233e-04) 
+Completing Iteration 6 (approx. per word bound = -7.449, relative change = 1.252e-04) 
 ............
 Completed E-Step (0 seconds). 
 Completed M-Step. 
-Completing Iteration 7 (approx. per word bound = -7.449, relative change = 1.168e-05) 
+Completing Iteration 7 (approx. per word bound = -7.449, relative change = 1.169e-05) 
 ............
 Completed E-Step (0 seconds). 
 Completed M-Step. 
@@ -774,30 +645,30 @@ Model Converged </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">summary</span>(topic_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">summary</span>(topic_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A topic model with 6 topics, 12 documents and a 7709 word dictionary.</code></pre>
+<pre><code>A topic model with 6 topics, 12 documents and a 7707 word dictionary.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Topic 1 Top Words:
      Highest Prob: st, simon, lord, day, lady, found, matter 
-     FREX: simon, clair, neville, lascar, opium, doran, flora 
-     Lift: aloysius, ceremony, doran, millar, 2_s, aberdeen, absurdly 
+     FREX: simon, clair, neville, lascar, opium, doran, boone 
+     Lift: aloysius, ceremony, doran, millar, pennies, 2_s, aberdeen 
      Score: simon, st, clair, neville, _danseuse_, lestrade, doran 
 Topic 2 Top Words:
      Highest Prob: door, miss, house, rucastle, matter, street, lady 
-     FREX: rucastle, hosmer, hunter, angel, windibank, _changed, 1 
-     Lift: advertised, angel, annoyance, brothers, employed, factor, fowler 
+     FREX: rucastle, hosmer, hunter, angel, windibank, _changed, to_ 
+     Lift: _boston, _changed, _g_, _n, 20, 75, advertised 
      Score: rucastle, hosmer, angel, windibank, hunter, type, 1 
 Topic 3 Top Words:
      Highest Prob: hat, goose, stone, bird, geese, baker, sir 
      FREX: geese, horner, ryder, henry, peterson, salesman, countess 
-     Lift: battered, bet, bred, brixton, cosmopolitan, covent, cream 
+     Lift: battered, bet, bred, cosmopolitan, covent, cream, cusack 
      Score: goose, geese, horner, _alias_, ryder, henry, peterson 
 Topic 4 Top Words:
      Highest Prob: father, time, mccarthy, son, hand, lestrade, left 
      FREX: mccarthy, pool, boscombe, openshaw, pips, horsham, turner 
-     Lift: bone, dundee, horsham, pondicherry, presumption, savannah, sundial 
+     Lift: _détour_, _lone, _métier_, _nous, _pince, _sophy, 10 
      Score: mccarthy, pool, lestrade, boscombe, openshaw, _détour_, turner 
 Topic 5 Top Words:
      Highest Prob: house, time, night, door, heard, hand, round 
@@ -807,104 +678,87 @@ Topic 5 Top Words:
 Topic 6 Top Words:
      Highest Prob: red, time, wilson, business, headed, day, league 
      FREX: wilson, league, merryweather, jones, coburg, jabez, headed 
-     Lift: daring, saturday, vincent, _employé_, _october, _partie, 17 
+     Lift: branch, crate, daring, director, directors, faded, merryweather 
      Score: wilson, league, merryweather, _employé_, jones, headed, coburg </code></pre>
 </div>
 </div>
-</section>
-<section id="contribution-of-words-in-topics" class="level2">
-<h2 class="anchored" data-anchor-id="contribution-of-words-in-topics">Contribution of Words in Topics</h2>
+</section><section id="contribution-of-words-in-topics" class="level2"><h2 class="anchored" data-anchor-id="contribution-of-words-in-topics">Contribution of Words in Topics</h2>
 <p>Looking at which words contribute the most in each topic.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Extracting betas and putting them in a tidy format</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>tm_beta <span class="ot">&lt;-</span> <span class="fu">tidy</span>(topic_model)</span>
-<span id="cb25-3"><a href="#cb25-3"></a></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="co"># Visualizing the top words contributing to each topic</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a>tm_beta <span class="sc">%&gt;%</span> </span>
-<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">group_by</span>(topic) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-7"><a href="#cb25-7"></a>  <span class="co"># top 10 word in each topic with higest beta (last column)</span></span>
-<span id="cb25-8"><a href="#cb25-8"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-9"><a href="#cb25-9"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb25-10"><a href="#cb25-10"></a>  <span class="co"># turn words into factors and order them based on their tf_idf values</span></span>
-<span id="cb25-11"><a href="#cb25-11"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This will not affect order the dataframe rows which is can be</span></span>
-<span id="cb25-12"><a href="#cb25-12"></a>  <span class="co">#   done via the arrange function</span></span>
-<span id="cb25-13"><a href="#cb25-13"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: Recording the word column this way is for ggplot to visualize them</span></span>
-<span id="cb25-14"><a href="#cb25-14"></a>  <span class="co">#   as desired from top tf_idf to lowest</span></span>
-<span id="cb25-15"><a href="#cb25-15"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> <span class="fu">reorder</span>(term, beta)) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-16"><a href="#cb25-16"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(term, beta, <span class="at">fill =</span> topic)) <span class="sc">+</span></span>
-<span id="cb25-17"><a href="#cb25-17"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb25-18"><a href="#cb25-18"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>topic, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb25-19"><a href="#cb25-19"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Selecting by beta</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Extracting betas and putting them in a tidy format</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>tm_beta <span class="ot">&lt;-</span> <span class="fu">tidy</span>(topic_model)</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># Visualizing the top words contributing to each topic</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>tm_beta <span class="sc">%&gt;%</span> </span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">group_by</span>(topic) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="co"># top 10 word in each topic with higest beta (last column)</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-9"><a href="#cb15-9"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-10"><a href="#cb15-10"></a>  <span class="co"># turn words into factors and order them based on their tf_idf values</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This will not affect order the dataframe rows which is can be</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a>  <span class="co">#   done via the arrange function</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: Recording the word column this way is for ggplot to visualize them</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>  <span class="co">#   as desired from top tf_idf to lowest</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> <span class="fu">reorder</span>(term, beta)) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-16"><a href="#cb15-16"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(term, beta, <span class="at">fill =</span> topic)) <span class="sc">+</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb15-18"><a href="#cb15-18"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>topic, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb15-19"><a href="#cb15-19"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="distribution-of-topics-in-stories" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-of-topics-in-stories">Distribution of Topics in Stories</h2>
+</section><section id="distribution-of-topics-in-stories" class="level2"><h2 class="anchored" data-anchor-id="distribution-of-topics-in-stories">Distribution of Topics in Stories</h2>
 <p>Looking at how the stories are associated with each topic and how strong each association is.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Extracting gammas and putting them in a tidy format</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>tm_gamma <span class="ot">&lt;-</span> <span class="fu">tidy</span>(topic_model, <span class="at">matrix =</span> <span class="st">"gamma"</span>,</span>
-<span id="cb27-3"><a href="#cb27-3"></a>                 <span class="co"># use the names of the stories instead of the default numbers</span></span>
-<span id="cb27-4"><a href="#cb27-4"></a>                 <span class="at">document_names =</span> <span class="fu">rownames</span>(sherlock_stm))</span>
-<span id="cb27-5"><a href="#cb27-5"></a></span>
-<span id="cb27-6"><a href="#cb27-6"></a></span>
-<span id="cb27-7"><a href="#cb27-7"></a><span class="co"># Visualizing the number of stories belonging to each topics and the confidence</span></span>
-<span id="cb27-8"><a href="#cb27-8"></a><span class="co">#   of the belonging</span></span>
-<span id="cb27-9"><a href="#cb27-9"></a>tm_gamma <span class="sc">%&gt;%</span> </span>
-<span id="cb27-10"><a href="#cb27-10"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gamma, <span class="at">fill =</span> <span class="fu">as.factor</span>(topic))) <span class="sc">+</span></span>
-<span id="cb27-11"><a href="#cb27-11"></a>  <span class="fu">geom_histogram</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb27-12"><a href="#cb27-12"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>topic, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Extracting gammas and putting them in a tidy format</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>tm_gamma <span class="ot">&lt;-</span> <span class="fu">tidy</span>(topic_model, <span class="at">matrix =</span> <span class="st">"gamma"</span>,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>                 <span class="co"># use the names of the stories instead of the default numbers</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>                 <span class="at">document_names =</span> <span class="fu">rownames</span>(sherlock_stm))</span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a></span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="co"># Visualizing the number of stories belonging to each topics and the confidence</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="co">#   of the belonging</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a>tm_gamma <span class="sc">%&gt;%</span> </span>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gamma, <span class="at">fill =</span> <span class="fu">as.factor</span>(topic))) <span class="sc">+</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a>  <span class="fu">geom_histogram</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>topic, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Visualizing how much each topic appear in each story</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>tm_gamma <span class="sc">%&gt;%</span> </span>
-<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(topic, gamma, <span class="at">fill =</span> document)) <span class="sc">+</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>document, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Visualizing how much each topic appear in each story</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>tm_gamma <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(topic, gamma, <span class="at">fill =</span> document)) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>document, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="topic-modeling-r_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The model did an excellent job strongly associating the stories into one or more topics. This perfect association is rare in the world of topic modeling. The reason behind this perfect association here could be due to the small number of documents that we have.</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+</section><section id="references" class="level2"><h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Adventures of Sherlock Holmes book by Arthur Conan Doyle on <a href="https://www.gutenberg.org/ebooks/48320">Project Gutenberg</a></li>
+<li>Adventures of Sherlock Holmes book by Arthur Conan Doyle on <a href="https://www.gutenberg.org/ebooks/48320">Project Gutenberg</a>
+</li>
 <li><a href="https://regex101.com/">Regular Expressions 101</a></li>
 </ul>
 
 
 <!-- -->
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1371,274 +1225,238 @@ Topic 6 Top Words:
       }
     }
   });
-  </script>
-<nav class="page-navigation column-body">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation column-body"><div class="nav-page nav-page-previous">
       <a href="../../src/r4ds/07-data-import.html" class="pagination-link" aria-label="Data Import">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Data Import</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/projects/scrap_mac_registrar.html" class="pagination-link" aria-label="Scrap Mac Registrar Website">
-        <span class="nav-page-text"><span class="chapter-title">Scrap Mac Registrar Website</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/projects/scrap_mac_registrar.html" class="pagination-link" aria-label="WIP: Web Scrap Mac Class Schedule">
+        <span class="nav-page-text"><span class="chapter-title">WIP: Web Scrap Mac Class Schedule</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb30" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1"></a><span class="co">---</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="an">title:</span><span class="co"> "Topic Modeling in R"</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="an">eval:</span><span class="co"> TRUE</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a><span class="co">---</span></span>
-<span id="cb30-5"><a href="#cb30-5"></a></span>
-<span id="cb30-6"><a href="#cb30-6"></a><span class="fu">## Clear Workspace, DON'T EDIT {-}</span></span>
-<span id="cb30-7"><a href="#cb30-7"></a></span>
-<span id="cb30-8"><a href="#cb30-8"></a>Always start by clearing the workspace. This ensure objects created in other files are not used used here.</span>
-<span id="cb30-9"><a href="#cb30-9"></a></span>
-<span id="cb30-12"><a href="#cb30-12"></a><span class="in">```{r}</span></span>
-<span id="cb30-13"><a href="#cb30-13"></a><span class="co">#| include: true</span></span>
-<span id="cb30-14"><a href="#cb30-14"></a><span class="co">#| results: 'hide'</span></span>
-<span id="cb30-15"><a href="#cb30-15"></a></span>
-<span id="cb30-16"><a href="#cb30-16"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb30-17"><a href="#cb30-17"></a><span class="in">```</span></span>
-<span id="cb30-18"><a href="#cb30-18"></a></span>
-<span id="cb30-19"><a href="#cb30-19"></a><span class="fu">## List Used Packages, EDIT {-}</span></span>
-<span id="cb30-20"><a href="#cb30-20"></a></span>
-<span id="cb30-21"><a href="#cb30-21"></a>List all the packages that will be used in chunk below.</span>
-<span id="cb30-22"><a href="#cb30-22"></a></span>
-<span id="cb30-25"><a href="#cb30-25"></a><span class="in">```{r}</span></span>
-<span id="cb30-26"><a href="#cb30-26"></a><span class="co">#| include: true</span></span>
-<span id="cb30-27"><a href="#cb30-27"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-28"><a href="#cb30-28"></a><span class="co">#| error: true</span></span>
-<span id="cb30-29"><a href="#cb30-29"></a></span>
-<span id="cb30-30"><a href="#cb30-30"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"gutenbergr"</span>, <span class="co"># download books from Project Gutenberg using book ID</span></span>
-<span id="cb30-31"><a href="#cb30-31"></a>              <span class="st">"tidyverse"</span>,</span>
-<span id="cb30-32"><a href="#cb30-32"></a>              <span class="st">"tidytext"</span>,</span>
-<span id="cb30-33"><a href="#cb30-33"></a>              <span class="st">"ggplot2"</span>,</span>
-<span id="cb30-34"><a href="#cb30-34"></a>              <span class="st">"stm"</span>, <span class="co"># for do topic modeling</span></span>
-<span id="cb30-35"><a href="#cb30-35"></a>              <span class="st">"quanteda"</span>) <span class="co"># great text mining, will be used to structure the input to stm</span></span>
-<span id="cb30-36"><a href="#cb30-36"></a><span class="in">```</span></span>
-<span id="cb30-37"><a href="#cb30-37"></a></span>
-<span id="cb30-38"><a href="#cb30-38"></a></span>
-<span id="cb30-39"><a href="#cb30-39"></a><span class="fu">## Load Packages, DON'T EDIT {#sec-packages -}</span></span>
-<span id="cb30-40"><a href="#cb30-40"></a></span>
-<span id="cb30-41"><a href="#cb30-41"></a><span class="fu">### Install Missing {-}</span></span>
-<span id="cb30-42"><a href="#cb30-42"></a></span>
-<span id="cb30-43"><a href="#cb30-43"></a>Any missing package will be installed automatically. This ensure smoother execution when run by others.</span>
-<span id="cb30-44"><a href="#cb30-44"></a></span>
-<span id="cb30-45"><a href="#cb30-45"></a>::: callout-important</span>
-<span id="cb30-46"><a href="#cb30-46"></a></span>
-<span id="cb30-47"><a href="#cb30-47"></a><span class="fu">#### Installing Packages on Other People Machine</span></span>
-<span id="cb30-48"><a href="#cb30-48"></a></span>
-<span id="cb30-49"><a href="#cb30-49"></a>Be aware the people may not like installing packages into their machine automatically.  This might break some of their previous code.</span>
-<span id="cb30-50"><a href="#cb30-50"></a></span>
-<span id="cb30-51"><a href="#cb30-51"></a>:::</span>
-<span id="cb30-52"><a href="#cb30-52"></a></span>
-<span id="cb30-53"><a href="#cb30-53"></a><span class="in">```{r Install Missing Packages}</span></span>
-<span id="cb30-54"><a href="#cb30-54"></a><span class="co">#| include: true</span></span>
-<span id="cb30-55"><a href="#cb30-55"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-56"><a href="#cb30-56"></a><span class="co">#| error: true</span></span>
-<span id="cb30-57"><a href="#cb30-57"></a></span>
-<span id="cb30-58"><a href="#cb30-58"></a><span class="co"># Do NOT modify</span></span>
-<span id="cb30-59"><a href="#cb30-59"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
-<span id="cb30-60"><a href="#cb30-60"></a><span class="in">```</span></span>
-<span id="cb30-61"><a href="#cb30-61"></a></span>
-<span id="cb30-62"><a href="#cb30-62"></a><span class="fu">### Load {-}</span></span>
-<span id="cb30-63"><a href="#cb30-63"></a></span>
-<span id="cb30-64"><a href="#cb30-64"></a>Load all packages</span>
-<span id="cb30-65"><a href="#cb30-65"></a></span>
-<span id="cb30-66"><a href="#cb30-66"></a><span class="in">```{r Load Packages}</span></span>
-<span id="cb30-67"><a href="#cb30-67"></a><span class="co">#| include: true</span></span>
-<span id="cb30-68"><a href="#cb30-68"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-69"><a href="#cb30-69"></a><span class="co">#| error: true</span></span>
-<span id="cb30-70"><a href="#cb30-70"></a></span>
-<span id="cb30-71"><a href="#cb30-71"></a><span class="co"># Do NOT modify</span></span>
-<span id="cb30-72"><a href="#cb30-72"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb30-73"><a href="#cb30-73"></a><span class="in">```</span></span>
-<span id="cb30-74"><a href="#cb30-74"></a></span>
-<span id="cb30-75"><a href="#cb30-75"></a></span>
-<span id="cb30-76"><a href="#cb30-76"></a><span class="fu">## Introduction</span></span>
-<span id="cb30-77"><a href="#cb30-77"></a></span>
-<span id="cb30-78"><a href="#cb30-78"></a>An attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle.  After inspecting the table of content, the book seems to have 12 stories, one story per chapter.  The analysis is inspired by <span class="co">[</span><span class="ot">Julia Silge</span><span class="co">](https://juliasilge.com/)</span>’s YouTube video <span class="co">[</span><span class="ot">Topic modeling with R and tidy data principles</span><span class="co">](https://www.youtube.com/embed/evTuL-RcRpc)</span></span>
-<span id="cb30-79"><a href="#cb30-79"></a></span>
-<span id="cb30-80"><a href="#cb30-80"></a><span class="fu">## Download Book</span></span>
-<span id="cb30-81"><a href="#cb30-81"></a></span>
-<span id="cb30-84"><a href="#cb30-84"></a><span class="in">```{r}</span></span>
-<span id="cb30-85"><a href="#cb30-85"></a><span class="co"># Download the book, each line of the book is read into a seperate row</span></span>
-<span id="cb30-86"><a href="#cb30-86"></a>sherlock_raw <span class="ot">&lt;-</span> <span class="fu">gutenberg_download</span>(<span class="dv">48320</span>)</span>
-<span id="cb30-87"><a href="#cb30-87"></a><span class="fu">dim</span>(sherlock_raw)</span>
-<span id="cb30-88"><a href="#cb30-88"></a><span class="fu">head</span>(sherlock_raw)</span>
-<span id="cb30-89"><a href="#cb30-89"></a><span class="fu">tail</span>(sherlock_raw)</span>
-<span id="cb30-90"><a href="#cb30-90"></a><span class="in">```</span></span>
-<span id="cb30-91"><a href="#cb30-91"></a></span>
-<span id="cb30-92"><a href="#cb30-92"></a><span class="fu">## Wrangle: Label Stories</span></span>
-<span id="cb30-95"><a href="#cb30-95"></a><span class="in">```{r}</span></span>
-<span id="cb30-96"><a href="#cb30-96"></a>sherlock <span class="ot">&lt;-</span> sherlock_raw <span class="sc">%&gt;%</span> </span>
-<span id="cb30-97"><a href="#cb30-97"></a>  </span>
-<span id="cb30-98"><a href="#cb30-98"></a>  <span class="co"># determine start of each story/chapter</span></span>
-<span id="cb30-99"><a href="#cb30-99"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(text, <span class="st">"^(A SCANDAL IN BOHEMIA|THE RED-HEADED LEAGUE|A CASE OF IDENTITY|THE BOSCOMBE VALLEY MYSTERY|THE FIVE ORANGE PIPS|THE MAN WITH THE TWISTED LIP|THE ADVENTURE OF THE BLUE CARBUNCLE|THE ADVENTURE OF THE SPECKLED BAND|THE ADVENTURE OF THE ENGINEER’S THUMB|THE ADVENTURE OF THE NOBLE BACHELOR|THE ADVENTURE OF THE BERYL CORONET|THE ADVENTURE OF THE COPPER BEECHES)$"</span>), text, <span class="cn">NA</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-100"><a href="#cb30-100"></a>  </span>
-<span id="cb30-101"><a href="#cb30-101"></a>  <span class="co"># determine lines belonging to each story/chapter by</span></span>
-<span id="cb30-102"><a href="#cb30-102"></a>  <span class="co"># filling down the N/A rows of story column</span></span>
-<span id="cb30-103"><a href="#cb30-103"></a>  <span class="fu">fill</span>(story) <span class="sc">%&gt;%</span></span>
-<span id="cb30-104"><a href="#cb30-104"></a>  </span>
-<span id="cb30-105"><a href="#cb30-105"></a>  <span class="co"># remove the part that does not belong to any story/chapter,</span></span>
-<span id="cb30-106"><a href="#cb30-106"></a>  <span class="co"># i.e, the introduction</span></span>
-<span id="cb30-107"><a href="#cb30-107"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(story)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-108"><a href="#cb30-108"></a>  </span>
-<span id="cb30-109"><a href="#cb30-109"></a>  <span class="co"># convert story column to factor</span></span>
-<span id="cb30-110"><a href="#cb30-110"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">factor</span>(story))</span>
-<span id="cb30-111"><a href="#cb30-111"></a><span class="in">```</span></span>
-<span id="cb30-112"><a href="#cb30-112"></a></span>
-<span id="cb30-113"><a href="#cb30-113"></a></span>
-<span id="cb30-114"><a href="#cb30-114"></a><span class="fu">## Wrangle: Put in Tidy Format</span></span>
-<span id="cb30-115"><a href="#cb30-115"></a></span>
-<span id="cb30-116"><a href="#cb30-116"></a>The row of <span class="in">`text`</span> column contains multiple words/tokens.  We want to put each word/token of each <span class="in">`text`</span> row into a separate row.  This makes the dataframe follows the tidy format and hence makes it easy to process.</span>
-<span id="cb30-117"><a href="#cb30-117"></a></span>
-<span id="cb30-120"><a href="#cb30-120"></a><span class="in">```{r}</span></span>
-<span id="cb30-121"><a href="#cb30-121"></a>tidy_sherlock <span class="ot">&lt;-</span> sherlock <span class="sc">%&gt;%</span></span>
-<span id="cb30-122"><a href="#cb30-122"></a>  </span>
-<span id="cb30-123"><a href="#cb30-123"></a>  <span class="co"># number the rows</span></span>
-<span id="cb30-124"><a href="#cb30-124"></a>  <span class="fu">mutate</span>(<span class="at">line =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-125"><a href="#cb30-125"></a>  </span>
-<span id="cb30-126"><a href="#cb30-126"></a>  <span class="co"># break the text column into multiple row where each row contain one token</span></span>
-<span id="cb30-127"><a href="#cb30-127"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-128"><a href="#cb30-128"></a>  </span>
-<span id="cb30-129"><a href="#cb30-129"></a>  <span class="co"># remove the stopwords--the rows where the word column is a stopword</span></span>
-<span id="cb30-130"><a href="#cb30-130"></a>  <span class="fu">anti_join</span>(stop_words) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-131"><a href="#cb30-131"></a>  </span>
-<span id="cb30-132"><a href="#cb30-132"></a>  <span class="co"># remove holmes rows which might affect our topic models</span></span>
-<span id="cb30-133"><a href="#cb30-133"></a>  <span class="fu">filter</span>(word <span class="sc">!=</span> <span class="st">"holmes"</span>)</span>
-<span id="cb30-134"><a href="#cb30-134"></a><span class="in">```</span></span>
-<span id="cb30-135"><a href="#cb30-135"></a></span>
-<span id="cb30-136"><a href="#cb30-136"></a></span>
-<span id="cb30-137"><a href="#cb30-137"></a></span>
-<span id="cb30-138"><a href="#cb30-138"></a><span class="fu">## Explore tf-idf</span></span>
-<span id="cb30-139"><a href="#cb30-139"></a></span>
-<span id="cb30-140"><a href="#cb30-140"></a><span class="ss">-   </span>To see which words are important in each story/chapter, i.e.,the words that appears many times in that story but few or none in the other stories.</span>
-<span id="cb30-141"><a href="#cb30-141"></a><span class="ss">-   </span>tf-idf (term frequency-inverse document frequency) is a great exploratory tool before starting with topic modeling</span>
-<span id="cb30-142"><a href="#cb30-142"></a></span>
-<span id="cb30-145"><a href="#cb30-145"></a><span class="in">```{r}</span></span>
-<span id="cb30-146"><a href="#cb30-146"></a>tidy_sherlock <span class="sc">%&gt;%</span> </span>
-<span id="cb30-147"><a href="#cb30-147"></a>  </span>
-<span id="cb30-148"><a href="#cb30-148"></a>  <span class="co"># count number of occurrence of words in stories</span></span>
-<span id="cb30-149"><a href="#cb30-149"></a>  <span class="fu">count</span>(story, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-150"><a href="#cb30-150"></a>  </span>
-<span id="cb30-151"><a href="#cb30-151"></a>  <span class="co"># compute and add tf, idf, and tf_idf values for words</span></span>
-<span id="cb30-152"><a href="#cb30-152"></a>  <span class="fu">bind_tf_idf</span>(word, story, n) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-153"><a href="#cb30-153"></a>  </span>
-<span id="cb30-154"><a href="#cb30-154"></a>  <span class="co"># group by story</span></span>
-<span id="cb30-155"><a href="#cb30-155"></a>  <span class="fu">group_by</span>(story) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-156"><a href="#cb30-156"></a>  </span>
-<span id="cb30-157"><a href="#cb30-157"></a>  <span class="co"># take top 10 words of each story with highest tf_idf (last column)</span></span>
-<span id="cb30-158"><a href="#cb30-158"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-159"><a href="#cb30-159"></a>  </span>
-<span id="cb30-160"><a href="#cb30-160"></a>  <span class="co"># unpack</span></span>
-<span id="cb30-161"><a href="#cb30-161"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb30-162"><a href="#cb30-162"></a>  </span>
-<span id="cb30-163"><a href="#cb30-163"></a>  <span class="co"># turn words into factors and order them based on their tf_idf values</span></span>
-<span id="cb30-164"><a href="#cb30-164"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This will not affect order the dataframe rows which is can be</span></span>
-<span id="cb30-165"><a href="#cb30-165"></a>  <span class="co">#   done via the arrange function</span></span>
-<span id="cb30-166"><a href="#cb30-166"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: Recording the word column this way is for ggplot to visualize them</span></span>
-<span id="cb30-167"><a href="#cb30-167"></a>  <span class="co">#   as desired from top tf_idf to lowest</span></span>
-<span id="cb30-168"><a href="#cb30-168"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word, tf_idf)) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-169"><a href="#cb30-169"></a>  </span>
-<span id="cb30-170"><a href="#cb30-170"></a>  <span class="co"># plot</span></span>
-<span id="cb30-171"><a href="#cb30-171"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(word, tf_idf, <span class="at">fill =</span> story)) <span class="sc">+</span></span>
-<span id="cb30-172"><a href="#cb30-172"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb30-173"><a href="#cb30-173"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>story, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb30-174"><a href="#cb30-174"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb30-175"><a href="#cb30-175"></a>  <span class="fu">coord_flip</span>()</span>
-<span id="cb30-176"><a href="#cb30-176"></a><span class="in">```</span></span>
-<span id="cb30-177"><a href="#cb30-177"></a></span>
-<span id="cb30-178"><a href="#cb30-178"></a></span>
-<span id="cb30-179"><a href="#cb30-179"></a><span class="fu">## Implement Topic Modeling</span></span>
-<span id="cb30-180"><a href="#cb30-180"></a></span>
-<span id="cb30-181"><a href="#cb30-181"></a>Training the model for the topics</span>
-<span id="cb30-182"><a href="#cb30-182"></a></span>
-<span id="cb30-185"><a href="#cb30-185"></a><span class="in">```{r}</span></span>
-<span id="cb30-186"><a href="#cb30-186"></a><span class="co"># Convert from tidy form to quanteda form (document x term matrix)</span></span>
-<span id="cb30-187"><a href="#cb30-187"></a>sherlock_stm <span class="ot">&lt;-</span> tidy_sherlock <span class="sc">%&gt;%</span> </span>
-<span id="cb30-188"><a href="#cb30-188"></a>  <span class="fu">count</span>(story, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-189"><a href="#cb30-189"></a>  <span class="fu">cast_dfm</span>(story, word, n)</span>
-<span id="cb30-190"><a href="#cb30-190"></a></span>
-<span id="cb30-191"><a href="#cb30-191"></a><span class="co"># Train the model</span></span>
-<span id="cb30-192"><a href="#cb30-192"></a>topic_model <span class="ot">&lt;-</span> <span class="fu">stm</span>(sherlock_stm, <span class="at">K=</span><span class="dv">6</span>, <span class="at">init.type =</span> <span class="st">"Spectral"</span>)</span>
-<span id="cb30-193"><a href="#cb30-193"></a><span class="in">```</span></span>
-<span id="cb30-194"><a href="#cb30-194"></a></span>
-<span id="cb30-195"><a href="#cb30-195"></a></span>
-<span id="cb30-196"><a href="#cb30-196"></a></span>
-<span id="cb30-199"><a href="#cb30-199"></a><span class="in">```{r}</span></span>
-<span id="cb30-200"><a href="#cb30-200"></a><span class="fu">summary</span>(topic_model)</span>
-<span id="cb30-201"><a href="#cb30-201"></a><span class="in">```</span></span>
-<span id="cb30-202"><a href="#cb30-202"></a></span>
-<span id="cb30-203"><a href="#cb30-203"></a><span class="fu">## Contribution of Words in Topics</span></span>
-<span id="cb30-204"><a href="#cb30-204"></a></span>
-<span id="cb30-205"><a href="#cb30-205"></a>Looking at which words contribute the most in each topic.</span>
-<span id="cb30-206"><a href="#cb30-206"></a></span>
-<span id="cb30-209"><a href="#cb30-209"></a><span class="in">```{r}</span></span>
-<span id="cb30-210"><a href="#cb30-210"></a><span class="co"># Extracting betas and putting them in a tidy format</span></span>
-<span id="cb30-211"><a href="#cb30-211"></a>tm_beta <span class="ot">&lt;-</span> <span class="fu">tidy</span>(topic_model)</span>
-<span id="cb30-212"><a href="#cb30-212"></a></span>
-<span id="cb30-213"><a href="#cb30-213"></a><span class="co"># Visualizing the top words contributing to each topic</span></span>
-<span id="cb30-214"><a href="#cb30-214"></a>tm_beta <span class="sc">%&gt;%</span> </span>
-<span id="cb30-215"><a href="#cb30-215"></a>  <span class="fu">group_by</span>(topic) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-216"><a href="#cb30-216"></a>  <span class="co"># top 10 word in each topic with higest beta (last column)</span></span>
-<span id="cb30-217"><a href="#cb30-217"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-218"><a href="#cb30-218"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb30-219"><a href="#cb30-219"></a>  <span class="co"># turn words into factors and order them based on their tf_idf values</span></span>
-<span id="cb30-220"><a href="#cb30-220"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This will not affect order the dataframe rows which is can be</span></span>
-<span id="cb30-221"><a href="#cb30-221"></a>  <span class="co">#   done via the arrange function</span></span>
-<span id="cb30-222"><a href="#cb30-222"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: Recording the word column this way is for ggplot to visualize them</span></span>
-<span id="cb30-223"><a href="#cb30-223"></a>  <span class="co">#   as desired from top tf_idf to lowest</span></span>
-<span id="cb30-224"><a href="#cb30-224"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> <span class="fu">reorder</span>(term, beta)) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-225"><a href="#cb30-225"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(term, beta, <span class="at">fill =</span> topic)) <span class="sc">+</span></span>
-<span id="cb30-226"><a href="#cb30-226"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb30-227"><a href="#cb30-227"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>topic, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb30-228"><a href="#cb30-228"></a>  <span class="fu">coord_flip</span>()</span>
-<span id="cb30-229"><a href="#cb30-229"></a><span class="in">```</span></span>
-<span id="cb30-230"><a href="#cb30-230"></a></span>
-<span id="cb30-231"><a href="#cb30-231"></a></span>
-<span id="cb30-232"><a href="#cb30-232"></a><span class="fu">## Distribution of Topics in Stories</span></span>
-<span id="cb30-233"><a href="#cb30-233"></a></span>
-<span id="cb30-234"><a href="#cb30-234"></a>Looking at how the stories are associated with each topic and how strong each association is.</span>
-<span id="cb30-235"><a href="#cb30-235"></a></span>
-<span id="cb30-238"><a href="#cb30-238"></a><span class="in">```{r}</span></span>
-<span id="cb30-239"><a href="#cb30-239"></a><span class="co"># Extracting gammas and putting them in a tidy format</span></span>
-<span id="cb30-240"><a href="#cb30-240"></a>tm_gamma <span class="ot">&lt;-</span> <span class="fu">tidy</span>(topic_model, <span class="at">matrix =</span> <span class="st">"gamma"</span>,</span>
-<span id="cb30-241"><a href="#cb30-241"></a>                 <span class="co"># use the names of the stories instead of the default numbers</span></span>
-<span id="cb30-242"><a href="#cb30-242"></a>                 <span class="at">document_names =</span> <span class="fu">rownames</span>(sherlock_stm))</span>
-<span id="cb30-243"><a href="#cb30-243"></a></span>
-<span id="cb30-244"><a href="#cb30-244"></a></span>
-<span id="cb30-245"><a href="#cb30-245"></a><span class="co"># Visualizing the number of stories belonging to each topics and the confidence</span></span>
-<span id="cb30-246"><a href="#cb30-246"></a><span class="co">#   of the belonging</span></span>
-<span id="cb30-247"><a href="#cb30-247"></a>tm_gamma <span class="sc">%&gt;%</span> </span>
-<span id="cb30-248"><a href="#cb30-248"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gamma, <span class="at">fill =</span> <span class="fu">as.factor</span>(topic))) <span class="sc">+</span></span>
-<span id="cb30-249"><a href="#cb30-249"></a>  <span class="fu">geom_histogram</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb30-250"><a href="#cb30-250"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>topic, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb30-251"><a href="#cb30-251"></a><span class="in">```</span></span>
-<span id="cb30-252"><a href="#cb30-252"></a></span>
-<span id="cb30-253"><a href="#cb30-253"></a></span>
-<span id="cb30-254"><a href="#cb30-254"></a></span>
-<span id="cb30-257"><a href="#cb30-257"></a><span class="in">```{r}</span></span>
-<span id="cb30-258"><a href="#cb30-258"></a><span class="co"># Visualizing how much each topic appear in each story</span></span>
-<span id="cb30-259"><a href="#cb30-259"></a>tm_gamma <span class="sc">%&gt;%</span> </span>
-<span id="cb30-260"><a href="#cb30-260"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(topic, gamma, <span class="at">fill =</span> document)) <span class="sc">+</span></span>
-<span id="cb30-261"><a href="#cb30-261"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb30-262"><a href="#cb30-262"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>document, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb30-263"><a href="#cb30-263"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>))</span>
-<span id="cb30-264"><a href="#cb30-264"></a><span class="in">```</span></span>
-<span id="cb30-265"><a href="#cb30-265"></a></span>
-<span id="cb30-266"><a href="#cb30-266"></a>The model did an excellent job strongly associating the stories into one or more topics. This perfect association is rare in the world of topic modeling. The reason behind this perfect association here could be due to the small number of documents that we have.</span>
-<span id="cb30-267"><a href="#cb30-267"></a></span>
-<span id="cb30-268"><a href="#cb30-268"></a></span>
-<span id="cb30-269"><a href="#cb30-269"></a><span class="fu">## References</span></span>
-<span id="cb30-270"><a href="#cb30-270"></a></span>
-<span id="cb30-271"><a href="#cb30-271"></a><span class="ss">- </span>Adventures of Sherlock Holmes book by Arthur Conan Doyle on <span class="co">[</span><span class="ot">Project Gutenberg</span><span class="co">](https://www.gutenberg.org/ebooks/48320)</span></span>
-<span id="cb30-272"><a href="#cb30-272"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Regular Expressions 101</span><span class="co">](https://regex101.com/)</span></span>
+<div class="sourceCode" id="cb18" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">---</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="an">title:</span><span class="co"> "Topic Modeling in R"</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="an">eval:</span><span class="co"> TRUE</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="co">---</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="in">```{r Clean workspace}</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="co">#| include: false</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a></span>
+<span id="cb18-9"><a href="#cb18-9"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb18-10"><a href="#cb18-10"></a><span class="in">```</span></span>
+<span id="cb18-11"><a href="#cb18-11"></a></span>
+<span id="cb18-12"><a href="#cb18-12"></a><span class="in">```{r List all used packages}</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a><span class="co">#| include: false</span></span>
+<span id="cb18-14"><a href="#cb18-14"></a></span>
+<span id="cb18-15"><a href="#cb18-15"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>,</span>
+<span id="cb18-16"><a href="#cb18-16"></a>              <span class="st">"gutenbergr"</span>, <span class="co"># download books from Project Gutenberg using book ID</span></span>
+<span id="cb18-17"><a href="#cb18-17"></a>              <span class="st">"tidyverse"</span>,</span>
+<span id="cb18-18"><a href="#cb18-18"></a>              <span class="st">"tidytext"</span>,</span>
+<span id="cb18-19"><a href="#cb18-19"></a>              <span class="st">"ggplot2"</span>,</span>
+<span id="cb18-20"><a href="#cb18-20"></a>              <span class="st">"stm"</span>, <span class="co"># for do topic modeling</span></span>
+<span id="cb18-21"><a href="#cb18-21"></a>              <span class="st">"quanteda"</span>, <span class="co"># great text mining, will be used to structure the input to stm</span></span>
+<span id="cb18-22"><a href="#cb18-22"></a>              <span class="st">"reshape2"</span>)</span>
+<span id="cb18-23"><a href="#cb18-23"></a><span class="in">```</span></span>
+<span id="cb18-24"><a href="#cb18-24"></a></span>
+<span id="cb18-25"><a href="#cb18-25"></a></span>
+<span id="cb18-26"><a href="#cb18-26"></a><span class="in">```{r Install missing packages}</span></span>
+<span id="cb18-27"><a href="#cb18-27"></a><span class="co">#| include: false</span></span>
+<span id="cb18-28"><a href="#cb18-28"></a></span>
+<span id="cb18-29"><a href="#cb18-29"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
+<span id="cb18-30"><a href="#cb18-30"></a><span class="in">```</span></span>
+<span id="cb18-31"><a href="#cb18-31"></a></span>
+<span id="cb18-32"><a href="#cb18-32"></a><span class="in">```{r Load packages}</span></span>
+<span id="cb18-33"><a href="#cb18-33"></a><span class="co">#| include: false</span></span>
+<span id="cb18-34"><a href="#cb18-34"></a></span>
+<span id="cb18-35"><a href="#cb18-35"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-36"><a href="#cb18-36"></a><span class="in">```</span></span>
+<span id="cb18-37"><a href="#cb18-37"></a></span>
+<span id="cb18-38"><a href="#cb18-38"></a></span>
+<span id="cb18-39"><a href="#cb18-39"></a><span class="fu">## Introduction</span></span>
+<span id="cb18-40"><a href="#cb18-40"></a></span>
+<span id="cb18-41"><a href="#cb18-41"></a>An attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle.  After inspecting the table of content, the book seems to have 12 stories, one story per chapter.  The analysis is inspired by <span class="co">[</span><span class="ot">Julia Silge</span><span class="co">](https://juliasilge.com/)</span>’s YouTube video <span class="co">[</span><span class="ot">Topic modeling with R and tidy data principles</span><span class="co">](https://www.youtube.com/embed/evTuL-RcRpc)</span></span>
+<span id="cb18-42"><a href="#cb18-42"></a></span>
+<span id="cb18-43"><a href="#cb18-43"></a><span class="fu">## Download Book</span></span>
+<span id="cb18-44"><a href="#cb18-44"></a></span>
+<span id="cb18-47"><a href="#cb18-47"></a><span class="in">```{r}</span></span>
+<span id="cb18-48"><a href="#cb18-48"></a><span class="co"># Download the book, each line of the book is read into a separate row</span></span>
+<span id="cb18-49"><a href="#cb18-49"></a>sherlock_raw <span class="ot">&lt;-</span> <span class="fu">gutenberg_download</span>(<span class="dv">48320</span>)</span>
+<span id="cb18-50"><a href="#cb18-50"></a><span class="fu">dim</span>(sherlock_raw)</span>
+<span id="cb18-51"><a href="#cb18-51"></a><span class="fu">head</span>(sherlock_raw)</span>
+<span id="cb18-52"><a href="#cb18-52"></a><span class="fu">tail</span>(sherlock_raw)</span>
+<span id="cb18-53"><a href="#cb18-53"></a><span class="in">```</span></span>
+<span id="cb18-54"><a href="#cb18-54"></a></span>
+<span id="cb18-55"><a href="#cb18-55"></a><span class="fu">## Wrangle: Label Stories</span></span>
+<span id="cb18-58"><a href="#cb18-58"></a><span class="in">```{r}</span></span>
+<span id="cb18-59"><a href="#cb18-59"></a>sherlock <span class="ot">&lt;-</span> sherlock_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb18-60"><a href="#cb18-60"></a>  </span>
+<span id="cb18-61"><a href="#cb18-61"></a>  <span class="co"># determine start of each story/chapter</span></span>
+<span id="cb18-62"><a href="#cb18-62"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(text, <span class="st">"^(A SCANDAL IN BOHEMIA|THE RED-HEADED LEAGUE|A CASE OF IDENTITY|THE BOSCOMBE VALLEY MYSTERY|THE FIVE ORANGE PIPS|THE MAN WITH THE TWISTED LIP|THE ADVENTURE OF THE BLUE CARBUNCLE|THE ADVENTURE OF THE SPECKLED BAND|THE ADVENTURE OF THE ENGINEER’S THUMB|THE ADVENTURE OF THE NOBLE BACHELOR|THE ADVENTURE OF THE BERYL CORONET|THE ADVENTURE OF THE COPPER BEECHES)$"</span>), text, <span class="cn">NA</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-63"><a href="#cb18-63"></a>  </span>
+<span id="cb18-64"><a href="#cb18-64"></a>  <span class="co"># determine lines belonging to each story/chapter by</span></span>
+<span id="cb18-65"><a href="#cb18-65"></a>  <span class="co"># filling down the N/A rows of story column</span></span>
+<span id="cb18-66"><a href="#cb18-66"></a>  <span class="fu">fill</span>(story) <span class="sc">%&gt;%</span></span>
+<span id="cb18-67"><a href="#cb18-67"></a>  </span>
+<span id="cb18-68"><a href="#cb18-68"></a>  <span class="co"># remove the part that does not belong to any story/chapter,</span></span>
+<span id="cb18-69"><a href="#cb18-69"></a>  <span class="co"># i.e, the introduction</span></span>
+<span id="cb18-70"><a href="#cb18-70"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(story)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-71"><a href="#cb18-71"></a>  </span>
+<span id="cb18-72"><a href="#cb18-72"></a>  <span class="co"># convert story column to factor</span></span>
+<span id="cb18-73"><a href="#cb18-73"></a>  <span class="fu">mutate</span>(<span class="at">story =</span> <span class="fu">factor</span>(story))</span>
+<span id="cb18-74"><a href="#cb18-74"></a><span class="in">```</span></span>
+<span id="cb18-75"><a href="#cb18-75"></a></span>
+<span id="cb18-76"><a href="#cb18-76"></a></span>
+<span id="cb18-77"><a href="#cb18-77"></a><span class="fu">## Wrangle: Put in Tidy Format</span></span>
+<span id="cb18-78"><a href="#cb18-78"></a></span>
+<span id="cb18-79"><a href="#cb18-79"></a>The row of <span class="in">`text`</span> column contains multiple words/tokens.  We want to put each word/token of each <span class="in">`text`</span> row into a separate row.  This makes the dataframe follows the tidy format and hence makes it easy to process.</span>
+<span id="cb18-80"><a href="#cb18-80"></a></span>
+<span id="cb18-83"><a href="#cb18-83"></a><span class="in">```{r}</span></span>
+<span id="cb18-84"><a href="#cb18-84"></a>tidy_sherlock <span class="ot">&lt;-</span> sherlock <span class="sc">%&gt;%</span></span>
+<span id="cb18-85"><a href="#cb18-85"></a>  </span>
+<span id="cb18-86"><a href="#cb18-86"></a>  <span class="co"># number the rows</span></span>
+<span id="cb18-87"><a href="#cb18-87"></a>  <span class="fu">mutate</span>(<span class="at">line =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-88"><a href="#cb18-88"></a>  </span>
+<span id="cb18-89"><a href="#cb18-89"></a>  <span class="co"># break the text column into multiple row where each row contain one token</span></span>
+<span id="cb18-90"><a href="#cb18-90"></a>  <span class="fu">unnest_tokens</span>(word, text) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-91"><a href="#cb18-91"></a>  </span>
+<span id="cb18-92"><a href="#cb18-92"></a>  <span class="co"># remove the stopwords--the rows where the word column is a stopword</span></span>
+<span id="cb18-93"><a href="#cb18-93"></a>  <span class="fu">anti_join</span>(stop_words) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-94"><a href="#cb18-94"></a>  </span>
+<span id="cb18-95"><a href="#cb18-95"></a>  <span class="co"># remove holmes rows which might affect our topic models</span></span>
+<span id="cb18-96"><a href="#cb18-96"></a>  <span class="fu">filter</span>(word <span class="sc">!=</span> <span class="st">"holmes"</span>)</span>
+<span id="cb18-97"><a href="#cb18-97"></a><span class="in">```</span></span>
+<span id="cb18-98"><a href="#cb18-98"></a></span>
+<span id="cb18-99"><a href="#cb18-99"></a></span>
+<span id="cb18-100"><a href="#cb18-100"></a></span>
+<span id="cb18-101"><a href="#cb18-101"></a><span class="fu">## Explore tf-idf</span></span>
+<span id="cb18-102"><a href="#cb18-102"></a></span>
+<span id="cb18-103"><a href="#cb18-103"></a><span class="ss">-   </span>To see which words are important in each story/chapter, i.e.,the words that appears many times in that story but few or none in the other stories.</span>
+<span id="cb18-104"><a href="#cb18-104"></a><span class="ss">-   </span>tf-idf (term frequency-inverse document frequency) is a great exploratory tool before starting with topic modeling</span>
+<span id="cb18-105"><a href="#cb18-105"></a></span>
+<span id="cb18-108"><a href="#cb18-108"></a><span class="in">```{r}</span></span>
+<span id="cb18-109"><a href="#cb18-109"></a>tidy_sherlock <span class="sc">%&gt;%</span> </span>
+<span id="cb18-110"><a href="#cb18-110"></a>  </span>
+<span id="cb18-111"><a href="#cb18-111"></a>  <span class="co"># count number of occurrence of words in stories</span></span>
+<span id="cb18-112"><a href="#cb18-112"></a>  <span class="fu">count</span>(story, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-113"><a href="#cb18-113"></a>  </span>
+<span id="cb18-114"><a href="#cb18-114"></a>  <span class="co"># compute and add tf, idf, and tf_idf values for words</span></span>
+<span id="cb18-115"><a href="#cb18-115"></a>  <span class="fu">bind_tf_idf</span>(word, story, n) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-116"><a href="#cb18-116"></a>  </span>
+<span id="cb18-117"><a href="#cb18-117"></a>  <span class="co"># group by story</span></span>
+<span id="cb18-118"><a href="#cb18-118"></a>  <span class="fu">group_by</span>(story) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-119"><a href="#cb18-119"></a>  </span>
+<span id="cb18-120"><a href="#cb18-120"></a>  <span class="co"># take top 10 words of each story with highest tf_idf (last column)</span></span>
+<span id="cb18-121"><a href="#cb18-121"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-122"><a href="#cb18-122"></a>  </span>
+<span id="cb18-123"><a href="#cb18-123"></a>  <span class="co"># unpack</span></span>
+<span id="cb18-124"><a href="#cb18-124"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-125"><a href="#cb18-125"></a>  </span>
+<span id="cb18-126"><a href="#cb18-126"></a>  <span class="co"># turn words into factors and order them based on their tf_idf values</span></span>
+<span id="cb18-127"><a href="#cb18-127"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This will not affect order the dataframe rows which is can be</span></span>
+<span id="cb18-128"><a href="#cb18-128"></a>  <span class="co">#   done via the arrange function</span></span>
+<span id="cb18-129"><a href="#cb18-129"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: Recording the word column this way is for ggplot to visualize them</span></span>
+<span id="cb18-130"><a href="#cb18-130"></a>  <span class="co">#   as desired from top tf_idf to lowest</span></span>
+<span id="cb18-131"><a href="#cb18-131"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">reorder</span>(word, tf_idf)) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-132"><a href="#cb18-132"></a>  </span>
+<span id="cb18-133"><a href="#cb18-133"></a>  <span class="co"># plot</span></span>
+<span id="cb18-134"><a href="#cb18-134"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(word, tf_idf, <span class="at">fill =</span> story)) <span class="sc">+</span></span>
+<span id="cb18-135"><a href="#cb18-135"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-136"><a href="#cb18-136"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>story, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb18-137"><a href="#cb18-137"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb18-138"><a href="#cb18-138"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb18-139"><a href="#cb18-139"></a><span class="in">```</span></span>
+<span id="cb18-140"><a href="#cb18-140"></a></span>
+<span id="cb18-141"><a href="#cb18-141"></a></span>
+<span id="cb18-142"><a href="#cb18-142"></a><span class="fu">## Implement Topic Modeling</span></span>
+<span id="cb18-143"><a href="#cb18-143"></a></span>
+<span id="cb18-144"><a href="#cb18-144"></a>Training the model for the topics</span>
+<span id="cb18-145"><a href="#cb18-145"></a></span>
+<span id="cb18-148"><a href="#cb18-148"></a><span class="in">```{r}</span></span>
+<span id="cb18-149"><a href="#cb18-149"></a><span class="co"># Convert from tidy form to quanteda form (document x term matrix)</span></span>
+<span id="cb18-150"><a href="#cb18-150"></a>sherlock_stm <span class="ot">&lt;-</span> tidy_sherlock <span class="sc">%&gt;%</span> </span>
+<span id="cb18-151"><a href="#cb18-151"></a>  <span class="fu">count</span>(story, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-152"><a href="#cb18-152"></a>  <span class="fu">cast_dfm</span>(story, word, n)</span>
+<span id="cb18-153"><a href="#cb18-153"></a></span>
+<span id="cb18-154"><a href="#cb18-154"></a><span class="co"># Train the model</span></span>
+<span id="cb18-155"><a href="#cb18-155"></a>topic_model <span class="ot">&lt;-</span> <span class="fu">stm</span>(sherlock_stm, <span class="at">K=</span><span class="dv">6</span>, <span class="at">init.type =</span> <span class="st">"Spectral"</span>)</span>
+<span id="cb18-156"><a href="#cb18-156"></a><span class="in">```</span></span>
+<span id="cb18-157"><a href="#cb18-157"></a></span>
+<span id="cb18-158"><a href="#cb18-158"></a></span>
+<span id="cb18-159"><a href="#cb18-159"></a></span>
+<span id="cb18-162"><a href="#cb18-162"></a><span class="in">```{r}</span></span>
+<span id="cb18-163"><a href="#cb18-163"></a><span class="fu">summary</span>(topic_model)</span>
+<span id="cb18-164"><a href="#cb18-164"></a><span class="in">```</span></span>
+<span id="cb18-165"><a href="#cb18-165"></a></span>
+<span id="cb18-166"><a href="#cb18-166"></a><span class="fu">## Contribution of Words in Topics</span></span>
+<span id="cb18-167"><a href="#cb18-167"></a></span>
+<span id="cb18-168"><a href="#cb18-168"></a>Looking at which words contribute the most in each topic.</span>
+<span id="cb18-169"><a href="#cb18-169"></a></span>
+<span id="cb18-172"><a href="#cb18-172"></a><span class="in">```{r}</span></span>
+<span id="cb18-173"><a href="#cb18-173"></a><span class="co"># Extracting betas and putting them in a tidy format</span></span>
+<span id="cb18-174"><a href="#cb18-174"></a>tm_beta <span class="ot">&lt;-</span> <span class="fu">tidy</span>(topic_model)</span>
+<span id="cb18-175"><a href="#cb18-175"></a></span>
+<span id="cb18-176"><a href="#cb18-176"></a><span class="co"># Visualizing the top words contributing to each topic</span></span>
+<span id="cb18-177"><a href="#cb18-177"></a>tm_beta <span class="sc">%&gt;%</span> </span>
+<span id="cb18-178"><a href="#cb18-178"></a>  <span class="fu">group_by</span>(topic) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-179"><a href="#cb18-179"></a>  <span class="co"># top 10 word in each topic with higest beta (last column)</span></span>
+<span id="cb18-180"><a href="#cb18-180"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-181"><a href="#cb18-181"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-182"><a href="#cb18-182"></a>  <span class="co"># turn words into factors and order them based on their tf_idf values</span></span>
+<span id="cb18-183"><a href="#cb18-183"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This will not affect order the dataframe rows which is can be</span></span>
+<span id="cb18-184"><a href="#cb18-184"></a>  <span class="co">#   done via the arrange function</span></span>
+<span id="cb18-185"><a href="#cb18-185"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: Recording the word column this way is for ggplot to visualize them</span></span>
+<span id="cb18-186"><a href="#cb18-186"></a>  <span class="co">#   as desired from top tf_idf to lowest</span></span>
+<span id="cb18-187"><a href="#cb18-187"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> <span class="fu">reorder</span>(term, beta)) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-188"><a href="#cb18-188"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(term, beta, <span class="at">fill =</span> topic)) <span class="sc">+</span></span>
+<span id="cb18-189"><a href="#cb18-189"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-190"><a href="#cb18-190"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>topic, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb18-191"><a href="#cb18-191"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb18-192"><a href="#cb18-192"></a><span class="in">```</span></span>
+<span id="cb18-193"><a href="#cb18-193"></a></span>
+<span id="cb18-194"><a href="#cb18-194"></a></span>
+<span id="cb18-195"><a href="#cb18-195"></a><span class="fu">## Distribution of Topics in Stories</span></span>
+<span id="cb18-196"><a href="#cb18-196"></a></span>
+<span id="cb18-197"><a href="#cb18-197"></a>Looking at how the stories are associated with each topic and how strong each association is.</span>
+<span id="cb18-198"><a href="#cb18-198"></a></span>
+<span id="cb18-201"><a href="#cb18-201"></a><span class="in">```{r}</span></span>
+<span id="cb18-202"><a href="#cb18-202"></a><span class="co"># Extracting gammas and putting them in a tidy format</span></span>
+<span id="cb18-203"><a href="#cb18-203"></a>tm_gamma <span class="ot">&lt;-</span> <span class="fu">tidy</span>(topic_model, <span class="at">matrix =</span> <span class="st">"gamma"</span>,</span>
+<span id="cb18-204"><a href="#cb18-204"></a>                 <span class="co"># use the names of the stories instead of the default numbers</span></span>
+<span id="cb18-205"><a href="#cb18-205"></a>                 <span class="at">document_names =</span> <span class="fu">rownames</span>(sherlock_stm))</span>
+<span id="cb18-206"><a href="#cb18-206"></a></span>
+<span id="cb18-207"><a href="#cb18-207"></a></span>
+<span id="cb18-208"><a href="#cb18-208"></a><span class="co"># Visualizing the number of stories belonging to each topics and the confidence</span></span>
+<span id="cb18-209"><a href="#cb18-209"></a><span class="co">#   of the belonging</span></span>
+<span id="cb18-210"><a href="#cb18-210"></a>tm_gamma <span class="sc">%&gt;%</span> </span>
+<span id="cb18-211"><a href="#cb18-211"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(gamma, <span class="at">fill =</span> <span class="fu">as.factor</span>(topic))) <span class="sc">+</span></span>
+<span id="cb18-212"><a href="#cb18-212"></a>  <span class="fu">geom_histogram</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-213"><a href="#cb18-213"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>topic, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb18-214"><a href="#cb18-214"></a><span class="in">```</span></span>
+<span id="cb18-215"><a href="#cb18-215"></a></span>
+<span id="cb18-216"><a href="#cb18-216"></a></span>
+<span id="cb18-217"><a href="#cb18-217"></a></span>
+<span id="cb18-220"><a href="#cb18-220"></a><span class="in">```{r}</span></span>
+<span id="cb18-221"><a href="#cb18-221"></a><span class="co"># Visualizing how much each topic appear in each story</span></span>
+<span id="cb18-222"><a href="#cb18-222"></a>tm_gamma <span class="sc">%&gt;%</span> </span>
+<span id="cb18-223"><a href="#cb18-223"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(topic, gamma, <span class="at">fill =</span> document)) <span class="sc">+</span></span>
+<span id="cb18-224"><a href="#cb18-224"></a>  <span class="fu">geom_col</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-225"><a href="#cb18-225"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>document, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb18-226"><a href="#cb18-226"></a>  <span class="fu">theme</span>(<span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>))</span>
+<span id="cb18-227"><a href="#cb18-227"></a><span class="in">```</span></span>
+<span id="cb18-228"><a href="#cb18-228"></a></span>
+<span id="cb18-229"><a href="#cb18-229"></a>The model did an excellent job strongly associating the stories into one or more topics. This perfect association is rare in the world of topic modeling. The reason behind this perfect association here could be due to the small number of documents that we have.</span>
+<span id="cb18-230"><a href="#cb18-230"></a></span>
+<span id="cb18-231"><a href="#cb18-231"></a></span>
+<span id="cb18-232"><a href="#cb18-232"></a><span class="fu">## References</span></span>
+<span id="cb18-233"><a href="#cb18-233"></a></span>
+<span id="cb18-234"><a href="#cb18-234"></a><span class="ss">- </span>Adventures of Sherlock Holmes book by Arthur Conan Doyle on <span class="co">[</span><span class="ot">Project Gutenberg</span><span class="co">](https://www.gutenberg.org/ebooks/48320)</span></span>
+<span id="cb18-235"><a href="#cb18-235"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Regular Expressions 101</span><span class="co">](https://regex101.com/)</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -1650,8 +1468,6 @@ Topic 6 Top Words:
     </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
