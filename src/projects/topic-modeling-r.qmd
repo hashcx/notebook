@@ -17,7 +17,8 @@ packages <- c("gutenbergr", # download books from Project Gutenberg using book I
               "tidytext",
               "ggplot2",
               "stm", # for do topic modeling
-              "quanteda") # great text mining, will be used to structure the input to stm
+              "quanteda", # great text mining, will be used to structure the input to stm
+              "reshape2")
 ```
 
 
