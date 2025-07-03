@@ -43,45 +43,45 @@
   {
     "objectID": "src/notes/eda.html",
     "href": "src/notes/eda.html",
-    "title": "EDA",
+    "title": "Exploartory Data Analysis",
     "section": "",
-    "text": "For each dataset, try to obtain the following summaries.\n\nManual Summaries\nusing the dataset codebook, if available, or via some search and/or asking, answer the following questions:\n\nWhat is its source?\nHow it was obtained?\nWho collected it?\nWhen it was collected?\nWhat does each column/variable represent?\nWhat does each row/observation represent?\n\n\n\nComputational Summaries\nThrough computations, ie, code, answer the following questions:\n\nHow many columns/variables?\nHow many rows/observations?\nWhat is the data type of each column/variable?\nWhat are the top few rows/observations?\nWhat are the bottom few rows/observations?\nHow many missing values in each column/variable?\nHow many rows/observations contain 1+ missing values?\nWhat is the summary statistics of each column/variable?\n\nIn a blog post (html), Michael Clark demos eight R packages that can help explore data quickly and effectively. The demoed packages are:\n\narsenal\nDataExplorer\ndataReporter (dataMaid previously)\ngtsummary\njanitor\nSmartEDA\nsummarytools\nvisdat.",
+    "text": "For each dataset, try to obtain the following Exploartory Data Analysis (EDA) summaries.\n\nManual Summaries\nusing the dataset codebook, if available, or via some search and/or asking, answer the following questions:\n\nWhat is its source?\nHow it was obtained?\nWho collected it?\nWhen it was collected?\nWhat does each column/variable represent?\nWhat does each row/observation represent?\n\n\n\nComputational Summaries\nThrough computations, ie, code, answer the following questions:\n\nHow many columns/variables?\nHow many rows/observations?\nWhat is the data type of each column/variable?\nWhat are the top few rows/observations?\nWhat are the bottom few rows/observations?\nHow many missing values in each column/variable?\nHow many rows/observations contain 1+ missing values?\nWhat is the summary statistics of each column/variable?\n\nIn a blog post (html), Michael Clark demos eight R packages that can help explore data quickly and effectively. The demoed packages are:\n\narsenal\nDataExplorer\ndataReporter (dataMaid previously)\ngtsummary\njanitor\nSmartEDA\nsummarytools\nvisdat.",
     "crumbs": [
       "Notes",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>EDA</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Exploartory Data Analysis</span>"
     ]
   },
   {
     "objectID": "src/notes/code-files.html",
     "href": "src/notes/code-files.html",
-    "title": "R/Rmd/qmd Files",
+    "title": "Code Files",
     "section": "",
     "text": "1. Create Project\nIt is advisable to perform the following step at the beginning of each code file. The example code chunks are for the R programming language.\nWhen wanting to write R code, create a project then add R/Rmd/qmd files into it instead of only creating a single file. This will allow saving the workspace settings.",
     "crumbs": [
       "Notes",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Code Files</span>"
     ]
   },
   {
     "objectID": "src/notes/code-files.html#clean-workspace",
     "href": "src/notes/code-files.html#clean-workspace",
-    "title": "R/Rmd/qmd Files",
+    "title": "Code Files",
     "section": "2. Clean Workspace",
     "text": "2. Clean Workspace\nAlways start by clearing the workspace to ensure objects created in other files are not used in the current file by using the code shown blew. This can be done manually in RStudio: Environment window -&gt; Broom icon.\n#| include: false\n\nrm(list = ls())",
     "crumbs": [
       "Notes",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Code Files</span>"
     ]
   },
   {
     "objectID": "src/notes/code-files.html#insall-load-packages-automatically",
     "href": "src/notes/code-files.html#insall-load-packages-automatically",
-    "title": "R/Rmd/qmd Files",
+    "title": "Code Files",
     "section": "3. Insall & Load Packages Automatically",
     "text": "3. Insall & Load Packages Automatically\nAlthough people may not like installing packages on their machines automatically for different reasons, I prefer this route for myself because I use multiple machines and installing packages one at a time (when the code breaks multiple times, one for each missing package) is annoying.\nStep 1: Store all needed packages to a variables by including the following code chunk and changing the given list of sample packages.\n#| include: false\n\npackages &lt;- c(\"here\", \"tidyverse\", \"janitor\")\nStep 2: Install missing packages automatically, if any, by including the following code chunk as it is.\n#| include: false\n\ninstall.packages(setdiff(packages, rownames(installed.packages())))\nStep 3: Load packages in one go automatically by including the following code chunk as it is.\n#| include: false\n\nlapply(packages, require, character.only = TRUE)\n\n\n\n\n\n\nExecution Options\n\n\n\nThe above R code chunk includes the execution option #| include: false which will prevent any output from being included in the knitted/rendered document. For the complete list of execution options that can be used in Quarto files see this page (html).",
     "crumbs": [
       "Notes",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R/Rmd/qmd Files</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Code Files</span>"
     ]
   },
   {
@@ -243,7 +243,7 @@
     "href": "src/notes/rstudio.html",
     "title": "RStudio",
     "section": "",
-    "text": "Selected Keyboard Shortcuts\nBelow is a set of helpful keyboard shortcut.",
+    "text": "Selected Keyboard Shortcuts\nBelow is a set of helpful keyboard shortcuts:",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>RStudio</span>"
