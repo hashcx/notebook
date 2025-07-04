@@ -90,8 +90,8 @@ format:
     link-external-newwindow: true
     css: sty/styles.css
     code-copy: true
-    code-link: true
-    code-line-numbers: true
+    code-link: true # can't be combined with code-line-numbers or and/or code-annotations
+    code-line-numbers: false
     code-block-bg: true
     code-block-border-left: "#1482FA"
     code-tools: true
