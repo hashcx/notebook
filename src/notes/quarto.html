@@ -484,7 +484,7 @@ cookieconsent.run({
 </li>
 </ol></section><section id="import-content" class="level2"><h2 class="anchored" data-anchor-id="import-content">Import Content</h2>
 <p>To import the content of a Quarto document into another, use the following shortcodes:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">&lt;!-- {{&lt; include file.qmd &gt;}} --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- {{&lt; include file.qmd &gt;}} --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="publish-options-on-github-pages" class="level2"><h2 class="anchored" data-anchor-id="publish-options-on-github-pages">Publish Options on GitHub Pages</h2>
 <p>A summary of the publish options of a Quarto website on GitHub pages is <a href="https://docs.google.com/spreadsheets/d/1efz-KlHgNicp8T8Kzt5ELlX6i0pvwFerosTHLgGwW_Y/preview">here (GSheet)</a></p>
 </section><section id="references" class="level2"><h2 class="anchored" data-anchor-id="references">References</h2>
@@ -973,63 +973,63 @@ cookieconsent.run({
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "Quarto"</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">---</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="in">```{r Clean workspace}</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#| include: false</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="in">```</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="in">```{r List all used packages}</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="co">#| include: false</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="in">```</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a></span>
-<span id="cb2-17"><a href="#cb2-17"></a></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="in">```{r Install missing packages}</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="co">#| include: false</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="in">```</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="in">```{r Load packages}</span></span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="co">#| include: false</span></span>
-<span id="cb2-26"><a href="#cb2-26"></a></span>
-<span id="cb2-27"><a href="#cb2-27"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-28"><a href="#cb2-28"></a><span class="in">```</span></span>
-<span id="cb2-29"><a href="#cb2-29"></a></span>
-<span id="cb2-30"><a href="#cb2-30"></a></span>
-<span id="cb2-31"><a href="#cb2-31"></a><span class="fu">## Render &amp; Review</span></span>
-<span id="cb2-32"><a href="#cb2-32"></a></span>
-<span id="cb2-33"><a href="#cb2-33"></a><span class="ss">1.  </span>VSCode/RStudio -<span class="sc">\&gt;</span> *Render* button</span>
-<span id="cb2-34"><a href="#cb2-34"></a><span class="ss">2.  </span>Terminal -<span class="sc">\&gt;</span> <span class="in">`quarto preview`</span></span>
-<span id="cb2-35"><a href="#cb2-35"></a><span class="ss">3.  </span>Terminal -<span class="sc">\&gt;</span> <span class="in">`quarto preview help`</span></span>
-<span id="cb2-36"><a href="#cb2-36"></a></span>
-<span id="cb2-37"><a href="#cb2-37"></a><span class="fu">## Render w/o Review</span></span>
-<span id="cb2-38"><a href="#cb2-38"></a></span>
-<span id="cb2-39"><a href="#cb2-39"></a><span class="ss">1.  </span>Terminal -<span class="sc">\&gt;</span> <span class="in">`quarto render`</span></span>
-<span id="cb2-40"><a href="#cb2-40"></a><span class="ss">2.  </span>Terminal -<span class="sc">\&gt;</span> <span class="in">`quarto render help`</span></span>
-<span id="cb2-41"><a href="#cb2-41"></a></span>
-<span id="cb2-42"><a href="#cb2-42"></a><span class="fu">## Import Content</span></span>
-<span id="cb2-43"><a href="#cb2-43"></a></span>
-<span id="cb2-44"><a href="#cb2-44"></a>To import the content of a Quarto document into another, use the following shortcodes:</span>
-<span id="cb2-45"><a href="#cb2-45"></a></span>
-<span id="cb2-46"><a href="#cb2-46"></a><span class="in">``` markdown</span></span>
-<span id="cb2-47"><a href="#cb2-47"></a><span class="co">&lt;!-- {{&lt; include file.qmd &gt;}} --&gt;</span></span>
-<span id="cb2-48"><a href="#cb2-48"></a><span class="in">```</span></span>
-<span id="cb2-49"><a href="#cb2-49"></a></span>
-<span id="cb2-50"><a href="#cb2-50"></a><span class="fu">## Publish Options on GitHub Pages</span></span>
-<span id="cb2-51"><a href="#cb2-51"></a></span>
-<span id="cb2-52"><a href="#cb2-52"></a>A summary of the publish options of a Quarto website on GitHub pages is <span class="co">[</span><span class="ot">here (GSheet)</span><span class="co">](https://docs.google.com/spreadsheets/d/1efz-KlHgNicp8T8Kzt5ELlX6i0pvwFerosTHLgGwW_Y/preview)</span></span>
-<span id="cb2-53"><a href="#cb2-53"></a></span>
-<span id="cb2-54"><a href="#cb2-54"></a></span>
-<span id="cb2-55"><a href="#cb2-55"></a><span class="fu">## References</span></span>
-<span id="cb2-56"><a href="#cb2-56"></a></span>
-<span id="cb2-57"><a href="#cb2-57"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Quarto Reference</span><span class="co">](https://quarto.org/docs/reference/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Quarto"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Clean workspace}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r List all used packages}</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Install missing packages}</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Load packages}</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Render &amp; Review</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>VSCode/RStudio -<span class="sc">\&gt;</span> *Render* button</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Terminal -<span class="sc">\&gt;</span> <span class="in">`quarto preview`</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Terminal -<span class="sc">\&gt;</span> <span class="in">`quarto preview help`</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Render w/o Review</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Terminal -<span class="sc">\&gt;</span> <span class="in">`quarto render`</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Terminal -<span class="sc">\&gt;</span> <span class="in">`quarto render help`</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Import Content</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>To import the content of a Quarto document into another, use the following shortcodes:</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- {{&lt; include file.qmd &gt;}} --&gt;</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Publish Options on GitHub Pages</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>A summary of the publish options of a Quarto website on GitHub pages is <span class="co">[</span><span class="ot">here (GSheet)</span><span class="co">](https://docs.google.com/spreadsheets/d/1efz-KlHgNicp8T8Kzt5ELlX6i0pvwFerosTHLgGwW_Y/preview)</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Quarto Reference</span><span class="co">](https://quarto.org/docs/reference/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">

@@ -969,56 +969,56 @@ cookieconsent.run({
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "Workflow: Basics"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="in">```{r Clean workspace}</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#| include: false</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="in">```</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="in">```{r List all used packages}</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co">#| include: false</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>)</span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="in">```</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="in">```{r Install missing packages}</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co">#| include: false</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="in">```</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="in">```{r Load packages}</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="co">#| include: false</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a></span>
-<span id="cb1-28"><a href="#cb1-28"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="in">```</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a></span>
-<span id="cb1-31"><a href="#cb1-31"></a></span>
-<span id="cb1-32"><a href="#cb1-32"></a><span class="fu">## Introduction</span></span>
-<span id="cb1-33"><a href="#cb1-33"></a></span>
-<span id="cb1-34"><a href="#cb1-34"></a>This page covers basic concepts when working with R.  I took note for those that were new to me or found useful to remind myself with.</span>
-<span id="cb1-35"><a href="#cb1-35"></a></span>
-<span id="cb1-36"><a href="#cb1-36"></a></span>
-<span id="cb1-37"><a href="#cb1-37"></a><span class="fu">## Comments</span></span>
-<span id="cb1-38"><a href="#cb1-38"></a></span>
-<span id="cb1-39"><a href="#cb1-39"></a>Use comments to explain the *why* of your code, eg, you changed the default value of a parameter of a function from say <span class="in">`.2`</span> to <span class="in">`.9`</span>, why?</span>
-<span id="cb1-40"><a href="#cb1-40"></a></span>
-<span id="cb1-41"><a href="#cb1-41"></a></span>
-<span id="cb1-42"><a href="#cb1-42"></a><span class="fu">## Nameing Objects Rules</span></span>
-<span id="cb1-43"><a href="#cb1-43"></a></span>
-<span id="cb1-44"><a href="#cb1-44"></a><span class="ss">- </span>Allowed characters when naming objects</span>
-<span id="cb1-45"><a href="#cb1-45"></a><span class="ss">  - </span>letters</span>
-<span id="cb1-46"><a href="#cb1-46"></a><span class="ss">  - </span>numbers</span>
-<span id="cb1-47"><a href="#cb1-47"></a><span class="ss">  - </span><span class="in">`_`</span></span>
-<span id="cb1-48"><a href="#cb1-48"></a><span class="ss">  - </span><span class="in">`.`</span></span>
-<span id="cb1-49"><a href="#cb1-49"></a><span class="ss">- </span>All names must start with a letter</span>
-<span id="cb1-50"><a href="#cb1-50"></a><span class="ss">- </span>R is case-sensitive, ie, <span class="in">`var`</span>, <span class="in">`Var`</span>, and <span class="in">`VAR`</span> are different names</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Workflow: Basics"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Clean workspace}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r List all used packages}</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Install missing packages}</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Load packages}</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>This page covers basic concepts when working with R.  I took note for those that were new to me or found useful to remind myself with.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comments</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Use comments to explain the *why* of your code, eg, you changed the default value of a parameter of a function from say <span class="in">`.2`</span> to <span class="in">`.9`</span>, why?</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nameing Objects Rules</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Allowed characters when naming objects</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>letters</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>numbers</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`_`</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`.`</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>All names must start with a letter</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>R is case-sensitive, ie, <span class="in">`var`</span>, <span class="in">`Var`</span>, and <span class="in">`VAR`</span> are different names</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">

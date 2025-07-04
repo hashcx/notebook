@@ -509,15 +509,15 @@ cookieconsent.run({
 <span class="header-section-number">8.2.1</span> Load Dataset</h3>
 <p>The <code>penguins</code> dataset from the <code>palmerpenguins</code> package will be used for plotting. Typically, the package is loaded using the <code>library</code> function as shown in the code chunk below. However, a better approach is the one outlined in <span class="quarto-unresolved-ref">?sec-packages</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Explore the dataset</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">help</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Explore the dataset differently</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 344
 Columns: 8
@@ -535,13 +535,13 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span class="header-section-number">8.2.2</span> Load Plotting Package</h3>
 <p>The <code>ggplot2</code> package will be used for plotting. The package is typically loaded using the <code>library</code> function as shown in the code chunk below. However, a better approach is the one outlined in <span class="quarto-unresolved-ref">?sec-packages</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="create-ggplot-object" class="level3" data-number="8.2.3"><h3 data-number="8.2.3" class="anchored" data-anchor-id="create-ggplot-object">
 <span class="header-section-number">8.2.3</span> Create <code>ggplot</code> object</h3>
-<p>Create an empty canvas by instantiating a <code>ggplot</code> object using the <code>ggplot()</code> function.</p>
+<p>Create an empty canvas by instantiating a <code>ggplot</code> object using the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
@@ -553,7 +553,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span class="header-section-number">8.2.4</span> Link Dataset</h3>
 <p>Link the dataset with the instantiated <code>ggplot</code> object using the <code>data</code> parameter.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
@@ -563,10 +563,10 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </section><section id="map-two-variables" class="level3" data-number="8.2.5"><h3 data-number="8.2.5" class="anchored" data-anchor-id="map-two-variables">
 <span class="header-section-number">8.2.5</span> Map Two Variables</h3>
-<p>Specify which of the variables in the dataset will be used as the plot aesthetics (visual properties) using the <code>mapping</code> argument done via the <code>aes()</code> function.</p>
+<p>Specify which of the variables in the dataset will be used as the plot aesthetics (visual properties) using the <code>mapping</code> argument done via the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb8-2"><a href="#cb8-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
@@ -578,9 +578,9 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span class="header-section-number">8.2.6</span> Display Data</h3>
 <p>Specify how the data (observations) will be represented geometrically on the plot, eg, bars, points, or line. The functions starting with <code>geom_</code> is used for this purpose. These functions add layer of the selected geometric object to the plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb9-2"><a href="#cb9-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
@@ -590,13 +590,13 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </section><section id="map-third-variables" class="level3" data-number="8.2.7"><h3 data-number="8.2.7" class="anchored" data-anchor-id="map-third-variables">
 <span class="header-section-number">8.2.7</span> Map Third Variables</h3>
-<p>Other variables in the dataset can be linked to plot aesthetics (visual properties) using the <code>mapping</code> argument done via the <code>aes()</code> function.</p>
+<p>Other variables in the dataset can be linked to plot aesthetics (visual properties) using the <code>mapping</code> argument done via the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="at">data =</span> penguins,</span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> species)</span>
-<span id="cb10-4"><a href="#cb10-4"></a>) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
+<span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
@@ -608,12 +608,12 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span class="header-section-number">8.2.8</span> Display Three Trendlines</h3>
 <p>More geometric representations for the data can be specified using the functions starting with <code>geom_</code> which will add layer of the selected geometric object to the plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="at">data =</span> penguins,</span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> species)</span>
-<span id="cb11-4"><a href="#cb11-4"></a>) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
+<span>  mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span></span>
+<span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
@@ -623,12 +623,12 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </section><section id="display-one-trendline" class="level3" data-number="8.2.9"><h3 data-number="8.2.9" class="anchored" data-anchor-id="display-one-trendline">
 <span class="header-section-number">8.2.9</span> Display One Trendline</h3>
-<p>The aesthetic mapping defined in the <code>ggplot()</code> function is <em>global</em> meaning that all the <code>geom_()</code> functions inherit it. However, the aesthetic mapping defined in the <code>geom_()</code> functions are <em>local</em>, ie, not shared with other <code>gemo_()</code> functions.</p>
+<p>The aesthetic mapping defined in the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function is <em>global</em> meaning that all the <code>geom_()</code> functions inherit it. However, the aesthetic mapping defined in the <code>geom_()</code> functions are <em>local</em>, ie, not shared with other <code>gemo_()</code> functions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb12-2"><a href="#cb12-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
@@ -638,12 +638,12 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </section><section id="map-one-variable-twice" class="level3" data-number="8.2.10"><h3 data-number="8.2.10" class="anchored" data-anchor-id="map-one-variable-twice">
 <span class="header-section-number">8.2.10</span> Map One Variable Twice</h3>
-<p>We can link the same variable to multiple plot aesthetics (visual properties) using the <code>mapping</code> parameter done via the <code>aes()</code> function.</p>
+<p>We can link the same variable to multiple plot aesthetics (visual properties) using the <code>mapping</code> parameter done via the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb13-2"><a href="#cb13-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">species</span>, shape <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
@@ -653,7 +653,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </section><section id="fix-labels" class="level3" data-number="8.2.11"><h3 data-number="8.2.11" class="anchored" data-anchor-id="fix-labels">
 <span class="header-section-number">8.2.11</span> Fix Labels</h3>
-<p>The <code>labs()</code> function can be used to make the plot more accessible. The function will add new layer to the plot and the following items can be added to the layer using the corresponding parameters</p>
+<p>The <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> function can be used to make the plot more accessible. The function will add new layer to the plot and the following items can be added to the layer using the corresponding parameters</p>
 <ul>
 <li>a title using the <code>title</code> parameter</li>
 <li>a sub-title, if necessary, using the <code>subtitle</code> parameter</li>
@@ -662,18 +662,18 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <li>data-series label or legend using the <code>color</code> and/or <code>shape</code> parameters</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb14-2"><a href="#cb14-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">labs</span>(</span>
-<span id="cb14-6"><a href="#cb14-6"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
-<span id="cb14-7"><a href="#cb14-7"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
-<span id="cb14-8"><a href="#cb14-8"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
-<span id="cb14-9"><a href="#cb14-9"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
-<span id="cb14-10"><a href="#cb14-10"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
-<span id="cb14-11"><a href="#cb14-11"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
-<span id="cb14-12"><a href="#cb14-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">species</span>, shape <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">'Fliper length (mm)'</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">'Body mass (g)'</span>,</span>
+<span>    shape <span class="op">=</span> <span class="st">'Species'</span>,</span>
+<span>    color <span class="op">=</span> <span class="st">'Species'</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
@@ -691,19 +691,19 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span class="header-section-number">8.2.12</span> Ensure Color-blind Safe</h3>
 <p>Make the plot more color-blind safe by using the <code>scale_color_colorblind()</code> function from the <code>ggthemes</code> package which will add new layer to the plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb15-2"><a href="#cb15-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">labs</span>(</span>
-<span id="cb15-6"><a href="#cb15-6"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
-<span id="cb15-7"><a href="#cb15-7"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
-<span id="cb15-8"><a href="#cb15-8"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
-<span id="cb15-9"><a href="#cb15-9"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
-<span id="cb15-10"><a href="#cb15-10"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
-<span id="cb15-11"><a href="#cb15-11"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
-<span id="cb15-12"><a href="#cb15-12"></a>  ) <span class="sc">+</span></span>
-<span id="cb15-13"><a href="#cb15-13"></a>  <span class="fu">scale_color_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">species</span>, shape <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">'Fliper length (mm)'</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">'Body mass (g)'</span>,</span>
+<span>    shape <span class="op">=</span> <span class="st">'Species'</span>,</span>
+<span>    color <span class="op">=</span> <span class="st">'Species'</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_colorblind</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
@@ -715,18 +715,18 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span class="header-section-number">8.2.13</span> Can Call Implicitly</h3>
 <p>The first one or two arguments of functions are so important that scientists should know them by heart. Hence, to save some typing, the name of these arguments are usually omitted and only the values assigned to them are kept, ie, the names becomes implicit and no more explicit. Hence, the above call can be written as follows–the arguments <code>data</code> and <code>mapping</code> were omitted.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-5"><a href="#cb16-5"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
-<span id="cb16-6"><a href="#cb16-6"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
-<span id="cb16-7"><a href="#cb16-7"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
-<span id="cb16-8"><a href="#cb16-8"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
-<span id="cb16-9"><a href="#cb16-9"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
-<span id="cb16-10"><a href="#cb16-10"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
-<span id="cb16-11"><a href="#cb16-11"></a>  ) <span class="sc">+</span></span>
-<span id="cb16-12"><a href="#cb16-12"></a>  <span class="fu">scale_color_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">species</span>, shape <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">'Fliper length (mm)'</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">'Body mass (g)'</span>,</span>
+<span>    shape <span class="op">=</span> <span class="st">'Species'</span>,</span>
+<span>    color <span class="op">=</span> <span class="st">'Species'</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_colorblind</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
@@ -736,21 +736,21 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </section><section id="use-pipe-operator" class="level3" data-number="8.2.14"><h3 data-number="8.2.14" class="anchored" data-anchor-id="use-pipe-operator">
 <span class="header-section-number">8.2.14</span> Use Pipe Operator</h3>
-<p>The pipe operator <code>\&gt;</code> (shortcut: <code>Ctrl+M</code>) can be used to make the code tidy. The above code can be re-written as follow–notice the dataset was pulled before the call to the <code>ggplot()</code> function.</p>
+<p>The pipe operator <code>\&gt;</code> (shortcut: <code>Ctrl+M</code>) can be used to make the code tidy. The above code can be re-written as follow–notice the dataset was pulled before the call to the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">labs</span>(</span>
-<span id="cb17-6"><a href="#cb17-6"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
-<span id="cb17-7"><a href="#cb17-7"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
-<span id="cb17-8"><a href="#cb17-8"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
-<span id="cb17-9"><a href="#cb17-9"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
-<span id="cb17-10"><a href="#cb17-10"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
-<span id="cb17-11"><a href="#cb17-11"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
-<span id="cb17-12"><a href="#cb17-12"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-13"><a href="#cb17-13"></a>  <span class="fu">scale_color_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">species</span>, shape <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">'Fliper length (mm)'</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">'Body mass (g)'</span>,</span>
+<span>    shape <span class="op">=</span> <span class="st">'Species'</span>,</span>
+<span>    color <span class="op">=</span> <span class="st">'Species'</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_color_colorblind</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="01-data-viz_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
@@ -770,7 +770,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span class="header-section-number">8.3.2</span> Numerical Variables</h3>
 <p>Plot options to visualize how a numerical (discrete or continuous) variable is distributed:</p>
 <ul>
-<li>histogram, using <code>geom_histogram()</code> function</li>
+<li>histogram, using <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code> function</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -786,7 +786,7 @@ Histogram Bin Width
 </div>
 </div>
 <ul>
-<li>density plot, using <code>geom_density()</code> function</li>
+<li>density plot, using <code><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density()</a></code> function</li>
 <li>boxplot, using <code>geom_boplot()</code> function</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -829,24 +829,24 @@ Figure&nbsp;8.1: Boxplot Components (taken from <a href="https://r4ds.hadley.nz/
 <p>For each category of the categorical variable, We can use any of the plot options mentioned above for the numerical variables</p>
 </section><section id="two-categoricals" class="level3" data-number="8.4.2"><h3 data-number="8.4.2" class="anchored" data-anchor-id="two-categoricals">
 <span class="header-section-number">8.4.2</span> Two Categoricals</h3>
-<p>Each category of one of the categorical variables will be placed on the x-axis (or the y-axis) by mapping it to the plot <code>x</code> (or <code>y</code>) aesthetic (visual property) of the <code>geom_bar()</code> and the distribution of the categories of the other categorical variables by mapping it to the plot <code>fill</code> aesthetic (visual property). The second variable can be shown as:</p>
+<p>Each category of one of the categorical variables will be placed on the x-axis (or the y-axis) by mapping it to the plot <code>x</code> (or <code>y</code>) aesthetic (visual property) of the <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> and the distribution of the categories of the other categorical variables by mapping it to the plot <code>fill</code> aesthetic (visual property). The second variable can be shown as:</p>
 <ul>
 <li>pure counts (stacked bar chart), or</li>
-<li>percentages (percent stack bar chart) by setting the <code>position</code> attribute of the <code>geom_bar()</code> to <code>fill</code>.</li>
+<li>percentages (percent stack bar chart) by setting the <code>position</code> attribute of the <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> to <code>fill</code>.</li>
 </ul></section><section id="two-numerical" class="level3" data-number="8.4.3"><h3 data-number="8.4.3" class="anchored" data-anchor-id="two-numerical">
 <span class="header-section-number">8.4.3</span> Two Numerical</h3>
 <p>Plot options to show the relationship between two numerical variables are:</p>
 <ul>
-<li>Scatter plot using the <code>geom_point()</code> function</li>
-<li>trend line using <code>geom_smooth()</code> function</li>
-<li>line graph using <code>geom_line()</code> function if one of the variables is monotonic, eg, time or date.</li>
+<li>Scatter plot using the <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> function</li>
+<li>trend line using <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> function</li>
+<li>line graph using <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code> function if one of the variables is monotonic, eg, time or date.</li>
 </ul></section><section id="three-or-more-variables" class="level3" data-number="8.4.4"><h3 data-number="8.4.4" class="anchored" data-anchor-id="three-or-more-variables">
 <span class="header-section-number">8.4.4</span> Three or More Variables</h3>
 <p>To visualize 3+ variables, We can either</p>
 <ul>
 <li>map variables to other aesthetics of the plot, eg, <em>color</em>, <em>size</em>, and <em>shape</em>
 </li>
-<li>split plot into facets, subplots that each display one subset of the data, based on a categorical variable using <code>facet_wrap()</code> function where its first argument is a formula created using <code>~</code> followed by a (categorical) variable name.</li>
+<li>split plot into facets, subplots that each display one subset of the data, based on a categorical variable using <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code> function where its first argument is a formula created using <code>~</code> followed by a (categorical) variable name.</li>
 </ul>
 
 
@@ -1330,330 +1330,330 @@ Figure&nbsp;8.1: Boxplot Components (taken from <a href="https://r4ds.hadley.nz/
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb18" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">---</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="an">title:</span><span class="co"> "Data Visualization"</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="co">---</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a></span>
-<span id="cb18-6"><a href="#cb18-6"></a><span class="in">```{r Clean workspace}</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a><span class="co">#| include: false</span></span>
-<span id="cb18-8"><a href="#cb18-8"></a></span>
-<span id="cb18-9"><a href="#cb18-9"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb18-10"><a href="#cb18-10"></a><span class="in">```</span></span>
-<span id="cb18-11"><a href="#cb18-11"></a></span>
-<span id="cb18-12"><a href="#cb18-12"></a><span class="in">```{r List all used packages}</span></span>
-<span id="cb18-13"><a href="#cb18-13"></a><span class="co">#| include: false</span></span>
-<span id="cb18-14"><a href="#cb18-14"></a></span>
-<span id="cb18-15"><a href="#cb18-15"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">'ggthemes'</span>, <span class="st">'ggplot2'</span>, <span class="st">'dplyr'</span>, <span class="st">'here'</span>, <span class="st">'knitr'</span>)</span>
-<span id="cb18-16"><a href="#cb18-16"></a><span class="in">```</span></span>
-<span id="cb18-17"><a href="#cb18-17"></a></span>
-<span id="cb18-18"><a href="#cb18-18"></a></span>
-<span id="cb18-19"><a href="#cb18-19"></a><span class="in">```{r Install missing packages}</span></span>
-<span id="cb18-20"><a href="#cb18-20"></a><span class="co">#| include: false</span></span>
-<span id="cb18-21"><a href="#cb18-21"></a></span>
-<span id="cb18-22"><a href="#cb18-22"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
-<span id="cb18-23"><a href="#cb18-23"></a><span class="in">```</span></span>
-<span id="cb18-24"><a href="#cb18-24"></a></span>
-<span id="cb18-25"><a href="#cb18-25"></a><span class="in">```{r Load packages}</span></span>
-<span id="cb18-26"><a href="#cb18-26"></a><span class="co">#| include: false</span></span>
-<span id="cb18-27"><a href="#cb18-27"></a></span>
-<span id="cb18-28"><a href="#cb18-28"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb18-29"><a href="#cb18-29"></a><span class="in">```</span></span>
-<span id="cb18-30"><a href="#cb18-30"></a></span>
-<span id="cb18-31"><a href="#cb18-31"></a></span>
-<span id="cb18-32"><a href="#cb18-32"></a><span class="fu">## Introduction</span></span>
-<span id="cb18-33"><a href="#cb18-33"></a></span>
-<span id="cb18-34"><a href="#cb18-34"></a>This page introduces the plot creation vocabulary step by step</span>
-<span id="cb18-35"><a href="#cb18-35"></a></span>
-<span id="cb18-36"><a href="#cb18-36"></a></span>
-<span id="cb18-37"><a href="#cb18-37"></a><span class="fu">## Plot Creation Process</span></span>
-<span id="cb18-38"><a href="#cb18-38"></a></span>
-<span id="cb18-39"><a href="#cb18-39"></a><span class="fu">### Load Dataset</span></span>
-<span id="cb18-40"><a href="#cb18-40"></a></span>
-<span id="cb18-41"><a href="#cb18-41"></a>The <span class="in">`penguins`</span> dataset from the <span class="in">`palmerpenguins`</span> package will be used for plotting. Typically, the package is loaded using the <span class="in">`library`</span> function as shown in the code chunk below. However, a better approach is the one outlined in @sec-packages.</span>
-<span id="cb18-42"><a href="#cb18-42"></a></span>
-<span id="cb18-45"><a href="#cb18-45"></a><span class="in">```{r}</span></span>
-<span id="cb18-46"><a href="#cb18-46"></a><span class="co">#| eval: false</span></span>
-<span id="cb18-47"><a href="#cb18-47"></a></span>
-<span id="cb18-48"><a href="#cb18-48"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb18-49"><a href="#cb18-49"></a><span class="in">```</span></span>
-<span id="cb18-50"><a href="#cb18-50"></a></span>
-<span id="cb18-51"><a href="#cb18-51"></a>Explore the dataset</span>
-<span id="cb18-52"><a href="#cb18-52"></a></span>
-<span id="cb18-55"><a href="#cb18-55"></a><span class="in">```{r}</span></span>
-<span id="cb18-56"><a href="#cb18-56"></a><span class="co">#| include: true</span></span>
-<span id="cb18-57"><a href="#cb18-57"></a><span class="co">#| output: true</span></span>
-<span id="cb18-58"><a href="#cb18-58"></a><span class="fu">help</span>(penguins)</span>
-<span id="cb18-59"><a href="#cb18-59"></a><span class="in">```</span></span>
-<span id="cb18-60"><a href="#cb18-60"></a></span>
-<span id="cb18-61"><a href="#cb18-61"></a>Explore the dataset differently</span>
-<span id="cb18-62"><a href="#cb18-62"></a></span>
-<span id="cb18-65"><a href="#cb18-65"></a><span class="in">```{r}</span></span>
-<span id="cb18-66"><a href="#cb18-66"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(penguins)</span>
-<span id="cb18-67"><a href="#cb18-67"></a><span class="in">```</span></span>
-<span id="cb18-68"><a href="#cb18-68"></a></span>
-<span id="cb18-69"><a href="#cb18-69"></a><span class="fu">### Load Plotting Package</span></span>
-<span id="cb18-70"><a href="#cb18-70"></a></span>
-<span id="cb18-71"><a href="#cb18-71"></a>The <span class="in">`ggplot2`</span> package will be used for plotting. The package is typically loaded using the <span class="in">`library`</span> function as shown in the code chunk below. However, a better approach is the one outlined in @sec-packages.</span>
-<span id="cb18-72"><a href="#cb18-72"></a></span>
-<span id="cb18-75"><a href="#cb18-75"></a><span class="in">```{r}</span></span>
-<span id="cb18-76"><a href="#cb18-76"></a><span class="co">#| eval: false</span></span>
-<span id="cb18-77"><a href="#cb18-77"></a></span>
-<span id="cb18-78"><a href="#cb18-78"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb18-79"><a href="#cb18-79"></a><span class="in">```</span></span>
-<span id="cb18-80"><a href="#cb18-80"></a></span>
-<span id="cb18-81"><a href="#cb18-81"></a><span class="fu">### Create `ggplot` object</span></span>
-<span id="cb18-82"><a href="#cb18-82"></a></span>
-<span id="cb18-83"><a href="#cb18-83"></a>Create an empty canvas by instantiating a <span class="in">`ggplot`</span> object using the <span class="in">`ggplot()`</span> function.</span>
-<span id="cb18-84"><a href="#cb18-84"></a></span>
-<span id="cb18-87"><a href="#cb18-87"></a><span class="in">```{r}</span></span>
-<span id="cb18-88"><a href="#cb18-88"></a><span class="fu">ggplot</span>()</span>
-<span id="cb18-89"><a href="#cb18-89"></a><span class="in">```</span></span>
-<span id="cb18-90"><a href="#cb18-90"></a></span>
-<span id="cb18-91"><a href="#cb18-91"></a><span class="fu">### Link Dataset</span></span>
-<span id="cb18-92"><a href="#cb18-92"></a></span>
-<span id="cb18-93"><a href="#cb18-93"></a>Link the dataset with the instantiated <span class="in">`ggplot`</span> object using the <span class="in">`data`</span> parameter.</span>
-<span id="cb18-94"><a href="#cb18-94"></a></span>
-<span id="cb18-97"><a href="#cb18-97"></a><span class="in">```{r}</span></span>
-<span id="cb18-98"><a href="#cb18-98"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins)</span>
-<span id="cb18-99"><a href="#cb18-99"></a><span class="in">```</span></span>
-<span id="cb18-100"><a href="#cb18-100"></a></span>
-<span id="cb18-101"><a href="#cb18-101"></a><span class="fu">### Map Two Variables</span></span>
-<span id="cb18-102"><a href="#cb18-102"></a></span>
-<span id="cb18-103"><a href="#cb18-103"></a>Specify which of the variables in the dataset will be used as the plot aesthetics (visual properties) using the <span class="in">`mapping`</span> argument done via the <span class="in">`aes()`</span> function.</span>
-<span id="cb18-104"><a href="#cb18-104"></a></span>
-<span id="cb18-107"><a href="#cb18-107"></a><span class="in">```{r}</span></span>
-<span id="cb18-108"><a href="#cb18-108"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb18-109"><a href="#cb18-109"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g))</span>
-<span id="cb18-110"><a href="#cb18-110"></a><span class="in">```</span></span>
-<span id="cb18-111"><a href="#cb18-111"></a></span>
-<span id="cb18-112"><a href="#cb18-112"></a><span class="fu">### Display Data</span></span>
-<span id="cb18-113"><a href="#cb18-113"></a></span>
-<span id="cb18-114"><a href="#cb18-114"></a>Specify how the data (observations) will be represented geometrically on the plot, eg, bars, points, or line. The functions starting with <span class="in">`geom_`</span> is used for this purpose. These functions add layer of the selected geometric object to the plot.</span>
-<span id="cb18-115"><a href="#cb18-115"></a></span>
-<span id="cb18-118"><a href="#cb18-118"></a><span class="in">```{r}</span></span>
-<span id="cb18-119"><a href="#cb18-119"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb18-120"><a href="#cb18-120"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb18-121"><a href="#cb18-121"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb18-122"><a href="#cb18-122"></a><span class="in">```</span></span>
-<span id="cb18-123"><a href="#cb18-123"></a></span>
-<span id="cb18-124"><a href="#cb18-124"></a><span class="fu">### Map Third Variables</span></span>
-<span id="cb18-125"><a href="#cb18-125"></a></span>
-<span id="cb18-126"><a href="#cb18-126"></a>Other variables in the dataset can be linked to plot aesthetics (visual properties) using the <span class="in">`mapping`</span> argument done via the <span class="in">`aes()`</span> function.</span>
-<span id="cb18-127"><a href="#cb18-127"></a></span>
-<span id="cb18-130"><a href="#cb18-130"></a><span class="in">```{r}</span></span>
-<span id="cb18-131"><a href="#cb18-131"></a><span class="fu">ggplot</span>(</span>
-<span id="cb18-132"><a href="#cb18-132"></a>  <span class="at">data =</span> penguins,</span>
-<span id="cb18-133"><a href="#cb18-133"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> species)</span>
-<span id="cb18-134"><a href="#cb18-134"></a>) <span class="sc">+</span></span>
-<span id="cb18-135"><a href="#cb18-135"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb18-136"><a href="#cb18-136"></a><span class="in">```</span></span>
-<span id="cb18-137"><a href="#cb18-137"></a></span>
-<span id="cb18-138"><a href="#cb18-138"></a><span class="fu">### Display Three Trendlines</span></span>
-<span id="cb18-139"><a href="#cb18-139"></a></span>
-<span id="cb18-140"><a href="#cb18-140"></a>More geometric representations for the data can be specified using the functions starting with <span class="in">`geom_`</span> which will add layer of the selected geometric object to the plot.</span>
-<span id="cb18-141"><a href="#cb18-141"></a></span>
-<span id="cb18-144"><a href="#cb18-144"></a><span class="in">```{r}</span></span>
-<span id="cb18-145"><a href="#cb18-145"></a><span class="fu">ggplot</span>(</span>
-<span id="cb18-146"><a href="#cb18-146"></a>  <span class="at">data =</span> penguins,</span>
-<span id="cb18-147"><a href="#cb18-147"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> species)</span>
-<span id="cb18-148"><a href="#cb18-148"></a>) <span class="sc">+</span></span>
-<span id="cb18-149"><a href="#cb18-149"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-150"><a href="#cb18-150"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
-<span id="cb18-151"><a href="#cb18-151"></a><span class="in">```</span></span>
-<span id="cb18-152"><a href="#cb18-152"></a></span>
-<span id="cb18-153"><a href="#cb18-153"></a><span class="fu">### Display One Trendline</span></span>
-<span id="cb18-154"><a href="#cb18-154"></a></span>
-<span id="cb18-155"><a href="#cb18-155"></a>The aesthetic mapping defined in the <span class="in">`ggplot()`</span> function is *global* meaning that all the `geom_()` functions inherit it. However, the aesthetic mapping defined in the `geom_()` functions are *local*, ie, not shared with other <span class="in">`gemo_()`</span> functions.</span>
-<span id="cb18-156"><a href="#cb18-156"></a></span>
-<span id="cb18-159"><a href="#cb18-159"></a><span class="in">```{r}</span></span>
-<span id="cb18-160"><a href="#cb18-160"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb18-161"><a href="#cb18-161"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb18-162"><a href="#cb18-162"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb18-163"><a href="#cb18-163"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
-<span id="cb18-164"><a href="#cb18-164"></a><span class="in">```</span></span>
-<span id="cb18-165"><a href="#cb18-165"></a></span>
-<span id="cb18-166"><a href="#cb18-166"></a><span class="fu">### Map One Variable Twice</span></span>
-<span id="cb18-167"><a href="#cb18-167"></a></span>
-<span id="cb18-168"><a href="#cb18-168"></a>We can link the same variable to multiple plot aesthetics (visual properties) using the <span class="in">`mapping`</span> parameter done via the <span class="in">`aes()`</span> function.</span>
-<span id="cb18-169"><a href="#cb18-169"></a></span>
-<span id="cb18-172"><a href="#cb18-172"></a><span class="in">```{r}</span></span>
-<span id="cb18-173"><a href="#cb18-173"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb18-174"><a href="#cb18-174"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb18-175"><a href="#cb18-175"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb18-176"><a href="#cb18-176"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
-<span id="cb18-177"><a href="#cb18-177"></a><span class="in">```</span></span>
-<span id="cb18-178"><a href="#cb18-178"></a></span>
-<span id="cb18-179"><a href="#cb18-179"></a><span class="fu">### Fix Labels</span></span>
-<span id="cb18-180"><a href="#cb18-180"></a></span>
-<span id="cb18-181"><a href="#cb18-181"></a>The <span class="in">`labs()`</span> function can be used to make the plot more accessible. The function will add new layer to the plot and the following items can be added to the layer using the corresponding parameters</span>
-<span id="cb18-182"><a href="#cb18-182"></a></span>
-<span id="cb18-183"><a href="#cb18-183"></a><span class="ss">-   </span>a title using the <span class="in">`title`</span> parameter</span>
-<span id="cb18-184"><a href="#cb18-184"></a><span class="ss">-   </span>a sub-title, if necessary, using the <span class="in">`subtitle`</span> parameter</span>
-<span id="cb18-185"><a href="#cb18-185"></a><span class="ss">-   </span>x-axis title using the <span class="in">`x`</span> parameter</span>
-<span id="cb18-186"><a href="#cb18-186"></a><span class="ss">-   </span>y-axis title using the <span class="in">`y`</span> parameter</span>
-<span id="cb18-187"><a href="#cb18-187"></a><span class="ss">-   </span>data-series label or legend using the <span class="in">`color`</span> and/or <span class="in">`shape`</span> parameters</span>
-<span id="cb18-188"><a href="#cb18-188"></a></span>
-<span id="cb18-191"><a href="#cb18-191"></a><span class="in">```{r}</span></span>
-<span id="cb18-192"><a href="#cb18-192"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb18-193"><a href="#cb18-193"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb18-194"><a href="#cb18-194"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb18-195"><a href="#cb18-195"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb18-196"><a href="#cb18-196"></a>  <span class="fu">labs</span>(</span>
-<span id="cb18-197"><a href="#cb18-197"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
-<span id="cb18-198"><a href="#cb18-198"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
-<span id="cb18-199"><a href="#cb18-199"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
-<span id="cb18-200"><a href="#cb18-200"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
-<span id="cb18-201"><a href="#cb18-201"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
-<span id="cb18-202"><a href="#cb18-202"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
-<span id="cb18-203"><a href="#cb18-203"></a>  )</span>
-<span id="cb18-204"><a href="#cb18-204"></a><span class="in">```</span></span>
-<span id="cb18-205"><a href="#cb18-205"></a></span>
-<span id="cb18-206"><a href="#cb18-206"></a>Other types of texts can be added using other functions. The other types of texts are:</span>
-<span id="cb18-207"><a href="#cb18-207"></a></span>
-<span id="cb18-208"><a href="#cb18-208"></a><span class="ss">-   </span>x-axis label</span>
-<span id="cb18-209"><a href="#cb18-209"></a><span class="ss">-   </span>y-axis label</span>
-<span id="cb18-210"><a href="#cb18-210"></a><span class="ss">-   </span>data labels, if necessary</span>
-<span id="cb18-211"><a href="#cb18-211"></a><span class="ss">-   </span>annotation for interesting or important data, if exist</span>
-<span id="cb18-212"><a href="#cb18-212"></a></span>
-<span id="cb18-213"><a href="#cb18-213"></a><span class="fu">### Ensure Color-blind Safe</span></span>
-<span id="cb18-214"><a href="#cb18-214"></a></span>
-<span id="cb18-215"><a href="#cb18-215"></a>Make the plot more color-blind safe by using the <span class="in">`scale_color_colorblind()`</span> function from the <span class="in">`ggthemes`</span> package which will add new layer to the plot.</span>
-<span id="cb18-216"><a href="#cb18-216"></a></span>
-<span id="cb18-219"><a href="#cb18-219"></a><span class="in">```{r}</span></span>
-<span id="cb18-220"><a href="#cb18-220"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb18-221"><a href="#cb18-221"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb18-222"><a href="#cb18-222"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb18-223"><a href="#cb18-223"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb18-224"><a href="#cb18-224"></a>  <span class="fu">labs</span>(</span>
-<span id="cb18-225"><a href="#cb18-225"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
-<span id="cb18-226"><a href="#cb18-226"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
-<span id="cb18-227"><a href="#cb18-227"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
-<span id="cb18-228"><a href="#cb18-228"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
-<span id="cb18-229"><a href="#cb18-229"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
-<span id="cb18-230"><a href="#cb18-230"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
-<span id="cb18-231"><a href="#cb18-231"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-232"><a href="#cb18-232"></a>  <span class="fu">scale_color_colorblind</span>()</span>
-<span id="cb18-233"><a href="#cb18-233"></a><span class="in">```</span></span>
-<span id="cb18-234"><a href="#cb18-234"></a></span>
-<span id="cb18-235"><a href="#cb18-235"></a><span class="fu">### Can Call Implicitly</span></span>
-<span id="cb18-236"><a href="#cb18-236"></a></span>
-<span id="cb18-237"><a href="#cb18-237"></a>The first one or two arguments of functions are so important that scientists should know them by heart. Hence, to save some typing, the name of these arguments are usually omitted and only the values assigned to them are kept, ie, the names becomes implicit and no more explicit. Hence, the above call can be written as follows--the arguments <span class="in">`data`</span> and <span class="in">`mapping`</span> were omitted.</span>
-<span id="cb18-238"><a href="#cb18-238"></a></span>
-<span id="cb18-241"><a href="#cb18-241"></a><span class="in">```{r}</span></span>
-<span id="cb18-242"><a href="#cb18-242"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb18-243"><a href="#cb18-243"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb18-244"><a href="#cb18-244"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb18-245"><a href="#cb18-245"></a>  <span class="fu">labs</span>(</span>
-<span id="cb18-246"><a href="#cb18-246"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
-<span id="cb18-247"><a href="#cb18-247"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
-<span id="cb18-248"><a href="#cb18-248"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
-<span id="cb18-249"><a href="#cb18-249"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
-<span id="cb18-250"><a href="#cb18-250"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
-<span id="cb18-251"><a href="#cb18-251"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
-<span id="cb18-252"><a href="#cb18-252"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-253"><a href="#cb18-253"></a>  <span class="fu">scale_color_colorblind</span>()</span>
-<span id="cb18-254"><a href="#cb18-254"></a><span class="in">```</span></span>
-<span id="cb18-255"><a href="#cb18-255"></a></span>
-<span id="cb18-256"><a href="#cb18-256"></a><span class="fu">### Use Pipe Operator</span></span>
-<span id="cb18-257"><a href="#cb18-257"></a></span>
-<span id="cb18-258"><a href="#cb18-258"></a>The pipe operator <span class="in">`\&gt;`</span> (shortcut: <span class="in">`Ctrl+M`</span>) can be used to make the code tidy. The above code can be re-written as follow--notice the dataset was pulled before the call to the <span class="in">`ggplot()`</span> function.</span>
-<span id="cb18-259"><a href="#cb18-259"></a></span>
-<span id="cb18-262"><a href="#cb18-262"></a><span class="in">```{r}</span></span>
-<span id="cb18-263"><a href="#cb18-263"></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb18-264"><a href="#cb18-264"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb18-265"><a href="#cb18-265"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb18-266"><a href="#cb18-266"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb18-267"><a href="#cb18-267"></a>  <span class="fu">labs</span>(</span>
-<span id="cb18-268"><a href="#cb18-268"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
-<span id="cb18-269"><a href="#cb18-269"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
-<span id="cb18-270"><a href="#cb18-270"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
-<span id="cb18-271"><a href="#cb18-271"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
-<span id="cb18-272"><a href="#cb18-272"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
-<span id="cb18-273"><a href="#cb18-273"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
-<span id="cb18-274"><a href="#cb18-274"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-275"><a href="#cb18-275"></a>  <span class="fu">scale_color_colorblind</span>()</span>
-<span id="cb18-276"><a href="#cb18-276"></a><span class="in">```</span></span>
-<span id="cb18-277"><a href="#cb18-277"></a></span>
-<span id="cb18-278"><a href="#cb18-278"></a><span class="fu">## Visualizing Distribution</span></span>
-<span id="cb18-279"><a href="#cb18-279"></a></span>
-<span id="cb18-280"><a href="#cb18-280"></a><span class="fu">### Categorical Variables</span></span>
-<span id="cb18-281"><a href="#cb18-281"></a></span>
-<span id="cb18-282"><a href="#cb18-282"></a>Plot options to visualize how a categorical variable is distributed:</span>
-<span id="cb18-283"><a href="#cb18-283"></a></span>
-<span id="cb18-284"><a href="#cb18-284"></a><span class="ss">-   </span>bar chart, if the counts are not computed, using <span class="in">`gemo_bar()`</span> function</span>
-<span id="cb18-285"><a href="#cb18-285"></a><span class="ss">-   </span>column chart, if the counts are computed, <span class="in">`gemo_col()`</span> function</span>
-<span id="cb18-286"><a href="#cb18-286"></a></span>
-<span id="cb18-287"><a href="#cb18-287"></a><span class="fu">### Numerical Variables</span></span>
-<span id="cb18-288"><a href="#cb18-288"></a></span>
-<span id="cb18-289"><a href="#cb18-289"></a>Plot options to visualize how a numerical (discrete or continuous) variable is distributed:</span>
-<span id="cb18-290"><a href="#cb18-290"></a></span>
-<span id="cb18-291"><a href="#cb18-291"></a><span class="ss">-   </span>histogram, using <span class="in">`geom_histogram()`</span> function</span>
-<span id="cb18-292"><a href="#cb18-292"></a></span>
-<span id="cb18-293"><a href="#cb18-293"></a>::: callout-note</span>
-<span id="cb18-294"><a href="#cb18-294"></a><span class="fu">#### Histogram Bin Width</span></span>
-<span id="cb18-295"><a href="#cb18-295"></a></span>
-<span id="cb18-296"><a href="#cb18-296"></a>The bin width of the histogram is in the unit of the variable mapped to the plot <span class="in">`x`</span> (or <span class="in">`y`</span>) aesthetic (visual property)</span>
-<span id="cb18-297"><a href="#cb18-297"></a>:::</span>
-<span id="cb18-298"><a href="#cb18-298"></a></span>
-<span id="cb18-299"><a href="#cb18-299"></a><span class="ss">-   </span>density plot, using <span class="in">`geom_density()`</span> function</span>
-<span id="cb18-300"><a href="#cb18-300"></a><span class="ss">-   </span>boxplot, using <span class="in">`geom_boplot()`</span> function</span>
-<span id="cb18-301"><a href="#cb18-301"></a></span>
-<span id="cb18-302"><a href="#cb18-302"></a>::: callout-note</span>
-<span id="cb18-303"><a href="#cb18-303"></a><span class="fu">#### Boxplot Components</span></span>
-<span id="cb18-304"><a href="#cb18-304"></a></span>
-<span id="cb18-305"><a href="#cb18-305"></a>As described beautifully in <span class="co">[</span><span class="ot">R4DS</span><span class="co">](https://r4ds.hadley.nz/data-visualize#visualizing-relationships)</span>, a boxplot consists of:</span>
-<span id="cb18-306"><a href="#cb18-306"></a></span>
-<span id="cb18-307"><a href="#cb18-307"></a><span class="ss">1.  </span>A box that describes the range of the middle half of the data, a distance known as the interquartile range (IQR), stretching from the 25th percentile of the distribution to the 75th percentile.</span>
-<span id="cb18-308"><a href="#cb18-308"></a></span>
-<span id="cb18-309"><a href="#cb18-309"></a><span class="ss">2.  </span>A line in the middle of the box displaying the median, ie, the 50th percentile, of the distribution.</span>
-<span id="cb18-310"><a href="#cb18-310"></a></span>
-<span id="cb18-311"><a href="#cb18-311"></a><span class="ss">3.  </span>The box and the line give sense of the spread of the distribution and whether or not the distribution is symmetric about the median or skewed to one side</span>
-<span id="cb18-312"><a href="#cb18-312"></a></span>
-<span id="cb18-313"><a href="#cb18-313"></a><span class="ss">4.  </span>Visual points that display the observations that fall more than 1.5 time the IQR from either edge of the box. These outlying points (hence called outliers) are unusual so are plotted individually</span>
-<span id="cb18-314"><a href="#cb18-314"></a></span>
-<span id="cb18-315"><a href="#cb18-315"></a><span class="ss">5.  </span>A whisker that extend from each end of the box and goes to the farthest non-outlier point in the distribution</span>
-<span id="cb18-316"><a href="#cb18-316"></a></span>
-<span id="cb18-317"><a href="#cb18-317"></a>Below is the diagram from <span class="co">[</span><span class="ot">R4DS</span><span class="co">](https://r4ds.hadley.nz/data-visualize#visualizing-relationships)</span> showing the above components and how the boxpot is created.</span>
-<span id="cb18-318"><a href="#cb18-318"></a></span>
-<span id="cb18-321"><a href="#cb18-321"></a><span class="in">```{r}</span></span>
-<span id="cb18-322"><a href="#cb18-322"></a><span class="co">#| label: fig-boxplot</span></span>
-<span id="cb18-323"><a href="#cb18-323"></a><span class="co">#| echo: false</span></span>
-<span id="cb18-324"><a href="#cb18-324"></a><span class="co">#| fig-cap: Boxplot Components (taken from [R4DS](https://r4ds.hadley.nz/data-visualize#visualizing-relationships))</span></span>
-<span id="cb18-325"><a href="#cb18-325"></a><span class="co">#| out-width: NuLL</span></span>
-<span id="cb18-326"><a href="#cb18-326"></a></span>
-<span id="cb18-327"><a href="#cb18-327"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">here</span>(<span class="st">"images"</span>, <span class="st">"EDA-boxplot.png"</span>))</span>
-<span id="cb18-328"><a href="#cb18-328"></a><span class="in">```</span></span>
-<span id="cb18-329"><a href="#cb18-329"></a></span>
-<span id="cb18-330"><a href="#cb18-330"></a>:::</span>
-<span id="cb18-331"><a href="#cb18-331"></a></span>
-<span id="cb18-332"><a href="#cb18-332"></a><span class="fu">## Visualizing Relationships</span></span>
-<span id="cb18-333"><a href="#cb18-333"></a></span>
-<span id="cb18-334"><a href="#cb18-334"></a><span class="fu">### One Categorical + One Numerical</span></span>
-<span id="cb18-335"><a href="#cb18-335"></a></span>
-<span id="cb18-336"><a href="#cb18-336"></a>For each category of the categorical variable, We can use any of the plot options mentioned above for the numerical variables</span>
-<span id="cb18-337"><a href="#cb18-337"></a></span>
-<span id="cb18-338"><a href="#cb18-338"></a><span class="fu">### Two Categoricals</span></span>
-<span id="cb18-339"><a href="#cb18-339"></a></span>
-<span id="cb18-340"><a href="#cb18-340"></a>Each category of one of the categorical variables will be placed on the x-axis (or the y-axis) by mapping it to the plot <span class="in">`x`</span> (or <span class="in">`y`</span>) aesthetic (visual property) of the <span class="in">`geom_bar()`</span> and the distribution of the categories of the other categorical variables by mapping it to the plot <span class="in">`fill`</span> aesthetic (visual property). The second variable can be shown as:</span>
-<span id="cb18-341"><a href="#cb18-341"></a></span>
-<span id="cb18-342"><a href="#cb18-342"></a><span class="ss">-   </span>pure counts (stacked bar chart), or</span>
-<span id="cb18-343"><a href="#cb18-343"></a><span class="ss">-   </span>percentages (percent stack bar chart) by setting the <span class="in">`position`</span> attribute of the <span class="in">`geom_bar()`</span> to <span class="in">`fill`</span>.</span>
-<span id="cb18-344"><a href="#cb18-344"></a></span>
-<span id="cb18-345"><a href="#cb18-345"></a><span class="fu">### Two Numerical</span></span>
-<span id="cb18-346"><a href="#cb18-346"></a></span>
-<span id="cb18-347"><a href="#cb18-347"></a>Plot options to show the relationship between two numerical variables are:</span>
-<span id="cb18-348"><a href="#cb18-348"></a></span>
-<span id="cb18-349"><a href="#cb18-349"></a><span class="ss">-   </span>Scatter plot using the <span class="in">`geom_point()`</span> function</span>
-<span id="cb18-350"><a href="#cb18-350"></a><span class="ss">-   </span>trend line using <span class="in">`geom_smooth()`</span> function</span>
-<span id="cb18-351"><a href="#cb18-351"></a><span class="ss">-   </span>line graph using <span class="in">`geom_line()`</span> function if one of the variables is monotonic, eg, time or date.</span>
-<span id="cb18-352"><a href="#cb18-352"></a></span>
-<span id="cb18-353"><a href="#cb18-353"></a><span class="fu">### Three or More Variables</span></span>
-<span id="cb18-354"><a href="#cb18-354"></a></span>
-<span id="cb18-355"><a href="#cb18-355"></a>To visualize 3+ variables, We can either</span>
-<span id="cb18-356"><a href="#cb18-356"></a></span>
-<span id="cb18-357"><a href="#cb18-357"></a><span class="ss">-   </span>map variables to other aesthetics of the plot, eg, *color*, *size*, and *shape*</span>
-<span id="cb18-358"><a href="#cb18-358"></a><span class="ss">-   </span>split plot into facets, subplots that each display one subset of the data, based on a categorical variable using <span class="in">`facet_wrap()`</span> function where its first argument is a formula created using <span class="in">`~`</span> followed by a (categorical) variable name.</span>
+<div class="sourceCode" id="cb18" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Data Visualization"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Clean workspace}</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r List all used packages}</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">'ggthemes'</span>, <span class="st">'ggplot2'</span>, <span class="st">'dplyr'</span>, <span class="st">'here'</span>, <span class="st">'knitr'</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Install missing packages}</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Load packages}</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>This page introduces the plot creation vocabulary step by step</span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plot Creation Process</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load Dataset</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>The <span class="in">`penguins`</span> dataset from the <span class="in">`palmerpenguins`</span> package will be used for plotting. Typically, the package is loaded using the <span class="in">`library`</span> function as shown in the code chunk below. However, a better approach is the one outlined in @sec-packages.</span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>Explore the dataset</span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: true</span></span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: true</span></span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(penguins)</span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a>Explore the dataset differently</span>
+<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(penguins)</span>
+<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load Plotting Package</span></span>
+<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a>The <span class="in">`ggplot2`</span> package will be used for plotting. The package is typically loaded using the <span class="in">`library`</span> function as shown in the code chunk below. However, a better approach is the one outlined in @sec-packages.</span>
+<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-75"><a href="#cb18-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-76"><a href="#cb18-76" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-81"><a href="#cb18-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Create `ggplot` object</span></span>
+<span id="cb18-82"><a href="#cb18-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a>Create an empty canvas by instantiating a <span class="in">`ggplot`</span> object using the <span class="in">`ggplot()`</span> function.</span>
+<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()</span>
+<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a><span class="fu">### Link Dataset</span></span>
+<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a>Link the dataset with the instantiated <span class="in">`ggplot`</span> object using the <span class="in">`data`</span> parameter.</span>
+<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins)</span>
+<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-101"><a href="#cb18-101" aria-hidden="true" tabindex="-1"></a><span class="fu">### Map Two Variables</span></span>
+<span id="cb18-102"><a href="#cb18-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-103"><a href="#cb18-103" aria-hidden="true" tabindex="-1"></a>Specify which of the variables in the dataset will be used as the plot aesthetics (visual properties) using the <span class="in">`mapping`</span> argument done via the <span class="in">`aes()`</span> function.</span>
+<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g))</span>
+<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a><span class="fu">### Display Data</span></span>
+<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a>Specify how the data (observations) will be represented geometrically on the plot, eg, bars, points, or line. The functions starting with <span class="in">`geom_`</span> is used for this purpose. These functions add layer of the selected geometric object to the plot.</span>
+<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-119"><a href="#cb18-119" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb18-120"><a href="#cb18-120" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb18-121"><a href="#cb18-121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb18-122"><a href="#cb18-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-123"><a href="#cb18-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-124"><a href="#cb18-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### Map Third Variables</span></span>
+<span id="cb18-125"><a href="#cb18-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-126"><a href="#cb18-126" aria-hidden="true" tabindex="-1"></a>Other variables in the dataset can be linked to plot aesthetics (visual properties) using the <span class="in">`mapping`</span> argument done via the <span class="in">`aes()`</span> function.</span>
+<span id="cb18-127"><a href="#cb18-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-130"><a href="#cb18-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-131"><a href="#cb18-131" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb18-132"><a href="#cb18-132" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> penguins,</span>
+<span id="cb18-133"><a href="#cb18-133" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> species)</span>
+<span id="cb18-134"><a href="#cb18-134" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb18-135"><a href="#cb18-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb18-136"><a href="#cb18-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-137"><a href="#cb18-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-138"><a href="#cb18-138" aria-hidden="true" tabindex="-1"></a><span class="fu">### Display Three Trendlines</span></span>
+<span id="cb18-139"><a href="#cb18-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-140"><a href="#cb18-140" aria-hidden="true" tabindex="-1"></a>More geometric representations for the data can be specified using the functions starting with <span class="in">`geom_`</span> which will add layer of the selected geometric object to the plot.</span>
+<span id="cb18-141"><a href="#cb18-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-144"><a href="#cb18-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-145"><a href="#cb18-145" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb18-146"><a href="#cb18-146" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> penguins,</span>
+<span id="cb18-147"><a href="#cb18-147" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> species)</span>
+<span id="cb18-148"><a href="#cb18-148" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb18-149"><a href="#cb18-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-150"><a href="#cb18-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb18-151"><a href="#cb18-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-152"><a href="#cb18-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-153"><a href="#cb18-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Display One Trendline</span></span>
+<span id="cb18-154"><a href="#cb18-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a>The aesthetic mapping defined in the <span class="in">`ggplot()`</span> function is *global* meaning that all the `geom_()` functions inherit it. However, the aesthetic mapping defined in the `geom_()` functions are *local*, ie, not shared with other <span class="in">`gemo_()`</span> functions.</span>
+<span id="cb18-156"><a href="#cb18-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-160"><a href="#cb18-160" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb18-161"><a href="#cb18-161" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb18-162"><a href="#cb18-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb18-163"><a href="#cb18-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb18-164"><a href="#cb18-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-165"><a href="#cb18-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-166"><a href="#cb18-166" aria-hidden="true" tabindex="-1"></a><span class="fu">### Map One Variable Twice</span></span>
+<span id="cb18-167"><a href="#cb18-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-168"><a href="#cb18-168" aria-hidden="true" tabindex="-1"></a>We can link the same variable to multiple plot aesthetics (visual properties) using the <span class="in">`mapping`</span> parameter done via the <span class="in">`aes()`</span> function.</span>
+<span id="cb18-169"><a href="#cb18-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-172"><a href="#cb18-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-173"><a href="#cb18-173" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb18-174"><a href="#cb18-174" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb18-175"><a href="#cb18-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb18-176"><a href="#cb18-176" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb18-177"><a href="#cb18-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-178"><a href="#cb18-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-179"><a href="#cb18-179" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fix Labels</span></span>
+<span id="cb18-180"><a href="#cb18-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-181"><a href="#cb18-181" aria-hidden="true" tabindex="-1"></a>The <span class="in">`labs()`</span> function can be used to make the plot more accessible. The function will add new layer to the plot and the following items can be added to the layer using the corresponding parameters</span>
+<span id="cb18-182"><a href="#cb18-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-183"><a href="#cb18-183" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>a title using the <span class="in">`title`</span> parameter</span>
+<span id="cb18-184"><a href="#cb18-184" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>a sub-title, if necessary, using the <span class="in">`subtitle`</span> parameter</span>
+<span id="cb18-185"><a href="#cb18-185" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>x-axis title using the <span class="in">`x`</span> parameter</span>
+<span id="cb18-186"><a href="#cb18-186" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>y-axis title using the <span class="in">`y`</span> parameter</span>
+<span id="cb18-187"><a href="#cb18-187" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>data-series label or legend using the <span class="in">`color`</span> and/or <span class="in">`shape`</span> parameters</span>
+<span id="cb18-188"><a href="#cb18-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-191"><a href="#cb18-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-192"><a href="#cb18-192" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb18-193"><a href="#cb18-193" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb18-194"><a href="#cb18-194" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb18-195"><a href="#cb18-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb18-196"><a href="#cb18-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-197"><a href="#cb18-197" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
+<span id="cb18-198"><a href="#cb18-198" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
+<span id="cb18-199"><a href="#cb18-199" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
+<span id="cb18-200"><a href="#cb18-200" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
+<span id="cb18-201"><a href="#cb18-201" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
+<span id="cb18-202"><a href="#cb18-202" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
+<span id="cb18-203"><a href="#cb18-203" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-204"><a href="#cb18-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-205"><a href="#cb18-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-206"><a href="#cb18-206" aria-hidden="true" tabindex="-1"></a>Other types of texts can be added using other functions. The other types of texts are:</span>
+<span id="cb18-207"><a href="#cb18-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-208"><a href="#cb18-208" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>x-axis label</span>
+<span id="cb18-209"><a href="#cb18-209" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>y-axis label</span>
+<span id="cb18-210"><a href="#cb18-210" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>data labels, if necessary</span>
+<span id="cb18-211"><a href="#cb18-211" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>annotation for interesting or important data, if exist</span>
+<span id="cb18-212"><a href="#cb18-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-213"><a href="#cb18-213" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ensure Color-blind Safe</span></span>
+<span id="cb18-214"><a href="#cb18-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-215"><a href="#cb18-215" aria-hidden="true" tabindex="-1"></a>Make the plot more color-blind safe by using the <span class="in">`scale_color_colorblind()`</span> function from the <span class="in">`ggthemes`</span> package which will add new layer to the plot.</span>
+<span id="cb18-216"><a href="#cb18-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-219"><a href="#cb18-219" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-220"><a href="#cb18-220" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb18-221"><a href="#cb18-221" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb18-222"><a href="#cb18-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb18-223"><a href="#cb18-223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb18-224"><a href="#cb18-224" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-225"><a href="#cb18-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
+<span id="cb18-226"><a href="#cb18-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
+<span id="cb18-227"><a href="#cb18-227" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
+<span id="cb18-228"><a href="#cb18-228" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
+<span id="cb18-229"><a href="#cb18-229" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
+<span id="cb18-230"><a href="#cb18-230" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
+<span id="cb18-231"><a href="#cb18-231" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-232"><a href="#cb18-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_colorblind</span>()</span>
+<span id="cb18-233"><a href="#cb18-233" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-234"><a href="#cb18-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-235"><a href="#cb18-235" aria-hidden="true" tabindex="-1"></a><span class="fu">### Can Call Implicitly</span></span>
+<span id="cb18-236"><a href="#cb18-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-237"><a href="#cb18-237" aria-hidden="true" tabindex="-1"></a>The first one or two arguments of functions are so important that scientists should know them by heart. Hence, to save some typing, the name of these arguments are usually omitted and only the values assigned to them are kept, ie, the names becomes implicit and no more explicit. Hence, the above call can be written as follows--the arguments <span class="in">`data`</span> and <span class="in">`mapping`</span> were omitted.</span>
+<span id="cb18-238"><a href="#cb18-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-241"><a href="#cb18-241" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-242"><a href="#cb18-242" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb18-243"><a href="#cb18-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb18-244"><a href="#cb18-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb18-245"><a href="#cb18-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-246"><a href="#cb18-246" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
+<span id="cb18-247"><a href="#cb18-247" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
+<span id="cb18-248"><a href="#cb18-248" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
+<span id="cb18-249"><a href="#cb18-249" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
+<span id="cb18-250"><a href="#cb18-250" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
+<span id="cb18-251"><a href="#cb18-251" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
+<span id="cb18-252"><a href="#cb18-252" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-253"><a href="#cb18-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_colorblind</span>()</span>
+<span id="cb18-254"><a href="#cb18-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-255"><a href="#cb18-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-256"><a href="#cb18-256" aria-hidden="true" tabindex="-1"></a><span class="fu">### Use Pipe Operator</span></span>
+<span id="cb18-257"><a href="#cb18-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-258"><a href="#cb18-258" aria-hidden="true" tabindex="-1"></a>The pipe operator <span class="in">`\&gt;`</span> (shortcut: <span class="in">`Ctrl+M`</span>) can be used to make the code tidy. The above code can be re-written as follow--notice the dataset was pulled before the call to the <span class="in">`ggplot()`</span> function.</span>
+<span id="cb18-259"><a href="#cb18-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-262"><a href="#cb18-262" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-263"><a href="#cb18-263" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb18-264"><a href="#cb18-264" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb18-265"><a href="#cb18-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb18-266"><a href="#cb18-266" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb18-267"><a href="#cb18-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-268"><a href="#cb18-268" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">'Palmer Three Species Penguins'</span>,</span>
+<span id="cb18-269"><a href="#cb18-269" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">'The flipper length has a moderattly strong positive linear relationship with the body mass'</span>,</span>
+<span id="cb18-270"><a href="#cb18-270" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">'Fliper length (mm)'</span>,</span>
+<span id="cb18-271"><a href="#cb18-271" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">'Body mass (g)'</span>,</span>
+<span id="cb18-272"><a href="#cb18-272" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">'Species'</span>,</span>
+<span id="cb18-273"><a href="#cb18-273" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">'Species'</span></span>
+<span id="cb18-274"><a href="#cb18-274" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-275"><a href="#cb18-275" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_colorblind</span>()</span>
+<span id="cb18-276"><a href="#cb18-276" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-277"><a href="#cb18-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-278"><a href="#cb18-278" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualizing Distribution</span></span>
+<span id="cb18-279"><a href="#cb18-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-280"><a href="#cb18-280" aria-hidden="true" tabindex="-1"></a><span class="fu">### Categorical Variables</span></span>
+<span id="cb18-281"><a href="#cb18-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-282"><a href="#cb18-282" aria-hidden="true" tabindex="-1"></a>Plot options to visualize how a categorical variable is distributed:</span>
+<span id="cb18-283"><a href="#cb18-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-284"><a href="#cb18-284" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>bar chart, if the counts are not computed, using <span class="in">`gemo_bar()`</span> function</span>
+<span id="cb18-285"><a href="#cb18-285" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>column chart, if the counts are computed, <span class="in">`gemo_col()`</span> function</span>
+<span id="cb18-286"><a href="#cb18-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-287"><a href="#cb18-287" aria-hidden="true" tabindex="-1"></a><span class="fu">### Numerical Variables</span></span>
+<span id="cb18-288"><a href="#cb18-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-289"><a href="#cb18-289" aria-hidden="true" tabindex="-1"></a>Plot options to visualize how a numerical (discrete or continuous) variable is distributed:</span>
+<span id="cb18-290"><a href="#cb18-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-291"><a href="#cb18-291" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>histogram, using <span class="in">`geom_histogram()`</span> function</span>
+<span id="cb18-292"><a href="#cb18-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-293"><a href="#cb18-293" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb18-294"><a href="#cb18-294" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Histogram Bin Width</span></span>
+<span id="cb18-295"><a href="#cb18-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-296"><a href="#cb18-296" aria-hidden="true" tabindex="-1"></a>The bin width of the histogram is in the unit of the variable mapped to the plot <span class="in">`x`</span> (or <span class="in">`y`</span>) aesthetic (visual property)</span>
+<span id="cb18-297"><a href="#cb18-297" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb18-298"><a href="#cb18-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-299"><a href="#cb18-299" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>density plot, using <span class="in">`geom_density()`</span> function</span>
+<span id="cb18-300"><a href="#cb18-300" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>boxplot, using <span class="in">`geom_boplot()`</span> function</span>
+<span id="cb18-301"><a href="#cb18-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-302"><a href="#cb18-302" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb18-303"><a href="#cb18-303" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Boxplot Components</span></span>
+<span id="cb18-304"><a href="#cb18-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-305"><a href="#cb18-305" aria-hidden="true" tabindex="-1"></a>As described beautifully in <span class="co">[</span><span class="ot">R4DS</span><span class="co">](https://r4ds.hadley.nz/data-visualize#visualizing-relationships)</span>, a boxplot consists of:</span>
+<span id="cb18-306"><a href="#cb18-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-307"><a href="#cb18-307" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>A box that describes the range of the middle half of the data, a distance known as the interquartile range (IQR), stretching from the 25th percentile of the distribution to the 75th percentile.</span>
+<span id="cb18-308"><a href="#cb18-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-309"><a href="#cb18-309" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>A line in the middle of the box displaying the median, ie, the 50th percentile, of the distribution.</span>
+<span id="cb18-310"><a href="#cb18-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-311"><a href="#cb18-311" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>The box and the line give sense of the spread of the distribution and whether or not the distribution is symmetric about the median or skewed to one side</span>
+<span id="cb18-312"><a href="#cb18-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-313"><a href="#cb18-313" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Visual points that display the observations that fall more than 1.5 time the IQR from either edge of the box. These outlying points (hence called outliers) are unusual so are plotted individually</span>
+<span id="cb18-314"><a href="#cb18-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-315"><a href="#cb18-315" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>A whisker that extend from each end of the box and goes to the farthest non-outlier point in the distribution</span>
+<span id="cb18-316"><a href="#cb18-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-317"><a href="#cb18-317" aria-hidden="true" tabindex="-1"></a>Below is the diagram from <span class="co">[</span><span class="ot">R4DS</span><span class="co">](https://r4ds.hadley.nz/data-visualize#visualizing-relationships)</span> showing the above components and how the boxpot is created.</span>
+<span id="cb18-318"><a href="#cb18-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-321"><a href="#cb18-321" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-322"><a href="#cb18-322" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-boxplot</span></span>
+<span id="cb18-323"><a href="#cb18-323" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb18-324"><a href="#cb18-324" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Boxplot Components (taken from [R4DS](https://r4ds.hadley.nz/data-visualize#visualizing-relationships))</span></span>
+<span id="cb18-325"><a href="#cb18-325" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: NuLL</span></span>
+<span id="cb18-326"><a href="#cb18-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-327"><a href="#cb18-327" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">here</span>(<span class="st">"images"</span>, <span class="st">"EDA-boxplot.png"</span>))</span>
+<span id="cb18-328"><a href="#cb18-328" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-329"><a href="#cb18-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-330"><a href="#cb18-330" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb18-331"><a href="#cb18-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-332"><a href="#cb18-332" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualizing Relationships</span></span>
+<span id="cb18-333"><a href="#cb18-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-334"><a href="#cb18-334" aria-hidden="true" tabindex="-1"></a><span class="fu">### One Categorical + One Numerical</span></span>
+<span id="cb18-335"><a href="#cb18-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-336"><a href="#cb18-336" aria-hidden="true" tabindex="-1"></a>For each category of the categorical variable, We can use any of the plot options mentioned above for the numerical variables</span>
+<span id="cb18-337"><a href="#cb18-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-338"><a href="#cb18-338" aria-hidden="true" tabindex="-1"></a><span class="fu">### Two Categoricals</span></span>
+<span id="cb18-339"><a href="#cb18-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-340"><a href="#cb18-340" aria-hidden="true" tabindex="-1"></a>Each category of one of the categorical variables will be placed on the x-axis (or the y-axis) by mapping it to the plot <span class="in">`x`</span> (or <span class="in">`y`</span>) aesthetic (visual property) of the <span class="in">`geom_bar()`</span> and the distribution of the categories of the other categorical variables by mapping it to the plot <span class="in">`fill`</span> aesthetic (visual property). The second variable can be shown as:</span>
+<span id="cb18-341"><a href="#cb18-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-342"><a href="#cb18-342" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>pure counts (stacked bar chart), or</span>
+<span id="cb18-343"><a href="#cb18-343" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>percentages (percent stack bar chart) by setting the <span class="in">`position`</span> attribute of the <span class="in">`geom_bar()`</span> to <span class="in">`fill`</span>.</span>
+<span id="cb18-344"><a href="#cb18-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-345"><a href="#cb18-345" aria-hidden="true" tabindex="-1"></a><span class="fu">### Two Numerical</span></span>
+<span id="cb18-346"><a href="#cb18-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-347"><a href="#cb18-347" aria-hidden="true" tabindex="-1"></a>Plot options to show the relationship between two numerical variables are:</span>
+<span id="cb18-348"><a href="#cb18-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-349"><a href="#cb18-349" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Scatter plot using the <span class="in">`geom_point()`</span> function</span>
+<span id="cb18-350"><a href="#cb18-350" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>trend line using <span class="in">`geom_smooth()`</span> function</span>
+<span id="cb18-351"><a href="#cb18-351" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>line graph using <span class="in">`geom_line()`</span> function if one of the variables is monotonic, eg, time or date.</span>
+<span id="cb18-352"><a href="#cb18-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-353"><a href="#cb18-353" aria-hidden="true" tabindex="-1"></a><span class="fu">### Three or More Variables</span></span>
+<span id="cb18-354"><a href="#cb18-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-355"><a href="#cb18-355" aria-hidden="true" tabindex="-1"></a>To visualize 3+ variables, We can either</span>
+<span id="cb18-356"><a href="#cb18-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-357"><a href="#cb18-357" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>map variables to other aesthetics of the plot, eg, *color*, *size*, and *shape*</span>
+<span id="cb18-358"><a href="#cb18-358" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>split plot into facets, subplots that each display one subset of the data, based on a categorical variable using <span class="in">`facet_wrap()`</span> function where its first argument is a formula created using <span class="in">`~`</span> followed by a (categorical) variable name.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

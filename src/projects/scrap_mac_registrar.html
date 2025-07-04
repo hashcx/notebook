@@ -507,11 +507,11 @@ cookieconsent.run({
 <section id="url" class="level3">
 <h3 class="anchored" data-anchor-id="url">URL</h3>
 <p>The base URL of the class schedule is</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=<span class="dt">&lt;</span><span class="kw">year</span><span class="dt">&gt;&lt;</span><span class="kw">term</span><span class="ot"> code</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=<span class="dt">&lt;</span><span class="kw">year</span><span class="dt">&gt;&lt;</span><span class="kw">term</span><span class="ot"> code</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>where <code>&lt;year&gt;</code> is the latest year of academic year, 2026 for the 2025/26 year; and <code>&lt;term code&gt;</code> is <code>10</code> for fall and <code>30</code> for spring. For example, to get the class schedule for the fall semester of 2025/2026 academic year, the URL would be</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202610</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202610</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>and for the spring semester of the same year, the URL of the class schedule would be</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202630</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202630</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="load" class="level3">
 <h3 class="anchored" data-anchor-id="load">Load</h3>
@@ -1007,42 +1007,42 @@ cookieconsent.run({
   <div class="nav-page nav-page-next">
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu"># WIP: Web Scrap Mac Class Schedule</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">## Introduction</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a>This is a work-in-progress to scarp the class schedule from Macalester's Registrar website.</span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">## Observations</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="fu">### URL</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a></span>
-<span id="cb4-11"><a href="#cb4-11"></a>The base URL of the class schedule is</span>
-<span id="cb4-12"><a href="#cb4-12"></a></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="in">```markdown</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=<span class="dt">&lt;</span><span class="kw">year</span><span class="dt">&gt;&lt;</span><span class="kw">term</span><span class="ot"> code</span><span class="dt">&gt;</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="in">```</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a></span>
-<span id="cb4-17"><a href="#cb4-17"></a>where <span class="in">`&lt;year&gt;`</span> is the latest year of academic year, 2026 for the 2025/26 year; and <span class="in">`&lt;term code&gt;`</span> is <span class="in">`10`</span> for fall and <span class="in">`30`</span> for spring.  For example, to get the class schedule for the fall semester of 2025/2026 academic year, the URL would be</span>
-<span id="cb4-18"><a href="#cb4-18"></a></span>
-<span id="cb4-19"><a href="#cb4-19"></a><span class="in">```markdown</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202610</span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="in">```</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a></span>
-<span id="cb4-23"><a href="#cb4-23"></a>and for the spring semester of the same year, the URL of the class schedule would be</span>
-<span id="cb4-24"><a href="#cb4-24"></a></span>
-<span id="cb4-25"><a href="#cb4-25"></a><span class="in">```markdown</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202630</span>
-<span id="cb4-27"><a href="#cb4-27"></a><span class="in">```</span></span>
-<span id="cb4-28"><a href="#cb4-28"></a></span>
-<span id="cb4-29"><a href="#cb4-29"></a><span class="fu">### Load</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a></span>
-<span id="cb4-31"><a href="#cb4-31"></a>The page will take few seconds to load the class schedule which be taking into consideration when scapping.</span>
-<span id="cb4-32"><a href="#cb4-32"></a></span>
-<span id="cb4-33"><a href="#cb4-33"></a></span>
-<span id="cb4-34"><a href="#cb4-34"></a><span class="fu">## References</span></span>
-<span id="cb4-35"><a href="#cb4-35"></a></span>
-<span id="cb4-36"><a href="#cb4-36"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Control a web browser from R to web scrap static and dynamic websites using `chromote` (YouTube)</span><span class="co">]( https://www.youtube.com/watch?v=30AOpjLeOyI)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># WIP: Web Scrap Mac Class Schedule</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>This is a work-in-progress to scarp the class schedule from Macalester's Registrar website.</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observations</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">### URL</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>The base URL of the class schedule is</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=<span class="dt">&lt;</span><span class="kw">year</span><span class="dt">&gt;&lt;</span><span class="kw">term</span><span class="ot"> code</span><span class="dt">&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>where <span class="in">`&lt;year&gt;`</span> is the latest year of academic year, 2026 for the 2025/26 year; and <span class="in">`&lt;term code&gt;`</span> is <span class="in">`10`</span> for fall and <span class="in">`30`</span> for spring.  For example, to get the class schedule for the fall semester of 2025/2026 academic year, the URL would be</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202610</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>and for the spring semester of the same year, the URL of the class schedule would be</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202630</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>The page will take few seconds to load the class schedule which be taking into consideration when scapping.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Control a web browser from R to web scrap static and dynamic websites using `chromote` (YouTube)</span><span class="co">]( https://www.youtube.com/watch?v=30AOpjLeOyI)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
