@@ -550,7 +550,7 @@
     "href": "src/projects/topic-modeling-r.html",
     "title": "Topic Modeling in R",
     "section": "",
-    "text": "Introduction\nAn attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle. After inspecting the table of content, the book seems to have 12 stories, one story per chapter. The analysis is inspired by Julia Silge’s YouTube video Topic modeling with R and tidy data principles",
+    "text": "Introduction\nAn attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle. After inspecting the table of content, the book seems to have 12 stories, one story per chapter.",
     "crumbs": [
       "Projects",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Topic Modeling in R</span>"
@@ -638,7 +638,7 @@
     "href": "src/projects/topic-modeling-r.html#references",
     "title": "Topic Modeling in R",
     "section": "References",
-    "text": "References\n\nAdventures of Sherlock Holmes book by Arthur Conan Doyle on Project Gutenberg\n\nRegular Expressions 101",
+    "text": "References\n\n\nJulia Silge’s Topic Modeling with R and tidy Data Principles (YouTube)\n\nAdventures of Sherlock Holmes book by Arthur Conan Doyle on Project Gutenberg\n\nRegular Expressions 101",
     "crumbs": [
       "Projects",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Topic Modeling in R</span>"
