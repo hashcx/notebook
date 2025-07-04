@@ -38,7 +38,22 @@ lapply(packages, require, character.only = TRUE)
 
 ## Introduction
 
-An attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle.  After inspecting the table of content, the book seems to have 12 stories, one story per chapter.
+An attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle. The book is available in an electronic form on [Project Gutenberg](https://www.gutenberg.org/cache/epub/1661/pg1661-images.html) and in print on [Amazon](https://www.amazon.com/Adventures-Sherlock-Holmes-Other-Stories/dp/1607102110).
+
+The book includes 12 stories, one story per chapter.  The titles of the stories/chapters are: 
+
+1. A Scandal in Bohemia
+2. The Red-Headed League
+3. A Case of Identity
+4. The Boscombe Valley Mystery
+5. The Five Orange Pips
+6. The Man with the Twisted Lip
+7. The Adventure of the Blue Carbuncle
+8. The Adventure of the Speckled Band
+9. The Adventure of the Engineer’s Thumb
+10. The Adventure of the Noble Bachelor
+11. The Adventure of the Beryl Coronet
+12. The Adventure of the Copper Beeches
 
 ## Download Book
 
