@@ -37,6 +37,13 @@ An R package usually includes:
   - documentation describing how to use the function
   - sample data
 
+## Dataset in Packages
+
+To list datasets in all the available packages, use the following command:
+
+```r
+data(package = .packages(all.available = TRUE))
+```
 
 ## Primitive Data Types
 
@@ -50,17 +57,13 @@ The primitive (also known as singleton/simple) data types in R are:
 
 To know the datatype of an object, run the command:
 
-```{r}
-#| eval: false
-
+```r
 class(x) # give the data type of x
 ```
 
 To know the type of the variables of each variable.
 
-```{r}
-#| eval: false
-
+```r
 x |> 
   slice(0) |> 
   glimpse()
@@ -102,9 +105,7 @@ x <- c(1, 2, 3, 4)
 
 To force the `print()` function to print all the columns of a `tibble`, set the `width` parameter to `Inf` as follows:
 
-```{r}
-#| eval: false
-
+```r
 print(ds, width = Inf)
 ```
 
@@ -112,9 +113,7 @@ print(ds, width = Inf)
 
 To construct small tibble by hand, use the `tribble` function as follows:
 
-```{r}
-#| eval: false
-
+```r
 df <- tribble(
   ~var1, ~var2, ~var3
   "A", 1, TRUE,
@@ -138,9 +137,7 @@ knitr::include_graphics(here("images", "datastructure.png"))
 
 To know the data structure and length of the object, run the command:
 
-```{r}
-#| eval: false
-
+```r
 str(x) # give the structure type of x
 length(x) # length of structure
 ```
@@ -158,9 +155,7 @@ x <- 3 # assign 3 to x (x gets 3)
 
 Getting Help 
 
-```{r}
-#| eval: false
-
+```r
 args(round) # print the argument list of function
 ?round # show documentation of function in Help window
 ```
@@ -199,9 +194,7 @@ mean(heights, na.rm = TRUE)
 
 The `here` package makes it easy to point to files starting from the project main directory.
 
-```{r}
-#| eval: false
-
+```r
 library("here", "janitor")
 ```
 
