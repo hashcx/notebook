@@ -38,7 +38,7 @@ lapply(packages, require, character.only = TRUE)
 
 ## Introduction
 
-An attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle.  After inspecting the table of content, the book seems to have 12 stories, one story per chapter.  The analysis is inspired by [Julia Silge](https://juliasilge.com/)’s YouTube video [Topic modeling with R and tidy data principles](https://www.youtube.com/embed/evTuL-RcRpc)
+An attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle.  After inspecting the table of content, the book seems to have 12 stories, one story per chapter.
 
 ## Download Book
 
@@ -213,5 +213,6 @@ The model did an excellent job strongly associating the stories into one or more
 
 ## References
 
+- [Julia Silge](https://juliasilge.com/)'s [Topic Modeling with R and tidy Data Principles (YouTube)](https://www.youtube.com/embed/evTuL-RcRpc)
 - Adventures of Sherlock Holmes book by Arthur Conan Doyle on [Project Gutenberg](https://www.gutenberg.org/ebooks/48320)
 - [Regular Expressions 101](https://regex101.com/)
