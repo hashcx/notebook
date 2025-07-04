@@ -550,7 +550,18 @@
     "href": "src/projects/topic-modeling-r.html",
     "title": "Topic Modeling in R",
     "section": "",
-    "text": "Introduction\nAn attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle. After inspecting the table of content, the book seems to have 12 stories, one story per chapter.",
+    "text": "Introduction\nAn attempt to understand Sherlock Holmes short stories found in Adventures of Sherlock Holmes book by Arthur Conan Doyle. The book is available in an electronic form on Project Gutenberg and in print on Amazon.\nThe book includes 12 stories, one story per chapter. The titles of the stories/chapters are:",
+    "crumbs": [
+      "Projects",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Topic Modeling in R</span>"
+    ]
+  },
+  {
+    "objectID": "src/projects/topic-modeling-r.html#introduction",
+    "href": "src/projects/topic-modeling-r.html#introduction",
+    "title": "Topic Modeling in R",
+    "section": "",
+    "text": "A Scandal in Bohemia\nThe Red-Headed League\nA Case of Identity\nThe Boscombe Valley Mystery\nThe Five Orange Pips\nThe Man with the Twisted Lip\nThe Adventure of the Blue Carbuncle\nThe Adventure of the Speckled Band\nThe Adventure of the Engineer’s Thumb\nThe Adventure of the Noble Bachelor\nThe Adventure of the Beryl Coronet\nThe Adventure of the Copper Beeches",
     "crumbs": [
       "Projects",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Topic Modeling in R</span>"
