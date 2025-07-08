@@ -1,8 +1,10 @@
-## Exploartory Data Analysis
+---
+title: "Exploartory Data Analysis"
+---
 
 For each dataset, try to obtain the following Exploartory Data Analysis (EDA) summaries.
 
-### Manual Summaries
+## Manual Summaries
 
 using the dataset codebook, if available, or via some search and/or asking, answer the following questions:
 
@@ -13,7 +15,7 @@ using the dataset codebook, if available, or via some search and/or asking, answ
 - What does each column/variable represent?
 - What does each row/observation represent?
 
-### Computational Summaries
+## Computational Summaries
 
 Through computations, ie, code, answer the following questions:
 
