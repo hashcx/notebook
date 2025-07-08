@@ -1,0 +1,34 @@
+---
+title: "Web Hosting"
+---
+
+```{r Clean workspace}
+#| include: false
+
+rm(list = ls())
+```
+
+```{r List all used packages}
+#| include: false
+
+packages <- c("downlit", "xml2")
+```
+
+
+```{r Install missing packages}
+#| include: false
+
+install.packages(setdiff(packages, rownames(installed.packages())))
+```
+
+```{r Load packages}
+#| include: false
+
+lapply(packages, require, character.only = TRUE)
+```
+
+## Introduction
+
+There are many ways to host websites on the internet.  Below are some free options.
+
+- A Quarto website can be published on on GitHub Pages for free.  Check [this GSheet](https://docs.google.com/spreadsheets/d/1efz-KlHgNicp8T8Kzt5ELlX6i0pvwFerosTHLgGwW_Y/preview) for options.
