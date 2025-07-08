@@ -57,6 +57,7 @@ book:
         - src/notes/quarto.qmd
         - src/notes/rstudio.qmd
         - src/notes/windows.qmd
+        - src/webhost.qmd
     
     - part: src/r4ds/_r4ds.qmd
       chapters:
