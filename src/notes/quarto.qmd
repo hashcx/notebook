@@ -47,9 +47,9 @@ To import the content of a Quarto document into another, use the following short
 <!-- {{< include file.qmd >}} -->
 ```
 
-## Publish Options on GitHub Pages
+## Render and Publish Options
 
-A summary of the publish options of a Quarto website on GitHub pages is [here (GSheet)](https://docs.google.com/spreadsheets/d/1efz-KlHgNicp8T8Kzt5ELlX6i0pvwFerosTHLgGwW_Y/preview)
+A summary of render and publish options of a Quarto website using GitHub Actions and Pages is [here (GSheet)](https://docs.google.com/spreadsheets/d/1efz-KlHgNicp8T8Kzt5ELlX6i0pvwFerosTHLgGwW_Y/preview)
 
 
 ## References
