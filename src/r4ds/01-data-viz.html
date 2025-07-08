@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>8&nbsp; Data Visualization – Workspace</title>
+<title>9&nbsp; Data Visualization – Workspace</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -369,6 +369,11 @@ cookieconsent.run({
   <a href="../../src/notes/windows.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Microsoft Windows</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/notes/webhost.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Web Hosting</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -446,40 +451,40 @@ cookieconsent.run({
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">8.1</span> Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">9.1</span> Introduction</a></li>
   <li>
-<a href="#plot-creation-process" id="toc-plot-creation-process" class="nav-link" data-scroll-target="#plot-creation-process"><span class="header-section-number">8.2</span> Plot Creation Process</a>
+<a href="#plot-creation-process" id="toc-plot-creation-process" class="nav-link" data-scroll-target="#plot-creation-process"><span class="header-section-number">9.2</span> Plot Creation Process</a>
   <ul class="collapse">
-<li><a href="#load-dataset" id="toc-load-dataset" class="nav-link" data-scroll-target="#load-dataset"><span class="header-section-number">8.2.1</span> Load Dataset</a></li>
-  <li><a href="#load-plotting-package" id="toc-load-plotting-package" class="nav-link" data-scroll-target="#load-plotting-package"><span class="header-section-number">8.2.2</span> Load Plotting Package</a></li>
-  <li><a href="#create-ggplot-object" id="toc-create-ggplot-object" class="nav-link" data-scroll-target="#create-ggplot-object"><span class="header-section-number">8.2.3</span> Create <code>ggplot</code> object</a></li>
-  <li><a href="#link-dataset" id="toc-link-dataset" class="nav-link" data-scroll-target="#link-dataset"><span class="header-section-number">8.2.4</span> Link Dataset</a></li>
-  <li><a href="#map-two-variables" id="toc-map-two-variables" class="nav-link" data-scroll-target="#map-two-variables"><span class="header-section-number">8.2.5</span> Map Two Variables</a></li>
-  <li><a href="#display-data" id="toc-display-data" class="nav-link" data-scroll-target="#display-data"><span class="header-section-number">8.2.6</span> Display Data</a></li>
-  <li><a href="#map-third-variables" id="toc-map-third-variables" class="nav-link" data-scroll-target="#map-third-variables"><span class="header-section-number">8.2.7</span> Map Third Variables</a></li>
-  <li><a href="#display-three-trendlines" id="toc-display-three-trendlines" class="nav-link" data-scroll-target="#display-three-trendlines"><span class="header-section-number">8.2.8</span> Display Three Trendlines</a></li>
-  <li><a href="#display-one-trendline" id="toc-display-one-trendline" class="nav-link" data-scroll-target="#display-one-trendline"><span class="header-section-number">8.2.9</span> Display One Trendline</a></li>
-  <li><a href="#map-one-variable-twice" id="toc-map-one-variable-twice" class="nav-link" data-scroll-target="#map-one-variable-twice"><span class="header-section-number">8.2.10</span> Map One Variable Twice</a></li>
-  <li><a href="#fix-labels" id="toc-fix-labels" class="nav-link" data-scroll-target="#fix-labels"><span class="header-section-number">8.2.11</span> Fix Labels</a></li>
-  <li><a href="#ensure-color-blind-safe" id="toc-ensure-color-blind-safe" class="nav-link" data-scroll-target="#ensure-color-blind-safe"><span class="header-section-number">8.2.12</span> Ensure Color-blind Safe</a></li>
-  <li><a href="#can-call-implicitly" id="toc-can-call-implicitly" class="nav-link" data-scroll-target="#can-call-implicitly"><span class="header-section-number">8.2.13</span> Can Call Implicitly</a></li>
-  <li><a href="#use-pipe-operator" id="toc-use-pipe-operator" class="nav-link" data-scroll-target="#use-pipe-operator"><span class="header-section-number">8.2.14</span> Use Pipe Operator</a></li>
+<li><a href="#load-dataset" id="toc-load-dataset" class="nav-link" data-scroll-target="#load-dataset"><span class="header-section-number">9.2.1</span> Load Dataset</a></li>
+  <li><a href="#load-plotting-package" id="toc-load-plotting-package" class="nav-link" data-scroll-target="#load-plotting-package"><span class="header-section-number">9.2.2</span> Load Plotting Package</a></li>
+  <li><a href="#create-ggplot-object" id="toc-create-ggplot-object" class="nav-link" data-scroll-target="#create-ggplot-object"><span class="header-section-number">9.2.3</span> Create <code>ggplot</code> object</a></li>
+  <li><a href="#link-dataset" id="toc-link-dataset" class="nav-link" data-scroll-target="#link-dataset"><span class="header-section-number">9.2.4</span> Link Dataset</a></li>
+  <li><a href="#map-two-variables" id="toc-map-two-variables" class="nav-link" data-scroll-target="#map-two-variables"><span class="header-section-number">9.2.5</span> Map Two Variables</a></li>
+  <li><a href="#display-data" id="toc-display-data" class="nav-link" data-scroll-target="#display-data"><span class="header-section-number">9.2.6</span> Display Data</a></li>
+  <li><a href="#map-third-variables" id="toc-map-third-variables" class="nav-link" data-scroll-target="#map-third-variables"><span class="header-section-number">9.2.7</span> Map Third Variables</a></li>
+  <li><a href="#display-three-trendlines" id="toc-display-three-trendlines" class="nav-link" data-scroll-target="#display-three-trendlines"><span class="header-section-number">9.2.8</span> Display Three Trendlines</a></li>
+  <li><a href="#display-one-trendline" id="toc-display-one-trendline" class="nav-link" data-scroll-target="#display-one-trendline"><span class="header-section-number">9.2.9</span> Display One Trendline</a></li>
+  <li><a href="#map-one-variable-twice" id="toc-map-one-variable-twice" class="nav-link" data-scroll-target="#map-one-variable-twice"><span class="header-section-number">9.2.10</span> Map One Variable Twice</a></li>
+  <li><a href="#fix-labels" id="toc-fix-labels" class="nav-link" data-scroll-target="#fix-labels"><span class="header-section-number">9.2.11</span> Fix Labels</a></li>
+  <li><a href="#ensure-color-blind-safe" id="toc-ensure-color-blind-safe" class="nav-link" data-scroll-target="#ensure-color-blind-safe"><span class="header-section-number">9.2.12</span> Ensure Color-blind Safe</a></li>
+  <li><a href="#can-call-implicitly" id="toc-can-call-implicitly" class="nav-link" data-scroll-target="#can-call-implicitly"><span class="header-section-number">9.2.13</span> Can Call Implicitly</a></li>
+  <li><a href="#use-pipe-operator" id="toc-use-pipe-operator" class="nav-link" data-scroll-target="#use-pipe-operator"><span class="header-section-number">9.2.14</span> Use Pipe Operator</a></li>
   </ul>
 </li>
   <li>
-<a href="#visualizing-distribution" id="toc-visualizing-distribution" class="nav-link" data-scroll-target="#visualizing-distribution"><span class="header-section-number">8.3</span> Visualizing Distribution</a>
+<a href="#visualizing-distribution" id="toc-visualizing-distribution" class="nav-link" data-scroll-target="#visualizing-distribution"><span class="header-section-number">9.3</span> Visualizing Distribution</a>
   <ul class="collapse">
-<li><a href="#categorical-variables" id="toc-categorical-variables" class="nav-link" data-scroll-target="#categorical-variables"><span class="header-section-number">8.3.1</span> Categorical Variables</a></li>
-  <li><a href="#numerical-variables" id="toc-numerical-variables" class="nav-link" data-scroll-target="#numerical-variables"><span class="header-section-number">8.3.2</span> Numerical Variables</a></li>
+<li><a href="#categorical-variables" id="toc-categorical-variables" class="nav-link" data-scroll-target="#categorical-variables"><span class="header-section-number">9.3.1</span> Categorical Variables</a></li>
+  <li><a href="#numerical-variables" id="toc-numerical-variables" class="nav-link" data-scroll-target="#numerical-variables"><span class="header-section-number">9.3.2</span> Numerical Variables</a></li>
   </ul>
 </li>
   <li>
-<a href="#visualizing-relationships" id="toc-visualizing-relationships" class="nav-link" data-scroll-target="#visualizing-relationships"><span class="header-section-number">8.4</span> Visualizing Relationships</a>
+<a href="#visualizing-relationships" id="toc-visualizing-relationships" class="nav-link" data-scroll-target="#visualizing-relationships"><span class="header-section-number">9.4</span> Visualizing Relationships</a>
   <ul class="collapse">
-<li><a href="#one-categorical-one-numerical" id="toc-one-categorical-one-numerical" class="nav-link" data-scroll-target="#one-categorical-one-numerical"><span class="header-section-number">8.4.1</span> One Categorical + One Numerical</a></li>
-  <li><a href="#two-categoricals" id="toc-two-categoricals" class="nav-link" data-scroll-target="#two-categoricals"><span class="header-section-number">8.4.2</span> Two Categoricals</a></li>
-  <li><a href="#two-numerical" id="toc-two-numerical" class="nav-link" data-scroll-target="#two-numerical"><span class="header-section-number">8.4.3</span> Two Numerical</a></li>
-  <li><a href="#three-or-more-variables" id="toc-three-or-more-variables" class="nav-link" data-scroll-target="#three-or-more-variables"><span class="header-section-number">8.4.4</span> Three or More Variables</a></li>
+<li><a href="#one-categorical-one-numerical" id="toc-one-categorical-one-numerical" class="nav-link" data-scroll-target="#one-categorical-one-numerical"><span class="header-section-number">9.4.1</span> One Categorical + One Numerical</a></li>
+  <li><a href="#two-categoricals" id="toc-two-categoricals" class="nav-link" data-scroll-target="#two-categoricals"><span class="header-section-number">9.4.2</span> Two Categoricals</a></li>
+  <li><a href="#two-numerical" id="toc-two-numerical" class="nav-link" data-scroll-target="#two-numerical"><span class="header-section-number">9.4.3</span> Two Numerical</a></li>
+  <li><a href="#three-or-more-variables" id="toc-three-or-more-variables" class="nav-link" data-scroll-target="#three-or-more-variables"><span class="header-section-number">9.4.4</span> Three or More Variables</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/r4ds/01-data-viz.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -500,13 +505,13 @@ cookieconsent.run({
   
 
 
-</header><section id="introduction" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="introduction">
-<span class="header-section-number">8.1</span> Introduction</h2>
+</header><section id="introduction" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="introduction">
+<span class="header-section-number">9.1</span> Introduction</h2>
 <p>This page introduces the plot creation vocabulary step by step</p>
-</section><section id="plot-creation-process" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="plot-creation-process">
-<span class="header-section-number">8.2</span> Plot Creation Process</h2>
-<section id="load-dataset" class="level3" data-number="8.2.1"><h3 data-number="8.2.1" class="anchored" data-anchor-id="load-dataset">
-<span class="header-section-number">8.2.1</span> Load Dataset</h3>
+</section><section id="plot-creation-process" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="plot-creation-process">
+<span class="header-section-number">9.2</span> Plot Creation Process</h2>
+<section id="load-dataset" class="level3" data-number="9.2.1"><h3 data-number="9.2.1" class="anchored" data-anchor-id="load-dataset">
+<span class="header-section-number">9.2.1</span> Load Dataset</h3>
 <p>The <code>penguins</code> dataset from the <code>palmerpenguins</code> package will be used for plotting. Typically, the package is loaded using the <code>library</code> function as shown in the code chunk below. However, a better approach is the one outlined in <span class="quarto-unresolved-ref">?sec-packages</span>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -531,14 +536,14 @@ $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, 
 $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…</code></pre>
 </div>
 </div>
-</section><section id="load-plotting-package" class="level3" data-number="8.2.2"><h3 data-number="8.2.2" class="anchored" data-anchor-id="load-plotting-package">
-<span class="header-section-number">8.2.2</span> Load Plotting Package</h3>
+</section><section id="load-plotting-package" class="level3" data-number="9.2.2"><h3 data-number="9.2.2" class="anchored" data-anchor-id="load-plotting-package">
+<span class="header-section-number">9.2.2</span> Load Plotting Package</h3>
 <p>The <code>ggplot2</code> package will be used for plotting. The package is typically loaded using the <code>library</code> function as shown in the code chunk below. However, a better approach is the one outlined in <span class="quarto-unresolved-ref">?sec-packages</span>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="create-ggplot-object" class="level3" data-number="8.2.3"><h3 data-number="8.2.3" class="anchored" data-anchor-id="create-ggplot-object">
-<span class="header-section-number">8.2.3</span> Create <code>ggplot</code> object</h3>
+</section><section id="create-ggplot-object" class="level3" data-number="9.2.3"><h3 data-number="9.2.3" class="anchored" data-anchor-id="create-ggplot-object">
+<span class="header-section-number">9.2.3</span> Create <code>ggplot</code> object</h3>
 <p>Create an empty canvas by instantiating a <code>ggplot</code> object using the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -549,8 +554,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="link-dataset" class="level3" data-number="8.2.4"><h3 data-number="8.2.4" class="anchored" data-anchor-id="link-dataset">
-<span class="header-section-number">8.2.4</span> Link Dataset</h3>
+</section><section id="link-dataset" class="level3" data-number="9.2.4"><h3 data-number="9.2.4" class="anchored" data-anchor-id="link-dataset">
+<span class="header-section-number">9.2.4</span> Link Dataset</h3>
 <p>Link the dataset with the instantiated <code>ggplot</code> object using the <code>data</code> parameter.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -561,8 +566,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="map-two-variables" class="level3" data-number="8.2.5"><h3 data-number="8.2.5" class="anchored" data-anchor-id="map-two-variables">
-<span class="header-section-number">8.2.5</span> Map Two Variables</h3>
+</section><section id="map-two-variables" class="level3" data-number="9.2.5"><h3 data-number="9.2.5" class="anchored" data-anchor-id="map-two-variables">
+<span class="header-section-number">9.2.5</span> Map Two Variables</h3>
 <p>Specify which of the variables in the dataset will be used as the plot aesthetics (visual properties) using the <code>mapping</code> argument done via the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> function.</p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -574,8 +579,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="display-data" class="level3" data-number="8.2.6"><h3 data-number="8.2.6" class="anchored" data-anchor-id="display-data">
-<span class="header-section-number">8.2.6</span> Display Data</h3>
+</section><section id="display-data" class="level3" data-number="9.2.6"><h3 data-number="9.2.6" class="anchored" data-anchor-id="display-data">
+<span class="header-section-number">9.2.6</span> Display Data</h3>
 <p>Specify how the data (observations) will be represented geometrically on the plot, eg, bars, points, or line. The functions starting with <code>geom_</code> is used for this purpose. These functions add layer of the selected geometric object to the plot.</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -588,8 +593,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="map-third-variables" class="level3" data-number="8.2.7"><h3 data-number="8.2.7" class="anchored" data-anchor-id="map-third-variables">
-<span class="header-section-number">8.2.7</span> Map Third Variables</h3>
+</section><section id="map-third-variables" class="level3" data-number="9.2.7"><h3 data-number="9.2.7" class="anchored" data-anchor-id="map-third-variables">
+<span class="header-section-number">9.2.7</span> Map Third Variables</h3>
 <p>Other variables in the dataset can be linked to plot aesthetics (visual properties) using the <code>mapping</code> argument done via the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> function.</p>
 <div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
@@ -604,8 +609,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="display-three-trendlines" class="level3" data-number="8.2.8"><h3 data-number="8.2.8" class="anchored" data-anchor-id="display-three-trendlines">
-<span class="header-section-number">8.2.8</span> Display Three Trendlines</h3>
+</section><section id="display-three-trendlines" class="level3" data-number="9.2.8"><h3 data-number="9.2.8" class="anchored" data-anchor-id="display-three-trendlines">
+<span class="header-section-number">9.2.8</span> Display Three Trendlines</h3>
 <p>More geometric representations for the data can be specified using the functions starting with <code>geom_</code> which will add layer of the selected geometric object to the plot.</p>
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
@@ -621,8 +626,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="display-one-trendline" class="level3" data-number="8.2.9"><h3 data-number="8.2.9" class="anchored" data-anchor-id="display-one-trendline">
-<span class="header-section-number">8.2.9</span> Display One Trendline</h3>
+</section><section id="display-one-trendline" class="level3" data-number="9.2.9"><h3 data-number="9.2.9" class="anchored" data-anchor-id="display-one-trendline">
+<span class="header-section-number">9.2.9</span> Display One Trendline</h3>
 <p>The aesthetic mapping defined in the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function is <em>global</em> meaning that all the <code>geom_()</code> functions inherit it. However, the aesthetic mapping defined in the <code>geom_()</code> functions are <em>local</em>, ie, not shared with other <code>gemo_()</code> functions.</p>
 <div class="cell">
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -636,8 +641,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="map-one-variable-twice" class="level3" data-number="8.2.10"><h3 data-number="8.2.10" class="anchored" data-anchor-id="map-one-variable-twice">
-<span class="header-section-number">8.2.10</span> Map One Variable Twice</h3>
+</section><section id="map-one-variable-twice" class="level3" data-number="9.2.10"><h3 data-number="9.2.10" class="anchored" data-anchor-id="map-one-variable-twice">
+<span class="header-section-number">9.2.10</span> Map One Variable Twice</h3>
 <p>We can link the same variable to multiple plot aesthetics (visual properties) using the <code>mapping</code> parameter done via the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> function.</p>
 <div class="cell">
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -651,8 +656,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="fix-labels" class="level3" data-number="8.2.11"><h3 data-number="8.2.11" class="anchored" data-anchor-id="fix-labels">
-<span class="header-section-number">8.2.11</span> Fix Labels</h3>
+</section><section id="fix-labels" class="level3" data-number="9.2.11"><h3 data-number="9.2.11" class="anchored" data-anchor-id="fix-labels">
+<span class="header-section-number">9.2.11</span> Fix Labels</h3>
 <p>The <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> function can be used to make the plot more accessible. The function will add new layer to the plot and the following items can be added to the layer using the corresponding parameters</p>
 <ul>
 <li>a title using the <code>title</code> parameter</li>
@@ -687,8 +692,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <li>y-axis label</li>
 <li>data labels, if necessary</li>
 <li>annotation for interesting or important data, if exist</li>
-</ul></section><section id="ensure-color-blind-safe" class="level3" data-number="8.2.12"><h3 data-number="8.2.12" class="anchored" data-anchor-id="ensure-color-blind-safe">
-<span class="header-section-number">8.2.12</span> Ensure Color-blind Safe</h3>
+</ul></section><section id="ensure-color-blind-safe" class="level3" data-number="9.2.12"><h3 data-number="9.2.12" class="anchored" data-anchor-id="ensure-color-blind-safe">
+<span class="header-section-number">9.2.12</span> Ensure Color-blind Safe</h3>
 <p>Make the plot more color-blind safe by using the <code>scale_color_colorblind()</code> function from the <code>ggthemes</code> package which will add new layer to the plot.</p>
 <div class="cell">
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -711,8 +716,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="can-call-implicitly" class="level3" data-number="8.2.13"><h3 data-number="8.2.13" class="anchored" data-anchor-id="can-call-implicitly">
-<span class="header-section-number">8.2.13</span> Can Call Implicitly</h3>
+</section><section id="can-call-implicitly" class="level3" data-number="9.2.13"><h3 data-number="9.2.13" class="anchored" data-anchor-id="can-call-implicitly">
+<span class="header-section-number">9.2.13</span> Can Call Implicitly</h3>
 <p>The first one or two arguments of functions are so important that scientists should know them by heart. Hence, to save some typing, the name of these arguments are usually omitted and only the values assigned to them are kept, ie, the names becomes implicit and no more explicit. Hence, the above call can be written as follows–the arguments <code>data</code> and <code>mapping</code> were omitted.</p>
 <div class="cell">
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">flipper_length_mm</span>, y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -734,8 +739,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="use-pipe-operator" class="level3" data-number="8.2.14"><h3 data-number="8.2.14" class="anchored" data-anchor-id="use-pipe-operator">
-<span class="header-section-number">8.2.14</span> Use Pipe Operator</h3>
+</section><section id="use-pipe-operator" class="level3" data-number="9.2.14"><h3 data-number="9.2.14" class="anchored" data-anchor-id="use-pipe-operator">
+<span class="header-section-number">9.2.14</span> Use Pipe Operator</h3>
 <p>The pipe operator <code>\&gt;</code> (shortcut: <code>Ctrl+M</code>) can be used to make the code tidy. The above code can be re-written as follow–notice the dataset was pulled before the call to the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> function.</p>
 <div class="cell">
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">|&gt;</span></span>
@@ -758,16 +763,16 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section></section><section id="visualizing-distribution" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="visualizing-distribution">
-<span class="header-section-number">8.3</span> Visualizing Distribution</h2>
-<section id="categorical-variables" class="level3" data-number="8.3.1"><h3 data-number="8.3.1" class="anchored" data-anchor-id="categorical-variables">
-<span class="header-section-number">8.3.1</span> Categorical Variables</h3>
+</section></section><section id="visualizing-distribution" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="visualizing-distribution">
+<span class="header-section-number">9.3</span> Visualizing Distribution</h2>
+<section id="categorical-variables" class="level3" data-number="9.3.1"><h3 data-number="9.3.1" class="anchored" data-anchor-id="categorical-variables">
+<span class="header-section-number">9.3.1</span> Categorical Variables</h3>
 <p>Plot options to visualize how a categorical variable is distributed:</p>
 <ul>
 <li>bar chart, if the counts are not computed, using <code>gemo_bar()</code> function</li>
 <li>column chart, if the counts are computed, <code>gemo_col()</code> function</li>
-</ul></section><section id="numerical-variables" class="level3" data-number="8.3.2"><h3 data-number="8.3.2" class="anchored" data-anchor-id="numerical-variables">
-<span class="header-section-number">8.3.2</span> Numerical Variables</h3>
+</ul></section><section id="numerical-variables" class="level3" data-number="9.3.2"><h3 data-number="9.3.2" class="anchored" data-anchor-id="numerical-variables">
+<span class="header-section-number">9.3.2</span> Numerical Variables</h3>
 <p>Plot options to visualize how a numerical (discrete or continuous) variable is distributed:</p>
 <ul>
 <li>histogram, using <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code> function</li>
@@ -815,33 +820,33 @@ Boxplot Components
 <img src="../../images/EDA-boxplot.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.1: Boxplot Components (taken from <a href="https://r4ds.hadley.nz/data-visualize#visualizing-relationships">R4DS</a>)
+Figure&nbsp;9.1: Boxplot Components (taken from <a href="https://r4ds.hadley.nz/data-visualize#visualizing-relationships">R4DS</a>)
 </figcaption></figure>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section></section><section id="visualizing-relationships" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="visualizing-relationships">
-<span class="header-section-number">8.4</span> Visualizing Relationships</h2>
-<section id="one-categorical-one-numerical" class="level3" data-number="8.4.1"><h3 data-number="8.4.1" class="anchored" data-anchor-id="one-categorical-one-numerical">
-<span class="header-section-number">8.4.1</span> One Categorical + One Numerical</h3>
+</section></section><section id="visualizing-relationships" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="visualizing-relationships">
+<span class="header-section-number">9.4</span> Visualizing Relationships</h2>
+<section id="one-categorical-one-numerical" class="level3" data-number="9.4.1"><h3 data-number="9.4.1" class="anchored" data-anchor-id="one-categorical-one-numerical">
+<span class="header-section-number">9.4.1</span> One Categorical + One Numerical</h3>
 <p>For each category of the categorical variable, We can use any of the plot options mentioned above for the numerical variables</p>
-</section><section id="two-categoricals" class="level3" data-number="8.4.2"><h3 data-number="8.4.2" class="anchored" data-anchor-id="two-categoricals">
-<span class="header-section-number">8.4.2</span> Two Categoricals</h3>
+</section><section id="two-categoricals" class="level3" data-number="9.4.2"><h3 data-number="9.4.2" class="anchored" data-anchor-id="two-categoricals">
+<span class="header-section-number">9.4.2</span> Two Categoricals</h3>
 <p>Each category of one of the categorical variables will be placed on the x-axis (or the y-axis) by mapping it to the plot <code>x</code> (or <code>y</code>) aesthetic (visual property) of the <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> and the distribution of the categories of the other categorical variables by mapping it to the plot <code>fill</code> aesthetic (visual property). The second variable can be shown as:</p>
 <ul>
 <li>pure counts (stacked bar chart), or</li>
 <li>percentages (percent stack bar chart) by setting the <code>position</code> attribute of the <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code> to <code>fill</code>.</li>
-</ul></section><section id="two-numerical" class="level3" data-number="8.4.3"><h3 data-number="8.4.3" class="anchored" data-anchor-id="two-numerical">
-<span class="header-section-number">8.4.3</span> Two Numerical</h3>
+</ul></section><section id="two-numerical" class="level3" data-number="9.4.3"><h3 data-number="9.4.3" class="anchored" data-anchor-id="two-numerical">
+<span class="header-section-number">9.4.3</span> Two Numerical</h3>
 <p>Plot options to show the relationship between two numerical variables are:</p>
 <ul>
 <li>Scatter plot using the <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> function</li>
 <li>trend line using <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> function</li>
 <li>line graph using <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code> function if one of the variables is monotonic, eg, time or date.</li>
-</ul></section><section id="three-or-more-variables" class="level3" data-number="8.4.4"><h3 data-number="8.4.4" class="anchored" data-anchor-id="three-or-more-variables">
-<span class="header-section-number">8.4.4</span> Three or More Variables</h3>
+</ul></section><section id="three-or-more-variables" class="level3" data-number="9.4.4"><h3 data-number="9.4.4" class="anchored" data-anchor-id="three-or-more-variables">
+<span class="header-section-number">9.4.4</span> Three or More Variables</h3>
 <p>To visualize 3+ variables, We can either</p>
 <ul>
 <li>map variables to other aesthetics of the plot, eg, <em>color</em>, <em>size</em>, and <em>shape</em>

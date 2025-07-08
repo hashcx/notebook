@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>10&nbsp; Data Transformation – Workspace</title>
+<title>11&nbsp; Data Transformation – Workspace</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -369,6 +369,11 @@ cookieconsent.run({
   <a href="../../src/notes/windows.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Microsoft Windows</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/notes/webhost.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Web Hosting</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -446,16 +451,16 @@ cookieconsent.run({
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">10.1</span> Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">11.1</span> Introduction</a></li>
   <li>
-<a href="#dplyr-functions-verbs" id="toc-dplyr-functions-verbs" class="nav-link" data-scroll-target="#dplyr-functions-verbs"><span class="header-section-number">10.2</span> <code>dplyr</code> Functions (Verbs)</a>
+<a href="#dplyr-functions-verbs" id="toc-dplyr-functions-verbs" class="nav-link" data-scroll-target="#dplyr-functions-verbs"><span class="header-section-number">11.2</span> <code>dplyr</code> Functions (Verbs)</a>
   <ul class="collapse">
-<li><a href="#four-groups" id="toc-four-groups" class="nav-link" data-scroll-target="#four-groups"><span class="header-section-number">10.2.1</span> Four Groups</a></li>
-  <li><a href="#common-characteristics" id="toc-common-characteristics" class="nav-link" data-scroll-target="#common-characteristics"><span class="header-section-number">10.2.2</span> Common Characteristics</a></li>
-  <li><a href="#pipe-operator" id="toc-pipe-operator" class="nav-link" data-scroll-target="#pipe-operator"><span class="header-section-number">10.2.3</span> Pipe <code>|&gt;</code> Operator</a></li>
-  <li><a href="#row-functions" id="toc-row-functions" class="nav-link" data-scroll-target="#row-functions"><span class="header-section-number">10.2.4</span> Row Functions</a></li>
-  <li><a href="#column-functions" id="toc-column-functions" class="nav-link" data-scroll-target="#column-functions"><span class="header-section-number">10.2.5</span> Column Functions</a></li>
-  <li><a href="#groups-functions" id="toc-groups-functions" class="nav-link" data-scroll-target="#groups-functions"><span class="header-section-number">10.2.6</span> Groups Functions</a></li>
+<li><a href="#four-groups" id="toc-four-groups" class="nav-link" data-scroll-target="#four-groups"><span class="header-section-number">11.2.1</span> Four Groups</a></li>
+  <li><a href="#common-characteristics" id="toc-common-characteristics" class="nav-link" data-scroll-target="#common-characteristics"><span class="header-section-number">11.2.2</span> Common Characteristics</a></li>
+  <li><a href="#pipe-operator" id="toc-pipe-operator" class="nav-link" data-scroll-target="#pipe-operator"><span class="header-section-number">11.2.3</span> Pipe <code>|&gt;</code> Operator</a></li>
+  <li><a href="#row-functions" id="toc-row-functions" class="nav-link" data-scroll-target="#row-functions"><span class="header-section-number">11.2.4</span> Row Functions</a></li>
+  <li><a href="#column-functions" id="toc-column-functions" class="nav-link" data-scroll-target="#column-functions"><span class="header-section-number">11.2.5</span> Column Functions</a></li>
+  <li><a href="#groups-functions" id="toc-groups-functions" class="nav-link" data-scroll-target="#groups-functions"><span class="header-section-number">11.2.6</span> Groups Functions</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/r4ds/03-data-trans.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -476,13 +481,13 @@ cookieconsent.run({
   
 
 
-</header><section id="introduction" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="introduction">
-<span class="header-section-number">10.1</span> Introduction</h2>
+</header><section id="introduction" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="introduction">
+<span class="header-section-number">11.1</span> Introduction</h2>
 <p>This page introduces the <code>dplyr</code> package used to transform data such as creating new variables, editing existing variables, filtering out observations, and creating summaries.</p>
-</section><section id="dplyr-functions-verbs" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="dplyr-functions-verbs">
-<span class="header-section-number">10.2</span> <code>dplyr</code> Functions (Verbs)</h2>
-<section id="four-groups" class="level3" data-number="10.2.1"><h3 data-number="10.2.1" class="anchored" data-anchor-id="four-groups">
-<span class="header-section-number">10.2.1</span> Four Groups</h3>
+</section><section id="dplyr-functions-verbs" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="dplyr-functions-verbs">
+<span class="header-section-number">11.2</span> <code>dplyr</code> Functions (Verbs)</h2>
+<section id="four-groups" class="level3" data-number="11.2.1"><h3 data-number="11.2.1" class="anchored" data-anchor-id="four-groups">
+<span class="header-section-number">11.2.1</span> Four Groups</h3>
 <p><code>dplyr</code> functions (verbs) can be grouped into functions that work on:</p>
 <ul>
 <li>rows, eg, <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>, <code>arrange()</code>, <code>distinct()</code>, <code>count()</code>
@@ -492,22 +497,22 @@ cookieconsent.run({
 <li>groups, eg, <code>summarize()</code>, <code>slice_max</code>, <code>group_by</code>, <code>ungroup()</code>, <code>.by</code>
 </li>
 <li>tables</li>
-</ul></section><section id="common-characteristics" class="level3" data-number="10.2.2"><h3 data-number="10.2.2" class="anchored" data-anchor-id="common-characteristics">
-<span class="header-section-number">10.2.2</span> Common Characteristics</h3>
+</ul></section><section id="common-characteristics" class="level3" data-number="11.2.2"><h3 data-number="11.2.2" class="anchored" data-anchor-id="common-characteristics">
+<span class="header-section-number">11.2.2</span> Common Characteristics</h3>
 <p>All the functions have the followings in common:</p>
 <ul>
 <li>their first argument is always a data frame</li>
 <li>their subsequent arguments typically describe which columns to operate on using variable names <em>without quotes</em>
 </li>
 <li>they always output a new data frame, they don’t modify the passed one</li>
-</ul></section><section id="pipe-operator" class="level3" data-number="10.2.3"><h3 data-number="10.2.3" class="anchored" data-anchor-id="pipe-operator">
-<span class="header-section-number">10.2.3</span> Pipe <code>|&gt;</code> Operator</h3>
+</ul></section><section id="pipe-operator" class="level3" data-number="11.2.3"><h3 data-number="11.2.3" class="anchored" data-anchor-id="pipe-operator">
+<span class="header-section-number">11.2.3</span> Pipe <code>|&gt;</code> Operator</h3>
 <ul>
 <li>The pipe <code>|&gt;</code> operator takes what on its left and pass it to the function on its right so that <code>x |&gt; f(y)</code> (pronounced as <code>x</code> <em>then</em> <code>f(y)</code>) is equivalent to <code>f(x, y)</code> and <code>x |&gt; f(y) |&gt; g(z)</code> (pronounced as <code>x</code> then <code>f(y)</code> then <code>g(z)</code>) is equivalent to <code>g(f(x, y), z)</code>
 </li>
 <li>The <code>base</code> R pipe operator <code>|&gt;</code> was introduced in R 4.1.0 in 2021 while the tidyverse <code>magrittr</code> pipe operator <code>%&gt;%</code> was introduced in 2014. Using <code>|&gt;</code> instead of <code>%&gt;%</code> makes our code run when we don’t use tidyverse</li>
-</ul></section><section id="row-functions" class="level3" data-number="10.2.4"><h3 data-number="10.2.4" class="anchored" data-anchor-id="row-functions">
-<span class="header-section-number">10.2.4</span> Row Functions</h3>
+</ul></section><section id="row-functions" class="level3" data-number="11.2.4"><h3 data-number="11.2.4" class="anchored" data-anchor-id="row-functions">
+<span class="header-section-number">11.2.4</span> Row Functions</h3>
 <ul>
 <li>The following <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> statements are equivalent:
 <ul>
@@ -547,8 +552,8 @@ cookieconsent.run({
 <code>count(ds, var1, var2, sort = TRUE)</code> arrange results in descending order of number of occurrence</li>
 </ul>
 </li>
-</ul></section><section id="column-functions" class="level3" data-number="10.2.5"><h3 data-number="10.2.5" class="anchored" data-anchor-id="column-functions">
-<span class="header-section-number">10.2.5</span> Column Functions</h3>
+</ul></section><section id="column-functions" class="level3" data-number="11.2.5"><h3 data-number="11.2.5" class="anchored" data-anchor-id="column-functions">
+<span class="header-section-number">11.2.5</span> Column Functions</h3>
 <ul>
 <li>
 <code>mutate()</code>
@@ -596,8 +601,8 @@ cookieconsent.run({
 </li>
 </ul>
 </li>
-</ul></section><section id="groups-functions" class="level3" data-number="10.2.6"><h3 data-number="10.2.6" class="anchored" data-anchor-id="groups-functions">
-<span class="header-section-number">10.2.6</span> Groups Functions</h3>
+</ul></section><section id="groups-functions" class="level3" data-number="11.2.6"><h3 data-number="11.2.6" class="anchored" data-anchor-id="groups-functions">
+<span class="header-section-number">11.2.6</span> Groups Functions</h3>
 <ul>
 <li>
 <code>group_by()</code>

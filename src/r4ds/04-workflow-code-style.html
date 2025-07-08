@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>11&nbsp; Workflow: Code Style – Workspace</title>
+<title>12&nbsp; Workflow: Code Style – Workspace</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -369,6 +369,11 @@ cookieconsent.run({
   <a href="../../src/notes/windows.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Microsoft Windows</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/notes/webhost.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Web Hosting</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -446,23 +451,23 @@ cookieconsent.run({
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">11.1</span> Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">12.1</span> Introduction</a></li>
   <li>
-<a href="#styling-overview" id="toc-styling-overview" class="nav-link" data-scroll-target="#styling-overview"><span class="header-section-number">11.2</span> Styling Overview</a>
+<a href="#styling-overview" id="toc-styling-overview" class="nav-link" data-scroll-target="#styling-overview"><span class="header-section-number">12.2</span> Styling Overview</a>
   <ul class="collapse">
-<li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">11.2.1</span> Consistency</a></li>
-  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines"><span class="header-section-number">11.2.2</span> Guidelines</a></li>
-  <li><a href="#automatic" id="toc-automatic" class="nav-link" data-scroll-target="#automatic"><span class="header-section-number">11.2.3</span> Automatic</a></li>
+<li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">12.2.1</span> Consistency</a></li>
+  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines"><span class="header-section-number">12.2.2</span> Guidelines</a></li>
+  <li><a href="#automatic" id="toc-automatic" class="nav-link" data-scroll-target="#automatic"><span class="header-section-number">12.2.3</span> Automatic</a></li>
   </ul>
 </li>
   <li>
-<a href="#styling-specifics" id="toc-styling-specifics" class="nav-link" data-scroll-target="#styling-specifics"><span class="header-section-number">11.3</span> Styling Specifics</a>
+<a href="#styling-specifics" id="toc-styling-specifics" class="nav-link" data-scroll-target="#styling-specifics"><span class="header-section-number">12.3</span> Styling Specifics</a>
   <ul class="collapse">
-<li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names"><span class="header-section-number">11.3.1</span> Names</a></li>
-  <li><a href="#spaces" id="toc-spaces" class="nav-link" data-scroll-target="#spaces"><span class="header-section-number">11.3.2</span> Spaces</a></li>
-  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes"><span class="header-section-number">11.3.3</span> Pipes <code>|&gt;</code></a></li>
-  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="header-section-number">11.3.4</span> <code>ggplot2</code></a></li>
-  <li><a href="#sectioning-comments" id="toc-sectioning-comments" class="nav-link" data-scroll-target="#sectioning-comments"><span class="header-section-number">11.3.5</span> Sectioning Comments</a></li>
+<li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names"><span class="header-section-number">12.3.1</span> Names</a></li>
+  <li><a href="#spaces" id="toc-spaces" class="nav-link" data-scroll-target="#spaces"><span class="header-section-number">12.3.2</span> Spaces</a></li>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes"><span class="header-section-number">12.3.3</span> Pipes <code>|&gt;</code></a></li>
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="header-section-number">12.3.4</span> <code>ggplot2</code></a></li>
+  <li><a href="#sectioning-comments" id="toc-sectioning-comments" class="nav-link" data-scroll-target="#sectioning-comments"><span class="header-section-number">12.3.5</span> Sectioning Comments</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/r4ds/04-workflow-code-style.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -483,8 +488,8 @@ cookieconsent.run({
   
 
 
-</header><section id="introduction" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="introduction">
-<span class="header-section-number">11.1</span> Introduction</h2>
+</header><section id="introduction" class="level2" data-number="12.1"><h2 data-number="12.1" class="anchored" data-anchor-id="introduction">
+<span class="header-section-number">12.1</span> Introduction</h2>
 <p>This page covers code style concepts when working with R. I took note for those that were new to me or found useful to remind myself with.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -499,13 +504,13 @@ Code Style &amp; Punctuation
 <p>Code style is like punctuation, when used correctly, itmakecodereadeasily.</p>
 </div>
 </div>
-</section><section id="styling-overview" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="styling-overview">
-<span class="header-section-number">11.2</span> Styling Overview</h2>
-<section id="consistency" class="level3" data-number="11.2.1"><h3 data-number="11.2.1" class="anchored" data-anchor-id="consistency">
-<span class="header-section-number">11.2.1</span> Consistency</h3>
+</section><section id="styling-overview" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="styling-overview">
+<span class="header-section-number">12.2</span> Styling Overview</h2>
+<section id="consistency" class="level3" data-number="12.2.1"><h3 data-number="12.2.1" class="anchored" data-anchor-id="consistency">
+<span class="header-section-number">12.2.1</span> Consistency</h3>
 <p>Although there are styling guidelines (see below for example) that one can follow, it is important that a programmer pick one and stick with it to make easy for other including future self to read your work.</p>
-</section><section id="guidelines" class="level3" data-number="11.2.2"><h3 data-number="11.2.2" class="anchored" data-anchor-id="guidelines">
-<span class="header-section-number">11.2.2</span> Guidelines</h3>
+</section><section id="guidelines" class="level3" data-number="12.2.2"><h3 data-number="12.2.2" class="anchored" data-anchor-id="guidelines">
+<span class="header-section-number">12.2.2</span> Guidelines</h3>
 <p>There is not official styling guideline for R. However, there are different styling guidelines that one can adopt, below are some of those found by search R styling guidelines (<a href="https://www.google.com/search?q=r+styling+guidlines&amp;oq=r+styling+guidlines">html</a>):</p>
 <ul>
 <li>tidyverse Style Guide (<a href="https://style.tidyverse.org/">html</a>) by Hadley Wickham. <strong>This is the adopted guidelines in these notes.</strong>
@@ -514,22 +519,22 @@ Code Style &amp; Punctuation
 <li>R Coding Conventions (<a href="https://docs.google.com/document/d/1esDVxyWvH8AsX-VJa-8oqWaHLs4stGlIbk8kLc5VlII/preview">html</a>) by Henrik Bengtsson, Assoc Professor, Dept of Statistics, University of California, Berkeley</li>
 <li>Coding Style (<a href="https://contributions.bioconductor.org/r-code.html#r-code">html</a>) by Bioconductor project (<a href="https://bioconductor.org/">website</a>)</li>
 <li>R Style Guide (<a href="https://jef.works/R-style-guide/">html</a>) by Jean Fan (<a href="https://github.com/JEFworks">GitHub</a>), Assistant Professor, Center for Computational Biology, Department of Biomedical Engineering, Johns Hopkins University</li>
-</ul></section><section id="automatic" class="level3" data-number="11.2.3"><h3 data-number="11.2.3" class="anchored" data-anchor-id="automatic">
-<span class="header-section-number">11.2.3</span> Automatic</h3>
+</ul></section><section id="automatic" class="level3" data-number="12.2.3"><h3 data-number="12.2.3" class="anchored" data-anchor-id="automatic">
+<span class="header-section-number">12.2.3</span> Automatic</h3>
 <p>There are package that can be used to automatically style existing code. Below are some of those:</p>
 <ul>
 <li>
 <code>styler</code> package (<a href="https://styler.r-lib.org/">website</a>) by Lorenz Walthert (<a href="https://lorenzwalthert.com/">website</a>). After installing the package, launch RStudio’s command palette using the keyboard shortcut <code>Ctrl+Shift+P</code>, type <code>styler</code>, and select from the available commands</li>
-</ul></section></section><section id="styling-specifics" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="styling-specifics">
-<span class="header-section-number">11.3</span> Styling Specifics</h2>
-<section id="names" class="level3" data-number="11.3.1"><h3 data-number="11.3.1" class="anchored" data-anchor-id="names">
-<span class="header-section-number">11.3.1</span> Names</h3>
+</ul></section></section><section id="styling-specifics" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="styling-specifics">
+<span class="header-section-number">12.3</span> Styling Specifics</h2>
+<section id="names" class="level3" data-number="12.3.1"><h3 data-number="12.3.1" class="anchored" data-anchor-id="names">
+<span class="header-section-number">12.3.1</span> Names</h3>
 <ul>
 <li>Use meaningful names</li>
 <li>snake_case is used to separate_multi_word_variables</li>
 <li>variables with certain theme should start with the same common word/letter to make use of the auto-complete functionality</li>
-</ul></section><section id="spaces" class="level3" data-number="11.3.2"><h3 data-number="11.3.2" class="anchored" data-anchor-id="spaces">
-<span class="header-section-number">11.3.2</span> Spaces</h3>
+</ul></section><section id="spaces" class="level3" data-number="12.3.2"><h3 data-number="12.3.2" class="anchored" data-anchor-id="spaces">
+<span class="header-section-number">12.3.2</span> Spaces</h3>
 <ul>
 <li>Except <code>^</code>, put spaces on both sides of mathematical operators</li>
 <li>Put spaces on both sides of the assignment operator, <code>&lt;-</code>
@@ -564,8 +569,8 @@ Code Style &amp; Punctuation
 <span>    dep_minute <span class="op">=</span> <span class="va">dep_time</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span>  <span class="fl">100</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="pipes" class="level3" data-number="11.3.3"><h3 data-number="11.3.3" class="anchored" data-anchor-id="pipes">
-<span class="header-section-number">11.3.3</span> Pipes <code>|&gt;</code>
+</section><section id="pipes" class="level3" data-number="12.3.3"><h3 data-number="12.3.3" class="anchored" data-anchor-id="pipes">
+<span class="header-section-number">12.3.3</span> Pipes <code>|&gt;</code>
 </h3>
 <p>The roles for pipes are nicely summarized in <a href="https://r4ds.hadley.nz/workflow-style#sec-pipes">R4DS</a>. Most of them are copied below.</p>
 <ul>
@@ -647,8 +652,8 @@ Long Pipeline
 <p>Break long pipelines (tasks) to meaningful pipelines (sub-tasks) and save the intermediate steps. This will make the code more readable and easy to check and debug.</p>
 </div>
 </div>
-</section><section id="ggplot2" class="level3" data-number="11.3.4"><h3 data-number="11.3.4" class="anchored" data-anchor-id="ggplot2">
-<span class="header-section-number">11.3.4</span> <code>ggplot2</code>
+</section><section id="ggplot2" class="level3" data-number="12.3.4"><h3 data-number="12.3.4" class="anchored" data-anchor-id="ggplot2">
+<span class="header-section-number">12.3.4</span> <code>ggplot2</code>
 </h3>
 <p>The same rules from pipe can be applied to <code>ggplot2</code>.</p>
 <div class="cell">
@@ -668,8 +673,8 @@ Long Pipeline
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="sectioning-comments" class="level3" data-number="11.3.5"><h3 data-number="11.3.5" class="anchored" data-anchor-id="sectioning-comments">
-<span class="header-section-number">11.3.5</span> Sectioning Comments</h3>
+</section><section id="sectioning-comments" class="level3" data-number="12.3.5"><h3 data-number="12.3.5" class="anchored" data-anchor-id="sectioning-comments">
+<span class="header-section-number">12.3.5</span> Sectioning Comments</h3>
 <p>When writing long scripts, it is advisable to break the code into sections and using <em>sectioning</em> comments to label them. The RStudio keyboard shortcut to create such comment is <code>Cnrl+Shift+R</code>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Load data --------------------------------------</span></span>
