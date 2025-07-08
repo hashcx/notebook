@@ -1,4 +1,6 @@
-# Code Files
+---
+title: "Code Files"
+---
 
 It is advisable to perform the following step at the beginning of each code file.  The example code chunks are for the R programming language.
 
