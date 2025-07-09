@@ -13,7 +13,7 @@ rm(list = ls())
 ```{r List all used packages}
 #| include: false
 
-packages <- c("downlit", "xml2", "here", "tidyverse", "janitor")
+packages <- c("downlit", "xml2", "here", "tidyverse", "janitor", "cols4all", "shiny", "shinyjs", "kableExtra", "colorblindcheck", "plotly")
 ```
 
 
@@ -624,6 +624,19 @@ surveys_plot + geom_line(aes(color = sex)) +
   theme_bw() +
   theme(panel.grid = element_blank())
 ```
+
+## Colors
+
+### cols4all package
+
+[cols4all package](https://cols4all.github.io/cols4all-R/) by [Martijn Tennekes](https://10mapz.com/) helps select color palettes.
+
+The main tool in the package is a dashboard that can be started using the following line:
+
+```{r}
+c4a_gui()
+```
+
 
 ## References
 
