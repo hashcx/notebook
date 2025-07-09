@@ -493,6 +493,12 @@ cookieconsent.run({
   <li><a href="#time-series-data" id="toc-time-series-data" class="nav-link" data-scroll-target="#time-series-data">Time series data</a></li>
   </ul>
 </li>
+  <li>
+<a href="#colors" id="toc-colors" class="nav-link" data-scroll-target="#colors">Colors</a>
+  <ul class="collapse">
+<li><a href="#cols4all-package" id="toc-cols4all-package" class="nav-link" data-scroll-target="#cols4all-package">cols4all package</a></li>
+  </ul>
+</li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/hashcx/workspace/edit/main/src/notes/r.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hashcx/workspace/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -601,7 +607,7 @@ Printing tibble All Columns
 <div class="cell-output-display">
 <div id="fig-datastructure" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-datastructure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../images/datastructure.png" class="img-fluid figure-img">
+<img src="../../images/datastructure.png" class="img-fluid figure-img" width="256">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datastructure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.1: Common data structures in R ( taken from <a href="https://jjallaire.github.io/hopr/objects.html">Grolemund, 2014</a>)
@@ -1503,6 +1509,17 @@ $ plot_type       &lt;chr&gt; </code></pre>
 </div>
 </div>
 </div>
+</section></section><section id="colors" class="level2"><h2 class="anchored" data-anchor-id="colors">Colors</h2>
+<section id="cols4all-package" class="level3"><h3 class="anchored" data-anchor-id="cols4all-package">cols4all package</h3>
+<p><a href="https://cols4all.github.io/cols4all-R/">cols4all package</a> by <a href="https://10mapz.com/">Martijn Tennekes</a> helps select color palettes.</p>
+<p>The main tool in the package is a dashboard that can be started using the following line:</p>
+<div class="cell">
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">c4a_gui</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p></p>
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
+</div>
+</div>
 </section></section><section id="references" class="level2"><h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
 <li>OU Software Carpentry Workshop (check other workshops <a href="https://libraries.ou.edu/content/software-and-data-carpentry">here</a>)
@@ -2002,644 +2019,659 @@ $ plot_type       &lt;chr&gt; </code></pre>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb119" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "R"</span></span>
-<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="an">eval:</span><span class="co"> true</span></span>
-<span id="cb119-4"><a href="#cb119-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb119-5"><a href="#cb119-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-6"><a href="#cb119-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-7"><a href="#cb119-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Clean workspace}</span></span>
-<span id="cb119-8"><a href="#cb119-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb119-9"><a href="#cb119-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-10"><a href="#cb119-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb119-11"><a href="#cb119-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-12"><a href="#cb119-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-13"><a href="#cb119-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r List all used packages}</span></span>
-<span id="cb119-14"><a href="#cb119-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb119-15"><a href="#cb119-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-16"><a href="#cb119-16" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>, <span class="st">"here"</span>, <span class="st">"tidyverse"</span>, <span class="st">"janitor"</span>)</span>
-<span id="cb119-17"><a href="#cb119-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-18"><a href="#cb119-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-19"><a href="#cb119-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-20"><a href="#cb119-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Install missing packages}</span></span>
-<span id="cb119-21"><a href="#cb119-21" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb119-22"><a href="#cb119-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-23"><a href="#cb119-23" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
-<span id="cb119-24"><a href="#cb119-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-25"><a href="#cb119-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-26"><a href="#cb119-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Load packages}</span></span>
-<span id="cb119-27"><a href="#cb119-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb119-28"><a href="#cb119-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-29"><a href="#cb119-29" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb119-30"><a href="#cb119-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-31"><a href="#cb119-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-32"><a href="#cb119-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## R Packages</span></span>
-<span id="cb119-33"><a href="#cb119-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-34"><a href="#cb119-34" aria-hidden="true" tabindex="-1"></a>An R package usually includes:</span>
-<span id="cb119-35"><a href="#cb119-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-36"><a href="#cb119-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>reusable functions</span>
-<span id="cb119-37"><a href="#cb119-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>documentation describing how to use the function</span>
-<span id="cb119-38"><a href="#cb119-38" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>sample data</span>
-<span id="cb119-39"><a href="#cb119-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-40"><a href="#cb119-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset in Packages</span></span>
-<span id="cb119-41"><a href="#cb119-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-42"><a href="#cb119-42" aria-hidden="true" tabindex="-1"></a>To list datasets in all the available packages, use the following command:</span>
-<span id="cb119-43"><a href="#cb119-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-44"><a href="#cb119-44" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb119-45"><a href="#cb119-45" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="at">package =</span> <span class="fu">.packages</span>(<span class="at">all.available =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb119-46"><a href="#cb119-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-47"><a href="#cb119-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-48"><a href="#cb119-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Primitive Data Types</span></span>
-<span id="cb119-49"><a href="#cb119-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-50"><a href="#cb119-50" aria-hidden="true" tabindex="-1"></a>The primitive (also known as singleton/simple) data types in R are:</span>
-<span id="cb119-51"><a href="#cb119-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-52"><a href="#cb119-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>character</span>
-<span id="cb119-53"><a href="#cb119-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numeric</span>
-<span id="cb119-54"><a href="#cb119-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>logical</span>
-<span id="cb119-55"><a href="#cb119-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>raw</span>
-<span id="cb119-56"><a href="#cb119-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>imaginary numbers</span>
-<span id="cb119-57"><a href="#cb119-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-58"><a href="#cb119-58" aria-hidden="true" tabindex="-1"></a>To know the datatype of an object, run the command:</span>
-<span id="cb119-59"><a href="#cb119-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-60"><a href="#cb119-60" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb119-61"><a href="#cb119-61" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x) <span class="co"># give the data type of x</span></span>
-<span id="cb119-62"><a href="#cb119-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-63"><a href="#cb119-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-64"><a href="#cb119-64" aria-hidden="true" tabindex="-1"></a>To know the type of the variables of each variable.</span>
-<span id="cb119-65"><a href="#cb119-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-66"><a href="#cb119-66" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb119-67"><a href="#cb119-67" aria-hidden="true" tabindex="-1"></a>x <span class="sc">|&gt;</span> </span>
-<span id="cb119-68"><a href="#cb119-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb119-69"><a href="#cb119-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
-<span id="cb119-70"><a href="#cb119-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-71"><a href="#cb119-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-72"><a href="#cb119-72" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mixing Data Types</span></span>
-<span id="cb119-73"><a href="#cb119-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-74"><a href="#cb119-74" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>character + numeric --<span class="sc">\&gt;</span> character</span>
-<span id="cb119-75"><a href="#cb119-75" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numeric + logical --<span class="sc">\&gt;</span> numeric</span>
-<span id="cb119-76"><a href="#cb119-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numeric + character + logical --<span class="sc">\&gt;</span> character</span>
-<span id="cb119-77"><a href="#cb119-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-78"><a href="#cb119-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Compound Data Types</span></span>
-<span id="cb119-79"><a href="#cb119-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-80"><a href="#cb119-80" aria-hidden="true" tabindex="-1"></a>The compound (also know as collection/sttructure) data types in R are:</span>
-<span id="cb119-81"><a href="#cb119-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-82"><a href="#cb119-82" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**vector**: hold single type of data</span>
-<span id="cb119-83"><a href="#cb119-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-84"><a href="#cb119-84" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb119-85"><a href="#cb119-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-86"><a href="#cb119-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creating Vector</span></span>
-<span id="cb119-87"><a href="#cb119-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-88"><a href="#cb119-88" aria-hidden="true" tabindex="-1"></a>The <span class="in">`c()`</span> function (**c**ombine multiple elements) can be used to create vectors in R.</span>
-<span id="cb119-89"><a href="#cb119-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-90"><a href="#cb119-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-91"><a href="#cb119-91" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- c(1, 2, 3, 4)</span></span>
-<span id="cb119-92"><a href="#cb119-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-93"><a href="#cb119-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-94"><a href="#cb119-94" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb119-95"><a href="#cb119-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-96"><a href="#cb119-96" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**matrix**: 2D vector</span>
-<span id="cb119-97"><a href="#cb119-97" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**array**: nD vector</span>
-<span id="cb119-98"><a href="#cb119-98" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**list**: generic vector, can hold mixed type of data, eg, one element can be a character, another can be a list of integers, and the third could be a logical</span>
-<span id="cb119-99"><a href="#cb119-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**data frame**: table where columns represent vectors</span>
-<span id="cb119-100"><a href="#cb119-100" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**tibbles**: data frames, but slightly tweaked to work better with <span class="in">`tidyverse`</span>--when printing tibbles, only the first few columns that fit into the screen will be shown</span>
-<span id="cb119-101"><a href="#cb119-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-102"><a href="#cb119-102" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb119-103"><a href="#cb119-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-104"><a href="#cb119-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Printing tibble All Columns</span></span>
-<span id="cb119-105"><a href="#cb119-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-106"><a href="#cb119-106" aria-hidden="true" tabindex="-1"></a>To force the <span class="in">`print()`</span> function to print all the columns of a <span class="in">`tibble`</span>, set the <span class="in">`width`</span> parameter to <span class="in">`Inf`</span> as follows:</span>
-<span id="cb119-107"><a href="#cb119-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-108"><a href="#cb119-108" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb119-109"><a href="#cb119-109" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ds, <span class="at">width =</span> <span class="cn">Inf</span>)</span>
-<span id="cb119-110"><a href="#cb119-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-111"><a href="#cb119-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-112"><a href="#cb119-112" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb119-113"><a href="#cb119-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-114"><a href="#cb119-114" aria-hidden="true" tabindex="-1"></a>To construct small tibble by hand, use the <span class="in">`tribble`</span> function as follows:</span>
-<span id="cb119-115"><a href="#cb119-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-116"><a href="#cb119-116" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb119-117"><a href="#cb119-117" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb119-118"><a href="#cb119-118" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>var1, <span class="sc">~</span>var2, <span class="sc">~</span>var3</span>
-<span id="cb119-119"><a href="#cb119-119" aria-hidden="true" tabindex="-1"></a>  <span class="st">"A"</span>, <span class="dv">1</span>, <span class="cn">TRUE</span>,</span>
-<span id="cb119-120"><a href="#cb119-120" aria-hidden="true" tabindex="-1"></a>  <span class="st">"B"</span>, <span class="dv">2</span>, <span class="cn">FALSE</span>,</span>
-<span id="cb119-121"><a href="#cb119-121" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C"</span>, <span class="dv">3</span>, <span class="cn">TRUE</span></span>
-<span id="cb119-122"><a href="#cb119-122" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb119-123"><a href="#cb119-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-124"><a href="#cb119-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-125"><a href="#cb119-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-126"><a href="#cb119-126" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**factor**</span>
-<span id="cb119-127"><a href="#cb119-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-130"><a href="#cb119-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-131"><a href="#cb119-131" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-datastructure</span></span>
-<span id="cb119-132"><a href="#cb119-132" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb119-133"><a href="#cb119-133" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Common data structures in R ( taken from [Grolemund, 2014](https://jjallaire.github.io/hopr/objects.html))</span></span>
-<span id="cb119-134"><a href="#cb119-134" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: NULL</span></span>
-<span id="cb119-135"><a href="#cb119-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-136"><a href="#cb119-136" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">here</span>(<span class="st">"images"</span>, <span class="st">"datastructure.png"</span>))</span>
-<span id="cb119-137"><a href="#cb119-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-138"><a href="#cb119-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-139"><a href="#cb119-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-140"><a href="#cb119-140" aria-hidden="true" tabindex="-1"></a>To know the data structure and length of the object, run the command:</span>
-<span id="cb119-141"><a href="#cb119-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-142"><a href="#cb119-142" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb119-143"><a href="#cb119-143" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x) <span class="co"># give the structure type of x</span></span>
-<span id="cb119-144"><a href="#cb119-144" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x) <span class="co"># length of structure</span></span>
-<span id="cb119-145"><a href="#cb119-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-146"><a href="#cb119-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-147"><a href="#cb119-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-148"><a href="#cb119-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-149"><a href="#cb119-149" aria-hidden="true" tabindex="-1"></a><span class="fu">## Basics Operations</span></span>
-<span id="cb119-150"><a href="#cb119-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-151"><a href="#cb119-151" aria-hidden="true" tabindex="-1"></a>Assignment</span>
-<span id="cb119-152"><a href="#cb119-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-155"><a href="#cb119-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-156"><a href="#cb119-156" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># assign 3 to x (x gets 3)</span></span>
-<span id="cb119-157"><a href="#cb119-157" aria-hidden="true" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="dv">3</span>) <span class="co"># assign 3 to x (x gets 3) &amp; print the result to console</span></span>
-<span id="cb119-158"><a href="#cb119-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-159"><a href="#cb119-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-160"><a href="#cb119-160" aria-hidden="true" tabindex="-1"></a>Getting Help </span>
-<span id="cb119-161"><a href="#cb119-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-162"><a href="#cb119-162" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb119-163"><a href="#cb119-163" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(round) <span class="co"># print the argument list of function</span></span>
-<span id="cb119-164"><a href="#cb119-164" aria-hidden="true" tabindex="-1"></a>?round <span class="co"># show documentation of function in Help window</span></span>
-<span id="cb119-165"><a href="#cb119-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-166"><a href="#cb119-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-167"><a href="#cb119-167" aria-hidden="true" tabindex="-1"></a>Dealing with Structure</span>
-<span id="cb119-168"><a href="#cb119-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-171"><a href="#cb119-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-172"><a href="#cb119-172" aria-hidden="true" tabindex="-1"></a><span class="co"># concatenate set of values to create vector</span></span>
-<span id="cb119-173"><a href="#cb119-173" aria-hidden="true" tabindex="-1"></a>weight_g <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">3</span>, <span class="dv">9</span>)</span>
-<span id="cb119-174"><a href="#cb119-174" aria-hidden="true" tabindex="-1"></a>animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"dog"</span>, <span class="st">"bat"</span>, <span class="st">"cat"</span>)</span>
-<span id="cb119-175"><a href="#cb119-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-176"><a href="#cb119-176" aria-hidden="true" tabindex="-1"></a><span class="co"># utilizing logical values to pull specific values</span></span>
-<span id="cb119-177"><a href="#cb119-177" aria-hidden="true" tabindex="-1"></a>weight_g[weight_g <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> weight_g <span class="sc">&gt;</span> <span class="dv">60</span> <span class="sc">|</span> weight_g <span class="sc">==</span> <span class="dv">50</span>]</span>
-<span id="cb119-178"><a href="#cb119-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-179"><a href="#cb119-179" aria-hidden="true" tabindex="-1"></a><span class="co"># pull dog &amp; cat records</span></span>
-<span id="cb119-180"><a href="#cb119-180" aria-hidden="true" tabindex="-1"></a>animals[animals <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"dog"</span>, <span class="st">"cat"</span>)]</span>
-<span id="cb119-181"><a href="#cb119-181" aria-hidden="true" tabindex="-1"></a>animals[animals <span class="sc">==</span> <span class="st">"dog"</span> <span class="sc">|</span> animals <span class="sc">==</span> <span class="st">"cat"</span>]</span>
-<span id="cb119-182"><a href="#cb119-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-183"><a href="#cb119-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-184"><a href="#cb119-184" aria-hidden="true" tabindex="-1"></a>Statistics</span>
-<span id="cb119-185"><a href="#cb119-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-188"><a href="#cb119-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-189"><a href="#cb119-189" aria-hidden="true" tabindex="-1"></a><span class="co"># signaling missing data using NA</span></span>
-<span id="cb119-190"><a href="#cb119-190" aria-hidden="true" tabindex="-1"></a>heights <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">4</span>)</span>
-<span id="cb119-191"><a href="#cb119-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-192"><a href="#cb119-192" aria-hidden="true" tabindex="-1"></a><span class="co"># get mean while ignoring missing data</span></span>
-<span id="cb119-193"><a href="#cb119-193" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(heights, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb119-194"><a href="#cb119-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-195"><a href="#cb119-195" aria-hidden="true" tabindex="-1"></a><span class="co"># how to use mean</span></span>
-<span id="cb119-196"><a href="#cb119-196" aria-hidden="true" tabindex="-1"></a><span class="co"># ?mean</span></span>
-<span id="cb119-197"><a href="#cb119-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-198"><a href="#cb119-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-199"><a href="#cb119-199" aria-hidden="true" tabindex="-1"></a><span class="fu">## Initial Steps</span></span>
-<span id="cb119-200"><a href="#cb119-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-201"><a href="#cb119-201" aria-hidden="true" tabindex="-1"></a><span class="fu">### File Paths</span></span>
-<span id="cb119-202"><a href="#cb119-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-203"><a href="#cb119-203" aria-hidden="true" tabindex="-1"></a>The <span class="in">`here`</span> package makes it easy to point to files starting from the project main directory.</span>
-<span id="cb119-204"><a href="#cb119-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-205"><a href="#cb119-205" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb119-206"><a href="#cb119-206" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"here"</span>, <span class="st">"janitor"</span>)</span>
-<span id="cb119-207"><a href="#cb119-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-208"><a href="#cb119-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-209"><a href="#cb119-209" aria-hidden="true" tabindex="-1"></a><span class="fu">### Store Locally</span></span>
-<span id="cb119-210"><a href="#cb119-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-211"><a href="#cb119-211" aria-hidden="true" tabindex="-1"></a>Loading file from repository and saving it locally on disk. It is always a good idea to structure the workspace--for more information, see <span class="co">[</span><span class="ot">Best Practices for Scientific Computing paper</span><span class="co">](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)</span>.</span>
-<span id="cb119-212"><a href="#cb119-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-215"><a href="#cb119-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-216"><a href="#cb119-216" aria-hidden="true" tabindex="-1"></a>file_name <span class="ot">&lt;-</span> <span class="st">"portal_data_joined.csv"</span></span>
-<span id="cb119-217"><a href="#cb119-217" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, file_name)</span>
-<span id="cb119-218"><a href="#cb119-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-219"><a href="#cb119-219" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(file_path)) {</span>
-<span id="cb119-220"><a href="#cb119-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(</span>
-<span id="cb119-221"><a href="#cb119-221" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://ndownloader.figshare.com/files/2292169"</span>,</span>
-<span id="cb119-222"><a href="#cb119-222" aria-hidden="true" tabindex="-1"></a>    <span class="at">destfile =</span> file_path</span>
-<span id="cb119-223"><a href="#cb119-223" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb119-224"><a href="#cb119-224" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb119-225"><a href="#cb119-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-226"><a href="#cb119-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-227"><a href="#cb119-227" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load Locally</span></span>
-<span id="cb119-228"><a href="#cb119-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-231"><a href="#cb119-231" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-232"><a href="#cb119-232" aria-hidden="true" tabindex="-1"></a>surveys <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(file_path)</span>
-<span id="cb119-233"><a href="#cb119-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-234"><a href="#cb119-234" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(surveys)</span>
-<span id="cb119-235"><a href="#cb119-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-236"><a href="#cb119-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-237"><a href="#cb119-237" aria-hidden="true" tabindex="-1"></a><span class="fu">### Clean Names</span></span>
-<span id="cb119-238"><a href="#cb119-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-241"><a href="#cb119-241" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-242"><a href="#cb119-242" aria-hidden="true" tabindex="-1"></a>surveys <span class="ot">&lt;-</span> surveys <span class="sc">|&gt;</span> </span>
-<span id="cb119-243"><a href="#cb119-243" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
-<span id="cb119-244"><a href="#cb119-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-245"><a href="#cb119-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-246"><a href="#cb119-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-247"><a href="#cb119-247" aria-hidden="true" tabindex="-1"></a><span class="fu">### Inspecting Data</span></span>
-<span id="cb119-248"><a href="#cb119-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-251"><a href="#cb119-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-252"><a href="#cb119-252" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(surveys) <span class="co"># data type</span></span>
-<span id="cb119-253"><a href="#cb119-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-254"><a href="#cb119-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-257"><a href="#cb119-257" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-258"><a href="#cb119-258" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys) <span class="co"># structure</span></span>
-<span id="cb119-259"><a href="#cb119-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-260"><a href="#cb119-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-263"><a href="#cb119-263" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-264"><a href="#cb119-264" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">|&gt;</span> </span>
-<span id="cb119-265"><a href="#cb119-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb119-266"><a href="#cb119-266" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
-<span id="cb119-267"><a href="#cb119-267" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-268"><a href="#cb119-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-271"><a href="#cb119-271" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-272"><a href="#cb119-272" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(surveys) <span class="co"># dimensions</span></span>
-<span id="cb119-273"><a href="#cb119-273" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(surveys)</span>
-<span id="cb119-274"><a href="#cb119-274" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(surveys)</span>
-<span id="cb119-275"><a href="#cb119-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-276"><a href="#cb119-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-279"><a href="#cb119-279" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-280"><a href="#cb119-280" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(surveys)</span>
-<span id="cb119-281"><a href="#cb119-281" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-282"><a href="#cb119-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-283"><a href="#cb119-283" aria-hidden="true" tabindex="-1"></a>Print top and bottom obervations</span>
-<span id="cb119-284"><a href="#cb119-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-287"><a href="#cb119-287" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-288"><a href="#cb119-288" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys)</span>
-<span id="cb119-289"><a href="#cb119-289" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(surveys)</span>
-<span id="cb119-290"><a href="#cb119-290" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-291"><a href="#cb119-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-292"><a href="#cb119-292" aria-hidden="true" tabindex="-1"></a>Retrieve specific element/row/column</span>
-<span id="cb119-293"><a href="#cb119-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-296"><a href="#cb119-296" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-297"><a href="#cb119-297" aria-hidden="true" tabindex="-1"></a>surveys[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co"># element[1,1]</span></span>
-<span id="cb119-298"><a href="#cb119-298" aria-hidden="true" tabindex="-1"></a>surveys[<span class="dv">1</span>, ] <span class="co"># row 1</span></span>
-<span id="cb119-299"><a href="#cb119-299" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys[, <span class="dv">1</span>]) <span class="co"># column 1</span></span>
-<span id="cb119-300"><a href="#cb119-300" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys<span class="sc">$</span>sex) <span class="co"># column by name</span></span>
-<span id="cb119-301"><a href="#cb119-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-302"><a href="#cb119-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-303"><a href="#cb119-303" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dealing with Factor (Categorical) Columns</span></span>
-<span id="cb119-304"><a href="#cb119-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-305"><a href="#cb119-305" aria-hidden="true" tabindex="-1"></a>R convert columns that contain characters to factors by default. Factors are treated as integer vectors. By default, R sorts levels in alphabetical order.</span>
-<span id="cb119-306"><a href="#cb119-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-309"><a href="#cb119-309" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-310"><a href="#cb119-310" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(surveys<span class="sc">$</span>sex)</span>
-<span id="cb119-311"><a href="#cb119-311" aria-hidden="true" tabindex="-1"></a><span class="fu">nlevels</span>(surveys<span class="sc">$</span>sex)</span>
-<span id="cb119-312"><a href="#cb119-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-313"><a href="#cb119-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-314"><a href="#cb119-314" aria-hidden="true" tabindex="-1"></a>Reorder factors (to get better plots)</span>
-<span id="cb119-315"><a href="#cb119-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-318"><a href="#cb119-318" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-319"><a href="#cb119-319" aria-hidden="true" tabindex="-1"></a>surveys<span class="sc">$</span>sex_ordered <span class="ot">&lt;-</span> <span class="fu">factor</span>(surveys<span class="sc">$</span>sex, <span class="at">level =</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">""</span>))</span>
-<span id="cb119-320"><a href="#cb119-320" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys<span class="sc">$</span>sex_ordered)</span>
-<span id="cb119-321"><a href="#cb119-321" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(surveys<span class="sc">$</span>sex_ordered)</span>
-<span id="cb119-322"><a href="#cb119-322" aria-hidden="true" tabindex="-1"></a><span class="fu">nlevels</span>(surveys<span class="sc">$</span>sex_ordered)</span>
-<span id="cb119-323"><a href="#cb119-323" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-324"><a href="#cb119-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-325"><a href="#cb119-325" aria-hidden="true" tabindex="-1"></a><span class="fu">### Basic Plotting</span></span>
-<span id="cb119-326"><a href="#cb119-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-327"><a href="#cb119-327" aria-hidden="true" tabindex="-1"></a>Histogram</span>
-<span id="cb119-328"><a href="#cb119-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-331"><a href="#cb119-331" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-332"><a href="#cb119-332" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(surveys$sex)  # not possible</span></span>
-<span id="cb119-333"><a href="#cb119-333" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(surveys<span class="sc">$</span>sex_ordered)</span>
-<span id="cb119-334"><a href="#cb119-334" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-335"><a href="#cb119-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-336"><a href="#cb119-336" aria-hidden="true" tabindex="-1"></a>Enhance the plot</span>
-<span id="cb119-337"><a href="#cb119-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-340"><a href="#cb119-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-341"><a href="#cb119-341" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(surveys<span class="sc">$</span>sex_ordered)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"Female"</span></span>
-<span id="cb119-342"><a href="#cb119-342" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(surveys<span class="sc">$</span>sex_ordered)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"Male"</span></span>
-<span id="cb119-343"><a href="#cb119-343" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(surveys<span class="sc">$</span>sex_ordered)</span>
-<span id="cb119-344"><a href="#cb119-344" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-345"><a href="#cb119-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-346"><a href="#cb119-346" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Manipulation</span></span>
-<span id="cb119-347"><a href="#cb119-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-348"><a href="#cb119-348" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`tdlyr`</span></span>
-<span id="cb119-349"><a href="#cb119-349" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>makes manipulation of data easier</span>
-<span id="cb119-350"><a href="#cb119-350" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>built to work with data frames directly</span>
-<span id="cb119-351"><a href="#cb119-351" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>can directly work with data stored in an external database which give the advantage of only bringing what we need to the memory to work on without having to bring the whole database</span>
-<span id="cb119-352"><a href="#cb119-352" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`tidyr`</span></span>
-<span id="cb119-353"><a href="#cb119-353" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>allows to swiftly convert b/w different data formats for plotting &amp; analysis in order to accommodate the different requirements by different functions</span>
-<span id="cb119-354"><a href="#cb119-354" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>sometime we want one row per measurement</span>
-<span id="cb119-355"><a href="#cb119-355" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>other times we want the data aggregated like when plotting</span>
-<span id="cb119-356"><a href="#cb119-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-357"><a href="#cb119-357" aria-hidden="true" tabindex="-1"></a>Before using <span class="in">`tdlyr`</span> and <span class="in">`tidyr`</span>:</span>
-<span id="cb119-358"><a href="#cb119-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-359"><a href="#cb119-359" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Install <span class="in">`tidyverse`</span> package: umbrella-package that install several packages (tidyr, dplyr, ggplot2 tibble, magrittr, etc.)</span>
-<span id="cb119-360"><a href="#cb119-360" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Load the package each session</span>
-<span id="cb119-361"><a href="#cb119-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-362"><a href="#cb119-362" aria-hidden="true" tabindex="-1"></a>Load packages</span>
-<span id="cb119-363"><a href="#cb119-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-366"><a href="#cb119-366" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-367"><a href="#cb119-367" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb119-368"><a href="#cb119-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-369"><a href="#cb119-369" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
-<span id="cb119-370"><a href="#cb119-370" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-371"><a href="#cb119-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-372"><a href="#cb119-372" aria-hidden="true" tabindex="-1"></a>Load &amp; inspect data</span>
-<span id="cb119-373"><a href="#cb119-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-376"><a href="#cb119-376" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-377"><a href="#cb119-377" aria-hidden="true" tabindex="-1"></a><span class="co"># notice the '_' instead of '.' of basic R</span></span>
-<span id="cb119-378"><a href="#cb119-378" aria-hidden="true" tabindex="-1"></a>surveys <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"portal_data_joined.csv"</span>))</span>
-<span id="cb119-379"><a href="#cb119-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-380"><a href="#cb119-380" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys) <span class="co"># structure: tbl_df (tibble)</span></span>
-<span id="cb119-381"><a href="#cb119-381" aria-hidden="true" tabindex="-1"></a><span class="co"># view(surveys) # preview in the viewer window, avoid when rendering</span></span>
-<span id="cb119-382"><a href="#cb119-382" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-383"><a href="#cb119-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-384"><a href="#cb119-384" aria-hidden="true" tabindex="-1"></a><span class="fu">### Selection</span></span>
-<span id="cb119-385"><a href="#cb119-385" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-386"><a href="#cb119-386" aria-hidden="true" tabindex="-1"></a>Select certain columns</span>
-<span id="cb119-387"><a href="#cb119-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-390"><a href="#cb119-390" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-391"><a href="#cb119-391" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(surveys, plot_id, species_id, weight)</span>
-<span id="cb119-392"><a href="#cb119-392" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-393"><a href="#cb119-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-394"><a href="#cb119-394" aria-hidden="true" tabindex="-1"></a>Select all columns except ...</span>
-<span id="cb119-395"><a href="#cb119-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-398"><a href="#cb119-398" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-399"><a href="#cb119-399" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(surveys, <span class="sc">-</span>sex)</span>
-<span id="cb119-400"><a href="#cb119-400" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-401"><a href="#cb119-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-402"><a href="#cb119-402" aria-hidden="true" tabindex="-1"></a>Select rows based on criteria</span>
-<span id="cb119-403"><a href="#cb119-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-406"><a href="#cb119-406" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-407"><a href="#cb119-407" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(surveys, year <span class="sc">==</span> <span class="dv">1995</span>)</span>
-<span id="cb119-408"><a href="#cb119-408" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-409"><a href="#cb119-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-410"><a href="#cb119-410" aria-hidden="true" tabindex="-1"></a><span class="fu">### Piping</span></span>
-<span id="cb119-411"><a href="#cb119-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-412"><a href="#cb119-412" aria-hidden="true" tabindex="-1"></a>Sending the results of one function to another</span>
-<span id="cb119-413"><a href="#cb119-413" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-416"><a href="#cb119-416" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-417"><a href="#cb119-417" aria-hidden="true" tabindex="-1"></a><span class="co"># in multiple steps</span></span>
-<span id="cb119-418"><a href="#cb119-418" aria-hidden="true" tabindex="-1"></a>survey_less5 <span class="ot">&lt;-</span> <span class="fu">filter</span>(surveys, weight <span class="sc">&lt;</span> <span class="dv">5</span>)</span>
-<span id="cb119-419"><a href="#cb119-419" aria-hidden="true" tabindex="-1"></a>survey_sml <span class="ot">&lt;-</span> <span class="fu">select</span>(survey_less5, species_id, sex, weight)</span>
-<span id="cb119-420"><a href="#cb119-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-421"><a href="#cb119-421" aria-hidden="true" tabindex="-1"></a><span class="co"># in one long step</span></span>
-<span id="cb119-422"><a href="#cb119-422" aria-hidden="true" tabindex="-1"></a>survey_sml <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="fu">filter</span>(surveys, weight <span class="sc">&lt;</span> <span class="dv">5</span>), species_id, sex, weight)</span>
-<span id="cb119-423"><a href="#cb119-423" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-424"><a href="#cb119-424" aria-hidden="true" tabindex="-1"></a><span class="co"># using pipe %&gt;% of magritter package.  Use Ctrl + Shift + M to add</span></span>
-<span id="cb119-425"><a href="#cb119-425" aria-hidden="true" tabindex="-1"></a>survey_sml <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-426"><a href="#cb119-426" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weight <span class="sc">&lt;</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb119-427"><a href="#cb119-427" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species_id, sex, weight)</span>
-<span id="cb119-428"><a href="#cb119-428" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-429"><a href="#cb119-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-430"><a href="#cb119-430" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary</span></span>
-<span id="cb119-431"><a href="#cb119-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-432"><a href="#cb119-432" aria-hidden="true" tabindex="-1"></a>Summary of groups (1+ columns)</span>
-<span id="cb119-433"><a href="#cb119-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-434"><a href="#cb119-434" aria-hidden="true" tabindex="-1"></a>one factor</span>
-<span id="cb119-435"><a href="#cb119-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-438"><a href="#cb119-438" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-439"><a href="#cb119-439" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-440"><a href="#cb119-440" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span></span>
-<span id="cb119-441"><a href="#cb119-441" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb119-442"><a href="#cb119-442" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-443"><a href="#cb119-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-444"><a href="#cb119-444" aria-hidden="true" tabindex="-1"></a>two factors</span>
-<span id="cb119-445"><a href="#cb119-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-448"><a href="#cb119-448" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-449"><a href="#cb119-449" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-450"><a href="#cb119-450" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex, species) <span class="sc">%&gt;%</span></span>
-<span id="cb119-451"><a href="#cb119-451" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb119-452"><a href="#cb119-452" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-453"><a href="#cb119-453" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-454"><a href="#cb119-454" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
-<span id="cb119-455"><a href="#cb119-455" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb119-456"><a href="#cb119-456" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-457"><a href="#cb119-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-458"><a href="#cb119-458" aria-hidden="true" tabindex="-1"></a>to avoid using <span class="in">`na.rm = FALSE`</span> each statistics</span>
-<span id="cb119-459"><a href="#cb119-459" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-462"><a href="#cb119-462" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-463"><a href="#cb119-463" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-464"><a href="#cb119-464" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
-<span id="cb119-465"><a href="#cb119-465" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
-<span id="cb119-466"><a href="#cb119-466" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight), <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight), <span class="at">sd_count =</span> <span class="fu">n</span>())</span>
-<span id="cb119-467"><a href="#cb119-467" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-468"><a href="#cb119-468" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-469"><a href="#cb119-469" aria-hidden="true" tabindex="-1"></a>arrange by mean weight</span>
-<span id="cb119-470"><a href="#cb119-470" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-473"><a href="#cb119-473" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-474"><a href="#cb119-474" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-475"><a href="#cb119-475" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
-<span id="cb119-476"><a href="#cb119-476" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
-<span id="cb119-477"><a href="#cb119-477" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight), <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight), <span class="at">sd_count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb119-478"><a href="#cb119-478" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(mean_weight)</span>
-<span id="cb119-479"><a href="#cb119-479" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-480"><a href="#cb119-480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-481"><a href="#cb119-481" aria-hidden="true" tabindex="-1"></a>in descending order</span>
-<span id="cb119-482"><a href="#cb119-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-485"><a href="#cb119-485" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-486"><a href="#cb119-486" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-487"><a href="#cb119-487" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
-<span id="cb119-488"><a href="#cb119-488" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
-<span id="cb119-489"><a href="#cb119-489" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight), <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight), <span class="at">sd_count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb119-490"><a href="#cb119-490" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_weight))</span>
-<span id="cb119-491"><a href="#cb119-491" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-492"><a href="#cb119-492" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-493"><a href="#cb119-493" aria-hidden="true" tabindex="-1"></a>by count</span>
-<span id="cb119-494"><a href="#cb119-494" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-497"><a href="#cb119-497" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-498"><a href="#cb119-498" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-499"><a href="#cb119-499" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
-<span id="cb119-500"><a href="#cb119-500" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
-<span id="cb119-501"><a href="#cb119-501" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight), <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight), <span class="at">sd_count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb119-502"><a href="#cb119-502" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(sd_count)</span>
-<span id="cb119-503"><a href="#cb119-503" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-504"><a href="#cb119-504" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-505"><a href="#cb119-505" aria-hidden="true" tabindex="-1"></a><span class="fu">### Count</span></span>
-<span id="cb119-506"><a href="#cb119-506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-507"><a href="#cb119-507" aria-hidden="true" tabindex="-1"></a>Count of a categorical column</span>
-<span id="cb119-508"><a href="#cb119-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-511"><a href="#cb119-511" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-512"><a href="#cb119-512" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-513"><a href="#cb119-513" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex)</span>
-<span id="cb119-514"><a href="#cb119-514" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-515"><a href="#cb119-515" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-516"><a href="#cb119-516" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reshaping</span></span>
-<span id="cb119-517"><a href="#cb119-517" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-518"><a href="#cb119-518" aria-hidden="true" tabindex="-1"></a>Using gather &amp; spreed</span>
-<span id="cb119-519"><a href="#cb119-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-520"><a href="#cb119-520" aria-hidden="true" tabindex="-1"></a>prepare the needed data first</span>
-<span id="cb119-521"><a href="#cb119-521" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-524"><a href="#cb119-524" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-525"><a href="#cb119-525" aria-hidden="true" tabindex="-1"></a>surveys_gw <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-526"><a href="#cb119-526" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
-<span id="cb119-527"><a href="#cb119-527" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(genus, plot_id) <span class="sc">%&gt;%</span></span>
-<span id="cb119-528"><a href="#cb119-528" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight))</span>
-<span id="cb119-529"><a href="#cb119-529" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-530"><a href="#cb119-530" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-531"><a href="#cb119-531" aria-hidden="true" tabindex="-1"></a>creating a 2D table where each dimension represent a category the cell will represent a statistics</span>
-<span id="cb119-532"><a href="#cb119-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-535"><a href="#cb119-535" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-536"><a href="#cb119-536" aria-hidden="true" tabindex="-1"></a>surveys_spread <span class="ot">&lt;-</span> surveys_gw <span class="sc">%&gt;%</span></span>
-<span id="cb119-537"><a href="#cb119-537" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key =</span> genus, <span class="at">value =</span> mean_weight)</span>
-<span id="cb119-538"><a href="#cb119-538" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys_spread)</span>
-<span id="cb119-539"><a href="#cb119-539" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys_spread)</span>
-<span id="cb119-540"><a href="#cb119-540" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-541"><a href="#cb119-541" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-542"><a href="#cb119-542" aria-hidden="true" tabindex="-1"></a>bring spread back</span>
-<span id="cb119-543"><a href="#cb119-543" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-546"><a href="#cb119-546" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-547"><a href="#cb119-547" aria-hidden="true" tabindex="-1"></a>surveys_gw <span class="ot">&lt;-</span> surveys_spread <span class="sc">%&gt;%</span></span>
-<span id="cb119-548"><a href="#cb119-548" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> genus, <span class="at">value =</span> mean_weight, <span class="sc">-</span>plot_id)</span>
-<span id="cb119-549"><a href="#cb119-549" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys_gw)</span>
-<span id="cb119-550"><a href="#cb119-550" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys_gw)</span>
-<span id="cb119-551"><a href="#cb119-551" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-552"><a href="#cb119-552" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-553"><a href="#cb119-553" aria-hidden="true" tabindex="-1"></a><span class="fu">### Filtering</span></span>
-<span id="cb119-554"><a href="#cb119-554" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-555"><a href="#cb119-555" aria-hidden="true" tabindex="-1"></a>Remove missing data</span>
-<span id="cb119-556"><a href="#cb119-556" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-559"><a href="#cb119-559" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-560"><a href="#cb119-560" aria-hidden="true" tabindex="-1"></a>survey_complete <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-561"><a href="#cb119-561" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight), <span class="sc">!</span><span class="fu">is.na</span>(hindfoot_length), <span class="sc">!</span><span class="fu">is.na</span>(sex))</span>
-<span id="cb119-562"><a href="#cb119-562" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-563"><a href="#cb119-563" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-564"><a href="#cb119-564" aria-hidden="true" tabindex="-1"></a>Filter those that has sample greater than 50</span>
-<span id="cb119-565"><a href="#cb119-565" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-568"><a href="#cb119-568" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-569"><a href="#cb119-569" aria-hidden="true" tabindex="-1"></a>species_counts <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
-<span id="cb119-570"><a href="#cb119-570" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species_id) <span class="sc">%&gt;%</span></span>
-<span id="cb119-571"><a href="#cb119-571" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;=</span> <span class="dv">50</span>)</span>
-<span id="cb119-572"><a href="#cb119-572" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-573"><a href="#cb119-573" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-574"><a href="#cb119-574" aria-hidden="true" tabindex="-1"></a>filter only those in the indicated category</span>
-<span id="cb119-575"><a href="#cb119-575" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-578"><a href="#cb119-578" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-579"><a href="#cb119-579" aria-hidden="true" tabindex="-1"></a>surveys_com <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
-<span id="cb119-580"><a href="#cb119-580" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species_id <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"albigula"</span>, <span class="st">"eremicus"</span>))</span>
-<span id="cb119-581"><a href="#cb119-581" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-582"><a href="#cb119-582" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-583"><a href="#cb119-583" aria-hidden="true" tabindex="-1"></a><span class="fu">### Saving to disk</span></span>
-<span id="cb119-584"><a href="#cb119-584" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-587"><a href="#cb119-587" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-588"><a href="#cb119-588" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb119-589"><a href="#cb119-589" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-590"><a href="#cb119-590" aria-hidden="true" tabindex="-1"></a><span class="fu">write_cvs</span>()</span>
-<span id="cb119-591"><a href="#cb119-591" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-592"><a href="#cb119-592" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-593"><a href="#cb119-593" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualization</span></span>
-<span id="cb119-594"><a href="#cb119-594" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-595"><a href="#cb119-595" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Help in making complex plots from data frames in simple steps</span>
-<span id="cb119-596"><a href="#cb119-596" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ggplot graphics are built step by step by adding new elements; this makes it flexible as well as customization</span>
-<span id="cb119-597"><a href="#cb119-597" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To get list of ggplot2 geometric objects: <span class="in">`help.search("gemo_", package="ggplot2")`</span></span>
-<span id="cb119-598"><a href="#cb119-598" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To know the aesthetic specification each geom_ can take: <span class="in">`vignette("ggplot2-specs")`</span></span>
-<span id="cb119-599"><a href="#cb119-599" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-600"><a href="#cb119-600" aria-hidden="true" tabindex="-1"></a>Step 1: Bind the plot to specific data frame</span>
-<span id="cb119-601"><a href="#cb119-601" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-604"><a href="#cb119-604" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-605"><a href="#cb119-605" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb119-606"><a href="#cb119-606" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
-<span id="cb119-607"><a href="#cb119-607" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)</span>
-<span id="cb119-608"><a href="#cb119-608" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb119-609"><a href="#cb119-609" aria-hidden="true" tabindex="-1"></a>surveys_plot</span>
-<span id="cb119-610"><a href="#cb119-610" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-611"><a href="#cb119-611" aria-hidden="true" tabindex="-1"></a><span class="co"># Color for each group</span></span>
-<span id="cb119-612"><a href="#cb119-612" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb119-613"><a href="#cb119-613" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
-<span id="cb119-614"><a href="#cb119-614" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length),</span>
-<span id="cb119-615"><a href="#cb119-615" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> species_id</span>
-<span id="cb119-616"><a href="#cb119-616" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb119-617"><a href="#cb119-617" aria-hidden="true" tabindex="-1"></a>surveys_plot</span>
-<span id="cb119-618"><a href="#cb119-618" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-619"><a href="#cb119-619" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-620"><a href="#cb119-620" aria-hidden="true" tabindex="-1"></a>Step 2: Select the type of the plot</span>
-<span id="cb119-621"><a href="#cb119-621" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-622"><a href="#cb119-622" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>scatter plot, dot plots, etc. <span class="sc">\&gt;</span> geom_point()</span>
-<span id="cb119-623"><a href="#cb119-623" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>boxplots <span class="sc">\&gt;</span> geom_boxplot()</span>
-<span id="cb119-624"><a href="#cb119-624" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>trend lines, time series, etc. <span class="sc">\&gt;</span> geom_line()</span>
-<span id="cb119-625"><a href="#cb119-625" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-626"><a href="#cb119-626" aria-hidden="true" tabindex="-1"></a><span class="fu">### Scatter plot</span></span>
-<span id="cb119-627"><a href="#cb119-627" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-630"><a href="#cb119-630" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-631"><a href="#cb119-631" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb119-632"><a href="#cb119-632" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-633"><a href="#cb119-633" aria-hidden="true" tabindex="-1"></a><span class="co"># add transparency</span></span>
-<span id="cb119-634"><a href="#cb119-634" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>)</span>
-<span id="cb119-635"><a href="#cb119-635" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-636"><a href="#cb119-636" aria-hidden="true" tabindex="-1"></a><span class="co"># color if not used in binding</span></span>
-<span id="cb119-637"><a href="#cb119-637" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span>
-<span id="cb119-638"><a href="#cb119-638" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-639"><a href="#cb119-639" aria-hidden="true" tabindex="-1"></a><span class="co"># add color if not used in binding</span></span>
-<span id="cb119-640"><a href="#cb119-640" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="fu">aes</span>(<span class="at">color =</span> species_id))</span>
-<span id="cb119-641"><a href="#cb119-641" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-642"><a href="#cb119-642" aria-hidden="true" tabindex="-1"></a><span class="co"># make the color blend by introducing small random variation in points locations</span></span>
-<span id="cb119-643"><a href="#cb119-643" aria-hidden="true" tabindex="-1"></a><span class="co"># used when having small data sets</span></span>
-<span id="cb119-644"><a href="#cb119-644" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>)</span>
-<span id="cb119-645"><a href="#cb119-645" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-646"><a href="#cb119-646" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-647"><a href="#cb119-647" aria-hidden="true" tabindex="-1"></a><span class="fu">### Boxplot</span></span>
-<span id="cb119-648"><a href="#cb119-648" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-651"><a href="#cb119-651" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-652"><a href="#cb119-652" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb119-653"><a href="#cb119-653" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
-<span id="cb119-654"><a href="#cb119-654" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species_id, <span class="at">y =</span> weight)</span>
-<span id="cb119-655"><a href="#cb119-655" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb119-656"><a href="#cb119-656" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-657"><a href="#cb119-657" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span>
-<span id="cb119-658"><a href="#cb119-658" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-659"><a href="#cb119-659" aria-hidden="true" tabindex="-1"></a><span class="co"># show data</span></span>
-<span id="cb119-660"><a href="#cb119-660" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb119-661"><a href="#cb119-661" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"tomato"</span>)</span>
-<span id="cb119-662"><a href="#cb119-662" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-663"><a href="#cb119-663" aria-hidden="true" tabindex="-1"></a><span class="co"># bring boxplot layer in front</span></span>
-<span id="cb119-664"><a href="#cb119-664" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"tomato"</span>) <span class="sc">+</span></span>
-<span id="cb119-665"><a href="#cb119-665" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span>
-<span id="cb119-666"><a href="#cb119-666" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-667"><a href="#cb119-667" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-668"><a href="#cb119-668" aria-hidden="true" tabindex="-1"></a><span class="fu">### Time series data</span></span>
-<span id="cb119-669"><a href="#cb119-669" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-672"><a href="#cb119-672" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb119-673"><a href="#cb119-673" aria-hidden="true" tabindex="-1"></a><span class="co"># create appropriate dataset</span></span>
-<span id="cb119-674"><a href="#cb119-674" aria-hidden="true" tabindex="-1"></a>yearly_count <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
-<span id="cb119-675"><a href="#cb119-675" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, species_id)</span>
-<span id="cb119-676"><a href="#cb119-676" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-677"><a href="#cb119-677" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb119-678"><a href="#cb119-678" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearly_count,</span>
-<span id="cb119-679"><a href="#cb119-679" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)</span>
-<span id="cb119-680"><a href="#cb119-680" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb119-681"><a href="#cb119-681" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-682"><a href="#cb119-682" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>()</span>
-<span id="cb119-683"><a href="#cb119-683" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-684"><a href="#cb119-684" aria-hidden="true" tabindex="-1"></a><span class="co"># make it more meaningful by breaking it by category</span></span>
-<span id="cb119-685"><a href="#cb119-685" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> species_id))</span>
-<span id="cb119-686"><a href="#cb119-686" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-687"><a href="#cb119-687" aria-hidden="true" tabindex="-1"></a><span class="co"># make it more colorful</span></span>
-<span id="cb119-688"><a href="#cb119-688" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> species_id))</span>
-<span id="cb119-689"><a href="#cb119-689" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-690"><a href="#cb119-690" aria-hidden="true" tabindex="-1"></a><span class="co"># split into multiple plots</span></span>
-<span id="cb119-691"><a href="#cb119-691" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id)</span>
-<span id="cb119-692"><a href="#cb119-692" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-693"><a href="#cb119-693" aria-hidden="true" tabindex="-1"></a><span class="co"># split the line in each plot by sex</span></span>
-<span id="cb119-694"><a href="#cb119-694" aria-hidden="true" tabindex="-1"></a>yearly_sex_counts <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
-<span id="cb119-695"><a href="#cb119-695" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, species_id, sex)</span>
-<span id="cb119-696"><a href="#cb119-696" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-697"><a href="#cb119-697" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb119-698"><a href="#cb119-698" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearly_sex_counts,</span>
-<span id="cb119-699"><a href="#cb119-699" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)</span>
-<span id="cb119-700"><a href="#cb119-700" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb119-701"><a href="#cb119-701" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-702"><a href="#cb119-702" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb119-703"><a href="#cb119-703" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id)</span>
-<span id="cb119-704"><a href="#cb119-704" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-705"><a href="#cb119-705" aria-hidden="true" tabindex="-1"></a><span class="co"># remove background</span></span>
-<span id="cb119-706"><a href="#cb119-706" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb119-707"><a href="#cb119-707" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id) <span class="sc">+</span></span>
-<span id="cb119-708"><a href="#cb119-708" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb119-709"><a href="#cb119-709" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb119-710"><a href="#cb119-710" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb119-711"><a href="#cb119-711" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-712"><a href="#cb119-712" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb119-713"><a href="#cb119-713" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-714"><a href="#cb119-714" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>OU Software Carpentry Workshop (check other workshops <span class="co">[</span><span class="ot">here</span><span class="co">](https://libraries.ou.edu/content/software-and-data-carpentry)</span>)</span>
-<span id="cb119-715"><a href="#cb119-715" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Main Tutorial</span><span class="co">](https://oulib-swc.github.io/2019-05-15-ou-swc/)</span></span>
-<span id="cb119-716"><a href="#cb119-716" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Data Carpentry with R</span><span class="co">](https://datacarpentry.org/R-ecology-lesson/index.html)</span></span>
-<span id="cb119-717"><a href="#cb119-717" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Software Carpentry with R</span><span class="co">](https://swcarpentry.github.io/r-novice-gapminder/)</span></span>
-<span id="cb119-718"><a href="#cb119-718" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Etherpad</span><span class="co">](https://pad.carpentries.org/2019-05-15-ou-swc)</span></span>
-<span id="cb119-719"><a href="#cb119-719" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Google Doc</span><span class="co">](https://docs.google.com/document/d/1aJq_X1uhaNkUj7qdZEzOcpc2Pky7eZPy76yqs0UkfrQ/edit)</span></span>
-<span id="cb119-720"><a href="#cb119-720" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Intro to ggplot</span><span class="co">](https://rawcdn.githack.com/allisonhorst/data-vis/fc107e063f50ef8695b0a75ed73d74720aca2c65/data_vis_np.html)</span> by <span class="co">[</span><span class="ot">Allison Horst</span><span class="co">](https://github.com/allisonhorst)</span></span>
-<span id="cb119-721"><a href="#cb119-721" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R for Data Science book by Garrett Grolemund and Hadley Wickham</span><span class="co">](https://r4ds.had.co.nz/)</span></span>
-<span id="cb119-722"><a href="#cb119-722" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Best Practices for Scientific Computing paper</span><span class="co">](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)</span></span>
+<div class="sourceCode" id="cb120" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "R"</span></span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="an">eval:</span><span class="co"> true</span></span>
+<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-6"><a href="#cb120-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-7"><a href="#cb120-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Clean workspace}</span></span>
+<span id="cb120-8"><a href="#cb120-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb120-9"><a href="#cb120-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-10"><a href="#cb120-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb120-11"><a href="#cb120-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-12"><a href="#cb120-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-13"><a href="#cb120-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r List all used packages}</span></span>
+<span id="cb120-14"><a href="#cb120-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb120-15"><a href="#cb120-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-16"><a href="#cb120-16" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"downlit"</span>, <span class="st">"xml2"</span>, <span class="st">"here"</span>, <span class="st">"tidyverse"</span>, <span class="st">"janitor"</span>, <span class="st">"cols4all"</span>, <span class="st">"shiny"</span>, <span class="st">"shinyjs"</span>, <span class="st">"kableExtra"</span>, <span class="st">"colorblindcheck"</span>, <span class="st">"plotly"</span>)</span>
+<span id="cb120-17"><a href="#cb120-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-18"><a href="#cb120-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-19"><a href="#cb120-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-20"><a href="#cb120-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Install missing packages}</span></span>
+<span id="cb120-21"><a href="#cb120-21" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb120-22"><a href="#cb120-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-23"><a href="#cb120-23" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">setdiff</span>(packages, <span class="fu">rownames</span>(<span class="fu">installed.packages</span>())))</span>
+<span id="cb120-24"><a href="#cb120-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-25"><a href="#cb120-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-26"><a href="#cb120-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r Load packages}</span></span>
+<span id="cb120-27"><a href="#cb120-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb120-28"><a href="#cb120-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-29"><a href="#cb120-29" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb120-30"><a href="#cb120-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-31"><a href="#cb120-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-32"><a href="#cb120-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## R Packages</span></span>
+<span id="cb120-33"><a href="#cb120-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-34"><a href="#cb120-34" aria-hidden="true" tabindex="-1"></a>An R package usually includes:</span>
+<span id="cb120-35"><a href="#cb120-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-36"><a href="#cb120-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>reusable functions</span>
+<span id="cb120-37"><a href="#cb120-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>documentation describing how to use the function</span>
+<span id="cb120-38"><a href="#cb120-38" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>sample data</span>
+<span id="cb120-39"><a href="#cb120-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-40"><a href="#cb120-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset in Packages</span></span>
+<span id="cb120-41"><a href="#cb120-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-42"><a href="#cb120-42" aria-hidden="true" tabindex="-1"></a>To list datasets in all the available packages, use the following command:</span>
+<span id="cb120-43"><a href="#cb120-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-44"><a href="#cb120-44" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb120-45"><a href="#cb120-45" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="at">package =</span> <span class="fu">.packages</span>(<span class="at">all.available =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb120-46"><a href="#cb120-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-47"><a href="#cb120-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-48"><a href="#cb120-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Primitive Data Types</span></span>
+<span id="cb120-49"><a href="#cb120-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-50"><a href="#cb120-50" aria-hidden="true" tabindex="-1"></a>The primitive (also known as singleton/simple) data types in R are:</span>
+<span id="cb120-51"><a href="#cb120-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-52"><a href="#cb120-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>character</span>
+<span id="cb120-53"><a href="#cb120-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numeric</span>
+<span id="cb120-54"><a href="#cb120-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>logical</span>
+<span id="cb120-55"><a href="#cb120-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>raw</span>
+<span id="cb120-56"><a href="#cb120-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>imaginary numbers</span>
+<span id="cb120-57"><a href="#cb120-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-58"><a href="#cb120-58" aria-hidden="true" tabindex="-1"></a>To know the datatype of an object, run the command:</span>
+<span id="cb120-59"><a href="#cb120-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-60"><a href="#cb120-60" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb120-61"><a href="#cb120-61" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x) <span class="co"># give the data type of x</span></span>
+<span id="cb120-62"><a href="#cb120-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-63"><a href="#cb120-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-64"><a href="#cb120-64" aria-hidden="true" tabindex="-1"></a>To know the type of the variables of each variable.</span>
+<span id="cb120-65"><a href="#cb120-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-66"><a href="#cb120-66" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb120-67"><a href="#cb120-67" aria-hidden="true" tabindex="-1"></a>x <span class="sc">|&gt;</span> </span>
+<span id="cb120-68"><a href="#cb120-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb120-69"><a href="#cb120-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
+<span id="cb120-70"><a href="#cb120-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-71"><a href="#cb120-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-72"><a href="#cb120-72" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mixing Data Types</span></span>
+<span id="cb120-73"><a href="#cb120-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-74"><a href="#cb120-74" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>character + numeric --<span class="sc">\&gt;</span> character</span>
+<span id="cb120-75"><a href="#cb120-75" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numeric + logical --<span class="sc">\&gt;</span> numeric</span>
+<span id="cb120-76"><a href="#cb120-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numeric + character + logical --<span class="sc">\&gt;</span> character</span>
+<span id="cb120-77"><a href="#cb120-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-78"><a href="#cb120-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Compound Data Types</span></span>
+<span id="cb120-79"><a href="#cb120-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-80"><a href="#cb120-80" aria-hidden="true" tabindex="-1"></a>The compound (also know as collection/sttructure) data types in R are:</span>
+<span id="cb120-81"><a href="#cb120-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-82"><a href="#cb120-82" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**vector**: hold single type of data</span>
+<span id="cb120-83"><a href="#cb120-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-84"><a href="#cb120-84" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb120-85"><a href="#cb120-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-86"><a href="#cb120-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creating Vector</span></span>
+<span id="cb120-87"><a href="#cb120-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-88"><a href="#cb120-88" aria-hidden="true" tabindex="-1"></a>The <span class="in">`c()`</span> function (**c**ombine multiple elements) can be used to create vectors in R.</span>
+<span id="cb120-89"><a href="#cb120-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-90"><a href="#cb120-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-91"><a href="#cb120-91" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- c(1, 2, 3, 4)</span></span>
+<span id="cb120-92"><a href="#cb120-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-93"><a href="#cb120-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-94"><a href="#cb120-94" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb120-95"><a href="#cb120-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-96"><a href="#cb120-96" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**matrix**: 2D vector</span>
+<span id="cb120-97"><a href="#cb120-97" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**array**: nD vector</span>
+<span id="cb120-98"><a href="#cb120-98" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**list**: generic vector, can hold mixed type of data, eg, one element can be a character, another can be a list of integers, and the third could be a logical</span>
+<span id="cb120-99"><a href="#cb120-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**data frame**: table where columns represent vectors</span>
+<span id="cb120-100"><a href="#cb120-100" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**tibbles**: data frames, but slightly tweaked to work better with <span class="in">`tidyverse`</span>--when printing tibbles, only the first few columns that fit into the screen will be shown</span>
+<span id="cb120-101"><a href="#cb120-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-102"><a href="#cb120-102" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb120-103"><a href="#cb120-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-104"><a href="#cb120-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Printing tibble All Columns</span></span>
+<span id="cb120-105"><a href="#cb120-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-106"><a href="#cb120-106" aria-hidden="true" tabindex="-1"></a>To force the <span class="in">`print()`</span> function to print all the columns of a <span class="in">`tibble`</span>, set the <span class="in">`width`</span> parameter to <span class="in">`Inf`</span> as follows:</span>
+<span id="cb120-107"><a href="#cb120-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-108"><a href="#cb120-108" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb120-109"><a href="#cb120-109" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ds, <span class="at">width =</span> <span class="cn">Inf</span>)</span>
+<span id="cb120-110"><a href="#cb120-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-111"><a href="#cb120-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-112"><a href="#cb120-112" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb120-113"><a href="#cb120-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-114"><a href="#cb120-114" aria-hidden="true" tabindex="-1"></a>To construct small tibble by hand, use the <span class="in">`tribble`</span> function as follows:</span>
+<span id="cb120-115"><a href="#cb120-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-116"><a href="#cb120-116" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb120-117"><a href="#cb120-117" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb120-118"><a href="#cb120-118" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>var1, <span class="sc">~</span>var2, <span class="sc">~</span>var3</span>
+<span id="cb120-119"><a href="#cb120-119" aria-hidden="true" tabindex="-1"></a>  <span class="st">"A"</span>, <span class="dv">1</span>, <span class="cn">TRUE</span>,</span>
+<span id="cb120-120"><a href="#cb120-120" aria-hidden="true" tabindex="-1"></a>  <span class="st">"B"</span>, <span class="dv">2</span>, <span class="cn">FALSE</span>,</span>
+<span id="cb120-121"><a href="#cb120-121" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C"</span>, <span class="dv">3</span>, <span class="cn">TRUE</span></span>
+<span id="cb120-122"><a href="#cb120-122" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb120-123"><a href="#cb120-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-124"><a href="#cb120-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-125"><a href="#cb120-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-126"><a href="#cb120-126" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**factor**</span>
+<span id="cb120-127"><a href="#cb120-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-130"><a href="#cb120-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-131"><a href="#cb120-131" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-datastructure</span></span>
+<span id="cb120-132"><a href="#cb120-132" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb120-133"><a href="#cb120-133" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Common data structures in R ( taken from [Grolemund, 2014](https://jjallaire.github.io/hopr/objects.html))</span></span>
+<span id="cb120-134"><a href="#cb120-134" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: NULL</span></span>
+<span id="cb120-135"><a href="#cb120-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-136"><a href="#cb120-136" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">here</span>(<span class="st">"images"</span>, <span class="st">"datastructure.png"</span>))</span>
+<span id="cb120-137"><a href="#cb120-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-138"><a href="#cb120-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-139"><a href="#cb120-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-140"><a href="#cb120-140" aria-hidden="true" tabindex="-1"></a>To know the data structure and length of the object, run the command:</span>
+<span id="cb120-141"><a href="#cb120-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-142"><a href="#cb120-142" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb120-143"><a href="#cb120-143" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x) <span class="co"># give the structure type of x</span></span>
+<span id="cb120-144"><a href="#cb120-144" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x) <span class="co"># length of structure</span></span>
+<span id="cb120-145"><a href="#cb120-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-146"><a href="#cb120-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-147"><a href="#cb120-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-148"><a href="#cb120-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-149"><a href="#cb120-149" aria-hidden="true" tabindex="-1"></a><span class="fu">## Basics Operations</span></span>
+<span id="cb120-150"><a href="#cb120-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-151"><a href="#cb120-151" aria-hidden="true" tabindex="-1"></a>Assignment</span>
+<span id="cb120-152"><a href="#cb120-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-155"><a href="#cb120-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-156"><a href="#cb120-156" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># assign 3 to x (x gets 3)</span></span>
+<span id="cb120-157"><a href="#cb120-157" aria-hidden="true" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="dv">3</span>) <span class="co"># assign 3 to x (x gets 3) &amp; print the result to console</span></span>
+<span id="cb120-158"><a href="#cb120-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-159"><a href="#cb120-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-160"><a href="#cb120-160" aria-hidden="true" tabindex="-1"></a>Getting Help </span>
+<span id="cb120-161"><a href="#cb120-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-162"><a href="#cb120-162" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb120-163"><a href="#cb120-163" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(round) <span class="co"># print the argument list of function</span></span>
+<span id="cb120-164"><a href="#cb120-164" aria-hidden="true" tabindex="-1"></a>?round <span class="co"># show documentation of function in Help window</span></span>
+<span id="cb120-165"><a href="#cb120-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-166"><a href="#cb120-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-167"><a href="#cb120-167" aria-hidden="true" tabindex="-1"></a>Dealing with Structure</span>
+<span id="cb120-168"><a href="#cb120-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-171"><a href="#cb120-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-172"><a href="#cb120-172" aria-hidden="true" tabindex="-1"></a><span class="co"># concatenate set of values to create vector</span></span>
+<span id="cb120-173"><a href="#cb120-173" aria-hidden="true" tabindex="-1"></a>weight_g <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">3</span>, <span class="dv">9</span>)</span>
+<span id="cb120-174"><a href="#cb120-174" aria-hidden="true" tabindex="-1"></a>animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"dog"</span>, <span class="st">"bat"</span>, <span class="st">"cat"</span>)</span>
+<span id="cb120-175"><a href="#cb120-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-176"><a href="#cb120-176" aria-hidden="true" tabindex="-1"></a><span class="co"># utilizing logical values to pull specific values</span></span>
+<span id="cb120-177"><a href="#cb120-177" aria-hidden="true" tabindex="-1"></a>weight_g[weight_g <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> weight_g <span class="sc">&gt;</span> <span class="dv">60</span> <span class="sc">|</span> weight_g <span class="sc">==</span> <span class="dv">50</span>]</span>
+<span id="cb120-178"><a href="#cb120-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-179"><a href="#cb120-179" aria-hidden="true" tabindex="-1"></a><span class="co"># pull dog &amp; cat records</span></span>
+<span id="cb120-180"><a href="#cb120-180" aria-hidden="true" tabindex="-1"></a>animals[animals <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"dog"</span>, <span class="st">"cat"</span>)]</span>
+<span id="cb120-181"><a href="#cb120-181" aria-hidden="true" tabindex="-1"></a>animals[animals <span class="sc">==</span> <span class="st">"dog"</span> <span class="sc">|</span> animals <span class="sc">==</span> <span class="st">"cat"</span>]</span>
+<span id="cb120-182"><a href="#cb120-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-183"><a href="#cb120-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-184"><a href="#cb120-184" aria-hidden="true" tabindex="-1"></a>Statistics</span>
+<span id="cb120-185"><a href="#cb120-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-188"><a href="#cb120-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-189"><a href="#cb120-189" aria-hidden="true" tabindex="-1"></a><span class="co"># signaling missing data using NA</span></span>
+<span id="cb120-190"><a href="#cb120-190" aria-hidden="true" tabindex="-1"></a>heights <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">4</span>)</span>
+<span id="cb120-191"><a href="#cb120-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-192"><a href="#cb120-192" aria-hidden="true" tabindex="-1"></a><span class="co"># get mean while ignoring missing data</span></span>
+<span id="cb120-193"><a href="#cb120-193" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(heights, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb120-194"><a href="#cb120-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-195"><a href="#cb120-195" aria-hidden="true" tabindex="-1"></a><span class="co"># how to use mean</span></span>
+<span id="cb120-196"><a href="#cb120-196" aria-hidden="true" tabindex="-1"></a><span class="co"># ?mean</span></span>
+<span id="cb120-197"><a href="#cb120-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-198"><a href="#cb120-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-199"><a href="#cb120-199" aria-hidden="true" tabindex="-1"></a><span class="fu">## Initial Steps</span></span>
+<span id="cb120-200"><a href="#cb120-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-201"><a href="#cb120-201" aria-hidden="true" tabindex="-1"></a><span class="fu">### File Paths</span></span>
+<span id="cb120-202"><a href="#cb120-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-203"><a href="#cb120-203" aria-hidden="true" tabindex="-1"></a>The <span class="in">`here`</span> package makes it easy to point to files starting from the project main directory.</span>
+<span id="cb120-204"><a href="#cb120-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-205"><a href="#cb120-205" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb120-206"><a href="#cb120-206" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"here"</span>, <span class="st">"janitor"</span>)</span>
+<span id="cb120-207"><a href="#cb120-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-208"><a href="#cb120-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-209"><a href="#cb120-209" aria-hidden="true" tabindex="-1"></a><span class="fu">### Store Locally</span></span>
+<span id="cb120-210"><a href="#cb120-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-211"><a href="#cb120-211" aria-hidden="true" tabindex="-1"></a>Loading file from repository and saving it locally on disk. It is always a good idea to structure the workspace--for more information, see <span class="co">[</span><span class="ot">Best Practices for Scientific Computing paper</span><span class="co">](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)</span>.</span>
+<span id="cb120-212"><a href="#cb120-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-215"><a href="#cb120-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-216"><a href="#cb120-216" aria-hidden="true" tabindex="-1"></a>file_name <span class="ot">&lt;-</span> <span class="st">"portal_data_joined.csv"</span></span>
+<span id="cb120-217"><a href="#cb120-217" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, file_name)</span>
+<span id="cb120-218"><a href="#cb120-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-219"><a href="#cb120-219" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(file_path)) {</span>
+<span id="cb120-220"><a href="#cb120-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(</span>
+<span id="cb120-221"><a href="#cb120-221" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://ndownloader.figshare.com/files/2292169"</span>,</span>
+<span id="cb120-222"><a href="#cb120-222" aria-hidden="true" tabindex="-1"></a>    <span class="at">destfile =</span> file_path</span>
+<span id="cb120-223"><a href="#cb120-223" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb120-224"><a href="#cb120-224" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb120-225"><a href="#cb120-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-226"><a href="#cb120-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-227"><a href="#cb120-227" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load Locally</span></span>
+<span id="cb120-228"><a href="#cb120-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-231"><a href="#cb120-231" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-232"><a href="#cb120-232" aria-hidden="true" tabindex="-1"></a>surveys <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(file_path)</span>
+<span id="cb120-233"><a href="#cb120-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-234"><a href="#cb120-234" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(surveys)</span>
+<span id="cb120-235"><a href="#cb120-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-236"><a href="#cb120-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-237"><a href="#cb120-237" aria-hidden="true" tabindex="-1"></a><span class="fu">### Clean Names</span></span>
+<span id="cb120-238"><a href="#cb120-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-241"><a href="#cb120-241" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-242"><a href="#cb120-242" aria-hidden="true" tabindex="-1"></a>surveys <span class="ot">&lt;-</span> surveys <span class="sc">|&gt;</span> </span>
+<span id="cb120-243"><a href="#cb120-243" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb120-244"><a href="#cb120-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-245"><a href="#cb120-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-246"><a href="#cb120-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-247"><a href="#cb120-247" aria-hidden="true" tabindex="-1"></a><span class="fu">### Inspecting Data</span></span>
+<span id="cb120-248"><a href="#cb120-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-251"><a href="#cb120-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-252"><a href="#cb120-252" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(surveys) <span class="co"># data type</span></span>
+<span id="cb120-253"><a href="#cb120-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-254"><a href="#cb120-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-257"><a href="#cb120-257" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-258"><a href="#cb120-258" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys) <span class="co"># structure</span></span>
+<span id="cb120-259"><a href="#cb120-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-260"><a href="#cb120-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-263"><a href="#cb120-263" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-264"><a href="#cb120-264" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">|&gt;</span> </span>
+<span id="cb120-265"><a href="#cb120-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb120-266"><a href="#cb120-266" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span>
+<span id="cb120-267"><a href="#cb120-267" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-268"><a href="#cb120-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-271"><a href="#cb120-271" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-272"><a href="#cb120-272" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(surveys) <span class="co"># dimensions</span></span>
+<span id="cb120-273"><a href="#cb120-273" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(surveys)</span>
+<span id="cb120-274"><a href="#cb120-274" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(surveys)</span>
+<span id="cb120-275"><a href="#cb120-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-276"><a href="#cb120-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-279"><a href="#cb120-279" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-280"><a href="#cb120-280" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(surveys)</span>
+<span id="cb120-281"><a href="#cb120-281" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-282"><a href="#cb120-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-283"><a href="#cb120-283" aria-hidden="true" tabindex="-1"></a>Print top and bottom obervations</span>
+<span id="cb120-284"><a href="#cb120-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-287"><a href="#cb120-287" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-288"><a href="#cb120-288" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys)</span>
+<span id="cb120-289"><a href="#cb120-289" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(surveys)</span>
+<span id="cb120-290"><a href="#cb120-290" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-291"><a href="#cb120-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-292"><a href="#cb120-292" aria-hidden="true" tabindex="-1"></a>Retrieve specific element/row/column</span>
+<span id="cb120-293"><a href="#cb120-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-296"><a href="#cb120-296" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-297"><a href="#cb120-297" aria-hidden="true" tabindex="-1"></a>surveys[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co"># element[1,1]</span></span>
+<span id="cb120-298"><a href="#cb120-298" aria-hidden="true" tabindex="-1"></a>surveys[<span class="dv">1</span>, ] <span class="co"># row 1</span></span>
+<span id="cb120-299"><a href="#cb120-299" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys[, <span class="dv">1</span>]) <span class="co"># column 1</span></span>
+<span id="cb120-300"><a href="#cb120-300" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys<span class="sc">$</span>sex) <span class="co"># column by name</span></span>
+<span id="cb120-301"><a href="#cb120-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-302"><a href="#cb120-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-303"><a href="#cb120-303" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dealing with Factor (Categorical) Columns</span></span>
+<span id="cb120-304"><a href="#cb120-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-305"><a href="#cb120-305" aria-hidden="true" tabindex="-1"></a>R convert columns that contain characters to factors by default. Factors are treated as integer vectors. By default, R sorts levels in alphabetical order.</span>
+<span id="cb120-306"><a href="#cb120-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-309"><a href="#cb120-309" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-310"><a href="#cb120-310" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(surveys<span class="sc">$</span>sex)</span>
+<span id="cb120-311"><a href="#cb120-311" aria-hidden="true" tabindex="-1"></a><span class="fu">nlevels</span>(surveys<span class="sc">$</span>sex)</span>
+<span id="cb120-312"><a href="#cb120-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-313"><a href="#cb120-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-314"><a href="#cb120-314" aria-hidden="true" tabindex="-1"></a>Reorder factors (to get better plots)</span>
+<span id="cb120-315"><a href="#cb120-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-318"><a href="#cb120-318" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-319"><a href="#cb120-319" aria-hidden="true" tabindex="-1"></a>surveys<span class="sc">$</span>sex_ordered <span class="ot">&lt;-</span> <span class="fu">factor</span>(surveys<span class="sc">$</span>sex, <span class="at">level =</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">""</span>))</span>
+<span id="cb120-320"><a href="#cb120-320" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys<span class="sc">$</span>sex_ordered)</span>
+<span id="cb120-321"><a href="#cb120-321" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(surveys<span class="sc">$</span>sex_ordered)</span>
+<span id="cb120-322"><a href="#cb120-322" aria-hidden="true" tabindex="-1"></a><span class="fu">nlevels</span>(surveys<span class="sc">$</span>sex_ordered)</span>
+<span id="cb120-323"><a href="#cb120-323" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-324"><a href="#cb120-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-325"><a href="#cb120-325" aria-hidden="true" tabindex="-1"></a><span class="fu">### Basic Plotting</span></span>
+<span id="cb120-326"><a href="#cb120-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-327"><a href="#cb120-327" aria-hidden="true" tabindex="-1"></a>Histogram</span>
+<span id="cb120-328"><a href="#cb120-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-331"><a href="#cb120-331" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-332"><a href="#cb120-332" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(surveys$sex)  # not possible</span></span>
+<span id="cb120-333"><a href="#cb120-333" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(surveys<span class="sc">$</span>sex_ordered)</span>
+<span id="cb120-334"><a href="#cb120-334" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-335"><a href="#cb120-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-336"><a href="#cb120-336" aria-hidden="true" tabindex="-1"></a>Enhance the plot</span>
+<span id="cb120-337"><a href="#cb120-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-340"><a href="#cb120-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-341"><a href="#cb120-341" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(surveys<span class="sc">$</span>sex_ordered)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"Female"</span></span>
+<span id="cb120-342"><a href="#cb120-342" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(surveys<span class="sc">$</span>sex_ordered)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"Male"</span></span>
+<span id="cb120-343"><a href="#cb120-343" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(surveys<span class="sc">$</span>sex_ordered)</span>
+<span id="cb120-344"><a href="#cb120-344" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-345"><a href="#cb120-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-346"><a href="#cb120-346" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Manipulation</span></span>
+<span id="cb120-347"><a href="#cb120-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-348"><a href="#cb120-348" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`tdlyr`</span></span>
+<span id="cb120-349"><a href="#cb120-349" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>makes manipulation of data easier</span>
+<span id="cb120-350"><a href="#cb120-350" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>built to work with data frames directly</span>
+<span id="cb120-351"><a href="#cb120-351" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>can directly work with data stored in an external database which give the advantage of only bringing what we need to the memory to work on without having to bring the whole database</span>
+<span id="cb120-352"><a href="#cb120-352" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`tidyr`</span></span>
+<span id="cb120-353"><a href="#cb120-353" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>allows to swiftly convert b/w different data formats for plotting &amp; analysis in order to accommodate the different requirements by different functions</span>
+<span id="cb120-354"><a href="#cb120-354" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>sometime we want one row per measurement</span>
+<span id="cb120-355"><a href="#cb120-355" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>other times we want the data aggregated like when plotting</span>
+<span id="cb120-356"><a href="#cb120-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-357"><a href="#cb120-357" aria-hidden="true" tabindex="-1"></a>Before using <span class="in">`tdlyr`</span> and <span class="in">`tidyr`</span>:</span>
+<span id="cb120-358"><a href="#cb120-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-359"><a href="#cb120-359" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Install <span class="in">`tidyverse`</span> package: umbrella-package that install several packages (tidyr, dplyr, ggplot2 tibble, magrittr, etc.)</span>
+<span id="cb120-360"><a href="#cb120-360" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Load the package each session</span>
+<span id="cb120-361"><a href="#cb120-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-362"><a href="#cb120-362" aria-hidden="true" tabindex="-1"></a>Load packages</span>
+<span id="cb120-363"><a href="#cb120-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-366"><a href="#cb120-366" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-367"><a href="#cb120-367" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb120-368"><a href="#cb120-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-369"><a href="#cb120-369" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb120-370"><a href="#cb120-370" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-371"><a href="#cb120-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-372"><a href="#cb120-372" aria-hidden="true" tabindex="-1"></a>Load &amp; inspect data</span>
+<span id="cb120-373"><a href="#cb120-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-376"><a href="#cb120-376" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-377"><a href="#cb120-377" aria-hidden="true" tabindex="-1"></a><span class="co"># notice the '_' instead of '.' of basic R</span></span>
+<span id="cb120-378"><a href="#cb120-378" aria-hidden="true" tabindex="-1"></a>surveys <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"portal_data_joined.csv"</span>))</span>
+<span id="cb120-379"><a href="#cb120-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-380"><a href="#cb120-380" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys) <span class="co"># structure: tbl_df (tibble)</span></span>
+<span id="cb120-381"><a href="#cb120-381" aria-hidden="true" tabindex="-1"></a><span class="co"># view(surveys) # preview in the viewer window, avoid when rendering</span></span>
+<span id="cb120-382"><a href="#cb120-382" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-383"><a href="#cb120-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-384"><a href="#cb120-384" aria-hidden="true" tabindex="-1"></a><span class="fu">### Selection</span></span>
+<span id="cb120-385"><a href="#cb120-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-386"><a href="#cb120-386" aria-hidden="true" tabindex="-1"></a>Select certain columns</span>
+<span id="cb120-387"><a href="#cb120-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-390"><a href="#cb120-390" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-391"><a href="#cb120-391" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(surveys, plot_id, species_id, weight)</span>
+<span id="cb120-392"><a href="#cb120-392" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-393"><a href="#cb120-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-394"><a href="#cb120-394" aria-hidden="true" tabindex="-1"></a>Select all columns except ...</span>
+<span id="cb120-395"><a href="#cb120-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-398"><a href="#cb120-398" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-399"><a href="#cb120-399" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(surveys, <span class="sc">-</span>sex)</span>
+<span id="cb120-400"><a href="#cb120-400" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-401"><a href="#cb120-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-402"><a href="#cb120-402" aria-hidden="true" tabindex="-1"></a>Select rows based on criteria</span>
+<span id="cb120-403"><a href="#cb120-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-406"><a href="#cb120-406" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-407"><a href="#cb120-407" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(surveys, year <span class="sc">==</span> <span class="dv">1995</span>)</span>
+<span id="cb120-408"><a href="#cb120-408" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-409"><a href="#cb120-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-410"><a href="#cb120-410" aria-hidden="true" tabindex="-1"></a><span class="fu">### Piping</span></span>
+<span id="cb120-411"><a href="#cb120-411" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-412"><a href="#cb120-412" aria-hidden="true" tabindex="-1"></a>Sending the results of one function to another</span>
+<span id="cb120-413"><a href="#cb120-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-416"><a href="#cb120-416" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-417"><a href="#cb120-417" aria-hidden="true" tabindex="-1"></a><span class="co"># in multiple steps</span></span>
+<span id="cb120-418"><a href="#cb120-418" aria-hidden="true" tabindex="-1"></a>survey_less5 <span class="ot">&lt;-</span> <span class="fu">filter</span>(surveys, weight <span class="sc">&lt;</span> <span class="dv">5</span>)</span>
+<span id="cb120-419"><a href="#cb120-419" aria-hidden="true" tabindex="-1"></a>survey_sml <span class="ot">&lt;-</span> <span class="fu">select</span>(survey_less5, species_id, sex, weight)</span>
+<span id="cb120-420"><a href="#cb120-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-421"><a href="#cb120-421" aria-hidden="true" tabindex="-1"></a><span class="co"># in one long step</span></span>
+<span id="cb120-422"><a href="#cb120-422" aria-hidden="true" tabindex="-1"></a>survey_sml <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="fu">filter</span>(surveys, weight <span class="sc">&lt;</span> <span class="dv">5</span>), species_id, sex, weight)</span>
+<span id="cb120-423"><a href="#cb120-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-424"><a href="#cb120-424" aria-hidden="true" tabindex="-1"></a><span class="co"># using pipe %&gt;% of magritter package.  Use Ctrl + Shift + M to add</span></span>
+<span id="cb120-425"><a href="#cb120-425" aria-hidden="true" tabindex="-1"></a>survey_sml <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-426"><a href="#cb120-426" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weight <span class="sc">&lt;</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb120-427"><a href="#cb120-427" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species_id, sex, weight)</span>
+<span id="cb120-428"><a href="#cb120-428" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-429"><a href="#cb120-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-430"><a href="#cb120-430" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary</span></span>
+<span id="cb120-431"><a href="#cb120-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-432"><a href="#cb120-432" aria-hidden="true" tabindex="-1"></a>Summary of groups (1+ columns)</span>
+<span id="cb120-433"><a href="#cb120-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-434"><a href="#cb120-434" aria-hidden="true" tabindex="-1"></a>one factor</span>
+<span id="cb120-435"><a href="#cb120-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-438"><a href="#cb120-438" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-439"><a href="#cb120-439" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-440"><a href="#cb120-440" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span></span>
+<span id="cb120-441"><a href="#cb120-441" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb120-442"><a href="#cb120-442" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-443"><a href="#cb120-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-444"><a href="#cb120-444" aria-hidden="true" tabindex="-1"></a>two factors</span>
+<span id="cb120-445"><a href="#cb120-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-448"><a href="#cb120-448" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-449"><a href="#cb120-449" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-450"><a href="#cb120-450" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex, species) <span class="sc">%&gt;%</span></span>
+<span id="cb120-451"><a href="#cb120-451" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb120-452"><a href="#cb120-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-453"><a href="#cb120-453" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-454"><a href="#cb120-454" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb120-455"><a href="#cb120-455" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb120-456"><a href="#cb120-456" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-457"><a href="#cb120-457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-458"><a href="#cb120-458" aria-hidden="true" tabindex="-1"></a>to avoid using <span class="in">`na.rm = FALSE`</span> each statistics</span>
+<span id="cb120-459"><a href="#cb120-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-462"><a href="#cb120-462" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-463"><a href="#cb120-463" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-464"><a href="#cb120-464" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
+<span id="cb120-465"><a href="#cb120-465" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb120-466"><a href="#cb120-466" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight), <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight), <span class="at">sd_count =</span> <span class="fu">n</span>())</span>
+<span id="cb120-467"><a href="#cb120-467" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-468"><a href="#cb120-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-469"><a href="#cb120-469" aria-hidden="true" tabindex="-1"></a>arrange by mean weight</span>
+<span id="cb120-470"><a href="#cb120-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-473"><a href="#cb120-473" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-474"><a href="#cb120-474" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-475"><a href="#cb120-475" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
+<span id="cb120-476"><a href="#cb120-476" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb120-477"><a href="#cb120-477" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight), <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight), <span class="at">sd_count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb120-478"><a href="#cb120-478" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(mean_weight)</span>
+<span id="cb120-479"><a href="#cb120-479" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-480"><a href="#cb120-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-481"><a href="#cb120-481" aria-hidden="true" tabindex="-1"></a>in descending order</span>
+<span id="cb120-482"><a href="#cb120-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-485"><a href="#cb120-485" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-486"><a href="#cb120-486" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-487"><a href="#cb120-487" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
+<span id="cb120-488"><a href="#cb120-488" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb120-489"><a href="#cb120-489" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight), <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight), <span class="at">sd_count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb120-490"><a href="#cb120-490" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_weight))</span>
+<span id="cb120-491"><a href="#cb120-491" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-492"><a href="#cb120-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-493"><a href="#cb120-493" aria-hidden="true" tabindex="-1"></a>by count</span>
+<span id="cb120-494"><a href="#cb120-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-497"><a href="#cb120-497" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-498"><a href="#cb120-498" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-499"><a href="#cb120-499" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
+<span id="cb120-500"><a href="#cb120-500" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb120-501"><a href="#cb120-501" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight), <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight), <span class="at">sd_count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb120-502"><a href="#cb120-502" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(sd_count)</span>
+<span id="cb120-503"><a href="#cb120-503" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-504"><a href="#cb120-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-505"><a href="#cb120-505" aria-hidden="true" tabindex="-1"></a><span class="fu">### Count</span></span>
+<span id="cb120-506"><a href="#cb120-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-507"><a href="#cb120-507" aria-hidden="true" tabindex="-1"></a>Count of a categorical column</span>
+<span id="cb120-508"><a href="#cb120-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-511"><a href="#cb120-511" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-512"><a href="#cb120-512" aria-hidden="true" tabindex="-1"></a>surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-513"><a href="#cb120-513" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex)</span>
+<span id="cb120-514"><a href="#cb120-514" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-515"><a href="#cb120-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-516"><a href="#cb120-516" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reshaping</span></span>
+<span id="cb120-517"><a href="#cb120-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-518"><a href="#cb120-518" aria-hidden="true" tabindex="-1"></a>Using gather &amp; spreed</span>
+<span id="cb120-519"><a href="#cb120-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-520"><a href="#cb120-520" aria-hidden="true" tabindex="-1"></a>prepare the needed data first</span>
+<span id="cb120-521"><a href="#cb120-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-524"><a href="#cb120-524" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-525"><a href="#cb120-525" aria-hidden="true" tabindex="-1"></a>surveys_gw <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-526"><a href="#cb120-526" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span></span>
+<span id="cb120-527"><a href="#cb120-527" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(genus, plot_id) <span class="sc">%&gt;%</span></span>
+<span id="cb120-528"><a href="#cb120-528" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_weight =</span> <span class="fu">mean</span>(weight))</span>
+<span id="cb120-529"><a href="#cb120-529" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-530"><a href="#cb120-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-531"><a href="#cb120-531" aria-hidden="true" tabindex="-1"></a>creating a 2D table where each dimension represent a category the cell will represent a statistics</span>
+<span id="cb120-532"><a href="#cb120-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-535"><a href="#cb120-535" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-536"><a href="#cb120-536" aria-hidden="true" tabindex="-1"></a>surveys_spread <span class="ot">&lt;-</span> surveys_gw <span class="sc">%&gt;%</span></span>
+<span id="cb120-537"><a href="#cb120-537" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key =</span> genus, <span class="at">value =</span> mean_weight)</span>
+<span id="cb120-538"><a href="#cb120-538" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys_spread)</span>
+<span id="cb120-539"><a href="#cb120-539" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys_spread)</span>
+<span id="cb120-540"><a href="#cb120-540" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-541"><a href="#cb120-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-542"><a href="#cb120-542" aria-hidden="true" tabindex="-1"></a>bring spread back</span>
+<span id="cb120-543"><a href="#cb120-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-546"><a href="#cb120-546" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-547"><a href="#cb120-547" aria-hidden="true" tabindex="-1"></a>surveys_gw <span class="ot">&lt;-</span> surveys_spread <span class="sc">%&gt;%</span></span>
+<span id="cb120-548"><a href="#cb120-548" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> genus, <span class="at">value =</span> mean_weight, <span class="sc">-</span>plot_id)</span>
+<span id="cb120-549"><a href="#cb120-549" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(surveys_gw)</span>
+<span id="cb120-550"><a href="#cb120-550" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(surveys_gw)</span>
+<span id="cb120-551"><a href="#cb120-551" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-552"><a href="#cb120-552" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-553"><a href="#cb120-553" aria-hidden="true" tabindex="-1"></a><span class="fu">### Filtering</span></span>
+<span id="cb120-554"><a href="#cb120-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-555"><a href="#cb120-555" aria-hidden="true" tabindex="-1"></a>Remove missing data</span>
+<span id="cb120-556"><a href="#cb120-556" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-559"><a href="#cb120-559" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-560"><a href="#cb120-560" aria-hidden="true" tabindex="-1"></a>survey_complete <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-561"><a href="#cb120-561" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(weight), <span class="sc">!</span><span class="fu">is.na</span>(hindfoot_length), <span class="sc">!</span><span class="fu">is.na</span>(sex))</span>
+<span id="cb120-562"><a href="#cb120-562" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-563"><a href="#cb120-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-564"><a href="#cb120-564" aria-hidden="true" tabindex="-1"></a>Filter those that has sample greater than 50</span>
+<span id="cb120-565"><a href="#cb120-565" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-568"><a href="#cb120-568" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-569"><a href="#cb120-569" aria-hidden="true" tabindex="-1"></a>species_counts <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
+<span id="cb120-570"><a href="#cb120-570" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species_id) <span class="sc">%&gt;%</span></span>
+<span id="cb120-571"><a href="#cb120-571" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;=</span> <span class="dv">50</span>)</span>
+<span id="cb120-572"><a href="#cb120-572" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-573"><a href="#cb120-573" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-574"><a href="#cb120-574" aria-hidden="true" tabindex="-1"></a>filter only those in the indicated category</span>
+<span id="cb120-575"><a href="#cb120-575" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-578"><a href="#cb120-578" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-579"><a href="#cb120-579" aria-hidden="true" tabindex="-1"></a>surveys_com <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
+<span id="cb120-580"><a href="#cb120-580" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species_id <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"albigula"</span>, <span class="st">"eremicus"</span>))</span>
+<span id="cb120-581"><a href="#cb120-581" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-582"><a href="#cb120-582" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-583"><a href="#cb120-583" aria-hidden="true" tabindex="-1"></a><span class="fu">### Saving to disk</span></span>
+<span id="cb120-584"><a href="#cb120-584" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-587"><a href="#cb120-587" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-588"><a href="#cb120-588" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb120-589"><a href="#cb120-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-590"><a href="#cb120-590" aria-hidden="true" tabindex="-1"></a><span class="fu">write_cvs</span>()</span>
+<span id="cb120-591"><a href="#cb120-591" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-592"><a href="#cb120-592" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-593"><a href="#cb120-593" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualization</span></span>
+<span id="cb120-594"><a href="#cb120-594" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-595"><a href="#cb120-595" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Help in making complex plots from data frames in simple steps</span>
+<span id="cb120-596"><a href="#cb120-596" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ggplot graphics are built step by step by adding new elements; this makes it flexible as well as customization</span>
+<span id="cb120-597"><a href="#cb120-597" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To get list of ggplot2 geometric objects: <span class="in">`help.search("gemo_", package="ggplot2")`</span></span>
+<span id="cb120-598"><a href="#cb120-598" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To know the aesthetic specification each geom_ can take: <span class="in">`vignette("ggplot2-specs")`</span></span>
+<span id="cb120-599"><a href="#cb120-599" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-600"><a href="#cb120-600" aria-hidden="true" tabindex="-1"></a>Step 1: Bind the plot to specific data frame</span>
+<span id="cb120-601"><a href="#cb120-601" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-604"><a href="#cb120-604" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-605"><a href="#cb120-605" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb120-606"><a href="#cb120-606" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
+<span id="cb120-607"><a href="#cb120-607" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)</span>
+<span id="cb120-608"><a href="#cb120-608" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb120-609"><a href="#cb120-609" aria-hidden="true" tabindex="-1"></a>surveys_plot</span>
+<span id="cb120-610"><a href="#cb120-610" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-611"><a href="#cb120-611" aria-hidden="true" tabindex="-1"></a><span class="co"># Color for each group</span></span>
+<span id="cb120-612"><a href="#cb120-612" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb120-613"><a href="#cb120-613" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
+<span id="cb120-614"><a href="#cb120-614" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length),</span>
+<span id="cb120-615"><a href="#cb120-615" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> species_id</span>
+<span id="cb120-616"><a href="#cb120-616" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb120-617"><a href="#cb120-617" aria-hidden="true" tabindex="-1"></a>surveys_plot</span>
+<span id="cb120-618"><a href="#cb120-618" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-619"><a href="#cb120-619" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-620"><a href="#cb120-620" aria-hidden="true" tabindex="-1"></a>Step 2: Select the type of the plot</span>
+<span id="cb120-621"><a href="#cb120-621" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-622"><a href="#cb120-622" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>scatter plot, dot plots, etc. <span class="sc">\&gt;</span> geom_point()</span>
+<span id="cb120-623"><a href="#cb120-623" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>boxplots <span class="sc">\&gt;</span> geom_boxplot()</span>
+<span id="cb120-624"><a href="#cb120-624" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>trend lines, time series, etc. <span class="sc">\&gt;</span> geom_line()</span>
+<span id="cb120-625"><a href="#cb120-625" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-626"><a href="#cb120-626" aria-hidden="true" tabindex="-1"></a><span class="fu">### Scatter plot</span></span>
+<span id="cb120-627"><a href="#cb120-627" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-630"><a href="#cb120-630" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-631"><a href="#cb120-631" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb120-632"><a href="#cb120-632" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-633"><a href="#cb120-633" aria-hidden="true" tabindex="-1"></a><span class="co"># add transparency</span></span>
+<span id="cb120-634"><a href="#cb120-634" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>)</span>
+<span id="cb120-635"><a href="#cb120-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-636"><a href="#cb120-636" aria-hidden="true" tabindex="-1"></a><span class="co"># color if not used in binding</span></span>
+<span id="cb120-637"><a href="#cb120-637" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span>
+<span id="cb120-638"><a href="#cb120-638" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-639"><a href="#cb120-639" aria-hidden="true" tabindex="-1"></a><span class="co"># add color if not used in binding</span></span>
+<span id="cb120-640"><a href="#cb120-640" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="fu">aes</span>(<span class="at">color =</span> species_id))</span>
+<span id="cb120-641"><a href="#cb120-641" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-642"><a href="#cb120-642" aria-hidden="true" tabindex="-1"></a><span class="co"># make the color blend by introducing small random variation in points locations</span></span>
+<span id="cb120-643"><a href="#cb120-643" aria-hidden="true" tabindex="-1"></a><span class="co"># used when having small data sets</span></span>
+<span id="cb120-644"><a href="#cb120-644" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>)</span>
+<span id="cb120-645"><a href="#cb120-645" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-646"><a href="#cb120-646" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-647"><a href="#cb120-647" aria-hidden="true" tabindex="-1"></a><span class="fu">### Boxplot</span></span>
+<span id="cb120-648"><a href="#cb120-648" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-651"><a href="#cb120-651" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-652"><a href="#cb120-652" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb120-653"><a href="#cb120-653" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
+<span id="cb120-654"><a href="#cb120-654" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species_id, <span class="at">y =</span> weight)</span>
+<span id="cb120-655"><a href="#cb120-655" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb120-656"><a href="#cb120-656" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-657"><a href="#cb120-657" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span>
+<span id="cb120-658"><a href="#cb120-658" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-659"><a href="#cb120-659" aria-hidden="true" tabindex="-1"></a><span class="co"># show data</span></span>
+<span id="cb120-660"><a href="#cb120-660" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb120-661"><a href="#cb120-661" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"tomato"</span>)</span>
+<span id="cb120-662"><a href="#cb120-662" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-663"><a href="#cb120-663" aria-hidden="true" tabindex="-1"></a><span class="co"># bring boxplot layer in front</span></span>
+<span id="cb120-664"><a href="#cb120-664" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"tomato"</span>) <span class="sc">+</span></span>
+<span id="cb120-665"><a href="#cb120-665" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span>
+<span id="cb120-666"><a href="#cb120-666" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-667"><a href="#cb120-667" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-668"><a href="#cb120-668" aria-hidden="true" tabindex="-1"></a><span class="fu">### Time series data</span></span>
+<span id="cb120-669"><a href="#cb120-669" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-672"><a href="#cb120-672" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-673"><a href="#cb120-673" aria-hidden="true" tabindex="-1"></a><span class="co"># create appropriate dataset</span></span>
+<span id="cb120-674"><a href="#cb120-674" aria-hidden="true" tabindex="-1"></a>yearly_count <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
+<span id="cb120-675"><a href="#cb120-675" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, species_id)</span>
+<span id="cb120-676"><a href="#cb120-676" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-677"><a href="#cb120-677" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb120-678"><a href="#cb120-678" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearly_count,</span>
+<span id="cb120-679"><a href="#cb120-679" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)</span>
+<span id="cb120-680"><a href="#cb120-680" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb120-681"><a href="#cb120-681" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-682"><a href="#cb120-682" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>()</span>
+<span id="cb120-683"><a href="#cb120-683" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-684"><a href="#cb120-684" aria-hidden="true" tabindex="-1"></a><span class="co"># make it more meaningful by breaking it by category</span></span>
+<span id="cb120-685"><a href="#cb120-685" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> species_id))</span>
+<span id="cb120-686"><a href="#cb120-686" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-687"><a href="#cb120-687" aria-hidden="true" tabindex="-1"></a><span class="co"># make it more colorful</span></span>
+<span id="cb120-688"><a href="#cb120-688" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> species_id))</span>
+<span id="cb120-689"><a href="#cb120-689" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-690"><a href="#cb120-690" aria-hidden="true" tabindex="-1"></a><span class="co"># split into multiple plots</span></span>
+<span id="cb120-691"><a href="#cb120-691" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id)</span>
+<span id="cb120-692"><a href="#cb120-692" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-693"><a href="#cb120-693" aria-hidden="true" tabindex="-1"></a><span class="co"># split the line in each plot by sex</span></span>
+<span id="cb120-694"><a href="#cb120-694" aria-hidden="true" tabindex="-1"></a>yearly_sex_counts <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
+<span id="cb120-695"><a href="#cb120-695" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, species_id, sex)</span>
+<span id="cb120-696"><a href="#cb120-696" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-697"><a href="#cb120-697" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb120-698"><a href="#cb120-698" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearly_sex_counts,</span>
+<span id="cb120-699"><a href="#cb120-699" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)</span>
+<span id="cb120-700"><a href="#cb120-700" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb120-701"><a href="#cb120-701" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-702"><a href="#cb120-702" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb120-703"><a href="#cb120-703" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id)</span>
+<span id="cb120-704"><a href="#cb120-704" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-705"><a href="#cb120-705" aria-hidden="true" tabindex="-1"></a><span class="co"># remove background</span></span>
+<span id="cb120-706"><a href="#cb120-706" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb120-707"><a href="#cb120-707" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id) <span class="sc">+</span></span>
+<span id="cb120-708"><a href="#cb120-708" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb120-709"><a href="#cb120-709" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb120-710"><a href="#cb120-710" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-711"><a href="#cb120-711" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-712"><a href="#cb120-712" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors</span></span>
+<span id="cb120-713"><a href="#cb120-713" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-714"><a href="#cb120-714" aria-hidden="true" tabindex="-1"></a><span class="fu">### cols4all package</span></span>
+<span id="cb120-715"><a href="#cb120-715" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-716"><a href="#cb120-716" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">cols4all package</span><span class="co">](https://cols4all.github.io/cols4all-R/)</span> by <span class="co">[</span><span class="ot">Martijn Tennekes</span><span class="co">](https://10mapz.com/)</span> helps select color palettes.</span>
+<span id="cb120-717"><a href="#cb120-717" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-718"><a href="#cb120-718" aria-hidden="true" tabindex="-1"></a>The main tool in the package is a dashboard that can be started using the following line:</span>
+<span id="cb120-719"><a href="#cb120-719" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-722"><a href="#cb120-722" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb120-723"><a href="#cb120-723" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb120-724"><a href="#cb120-724" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-725"><a href="#cb120-725" aria-hidden="true" tabindex="-1"></a><span class="fu">c4a_gui</span>()</span>
+<span id="cb120-726"><a href="#cb120-726" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb120-727"><a href="#cb120-727" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-728"><a href="#cb120-728" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-729"><a href="#cb120-729" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb120-730"><a href="#cb120-730" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-731"><a href="#cb120-731" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>OU Software Carpentry Workshop (check other workshops <span class="co">[</span><span class="ot">here</span><span class="co">](https://libraries.ou.edu/content/software-and-data-carpentry)</span>)</span>
+<span id="cb120-732"><a href="#cb120-732" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Main Tutorial</span><span class="co">](https://oulib-swc.github.io/2019-05-15-ou-swc/)</span></span>
+<span id="cb120-733"><a href="#cb120-733" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Data Carpentry with R</span><span class="co">](https://datacarpentry.org/R-ecology-lesson/index.html)</span></span>
+<span id="cb120-734"><a href="#cb120-734" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Software Carpentry with R</span><span class="co">](https://swcarpentry.github.io/r-novice-gapminder/)</span></span>
+<span id="cb120-735"><a href="#cb120-735" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Etherpad</span><span class="co">](https://pad.carpentries.org/2019-05-15-ou-swc)</span></span>
+<span id="cb120-736"><a href="#cb120-736" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Google Doc</span><span class="co">](https://docs.google.com/document/d/1aJq_X1uhaNkUj7qdZEzOcpc2Pky7eZPy76yqs0UkfrQ/edit)</span></span>
+<span id="cb120-737"><a href="#cb120-737" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Intro to ggplot</span><span class="co">](https://rawcdn.githack.com/allisonhorst/data-vis/fc107e063f50ef8695b0a75ed73d74720aca2c65/data_vis_np.html)</span> by <span class="co">[</span><span class="ot">Allison Horst</span><span class="co">](https://github.com/allisonhorst)</span></span>
+<span id="cb120-738"><a href="#cb120-738" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R for Data Science book by Garrett Grolemund and Hadley Wickham</span><span class="co">](https://r4ds.had.co.nz/)</span></span>
+<span id="cb120-739"><a href="#cb120-739" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Best Practices for Scientific Computing paper</span><span class="co">](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

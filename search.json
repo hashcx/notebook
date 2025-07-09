@@ -206,6 +206,17 @@
     ]
   },
   {
+    "objectID": "src/notes/r.html#colors",
+    "href": "src/notes/r.html#colors",
+    "title": "R",
+    "section": "Colors",
+    "text": "Colors\ncols4all package\ncols4all package by Martijn Tennekes helps select color palettes.\nThe main tool in the package is a dashboard that can be started using the following line:\n\nc4a_gui()\n\n\nShiny applications not supported in static R Markdown documents",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R</span>"
+    ]
+  },
+  {
     "objectID": "src/notes/r.html#references",
     "href": "src/notes/r.html#references",
     "title": "R",
