@@ -634,6 +634,8 @@ surveys_plot + geom_line(aes(color = sex)) +
 The main tool in the package is a dashboard that can be started using the following line:
 
 ```{r}
+#| cache: false
+
 c4a_gui()
 ```
 
