@@ -61,6 +61,8 @@ jobs:
           sudo apt-get install -y libfribidi-dev
           sudo apt-get install -y libharfbuzz-dev
           sudo apt-get install -y libudunits2-dev
+          sudo apt-get install -y make
+          sudo apt-get install -y pandoc
 
 
       # # From: https://quarto.org/docs/publishing/github-pages.html#github-action
