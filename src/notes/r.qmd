@@ -13,7 +13,20 @@ rm(list = ls())
 ```{r List all used packages}
 #| include: false
 
-packages <- c("downlit", "xml2", "here", "tidyverse", "janitor", "cols4all", "shiny", "shinyjs", "kableExtra", "colorblindcheck", "plotly")
+packages <- c("downlit", 
+              "xml2", 
+              "here", 
+              "tidyverse", 
+              "janitor", 
+              "cols4all", 
+              "shiny", 
+              "shinyjs", 
+              "kableExtra", 
+              "colorblindcheck", 
+              "plotly",
+              "sf",
+              "rnaturalearth",
+              "rnaturalearthdata")
 ```
 
 
@@ -634,10 +647,70 @@ surveys_plot + geom_line(aes(color = sex)) +
 The main tool in the package is a dashboard that can be started using the following line:
 
 ```{r}
-#| cache: false
+#| eval: false
 
 c4a_gui()
 ```
+
+## Spatial Data
+
+### Projections
+
+An overview of common projections for Earth is provided by [USGS (pdf)](https://pubs.usgs.gov/gip/70047422/report.pdf)
+
+```{r}
+# download world map in small resolution as an sf object
+world <- ne_countries(scale = "small", returnclass = "sf")
+class(world)
+head(world)
+```
+#### Mercator Projection, Default
+
+```{r}
+world |> 
+  ggplot() + 
+  geom_sf()
+```
+
+
+#### Lambert Azimuthal Equal-Area Projection
+
+```{r}
+world |> 
+  ggplot() + 
+  geom_sf() + 
+  coord_sf(crs = "+proj=laea")
+```
+
+#### Foucaut Projection
+
+```{r}
+world |> 
+  ggplot() + 
+  geom_sf() + 
+  coord_sf(crs = "+proj=fouc")
+```
+
+#### Natural Earch II Projection
+
+```{r}
+world |> 
+  ggplot() + 
+  geom_sf() + 
+  coord_sf(crs = "+proj=natearth2")
+```
+
+#### EPSG Codes
+
+If the projection has an [EPSG code (html)](https://epsg.io/?q=%20kind%3ACRS), it can be used instead as follows:
+
+```{r}
+world |> 
+  ggplot() + 
+  geom_sf() + 
+  coord_sf(crs = sf::st_crs(27700))
+```
+
 
 
 ## References
@@ -651,3 +724,4 @@ c4a_gui()
 -   [Intro to ggplot](https://rawcdn.githack.com/allisonhorst/data-vis/fc107e063f50ef8695b0a75ed73d74720aca2c65/data_vis_np.html) by [Allison Horst](https://github.com/allisonhorst)
 -   [R for Data Science book by Garrett Grolemund and Hadley Wickham](https://r4ds.had.co.nz/)
 -   [Best Practices for Scientific Computing paper](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)
+- [R Manuals](https://rstudio.github.io/r-manuals/)
