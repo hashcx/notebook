@@ -4,7 +4,7 @@ on:
       - master
 
 
-name: Execute, Render and Publish
+name: Publish Quarto Project
 
 
 # you need these permissions to publish to GitHub pages
@@ -16,6 +16,9 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    
+    # env:
+    #   GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     
     steps:
       - name: Checkout Repository
@@ -124,4 +127,3 @@ jobs:
       #     CONFLUENCE_USER_EMAIL: ${{ secrets.CONFLUENCE_USER_EMAIL }}
       #     CONFLUENCE_AUTH_TOKEN: ${{ secrets.CONFLUENCE_AUTH_TOKEN }}
       #     CONFLUENCE_DOMAIN: ${{ secrets.CONFLUENCE_DOMAIN }}
-
