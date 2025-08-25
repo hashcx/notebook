@@ -360,6 +360,17 @@
     ]
   },
   {
+    "objectID": "src/notes/windows.html#keyboard-shortcut",
+    "href": "src/notes/windows.html#keyboard-shortcut",
+    "title": "Microsoft Windows",
+    "section": "Keyboard Shortcut",
+    "text": "Keyboard Shortcut\n\nwin + #: lanuch app pinned to taskbar",
+    "crumbs": [
+      "Notes",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Microsoft Windows</span>"
+    ]
+  },
+  {
     "objectID": "src/notes/webhost.html",
     "href": "src/notes/webhost.html",
     "title": "Web Hosting",
