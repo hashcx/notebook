@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.24">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>13&nbsp; Data Tidying – Workspace</title>
 <style>
@@ -66,18 +66,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-75d43f508b31697954ff2da8c12580dd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-a28d48b4bce934aa587d0f77497df212.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-75d43f508b31697954ff2da8c12580dd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-a1a320c9d8393d9f9c4cf10dac498987.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-07097c03a4f6bac75708eeb7ad70b98c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-a1a320c9d8393d9f9c4cf10dac498987.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -298,7 +299,9 @@ cookieconsent.run({
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">HashCX</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -502,7 +505,7 @@ cookieconsent.run({
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Data Trasformation Bottom-Line
+<span class="screen-reader-only">Note</span>Data Trasformation Bottom-Line
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -518,7 +521,7 @@ Data Trasformation Bottom-Line
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-`pivot_longer’ Idea
+<span class="screen-reader-only">Note</span>`pivot_longer’ Idea
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -531,14 +534,14 @@ Data Trasformation Bottom-Line
 <span class="header-section-number">13.2.1.1</span> Toy Dataset</h4>
 <p>The following toy dataset will be used to illustrate the concepts in this section. The book used <code><a href="https://tidyr.tidyverse.org/reference/billboard.html">tidyr::billboard</a></code> dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">id</span>, <span class="op">~</span><span class="va">A</span>, <span class="op">~</span><span class="va">B_1</span>, <span class="op">~</span><span class="va">B_2</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="fl">1</span>, <span class="fl">10.1</span>, <span class="fl">10.2</span>,</span>
 <span>  <span class="st">"B"</span>, <span class="fl">2</span>, <span class="fl">20.1</span>, <span class="cn">NA</span>,</span>
 <span>  <span class="st">"C"</span>, <span class="fl">3</span>, <span class="cn">NA</span>, <span class="fl">30.2</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 4
   id        A   B_1   B_2
@@ -559,7 +562,7 @@ Data Trasformation Bottom-Line
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Dimensions of New Dataset
+<span class="screen-reader-only">Note</span>Dimensions of New Dataset
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -576,14 +579,14 @@ Dimensions of New Dataset
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"B_"</span><span class="op">)</span>,</span>
 <span>    names_to <span class="op">=</span> <span class="st">"B_type"</span>,</span>
 <span>    values_to <span class="op">=</span> <span class="st">"value"</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   id        A B_type value
@@ -600,7 +603,7 @@ Dimensions of New Dataset
 <span class="header-section-number">13.2.1.3</span> Remove NA</h4>
 <p>Use the argument <code>values_drop_na = TRUE</code></p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"B_"</span><span class="op">)</span>,</span>
 <span>    names_to <span class="op">=</span> <span class="st">"B_type"</span>,</span>
@@ -608,7 +611,7 @@ Dimensions of New Dataset
 <span>    values_drop_na <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
   id        A B_type value
@@ -623,7 +626,7 @@ Dimensions of New Dataset
 <span class="header-section-number">13.2.1.4</span> Fix Cell Values</h4>
 <p>Use the <code><a href="https://readr.tidyverse.org/reference/parse_number.html">readr::parse_number()</a></code> function to extract the first number from var2 variable and ignore all other text.</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"B_"</span><span class="op">)</span>,</span>
 <span>    names_to <span class="op">=</span> <span class="st">"B_type"</span>,</span>
@@ -634,7 +637,7 @@ Dimensions of New Dataset
 <span>    B_type <span class="op">=</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/parse_number.html">parse_number</a></span><span class="op">(</span><span class="va">B_type</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
   id        A B_type value
@@ -651,14 +654,14 @@ Dimensions of New Dataset
 <span class="header-section-number">13.2.2.1</span> Toy Dataset</h4>
 <p>The following toy dataset will be used to illustrate the concepts in this section. The book used <code><a href="https://tidyr.tidyverse.org/reference/who.html">tidyr::who2</a></code> dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds2</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds2</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">id</span>, <span class="op">~</span><span class="va">A</span>, <span class="op">~</span><span class="va">B1_C1</span>, <span class="op">~</span><span class="va">B1_C2</span>, <span class="op">~</span><span class="va">B2_C1</span>, <span class="op">~</span><span class="va">B2_C2</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="fl">1</span>, <span class="fl">10.11</span>, <span class="fl">10.12</span>, <span class="fl">10.21</span>, <span class="fl">10.22</span>,</span>
 <span>  <span class="st">"B"</span>, <span class="fl">2</span>, <span class="fl">20.11</span>, <span class="fl">20.12</span>, <span class="cn">NA</span>, <span class="fl">20.22</span>,</span>
 <span>  <span class="st">"C"</span>, <span class="fl">3</span>, <span class="fl">30.11</span>, <span class="cn">NA</span>, <span class="fl">30.21</span>, <span class="fl">30.22</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 6
   id        A B1_C1 B1_C2 B2_C1 B2_C2
@@ -671,14 +674,14 @@ Dimensions of New Dataset
 </section><section id="lengthening-wo-seperating-variables" class="level4" data-number="13.2.2.2"><h4 data-number="13.2.2.2" class="anchored" data-anchor-id="lengthening-wo-seperating-variables">
 <span class="header-section-number">13.2.2.2</span> Lengthening w/o Seperating Variables</h4>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds2</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds2</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"B"</span><span class="op">)</span>,</span>
 <span>    names_to <span class="op">=</span> <span class="st">"B_C"</span>,</span>
 <span>    values_to <span class="op">=</span> <span class="st">"value"</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 4
    id        A B_C   value
@@ -700,7 +703,7 @@ Dimensions of New Dataset
 </section><section id="lengthening-w-seperating-variables" class="level4" data-number="13.2.2.3"><h4 data-number="13.2.2.3" class="anchored" data-anchor-id="lengthening-w-seperating-variables">
 <span class="header-section-number">13.2.2.3</span> Lengthening w/ Seperating Variables</h4>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds2</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds2</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="op">!</span><span class="op">(</span><span class="va">id</span><span class="op">:</span><span class="va">A</span><span class="op">)</span>,</span>
 <span>    names_sep <span class="op">=</span> <span class="st">"_"</span>,</span>
@@ -708,7 +711,7 @@ Dimensions of New Dataset
 <span>    values_to <span class="op">=</span> <span class="st">"value"</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 5
    id        A B     C     value
@@ -730,7 +733,7 @@ Dimensions of New Dataset
 </section><section id="dropping-na" class="level4" data-number="13.2.2.4"><h4 data-number="13.2.2.4" class="anchored" data-anchor-id="dropping-na">
 <span class="header-section-number">13.2.2.4</span> Dropping NA</h4>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds2</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds2</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="op">!</span><span class="op">(</span><span class="va">id</span><span class="op">:</span><span class="va">A</span><span class="op">)</span>,</span>
 <span>    names_sep <span class="op">=</span> <span class="st">"_"</span>,</span>
@@ -739,7 +742,7 @@ Dimensions of New Dataset
 <span>    values_drop_na <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 5
    id        A B     C     value
@@ -762,14 +765,14 @@ Dimensions of New Dataset
 <span class="header-section-number">13.2.3.1</span> Toy Dataset</h4>
 <p>The following toy dataset will be used to illustrate the concepts in this section. The book used <code><a href="https://tidyr.tidyverse.org/reference/household.html">tidyr::household</a></code> dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds3</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds3</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">id</span>, <span class="op">~</span><span class="va">child1_name</span>, <span class="op">~</span><span class="va">child1_age</span>, <span class="op">~</span><span class="va">child2_name</span>, <span class="op">~</span><span class="va">child2_age</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="st">"A1"</span>, <span class="fl">11</span>, <span class="st">"A2"</span>, <span class="fl">12</span>,</span>
 <span>  <span class="st">"B"</span>, <span class="st">"B1"</span>, <span class="fl">21</span>, <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
 <span>  <span class="st">"C"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"C2"</span>, <span class="fl">32</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
   id    child1_name child1_age child2_name child2_age
@@ -782,14 +785,14 @@ Dimensions of New Dataset
 </section><section id="lengthening-wo-removing-na" class="level4" data-number="13.2.3.2"><h4 data-number="13.2.3.2" class="anchored" data-anchor-id="lengthening-wo-removing-na">
 <span class="header-section-number">13.2.3.2</span> Lengthening w/o Removing NA</h4>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds3</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds3</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"child"</span><span class="op">)</span>,</span>
 <span>    names_sep <span class="op">=</span> <span class="st">"_"</span>,</span>
 <span>    names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"child"</span>, <span class="st">".value"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   id    child  name    age
@@ -805,7 +808,7 @@ Dimensions of New Dataset
 </section><section id="lengthening-w-removing-na" class="level4" data-number="13.2.3.3"><h4 data-number="13.2.3.3" class="anchored" data-anchor-id="lengthening-w-removing-na">
 <span class="header-section-number">13.2.3.3</span> Lengthening w Removing NA</h4>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds3</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds3</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"child"</span><span class="op">)</span>,</span>
 <span>    names_sep <span class="op">=</span> <span class="st">"_"</span>,</span>
@@ -813,7 +816,7 @@ Dimensions of New Dataset
 <span>    values_drop_na <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
   id    child  name    age
@@ -827,7 +830,7 @@ Dimensions of New Dataset
 </section><section id="fixing-cell-values" class="level4" data-number="13.2.3.4"><h4 data-number="13.2.3.4" class="anchored" data-anchor-id="fixing-cell-values">
 <span class="header-section-number">13.2.3.4</span> Fixing Cell Values</h4>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds3</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_lengthen</span> <span class="op">&lt;-</span> <span class="va">ds3</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
 <span>    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">"child"</span><span class="op">)</span>,</span>
 <span>    names_sep <span class="op">=</span> <span class="st">"_"</span>,</span>
@@ -838,7 +841,7 @@ Dimensions of New Dataset
 <span>    child <span class="op">=</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/parse_number.html">parse_number</a></span><span class="op">(</span><span class="va">child</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_lengthen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_lengthen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
   id    child name    age
@@ -858,7 +861,7 @@ Dimensions of New Dataset
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-`pivot_wider’ Idea
+<span class="screen-reader-only">Note</span>`pivot_wider’ Idea
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -871,7 +874,7 @@ Dimensions of New Dataset
 <span class="header-section-number">13.3.1.1</span> Toy Dataset</h4>
 <p>Notice that each unique value in the <code>id</code> column has a single value for each of the unique values in the <code>M</code> column.</p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">id</span>, <span class="op">~</span><span class="va">M</span>, <span class="op">~</span><span class="va">V</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="st">"M1"</span>, <span class="fl">10</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="st">"M2"</span>, <span class="fl">11</span>,</span>
@@ -881,7 +884,7 @@ Dimensions of New Dataset
 <span>  <span class="st">"C"</span>, <span class="st">"M2"</span>, <span class="fl">31</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   id    M         V
@@ -897,13 +900,13 @@ Dimensions of New Dataset
 </section><section id="widenning" class="level4" data-number="13.3.1.2"><h4 data-number="13.3.1.2" class="anchored" data-anchor-id="widenning">
 <span class="header-section-number">13.3.1.2</span> Widenning</h4>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_widen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_widen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_wider</span><span class="op">(</span></span>
 <span>    names_from <span class="op">=</span> <span class="va">M</span>,</span>
 <span>    values_from <span class="op">=</span> <span class="va">V</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_widen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_widen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   id       M1    M2
@@ -919,7 +922,7 @@ Dimensions of New Dataset
 <span class="header-section-number">13.3.2.1</span> Toy Dataset</h4>
 <p>Notice that NOT each unique value in the <code>id</code> column has a single value for each of the unique values in the <code>M</code> column–<code>B</code> does not have value for the <code>M2</code> value.</p>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">id</span>, <span class="op">~</span><span class="va">M</span>, <span class="op">~</span><span class="va">V</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="st">"M1"</span>, <span class="fl">10</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="st">"M2"</span>, <span class="fl">11</span>,</span>
@@ -928,7 +931,7 @@ Dimensions of New Dataset
 <span>  <span class="st">"C"</span>, <span class="st">"M2"</span>, <span class="fl">31</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   id    M         V
@@ -944,13 +947,13 @@ Dimensions of New Dataset
 <span class="header-section-number">13.3.2.2</span> Widenning</h4>
 <p>Notice that <code>B</code> observation will be assigned <code>NA</code> as its value in the <code>M2</code> column.</p>
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_widen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_widen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_wider</span><span class="op">(</span></span>
 <span>    names_from <span class="op">=</span> <span class="va">M</span>,</span>
 <span>    values_from <span class="op">=</span> <span class="va">V</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_widen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_widen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   id       M1    M2
@@ -966,7 +969,7 @@ Dimensions of New Dataset
 <span class="header-section-number">13.3.3.1</span> Toy Dataset</h4>
 <p>Notice that NOT each unique value in the <code>id</code> column has a single value for each of the unique values in the <code>M</code> column–B has multiple value for <code>M2</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">id</span>, <span class="op">~</span><span class="va">M</span>, <span class="op">~</span><span class="va">V</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="st">"M1"</span>, <span class="fl">10</span>,</span>
 <span>  <span class="st">"A"</span>, <span class="st">"M2"</span>, <span class="fl">11</span>,</span>
@@ -977,7 +980,7 @@ Dimensions of New Dataset
 <span>  <span class="st">"C"</span>, <span class="st">"M2"</span>, <span class="fl">31</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 3
   id    M         V
@@ -995,13 +998,13 @@ Dimensions of New Dataset
 <span class="header-section-number">13.3.3.2</span> Widenning</h4>
 <p>Notice that the generated values are <code>list-cols</code>–see the warning message for details.</p>
 <div class="cell">
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_widen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ds_widen</span> <span class="op">&lt;-</span> <span class="va">ds</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_wider</span><span class="op">(</span></span>
 <span>    names_from <span class="op">=</span> <span class="va">M</span>,</span>
 <span>    values_from <span class="op">=</span> <span class="va">V</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="va">ds_widen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">ds_widen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   id    M1        M2       
@@ -1088,13 +1091,14 @@ Dimensions of New Dataset
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1502,7 +1506,7 @@ Dimensions of New Dataset
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb37" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Data Tidying"</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
@@ -1890,7 +1894,7 @@ Dimensions of New Dataset
 <span id="cb37-422"><a href="#cb37-422" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-423"><a href="#cb37-423" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wickham, H. . (2014). Tidy Data. Journal of Statistical Software, 59(10), 1–23. https://doi.org/10.18637/jss.v059.i10 (<span class="co">[</span><span class="ot">webpage</span><span class="co">](https://www.jstatsoft.org/article/view/v059i10)</span>)</span>
 <span id="cb37-424"><a href="#cb37-424" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>details the history and underlying theory behind tidy data</span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
