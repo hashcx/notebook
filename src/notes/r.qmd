@@ -527,6 +527,12 @@ surveys_com <- surveys %>%
 write_cvs()
 ```
 
+For large and richer datasets, using parquet might be a better choice than .csv, as discussed in [R4DS Section 22.4](https://r4ds.hadley.nz/arrow.html#sec-parquet)
+
+If you’re working in a project, [R4DS](https://r4ds.hadley.nz/iteration.html#save-your-work) suggests calling the file that does data prep work something like `0-cleanup.qmd`. The 0 in the file name suggests that this should be run before anything else.
+
+If the input data files change over time, one might consider learning a tool like [targets](https://docs.ropensci.org/targets/) to set up your data cleaning code to automatically re-run whenever one of the input files is modified.
+
 ## Visualization
 
 -   Help in making complex plots from data frames in simple steps
