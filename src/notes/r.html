@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.25">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>R – Workspace</title>
 <style>
@@ -71,14 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a1a320c9d8393d9f9c4cf10dac498987.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-07097c03a4f6bac75708eeb7ad70b98c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-a1a320c9d8393d9f9c4cf10dac498987.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-6fcb3d3e39cdeebec45c99e4e1510763.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-e06b3ec4e3b1c7e2c623bb7343e038b1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-6fcb3d3e39cdeebec45c99e4e1510763.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -1329,6 +1329,9 @@ $ plot_type       &lt;chr&gt; </code></pre>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb102"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">write_cvs</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>For large and richer datasets, using parquet might be a better choice than .csv, as discussed in <a href="https://r4ds.hadley.nz/arrow.html#sec-parquet">R4DS Section 22.4</a></p>
+<p>If you’re working in a project, <a href="https://r4ds.hadley.nz/iteration.html#save-your-work">R4DS</a> suggests calling the file that does data prep work something like <code>0-cleanup.qmd</code>. The 0 in the file name suggests that this should be run before anything else.</p>
+<p>If the input data files change over time, one might consider learning a tool like <a href="https://docs.ropensci.org/targets/">targets</a> to set up your data cleaning code to automatically re-run whenever one of the input files is modified.</p>
 </section></section><section id="visualization" class="level2"><h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
 <ul>
 <li>Help in making complex plots from data frames in simple steps</li>
@@ -2856,204 +2859,210 @@ Geodetic CRS:  WGS 84
 <span id="cb129-603"><a href="#cb129-603" aria-hidden="true" tabindex="-1"></a><span class="fu">write_cvs</span>()</span>
 <span id="cb129-604"><a href="#cb129-604" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb129-605"><a href="#cb129-605" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-606"><a href="#cb129-606" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualization</span></span>
+<span id="cb129-606"><a href="#cb129-606" aria-hidden="true" tabindex="-1"></a>For large and richer datasets, using parquet might be a better choice than .csv, as discussed in <span class="co">[</span><span class="ot">R4DS Section 22.4</span><span class="co">](https://r4ds.hadley.nz/arrow.html#sec-parquet)</span></span>
 <span id="cb129-607"><a href="#cb129-607" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-608"><a href="#cb129-608" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Help in making complex plots from data frames in simple steps</span>
-<span id="cb129-609"><a href="#cb129-609" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ggplot graphics are built step by step by adding new elements; this makes it flexible as well as customization</span>
-<span id="cb129-610"><a href="#cb129-610" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To get list of ggplot2 geometric objects: <span class="in">`help.search("gemo_", package="ggplot2")`</span></span>
-<span id="cb129-611"><a href="#cb129-611" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To know the aesthetic specification each geom_ can take: <span class="in">`vignette("ggplot2-specs")`</span></span>
-<span id="cb129-612"><a href="#cb129-612" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-613"><a href="#cb129-613" aria-hidden="true" tabindex="-1"></a>Step 1: Bind the plot to specific data frame</span>
-<span id="cb129-614"><a href="#cb129-614" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-617"><a href="#cb129-617" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-618"><a href="#cb129-618" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb129-619"><a href="#cb129-619" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
-<span id="cb129-620"><a href="#cb129-620" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)</span>
-<span id="cb129-621"><a href="#cb129-621" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb129-622"><a href="#cb129-622" aria-hidden="true" tabindex="-1"></a>surveys_plot</span>
-<span id="cb129-623"><a href="#cb129-623" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-624"><a href="#cb129-624" aria-hidden="true" tabindex="-1"></a><span class="co"># Color for each group</span></span>
-<span id="cb129-625"><a href="#cb129-625" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb129-626"><a href="#cb129-626" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
-<span id="cb129-627"><a href="#cb129-627" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length),</span>
-<span id="cb129-628"><a href="#cb129-628" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> species_id</span>
-<span id="cb129-629"><a href="#cb129-629" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb129-630"><a href="#cb129-630" aria-hidden="true" tabindex="-1"></a>surveys_plot</span>
-<span id="cb129-631"><a href="#cb129-631" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-632"><a href="#cb129-632" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-633"><a href="#cb129-633" aria-hidden="true" tabindex="-1"></a>Step 2: Select the type of the plot</span>
-<span id="cb129-634"><a href="#cb129-634" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-635"><a href="#cb129-635" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>scatter plot, dot plots, etc. <span class="sc">\&gt;</span> geom_point()</span>
-<span id="cb129-636"><a href="#cb129-636" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>boxplots <span class="sc">\&gt;</span> geom_boxplot()</span>
-<span id="cb129-637"><a href="#cb129-637" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>trend lines, time series, etc. <span class="sc">\&gt;</span> geom_line()</span>
+<span id="cb129-608"><a href="#cb129-608" aria-hidden="true" tabindex="-1"></a>If you’re working in a project, <span class="co">[</span><span class="ot">R4DS</span><span class="co">](https://r4ds.hadley.nz/iteration.html#save-your-work)</span> suggests calling the file that does data prep work something like <span class="in">`0-cleanup.qmd`</span>. The 0 in the file name suggests that this should be run before anything else.</span>
+<span id="cb129-609"><a href="#cb129-609" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-610"><a href="#cb129-610" aria-hidden="true" tabindex="-1"></a>If the input data files change over time, one might consider learning a tool like <span class="co">[</span><span class="ot">targets</span><span class="co">](https://docs.ropensci.org/targets/)</span> to set up your data cleaning code to automatically re-run whenever one of the input files is modified.</span>
+<span id="cb129-611"><a href="#cb129-611" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-612"><a href="#cb129-612" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualization</span></span>
+<span id="cb129-613"><a href="#cb129-613" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-614"><a href="#cb129-614" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Help in making complex plots from data frames in simple steps</span>
+<span id="cb129-615"><a href="#cb129-615" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ggplot graphics are built step by step by adding new elements; this makes it flexible as well as customization</span>
+<span id="cb129-616"><a href="#cb129-616" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To get list of ggplot2 geometric objects: <span class="in">`help.search("gemo_", package="ggplot2")`</span></span>
+<span id="cb129-617"><a href="#cb129-617" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To know the aesthetic specification each geom_ can take: <span class="in">`vignette("ggplot2-specs")`</span></span>
+<span id="cb129-618"><a href="#cb129-618" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-619"><a href="#cb129-619" aria-hidden="true" tabindex="-1"></a>Step 1: Bind the plot to specific data frame</span>
+<span id="cb129-620"><a href="#cb129-620" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-623"><a href="#cb129-623" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-624"><a href="#cb129-624" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb129-625"><a href="#cb129-625" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
+<span id="cb129-626"><a href="#cb129-626" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length)</span>
+<span id="cb129-627"><a href="#cb129-627" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb129-628"><a href="#cb129-628" aria-hidden="true" tabindex="-1"></a>surveys_plot</span>
+<span id="cb129-629"><a href="#cb129-629" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-630"><a href="#cb129-630" aria-hidden="true" tabindex="-1"></a><span class="co"># Color for each group</span></span>
+<span id="cb129-631"><a href="#cb129-631" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb129-632"><a href="#cb129-632" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
+<span id="cb129-633"><a href="#cb129-633" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> hindfoot_length),</span>
+<span id="cb129-634"><a href="#cb129-634" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> species_id</span>
+<span id="cb129-635"><a href="#cb129-635" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb129-636"><a href="#cb129-636" aria-hidden="true" tabindex="-1"></a>surveys_plot</span>
+<span id="cb129-637"><a href="#cb129-637" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb129-638"><a href="#cb129-638" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-639"><a href="#cb129-639" aria-hidden="true" tabindex="-1"></a><span class="fu">### Scatter plot</span></span>
+<span id="cb129-639"><a href="#cb129-639" aria-hidden="true" tabindex="-1"></a>Step 2: Select the type of the plot</span>
 <span id="cb129-640"><a href="#cb129-640" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-643"><a href="#cb129-643" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-644"><a href="#cb129-644" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb129-645"><a href="#cb129-645" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-646"><a href="#cb129-646" aria-hidden="true" tabindex="-1"></a><span class="co"># add transparency</span></span>
-<span id="cb129-647"><a href="#cb129-647" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>)</span>
-<span id="cb129-648"><a href="#cb129-648" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-649"><a href="#cb129-649" aria-hidden="true" tabindex="-1"></a><span class="co"># color if not used in binding</span></span>
-<span id="cb129-650"><a href="#cb129-650" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span>
+<span id="cb129-641"><a href="#cb129-641" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>scatter plot, dot plots, etc. <span class="sc">\&gt;</span> geom_point()</span>
+<span id="cb129-642"><a href="#cb129-642" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>boxplots <span class="sc">\&gt;</span> geom_boxplot()</span>
+<span id="cb129-643"><a href="#cb129-643" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>trend lines, time series, etc. <span class="sc">\&gt;</span> geom_line()</span>
+<span id="cb129-644"><a href="#cb129-644" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-645"><a href="#cb129-645" aria-hidden="true" tabindex="-1"></a><span class="fu">### Scatter plot</span></span>
+<span id="cb129-646"><a href="#cb129-646" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-649"><a href="#cb129-649" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-650"><a href="#cb129-650" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
 <span id="cb129-651"><a href="#cb129-651" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-652"><a href="#cb129-652" aria-hidden="true" tabindex="-1"></a><span class="co"># add color if not used in binding</span></span>
-<span id="cb129-653"><a href="#cb129-653" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="fu">aes</span>(<span class="at">color =</span> species_id))</span>
+<span id="cb129-652"><a href="#cb129-652" aria-hidden="true" tabindex="-1"></a><span class="co"># add transparency</span></span>
+<span id="cb129-653"><a href="#cb129-653" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>)</span>
 <span id="cb129-654"><a href="#cb129-654" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-655"><a href="#cb129-655" aria-hidden="true" tabindex="-1"></a><span class="co"># make the color blend by introducing small random variation in points locations</span></span>
-<span id="cb129-656"><a href="#cb129-656" aria-hidden="true" tabindex="-1"></a><span class="co"># used when having small data sets</span></span>
-<span id="cb129-657"><a href="#cb129-657" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>)</span>
-<span id="cb129-658"><a href="#cb129-658" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-659"><a href="#cb129-659" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-660"><a href="#cb129-660" aria-hidden="true" tabindex="-1"></a><span class="fu">### Boxplot</span></span>
-<span id="cb129-661"><a href="#cb129-661" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-664"><a href="#cb129-664" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-665"><a href="#cb129-665" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb129-666"><a href="#cb129-666" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
-<span id="cb129-667"><a href="#cb129-667" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species_id, <span class="at">y =</span> weight)</span>
-<span id="cb129-668"><a href="#cb129-668" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb129-669"><a href="#cb129-669" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-670"><a href="#cb129-670" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span>
-<span id="cb129-671"><a href="#cb129-671" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-672"><a href="#cb129-672" aria-hidden="true" tabindex="-1"></a><span class="co"># show data</span></span>
-<span id="cb129-673"><a href="#cb129-673" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb129-674"><a href="#cb129-674" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"tomato"</span>)</span>
+<span id="cb129-655"><a href="#cb129-655" aria-hidden="true" tabindex="-1"></a><span class="co"># color if not used in binding</span></span>
+<span id="cb129-656"><a href="#cb129-656" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span>
+<span id="cb129-657"><a href="#cb129-657" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-658"><a href="#cb129-658" aria-hidden="true" tabindex="-1"></a><span class="co"># add color if not used in binding</span></span>
+<span id="cb129-659"><a href="#cb129-659" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="fu">aes</span>(<span class="at">color =</span> species_id))</span>
+<span id="cb129-660"><a href="#cb129-660" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-661"><a href="#cb129-661" aria-hidden="true" tabindex="-1"></a><span class="co"># make the color blend by introducing small random variation in points locations</span></span>
+<span id="cb129-662"><a href="#cb129-662" aria-hidden="true" tabindex="-1"></a><span class="co"># used when having small data sets</span></span>
+<span id="cb129-663"><a href="#cb129-663" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>)</span>
+<span id="cb129-664"><a href="#cb129-664" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb129-665"><a href="#cb129-665" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-666"><a href="#cb129-666" aria-hidden="true" tabindex="-1"></a><span class="fu">### Boxplot</span></span>
+<span id="cb129-667"><a href="#cb129-667" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-670"><a href="#cb129-670" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-671"><a href="#cb129-671" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb129-672"><a href="#cb129-672" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> survey_complete,</span>
+<span id="cb129-673"><a href="#cb129-673" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species_id, <span class="at">y =</span> weight)</span>
+<span id="cb129-674"><a href="#cb129-674" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb129-675"><a href="#cb129-675" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-676"><a href="#cb129-676" aria-hidden="true" tabindex="-1"></a><span class="co"># bring boxplot layer in front</span></span>
-<span id="cb129-677"><a href="#cb129-677" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"tomato"</span>) <span class="sc">+</span></span>
-<span id="cb129-678"><a href="#cb129-678" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span>
-<span id="cb129-679"><a href="#cb129-679" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-680"><a href="#cb129-680" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-681"><a href="#cb129-681" aria-hidden="true" tabindex="-1"></a><span class="fu">### Time series data</span></span>
-<span id="cb129-682"><a href="#cb129-682" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-685"><a href="#cb129-685" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-686"><a href="#cb129-686" aria-hidden="true" tabindex="-1"></a><span class="co"># create appropriate dataset</span></span>
-<span id="cb129-687"><a href="#cb129-687" aria-hidden="true" tabindex="-1"></a>yearly_count <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
-<span id="cb129-688"><a href="#cb129-688" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, species_id)</span>
-<span id="cb129-689"><a href="#cb129-689" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-690"><a href="#cb129-690" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb129-691"><a href="#cb129-691" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearly_count,</span>
-<span id="cb129-692"><a href="#cb129-692" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)</span>
-<span id="cb129-693"><a href="#cb129-693" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb129-694"><a href="#cb129-694" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-695"><a href="#cb129-695" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>()</span>
-<span id="cb129-696"><a href="#cb129-696" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-697"><a href="#cb129-697" aria-hidden="true" tabindex="-1"></a><span class="co"># make it more meaningful by breaking it by category</span></span>
-<span id="cb129-698"><a href="#cb129-698" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> species_id))</span>
-<span id="cb129-699"><a href="#cb129-699" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-700"><a href="#cb129-700" aria-hidden="true" tabindex="-1"></a><span class="co"># make it more colorful</span></span>
-<span id="cb129-701"><a href="#cb129-701" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> species_id))</span>
+<span id="cb129-676"><a href="#cb129-676" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span>
+<span id="cb129-677"><a href="#cb129-677" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-678"><a href="#cb129-678" aria-hidden="true" tabindex="-1"></a><span class="co"># show data</span></span>
+<span id="cb129-679"><a href="#cb129-679" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb129-680"><a href="#cb129-680" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"tomato"</span>)</span>
+<span id="cb129-681"><a href="#cb129-681" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-682"><a href="#cb129-682" aria-hidden="true" tabindex="-1"></a><span class="co"># bring boxplot layer in front</span></span>
+<span id="cb129-683"><a href="#cb129-683" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"tomato"</span>) <span class="sc">+</span></span>
+<span id="cb129-684"><a href="#cb129-684" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)</span>
+<span id="cb129-685"><a href="#cb129-685" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb129-686"><a href="#cb129-686" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-687"><a href="#cb129-687" aria-hidden="true" tabindex="-1"></a><span class="fu">### Time series data</span></span>
+<span id="cb129-688"><a href="#cb129-688" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-691"><a href="#cb129-691" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-692"><a href="#cb129-692" aria-hidden="true" tabindex="-1"></a><span class="co"># create appropriate dataset</span></span>
+<span id="cb129-693"><a href="#cb129-693" aria-hidden="true" tabindex="-1"></a>yearly_count <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
+<span id="cb129-694"><a href="#cb129-694" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, species_id)</span>
+<span id="cb129-695"><a href="#cb129-695" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-696"><a href="#cb129-696" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb129-697"><a href="#cb129-697" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearly_count,</span>
+<span id="cb129-698"><a href="#cb129-698" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)</span>
+<span id="cb129-699"><a href="#cb129-699" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb129-700"><a href="#cb129-700" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-701"><a href="#cb129-701" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>()</span>
 <span id="cb129-702"><a href="#cb129-702" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-703"><a href="#cb129-703" aria-hidden="true" tabindex="-1"></a><span class="co"># split into multiple plots</span></span>
-<span id="cb129-704"><a href="#cb129-704" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id)</span>
+<span id="cb129-703"><a href="#cb129-703" aria-hidden="true" tabindex="-1"></a><span class="co"># make it more meaningful by breaking it by category</span></span>
+<span id="cb129-704"><a href="#cb129-704" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> species_id))</span>
 <span id="cb129-705"><a href="#cb129-705" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-706"><a href="#cb129-706" aria-hidden="true" tabindex="-1"></a><span class="co"># split the line in each plot by sex</span></span>
-<span id="cb129-707"><a href="#cb129-707" aria-hidden="true" tabindex="-1"></a>yearly_sex_counts <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
-<span id="cb129-708"><a href="#cb129-708" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, species_id, sex)</span>
-<span id="cb129-709"><a href="#cb129-709" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-710"><a href="#cb129-710" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb129-711"><a href="#cb129-711" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearly_sex_counts,</span>
-<span id="cb129-712"><a href="#cb129-712" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)</span>
-<span id="cb129-713"><a href="#cb129-713" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb129-714"><a href="#cb129-714" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-715"><a href="#cb129-715" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb129-716"><a href="#cb129-716" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id)</span>
-<span id="cb129-717"><a href="#cb129-717" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-718"><a href="#cb129-718" aria-hidden="true" tabindex="-1"></a><span class="co"># remove background</span></span>
-<span id="cb129-719"><a href="#cb129-719" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb129-720"><a href="#cb129-720" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id) <span class="sc">+</span></span>
-<span id="cb129-721"><a href="#cb129-721" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb129-722"><a href="#cb129-722" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb129-723"><a href="#cb129-723" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-724"><a href="#cb129-724" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-725"><a href="#cb129-725" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors</span></span>
-<span id="cb129-726"><a href="#cb129-726" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-727"><a href="#cb129-727" aria-hidden="true" tabindex="-1"></a><span class="fu">### cols4all package</span></span>
-<span id="cb129-728"><a href="#cb129-728" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-729"><a href="#cb129-729" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">cols4all package</span><span class="co">](https://cols4all.github.io/cols4all-R/)</span> by <span class="co">[</span><span class="ot">Martijn Tennekes</span><span class="co">](https://10mapz.com/)</span> helps select color palettes.</span>
+<span id="cb129-706"><a href="#cb129-706" aria-hidden="true" tabindex="-1"></a><span class="co"># make it more colorful</span></span>
+<span id="cb129-707"><a href="#cb129-707" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> species_id))</span>
+<span id="cb129-708"><a href="#cb129-708" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-709"><a href="#cb129-709" aria-hidden="true" tabindex="-1"></a><span class="co"># split into multiple plots</span></span>
+<span id="cb129-710"><a href="#cb129-710" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id)</span>
+<span id="cb129-711"><a href="#cb129-711" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-712"><a href="#cb129-712" aria-hidden="true" tabindex="-1"></a><span class="co"># split the line in each plot by sex</span></span>
+<span id="cb129-713"><a href="#cb129-713" aria-hidden="true" tabindex="-1"></a>yearly_sex_counts <span class="ot">&lt;-</span> survey_complete <span class="sc">%&gt;%</span></span>
+<span id="cb129-714"><a href="#cb129-714" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, species_id, sex)</span>
+<span id="cb129-715"><a href="#cb129-715" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-716"><a href="#cb129-716" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb129-717"><a href="#cb129-717" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> yearly_sex_counts,</span>
+<span id="cb129-718"><a href="#cb129-718" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)</span>
+<span id="cb129-719"><a href="#cb129-719" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb129-720"><a href="#cb129-720" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-721"><a href="#cb129-721" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb129-722"><a href="#cb129-722" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id)</span>
+<span id="cb129-723"><a href="#cb129-723" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-724"><a href="#cb129-724" aria-hidden="true" tabindex="-1"></a><span class="co"># remove background</span></span>
+<span id="cb129-725"><a href="#cb129-725" aria-hidden="true" tabindex="-1"></a>surveys_plot <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb129-726"><a href="#cb129-726" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_id) <span class="sc">+</span></span>
+<span id="cb129-727"><a href="#cb129-727" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb129-728"><a href="#cb129-728" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb129-729"><a href="#cb129-729" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb129-730"><a href="#cb129-730" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-731"><a href="#cb129-731" aria-hidden="true" tabindex="-1"></a>The main tool in the package is a dashboard that can be started using the following line:</span>
+<span id="cb129-731"><a href="#cb129-731" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors</span></span>
 <span id="cb129-732"><a href="#cb129-732" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-735"><a href="#cb129-735" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-736"><a href="#cb129-736" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb129-737"><a href="#cb129-737" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-738"><a href="#cb129-738" aria-hidden="true" tabindex="-1"></a><span class="fu">c4a_gui</span>()</span>
-<span id="cb129-739"><a href="#cb129-739" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-740"><a href="#cb129-740" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-741"><a href="#cb129-741" aria-hidden="true" tabindex="-1"></a><span class="fu">## Spatial Data</span></span>
-<span id="cb129-742"><a href="#cb129-742" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-743"><a href="#cb129-743" aria-hidden="true" tabindex="-1"></a><span class="fu">### Projections</span></span>
-<span id="cb129-744"><a href="#cb129-744" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-745"><a href="#cb129-745" aria-hidden="true" tabindex="-1"></a>An overview of common projections for Earth is provided by <span class="co">[</span><span class="ot">USGS (pdf)</span><span class="co">](https://pubs.usgs.gov/gip/70047422/report.pdf)</span></span>
+<span id="cb129-733"><a href="#cb129-733" aria-hidden="true" tabindex="-1"></a><span class="fu">### cols4all package</span></span>
+<span id="cb129-734"><a href="#cb129-734" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-735"><a href="#cb129-735" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">cols4all package</span><span class="co">](https://cols4all.github.io/cols4all-R/)</span> by <span class="co">[</span><span class="ot">Martijn Tennekes</span><span class="co">](https://10mapz.com/)</span> helps select color palettes.</span>
+<span id="cb129-736"><a href="#cb129-736" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-737"><a href="#cb129-737" aria-hidden="true" tabindex="-1"></a>The main tool in the package is a dashboard that can be started using the following line:</span>
+<span id="cb129-738"><a href="#cb129-738" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-741"><a href="#cb129-741" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-742"><a href="#cb129-742" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb129-743"><a href="#cb129-743" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-744"><a href="#cb129-744" aria-hidden="true" tabindex="-1"></a><span class="fu">c4a_gui</span>()</span>
+<span id="cb129-745"><a href="#cb129-745" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb129-746"><a href="#cb129-746" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-749"><a href="#cb129-749" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-750"><a href="#cb129-750" aria-hidden="true" tabindex="-1"></a><span class="co"># download world map in small resolution as an sf object</span></span>
-<span id="cb129-751"><a href="#cb129-751" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb129-752"><a href="#cb129-752" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(world)</span>
-<span id="cb129-753"><a href="#cb129-753" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(world)</span>
-<span id="cb129-754"><a href="#cb129-754" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-755"><a href="#cb129-755" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Mercator Projection, Default</span></span>
-<span id="cb129-756"><a href="#cb129-756" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-759"><a href="#cb129-759" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-760"><a href="#cb129-760" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
-<span id="cb129-761"><a href="#cb129-761" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb129-762"><a href="#cb129-762" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span>
-<span id="cb129-763"><a href="#cb129-763" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-764"><a href="#cb129-764" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-765"><a href="#cb129-765" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-766"><a href="#cb129-766" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Lambert Azimuthal Equal-Area Projection</span></span>
-<span id="cb129-767"><a href="#cb129-767" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-770"><a href="#cb129-770" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-771"><a href="#cb129-771" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
-<span id="cb129-772"><a href="#cb129-772" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb129-773"><a href="#cb129-773" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
-<span id="cb129-774"><a href="#cb129-774" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=laea"</span>)</span>
-<span id="cb129-775"><a href="#cb129-775" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-776"><a href="#cb129-776" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-777"><a href="#cb129-777" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Foucaut Projection</span></span>
-<span id="cb129-778"><a href="#cb129-778" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-781"><a href="#cb129-781" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-782"><a href="#cb129-782" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
-<span id="cb129-783"><a href="#cb129-783" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb129-784"><a href="#cb129-784" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
-<span id="cb129-785"><a href="#cb129-785" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=fouc"</span>)</span>
-<span id="cb129-786"><a href="#cb129-786" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-787"><a href="#cb129-787" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-788"><a href="#cb129-788" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Natural Earch II Projection</span></span>
-<span id="cb129-789"><a href="#cb129-789" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-792"><a href="#cb129-792" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-793"><a href="#cb129-793" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
-<span id="cb129-794"><a href="#cb129-794" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb129-795"><a href="#cb129-795" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
-<span id="cb129-796"><a href="#cb129-796" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=natearth2"</span>)</span>
-<span id="cb129-797"><a href="#cb129-797" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-798"><a href="#cb129-798" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-799"><a href="#cb129-799" aria-hidden="true" tabindex="-1"></a><span class="fu">#### EPSG Codes</span></span>
-<span id="cb129-800"><a href="#cb129-800" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-801"><a href="#cb129-801" aria-hidden="true" tabindex="-1"></a>If the projection has an <span class="co">[</span><span class="ot">EPSG code (html)</span><span class="co">](https://epsg.io/?q=%20kind%3ACRS)</span>, it can be used instead as follows:</span>
-<span id="cb129-802"><a href="#cb129-802" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-805"><a href="#cb129-805" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb129-806"><a href="#cb129-806" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
-<span id="cb129-807"><a href="#cb129-807" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb129-808"><a href="#cb129-808" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
-<span id="cb129-809"><a href="#cb129-809" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> sf<span class="sc">::</span><span class="fu">st_crs</span>(<span class="dv">27700</span>))</span>
-<span id="cb129-810"><a href="#cb129-810" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb129-811"><a href="#cb129-811" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-812"><a href="#cb129-812" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-813"><a href="#cb129-813" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-814"><a href="#cb129-814" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb129-815"><a href="#cb129-815" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-816"><a href="#cb129-816" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>OU Software Carpentry Workshop (check other workshops <span class="co">[</span><span class="ot">here</span><span class="co">](https://libraries.ou.edu/content/software-and-data-carpentry)</span>)</span>
-<span id="cb129-817"><a href="#cb129-817" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Main Tutorial</span><span class="co">](https://oulib-swc.github.io/2019-05-15-ou-swc/)</span></span>
-<span id="cb129-818"><a href="#cb129-818" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Data Carpentry with R</span><span class="co">](https://datacarpentry.org/R-ecology-lesson/index.html)</span></span>
-<span id="cb129-819"><a href="#cb129-819" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Software Carpentry with R</span><span class="co">](https://swcarpentry.github.io/r-novice-gapminder/)</span></span>
-<span id="cb129-820"><a href="#cb129-820" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Etherpad</span><span class="co">](https://pad.carpentries.org/2019-05-15-ou-swc)</span></span>
-<span id="cb129-821"><a href="#cb129-821" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Google Doc</span><span class="co">](https://docs.google.com/document/d/1aJq_X1uhaNkUj7qdZEzOcpc2Pky7eZPy76yqs0UkfrQ/edit)</span></span>
-<span id="cb129-822"><a href="#cb129-822" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Intro to ggplot</span><span class="co">](https://rawcdn.githack.com/allisonhorst/data-vis/fc107e063f50ef8695b0a75ed73d74720aca2c65/data_vis_np.html)</span> by <span class="co">[</span><span class="ot">Allison Horst</span><span class="co">](https://github.com/allisonhorst)</span></span>
-<span id="cb129-823"><a href="#cb129-823" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R for Data Science book by Garrett Grolemund and Hadley Wickham</span><span class="co">](https://r4ds.had.co.nz/)</span></span>
-<span id="cb129-824"><a href="#cb129-824" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Best Practices for Scientific Computing paper</span><span class="co">](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)</span></span>
-<span id="cb129-825"><a href="#cb129-825" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">R Manuals</span><span class="co">](https://rstudio.github.io/r-manuals/)</span></span>
+<span id="cb129-747"><a href="#cb129-747" aria-hidden="true" tabindex="-1"></a><span class="fu">## Spatial Data</span></span>
+<span id="cb129-748"><a href="#cb129-748" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-749"><a href="#cb129-749" aria-hidden="true" tabindex="-1"></a><span class="fu">### Projections</span></span>
+<span id="cb129-750"><a href="#cb129-750" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-751"><a href="#cb129-751" aria-hidden="true" tabindex="-1"></a>An overview of common projections for Earth is provided by <span class="co">[</span><span class="ot">USGS (pdf)</span><span class="co">](https://pubs.usgs.gov/gip/70047422/report.pdf)</span></span>
+<span id="cb129-752"><a href="#cb129-752" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-755"><a href="#cb129-755" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-756"><a href="#cb129-756" aria-hidden="true" tabindex="-1"></a><span class="co"># download world map in small resolution as an sf object</span></span>
+<span id="cb129-757"><a href="#cb129-757" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb129-758"><a href="#cb129-758" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(world)</span>
+<span id="cb129-759"><a href="#cb129-759" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(world)</span>
+<span id="cb129-760"><a href="#cb129-760" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb129-761"><a href="#cb129-761" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Mercator Projection, Default</span></span>
+<span id="cb129-762"><a href="#cb129-762" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-765"><a href="#cb129-765" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-766"><a href="#cb129-766" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
+<span id="cb129-767"><a href="#cb129-767" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb129-768"><a href="#cb129-768" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span>
+<span id="cb129-769"><a href="#cb129-769" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb129-770"><a href="#cb129-770" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-771"><a href="#cb129-771" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-772"><a href="#cb129-772" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Lambert Azimuthal Equal-Area Projection</span></span>
+<span id="cb129-773"><a href="#cb129-773" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-776"><a href="#cb129-776" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-777"><a href="#cb129-777" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
+<span id="cb129-778"><a href="#cb129-778" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb129-779"><a href="#cb129-779" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb129-780"><a href="#cb129-780" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=laea"</span>)</span>
+<span id="cb129-781"><a href="#cb129-781" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb129-782"><a href="#cb129-782" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-783"><a href="#cb129-783" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Foucaut Projection</span></span>
+<span id="cb129-784"><a href="#cb129-784" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-787"><a href="#cb129-787" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-788"><a href="#cb129-788" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
+<span id="cb129-789"><a href="#cb129-789" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb129-790"><a href="#cb129-790" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb129-791"><a href="#cb129-791" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=fouc"</span>)</span>
+<span id="cb129-792"><a href="#cb129-792" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb129-793"><a href="#cb129-793" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-794"><a href="#cb129-794" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Natural Earch II Projection</span></span>
+<span id="cb129-795"><a href="#cb129-795" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-798"><a href="#cb129-798" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-799"><a href="#cb129-799" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
+<span id="cb129-800"><a href="#cb129-800" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb129-801"><a href="#cb129-801" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb129-802"><a href="#cb129-802" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=natearth2"</span>)</span>
+<span id="cb129-803"><a href="#cb129-803" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb129-804"><a href="#cb129-804" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-805"><a href="#cb129-805" aria-hidden="true" tabindex="-1"></a><span class="fu">#### EPSG Codes</span></span>
+<span id="cb129-806"><a href="#cb129-806" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-807"><a href="#cb129-807" aria-hidden="true" tabindex="-1"></a>If the projection has an <span class="co">[</span><span class="ot">EPSG code (html)</span><span class="co">](https://epsg.io/?q=%20kind%3ACRS)</span>, it can be used instead as follows:</span>
+<span id="cb129-808"><a href="#cb129-808" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-811"><a href="#cb129-811" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb129-812"><a href="#cb129-812" aria-hidden="true" tabindex="-1"></a>world <span class="sc">|&gt;</span> </span>
+<span id="cb129-813"><a href="#cb129-813" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb129-814"><a href="#cb129-814" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb129-815"><a href="#cb129-815" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> sf<span class="sc">::</span><span class="fu">st_crs</span>(<span class="dv">27700</span>))</span>
+<span id="cb129-816"><a href="#cb129-816" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb129-817"><a href="#cb129-817" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-818"><a href="#cb129-818" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-819"><a href="#cb129-819" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-820"><a href="#cb129-820" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb129-821"><a href="#cb129-821" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-822"><a href="#cb129-822" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>OU Software Carpentry Workshop (check other workshops <span class="co">[</span><span class="ot">here</span><span class="co">](https://libraries.ou.edu/content/software-and-data-carpentry)</span>)</span>
+<span id="cb129-823"><a href="#cb129-823" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Main Tutorial</span><span class="co">](https://oulib-swc.github.io/2019-05-15-ou-swc/)</span></span>
+<span id="cb129-824"><a href="#cb129-824" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Data Carpentry with R</span><span class="co">](https://datacarpentry.org/R-ecology-lesson/index.html)</span></span>
+<span id="cb129-825"><a href="#cb129-825" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Software Carpentry with R</span><span class="co">](https://swcarpentry.github.io/r-novice-gapminder/)</span></span>
+<span id="cb129-826"><a href="#cb129-826" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Etherpad</span><span class="co">](https://pad.carpentries.org/2019-05-15-ou-swc)</span></span>
+<span id="cb129-827"><a href="#cb129-827" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Google Doc</span><span class="co">](https://docs.google.com/document/d/1aJq_X1uhaNkUj7qdZEzOcpc2Pky7eZPy76yqs0UkfrQ/edit)</span></span>
+<span id="cb129-828"><a href="#cb129-828" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Intro to ggplot</span><span class="co">](https://rawcdn.githack.com/allisonhorst/data-vis/fc107e063f50ef8695b0a75ed73d74720aca2c65/data_vis_np.html)</span> by <span class="co">[</span><span class="ot">Allison Horst</span><span class="co">](https://github.com/allisonhorst)</span></span>
+<span id="cb129-829"><a href="#cb129-829" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R for Data Science book by Garrett Grolemund and Hadley Wickham</span><span class="co">](https://r4ds.had.co.nz/)</span></span>
+<span id="cb129-830"><a href="#cb129-830" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Best Practices for Scientific Computing paper</span><span class="co">](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)</span></span>
+<span id="cb129-831"><a href="#cb129-831" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">R Manuals</span><span class="co">](https://rstudio.github.io/r-manuals/)</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
