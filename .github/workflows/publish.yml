@@ -42,30 +42,34 @@ jobs:
 
 
       # From https://github.com/r-lib/actions/tree/v2-branch/setup-r
+      # se-public-rspm: true -> use pre-compiled packages to increase speed
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.4.3'
+          se-public-rspm: true
 
 
       # From: https://github.com/actions/runner-images/issues/37
       # From: https://p3m.dev/client/#/repos/cran/packages/overview?search=png
       - name: Install System Dependencies
         run: |
-          sudo apt-get install libcurl4-openssl-dev
-          sudo apt-get install -y libpng-dev
-          sudo apt-get install -y libgdal-dev
-          sudo apt-get install -y gdal-bin
-          sudo apt-get install -y libgeos-dev
-          sudo apt-get install -y libproj-dev
-          sudo apt-get install -y libsqlite3-dev
-          sudo apt-get install -y libfontconfig1-dev
-          sudo apt-get install -y libfreetype6-dev
-          sudo apt-get install -y libfribidi-dev
-          sudo apt-get install -y libharfbuzz-dev
-          sudo apt-get install -y libudunits2-dev
-          sudo apt-get install -y make
-          sudo apt-get install -y pandoc
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcurl4-openssl-dev \
+            libpng-dev \
+            libgdal-dev \
+            gdal-bin \
+            libgeos-dev \
+            libproj-dev \
+            libsqlite3-dev \
+            libfontconfig1-dev \
+            libfreetype6-dev \
+            libfribidi-dev \
+            libharfbuzz-dev \
+            libudunits2-dev \
+            make \
+            pandoc
 
 
       # # From: https://quarto.org/docs/publishing/github-pages.html#github-action
