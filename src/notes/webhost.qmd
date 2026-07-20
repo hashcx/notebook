@@ -32,3 +32,58 @@ lapply(packages, require, character.only = TRUE)
 There are many ways to host websites on the internet.  Below are some free options.
 
 - A Quarto website can be published on on GitHub Pages for free.  Check [this GSheet](https://docs.google.com/spreadsheets/d/1efz-KlHgNicp8T8Kzt5ELlX6i0pvwFerosTHLgGwW_Y/preview) for options.
+
+## Github Actions & R Dependencies
+
+The [TidyTuesday GitHub Action build](https://github.com/hashcx/TidyTuesday/actions/runs/29706448783/job/88244170879) shows an error when trying restore the `magick 2.9.1` package because it depends on `libMagick++-6.Q16.so.9` (a system dependecy) that could not be found.
+
+```
+✔ magick 2.9.1                             [installed binary]
+Error: code 1]
+/opt/R/4.4.2/lib/R/bin/R --vanilla -s -f '/tmp/Rtmp7xYRF6/renv-install-179870a6fe78.R'
+================================================================================
+
+Error in dyn.load(file, DLLpath = DLLpath, ...) : 
+  unable to load shared object '/home/runner/work/TidyTuesday/TidyTuesday/renv/staging/1/magick/libs/magick.so':
+  libMagick++-6.Q16.so.9: cannot open shared object file: No such file or directory
+Calls: loadNamespace -> library.dynam -> dyn.load
+Execution halted
+Traceback (most recent calls last):
+10: renv::restore()
+ 9: renv_restore_run_actions(project, diff, current, lockfile, rebuild, 
+        strict, descriptions)
+ 8: renv_graph_install(descriptions)
+ 7: handle(pkg, list(success = success, output = output, elapsed = elapsed))
+ 6: renv_graph_install_finalize(entry$record, entry$prepared, installdir, 
+        project, linkable)
+ 5: tryCatch(renv_install_test(package), error = function(err) {
+        unlink(installpath, recursive = TRUE)
+        stop(err)
+    })
+ 4: tryCatchList(expr, classes, parentenv, handlers)
+ 3: tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 2: value[[3L]](cond)
+ 1: stop(err)
+Execution halted
+Error: Process completed with exit code 1.
+```
+
+The solution is to install this required system dependecy during the GitHub Action Workflow (see the [one for TidyTuesday](https://github.com/hashcx/TidyTuesday/blob/main/.github/workflows/publish.yml)) as follows:
+
+```
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libfontconfig1-dev \
+            libharfbuzz-dev \
+            libfribidi-dev \
+            libfreetype6-dev \
+            libpng-dev \
+            libtiff5-dev \
+            libjpeg-dev \
+            libmagick++-dev
+```
