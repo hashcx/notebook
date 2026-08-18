@@ -72,7 +72,7 @@ book:
 
     - part: "Projects"
       chapters:
-        - src/projects/topic-modeling-r.qmd
+        # - src/projects/topic-modeling-r.qmd
         - src/projects/scrap_mac_registrar.qmd
         
   # appendices:
