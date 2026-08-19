@@ -5,12 +5,12 @@ A complete, step-by-step reference guide to preventing connection drops, handlin
 ---
 
 ## Table of Contents
-1. [Hardware Watchdog Timer Setup](#1-hardware-watchdog-timer-setup)
-2. [Outbound Email Configuration (`msmtp`)](#2-outbound-email-configuration-msmtp)
-3. [Automated Reboot Email Notifications](#3-automated-reboot-email-notifications)
-4. [Automatic Wi-Fi Reconnect Script](#4-automatic-wi-fi-reconnect-script)
-5. [Disabling Wi-Fi Power Saving](#5-disabling-wi-fi-power-saving)
-6. [Troubleshooting Quick Reference](#6-troubleshooting-quick-reference)
+1. [Hardware Watchdog Timer Setup](#hardware-watchdog-timer-setup)
+2. [Outbound Email Configuration (`msmtp`)](#outbound-email-configuration-msmtp)
+3. [Automated Reboot Email Notifications](#automated-reboot-email-notifications)
+4. [Automatic Wi-Fi Reconnect Script](#automatic-wi-fi-reconnect-script)
+5. [Disabling Wi-Fi Power Saving](#disabling-wi-fi-power-saving)
+6. [Troubleshooting Quick Reference](#troubleshooting-quick-reference)
 
 ---
 
