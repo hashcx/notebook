@@ -58,6 +58,7 @@ book:
         - src/notes/rstudio.qmd
         - src/notes/windows.qmd
         - src/notes/webhost.qmd
+        - src/notes/raspberry_pi_remote_access_stability_guide.md
     
     - part: src/r4ds/_r4ds.qmd
       chapters:
@@ -71,7 +72,7 @@ book:
 
     - part: "Projects"
       chapters:
-        - src/projects/topic-modeling-r.qmd
+        # - src/projects/topic-modeling-r.qmd
         - src/projects/scrap_mac_registrar.qmd
         
   # appendices:
