@@ -2,8 +2,6 @@
 title: "Raspberry PI Remote Access Stability Guide"
 ---
 
-# Raspberry Pi Remote Access & Stability Guide
-
 A complete, step-by-step reference guide to preventing connection drops, handling hard freezes, configuring reboot email alerts, auto-reconnecting Wi-Fi, and disabling power saving on Raspberry Pi OS.
 
 ---
