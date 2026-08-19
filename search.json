@@ -408,7 +408,7 @@
     "href": "src/notes/raspberry_pi_remote_access_stability_guide.html",
     "title": "Raspberry PI Remote Access Stability Guide",
     "section": "",
-    "text": "Raspberry Pi Remote Access & Stability Guide\nA complete, step-by-step reference guide to preventing connection drops, handling hard freezes, configuring reboot email alerts, auto-reconnecting Wi-Fi, and disabling power saving on Raspberry Pi OS.",
+    "text": "Table of Contents\nA complete, step-by-step reference guide to preventing connection drops, handling hard freezes, configuring reboot email alerts, auto-reconnecting Wi-Fi, and disabling power saving on Raspberry Pi OS.",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Raspberry PI Remote Access Stability Guide</span>"
@@ -418,8 +418,8 @@
     "objectID": "src/notes/raspberry_pi_remote_access_stability_guide.html#table-of-contents",
     "href": "src/notes/raspberry_pi_remote_access_stability_guide.html#table-of-contents",
     "title": "Raspberry PI Remote Access Stability Guide",
-    "section": "Table of Contents",
-    "text": "Table of Contents\n\nHardware Watchdog Timer Setup\nOutbound Email Configuration (msmtp)\nAutomated Reboot Email Notifications\nAutomatic Wi-Fi Reconnect Script\nDisabling Wi-Fi Power Saving\nTroubleshooting Quick Reference",
+    "section": "",
+    "text": "Hardware Watchdog Timer Setup\nOutbound Email Configuration (msmtp)\nAutomated Reboot Email Notifications\nAutomatic Wi-Fi Reconnect Script\nDisabling Wi-Fi Power Saving\nTroubleshooting Quick Reference",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Raspberry PI Remote Access Stability Guide</span>"
