@@ -58,6 +58,21 @@ To list datasets in all the available packages, use the following command:
 data(package = .packages(all.available = TRUE))
 ```
 
+To have a summary table where packages are sorted based on number of datasets they contains and the list of package they have (one row per package), use the following command:
+
+```r
+.packages(all.available = TRUE) |> 
+  data(package = _)  |> 
+  _$results  |> 
+  as.data.frame() |> 
+  dplyr::group_by(Package) |> 
+  dplyr::summarize(
+    N = dplyr::n(), 
+    Datasets = stringr::str_flatten_comma(Title)
+  ) |> 
+  dplyr::arrange(desc(N))
+```
+
 ## Primitive Data Types
 
 The primitive (also known as singleton/simple) data types in R are:
