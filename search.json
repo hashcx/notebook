@@ -133,7 +133,7 @@
     "href": "src/notes/r.html#dataset-in-packages",
     "title": "R",
     "section": "Dataset in Packages",
-    "text": "Dataset in Packages\nTo list datasets in all the available packages, use the following command:\ndata(package = .packages(all.available = TRUE))",
+    "text": "Dataset in Packages\nTo list datasets in all the available packages, use the following command:\ndata(package = .packages(all.available = TRUE))\nTo have a summary table where packages are sorted based on number of datasets they contains and the list of package they have (one row per package), use the following command:\n.packages(all.available = TRUE) |&gt; \n  data(package = _)  |&gt; \n  _$results  |&gt; \n  as.data.frame() |&gt; \n  dplyr::group_by(Package) |&gt; \n  dplyr::summarize(\n    N = dplyr::n(), \n    Datasets = stringr::str_flatten_comma(Title)\n  ) |&gt; \n  dplyr::arrange(desc(N))",
     "crumbs": [
       "Notes",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>R</span>"
