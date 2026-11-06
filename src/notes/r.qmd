@@ -73,6 +73,34 @@ To have a summary table where packages are sorted based on number of datasets th
   dplyr::arrange(desc(N))
 ```
 
+Obtain length of databases in installed packages
+
+```r
+len_fun <- function(pkg, ds) {
+  tryCatch(
+    {
+      ldf <- getExportedValue(pkg, ds)
+      print(class(ldf))
+      print(length(ldf))
+      length(ldf)
+    },
+    error = function(e) {
+      return(NA)
+    }
+  )
+}
+
+.packages(all.available = TRUE) |> 
+  data(package = _)  |> 
+  _$results  |> 
+  as.data.frame() |> 
+  dplyr::select(-LibPath, -Title) |> 
+  dplyr::mutate(Item = stringr::str_replace(Item, " .*", "")) |> 
+  dplyr::rowwise() |> 
+  dplyr::mutate(length = len_fun(Package, Item)) |> 
+  dplyr::arrange(desc(length))
+```
+
 ## Primitive Data Types
 
 The primitive (also known as singleton/simple) data types in R are:
